@@ -1,1 +1,129 @@
-<mxfile host="app.diagrams.net" modified="2020-10-07T09:14:15.890Z" agent="5.0 (Windows)" version="13.7.7" etag="Pm8HqBiCTNuaYIrWURfK" type="github"><diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">7VhZc9MwEP41Hp5gfBQnecRp0wKhU2ihw6NiK7aI7DWynINfzyqWYzsOOYD0yDQv0a43K2m/b4/YcPrx/FKQNPoEAeWGbQZzwzk3bNuybQe/lGZRaLq9bqEIBQu0UaW4Zb+oVppam7OAZg1DCcAlS5tKH5KE+rKhI0LArGk2Bt7cNSUhbSlufcLb2nsWyEjfwu5U+ivKwqjc2XJ7xZOYlMb6JllEApjVVM6F4fQFgCxW8bxPuQpeGZf794t7Ppy4lx8+Zz/JV+/j3fW314WzwSE/WV1B0ET+X9d24XpKeK7jpe8qF2UABeRJQJUT03C8SMYclxYuf1ApFxpwkktAFQgZQQgJ4UOAVNuNIZHazFIyTYJ3CliURxz8SaEaMM71Hihp+y5KmRQwWWGnHKyAUMacjCj3iD8JlwftAweBjxJIqHIVIBn0XarDXVRab8/YagwyyIVPt9jpbJFEhHSbP7ewU+er8VQjd0khplIs0EBQTiSbNslMdE6EK7sKd1xo6A+ggdOiwZDEqcp6oFnySuJqBmKyhRsKl1nEJL1NyTJAMywnTb7UeYBX9UJOskyjuAPkw0CaUiHpfGtYy6euzu2yuGlxVlUKq0z/qFYlzswjAXHWAuI7Fs+XlPyXlHT3TMmyY+3MSU2Wkhh7p6j2dAMskTUTGI8zPNg6dVYb/j2b3rbYdA0tMu3G41nT7ZHI1DmMS9aT55L7hxbhcgyDNxK4CtUq5XkYIlnQXWI4g3btiiAe5dnudtHAWDFoQGLGVbyuKJ9SyXyyoakQzkLc99xHuKnYTB7ckiUhSm4l3S3JivX3iM2m02w2K7nebcwN3aZ7rG7TaWF6g+gV0NkmX+J7Yh3fsddA6D12y+/uU6SfdQl+8I5fVtPdLd/as0xr9phvHPw0CPT0p4DeXjPlyxhwHIbZpzYIlCes8cnL+ag9CYxykSwHAcjlyySwbRKwNzWhB50EykJYA/ULTQlDMM3hKc4B6//8z5zHngPKStGEgKuY2maRYSeGwfos5ljHwwDF6k1tUQqr993OxW8=</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2020-10-07T13:43:28.419Z" agent="5.0 (Windows)" etag="LkB4nhAxfNpoac13GxyL" version="13.7.7" type="github">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+    <mxGraphModel dx="1422" dy="791" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2339" pageHeight="3300" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="iHcdqhV0YViVewFqACI8-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="iHcdqhV0YViVewFqACI8-0" target="iHcdqhV0YViVewFqACI8-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iHcdqhV0YViVewFqACI8-0" value="Data from Databases eg Gbif, Biocase" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="70" y="50" width="390" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="iHcdqhV0YViVewFqACI8-19" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="iHcdqhV0YViVewFqACI8-1" target="iHcdqhV0YViVewFqACI8-4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="256" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iHcdqhV0YViVewFqACI8-27" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;entryX=-0.016;entryY=0.497;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="iHcdqhV0YViVewFqACI8-1" target="iHcdqhV0YViVewFqACI8-14">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="427" y="195" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iHcdqhV0YViVewFqACI8-1" value="Are all the data located in Sweden?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="165" y="140" width="182" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="iHcdqhV0YViVewFqACI8-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.564;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;fontSize=12;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="iHcdqhV0YViVewFqACI8-4" target="iHcdqhV0YViVewFqACI8-33">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="256" y="488" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iHcdqhV0YViVewFqACI8-4" value="Synonymise with Dyntaxa" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;direction=south;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="154" y="320" width="204" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="iHcdqhV0YViVewFqACI8-22" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="iHcdqhV0YViVewFqACI8-14" target="iHcdqhV0YViVewFqACI8-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iHcdqhV0YViVewFqACI8-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="iHcdqhV0YViVewFqACI8-14" target="iHcdqhV0YViVewFqACI8-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iHcdqhV0YViVewFqACI8-14" value="Do you have an agreed taxonomy with knowledge of synonyms &lt;b&gt;AND&lt;/b&gt; historical species delimitations?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="490" y="93.75" width="310" height="202.5" as="geometry" />
+        </mxCell>
+        <mxCell id="iHcdqhV0YViVewFqACI8-40" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="iHcdqhV0YViVewFqACI8-20" target="iHcdqhV0YViVewFqACI8-33">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1005" y="510" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1005" y="480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iHcdqhV0YViVewFqACI8-20" value="&lt;div&gt;Do this!!!&lt;/div&gt;&lt;div&gt;It is not the same as &lt;br&gt;&lt;/div&gt;checking taxonomic backbones or name databases (eg. gbif or The plant list). Naming change through time and space and species records do not necessarily keep up with those changes." style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="860" y="97.5" width="290" height="195" as="geometry" />
+        </mxCell>
+        <mxCell id="iHcdqhV0YViVewFqACI8-46" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="iHcdqhV0YViVewFqACI8-33" target="iHcdqhV0YViVewFqACI8-45">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iHcdqhV0YViVewFqACI8-33" value="BDcleaner scripts" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=12;direction=south;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="572.5" y="420" width="145" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="iHcdqhV0YViVewFqACI8-59" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="iHcdqhV0YViVewFqACI8-45" target="iHcdqhV0YViVewFqACI8-58">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iHcdqhV0YViVewFqACI8-45" value="Are the data complete?" style="rhombus;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="482.5" y="570" width="325" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="iHcdqhV0YViVewFqACI8-63" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" target="iHcdqhV0YViVewFqACI8-58">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1125" y="930" as="sourcePoint" />
+            <mxPoint x="901.25" y="780" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iHcdqhV0YViVewFqACI8-64" value="NO" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="iHcdqhV0YViVewFqACI8-63">
+          <mxGeometry x="-0.0599" y="4" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iHcdqhV0YViVewFqACI8-58" value="What are the data to be used for" style="whiteSpace=wrap;html=1;aspect=fixed;fontSize=12;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="605" y="910" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="iHcdqhV0YViVewFqACI8-96" value="" style="endArrow=classic;html=1;fontSize=12;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="iHcdqhV0YViVewFqACI8-45">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="920" y="620" as="sourcePoint" />
+            <mxPoint x="1225" y="630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iHcdqhV0YViVewFqACI8-99" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="iHcdqhV0YViVewFqACI8-96">
+          <mxGeometry x="-0.4212" y="-2" relative="1" as="geometry">
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iHcdqhV0YViVewFqACI8-100" value="Incomplete or incorrect taxonomy" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="iHcdqhV0YViVewFqACI8-96">
+          <mxGeometry x="0.4349" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iHcdqhV0YViVewFqACI8-97" value="" style="endArrow=classic;html=1;fontSize=12;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="960" y="630" as="sourcePoint" />
+            <mxPoint x="1230" y="780" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="960" y="780" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iHcdqhV0YViVewFqACI8-108" value="Missing coordinates" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="iHcdqhV0YViVewFqACI8-97">
+          <mxGeometry x="0.1111" y="39" relative="1" as="geometry">
+            <mxPoint x="39" y="40" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iHcdqhV0YViVewFqACI8-104" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jumpStyle=arc;orthogonalLoop=1;jettySize=auto;html=1;endArrow=blockThin;endFill=1;fontSize=12;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="iHcdqhV0YViVewFqACI8-103" target="iHcdqhV0YViVewFqACI8-33">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1230" y="480" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1340" y="480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iHcdqhV0YViVewFqACI8-103" value="Is there a suitable name in notes?" style="rhombus;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="1220" y="575" width="240" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="iHcdqhV0YViVewFqACI8-106" value="Extract name with script" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=12;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="1130" y="440" width="120" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
