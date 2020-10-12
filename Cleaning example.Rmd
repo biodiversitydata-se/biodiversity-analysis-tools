@@ -1,0 +1,641 @@
+---
+title: "Example of data cleaning"
+author: "Charlie Campbell"
+date: "09/10/2020"
+output: html_document
+---
+# Example using <i>Sphagnum auriculatum</i>
+
+In this example of running through the work flow I have downloaded data from GBIF on the species <i>S. auriculatum</i> and <i>S. denticulatum</i> in Europe. These are currently listed as separate speceis in the GBIF backbone but the European checklist and dyntaxa.se list them (correctly) as both being synonyms of <i>S. aurculatu</i>. This data set  
+```{r setup, include=FALSE}
+############################################
+## Data 1. Botanical Garden Information
+## Methods: Automatic data collection
+## Important output: garden.inf data.frame
+############################################
+library(RCurl)
+library(httr)
+library(XML)
+
+# Automatic collection of botanical garden information in BGCI garden search
+# Read Garden name and correspongding websites
+url.list    <- 'https://tools.bgci.org/garden_search.php?action=Find&ftrCountry=All&ftrKeyword=&x=50&y=21'
+html.use    <- GET(url.list)
+doc1        <- htmlParse(html.use)
+garden.inf  <- readHTMLTable(doc1)[[3]]
+garden.link <- getHTMLLinks(doc1)
+link.no     <- which(str_detect(garden.link,'garden.php?'))
+link.use    <- paste0('http://www.bgci.org/',garden.link[link.no])
+
+# Read detail information of each botanical garden
+path.list <- list()
+for(i in 1:length(link.use)){
+  
+  url1        <- link.use[i]
+  doc         <- htmlParse(GET(url1))
+  
+  xpath1      <- xpathSApply(doc = doc,path = "//div[@class='meta-heading']//li",xmlValue)
+  save.no1    <- which(str_detect(xpath1,'Latitude')) # save latitude
+  save.no2    <- which(str_detect(xpath1,'Longitude')) # save longitude
+  save.no3    <- which(str_detect(xpath1,'Altitude')) # save altitude
+  save.no     <- unique(c(save.no1,save.no2,save.no3))
+  save.chr    <- xpath1[save.no]
+  
+  path.list[[i]] <- save.chr # save results in list
+  print(i)
+}
+
+# String processing
+use.list <- list()
+for(i in 1:length(link.use))
+{
+  trans1 <- str_trim(path.list[[i]])
+  if(length(trans1) == 0)
+  {
+    use.list[[i]] <- NULL
+    next
+  }
+  trans2        <- str_split(trans1,pattern = '\t')[[1]]
+  use.vec       <- trans2[which(trans2 != "")]
+  use.list[[i]] <- use.vec
+}
+
+
+# Transform information format to data.frame
+garden.inf$Latitude <- NA
+garden.inf$Longitude <- NA
+
+for(i in 1:length(link.use))
+{
+  if(is.null(use.list[[i]])) next
+  t1 <- str_split(use.list[[i]],':')
+  t2 <- lapply(t1, str_trim)
+  
+  for(k in 1:length(t2))
+  {
+    if(t2[[k]][1] != "Latitude" & t2[[k]][1] != "Longitude")
+    {
+      next
+    } else
+    {
+      if(t2[[k]][1] == "Latitude")
+      {
+        garden.inf$Latitude[i]  <- t2[[k]][2]
+      } else
+      {
+        garden.inf$Longitude[i] <- t2[[k]][2]
+      }
+    }
+  }
+  
+}
+
+# write the BGCI garden information
+write.csv(garden.inf,'./BDcleaner_Scripts/Example/GardenInformation.csv',row.names = F)
+
+```
+
+
+
+```{r setup, include=FALSE echo=TRUE}
+library(data.table)
+library(taxize)
+library(dplyr)
+df.bio <- lapply(list.files("./BDcleaner_Scripts/Example/Downloads/",
+                        full.names = TRUE,
+                        pattern = ".csv"),
+             function(q){
+               fread(q,encoding = "UTF-8")
+             })
+
+df.bio <- as.data.table(rbindlist(df.bio))
+
+df.bio <- df.bio %>%
+  unique()
+
+
+
+df.bio <- subset(df.bio,select = c('verbatimScientificName','countryCode',
+                                    'decimalLatitude','decimalLongitude','year'))
+
+df.bio$DataID <- 1:nrow(df.bio)
+
+
+nam <- data.frame(fullnamewithauthors= unique(df.bio$verbatimScientificName))
+
+#write.table( nam,
+#          "./BDcleaner_Scripts/Example/Agreed_taxonomy.csv",
+#          row.names = FALSE,
+#          sep = "\t")
+nam <- read.csv("./BDcleaner_Scripts/Example/Agreed_taxonomy.csv")
+
+df.bio <- merge(df.bio, 
+      nam,
+      by.x = "verbatimScientificName",
+      by.y = "fullnamewithauthors")
+
+head(df.bio)
+```
+
+
+
+```{r setup, include=FALSE echo=TRUE}
+###########################################################################
+## Part 2. Geographical cleaning
+## Dimension: Space
+## Important output variables
+##  (1)  ExGeo: the existence of geo-coordinates
+##  (2)  GeoPrecision: the number of decimal digits of coordinates
+##  (3)  TaxonType: match type of taxon name (with TPL)
+##  (4)  TaxonStatus: name status of taxon names (TPL)
+##  (5)  TxonComf: confidence level of taxon names (TPL)
+##  (6)  Adj.Coord: whether the error coordinate can be corrected
+##  (7)  Adj.TransTypr: type of coordinate transformation (correct)
+##  (8)  CountrySame: whether the coordinates match the political boundary?
+##  (9)  Overland: whether the coordinated located in terrsital area
+##  (10) GeoNotZero: Lat/Lon == 0?
+##  (11) FlagCent: centroids of administrative area
+##  (12) FlagIns: location of biodiversity institution
+##  (13) FlagBGCI: location of botanical garden
+##  (14) over.urban: whether located in urban area
+##  (15) overUrbanType: urban cluster of urban core or rural area
+############################################################################
+
+# Add new variable to df.bio dataframe
+add.var <- c("ExGeo","GeoPrecision")
+df.bio[,add.var] <- rep(NA,nrow(df.bio))
+
+## ExGeo: existence of geo-coordinates
+judge.geo         <- is.na(df.bio$decimalLongitude)+is.na(df.bio$decimalLatitude) # True: 0; False: 1
+no.geo            <- which(judge.geo==0)
+le.geo            <- length(no.geo)
+df.bio$ExGeo[no.geo]  <- 1
+df.bio$ExGeo[-no.geo] <- 0
+
+# GeoPrecision Use: number of decimal digits of coordinates
+clat <- df.bio$decimalLatitude[no.geo] %>% as.character %>% str_split(pattern = '[.]')
+clon <- df.bio$decimalLongitude[no.geo] %>% as.character %>% str_split(pattern = '[.]')
+
+geop.use <- rep(0,length = length(no.geo))
+for(p in 1:length(no.geo))
+{
+  if(is.na(clat[[p]][2]) | is.na(clon[[p]][2]))
+  {next} else
+  {
+    geop.use[p] <- max(str_length(clat[[p]][2]),str_length(clon[[p]][2]))
+  }
+}
+df.bio$GeoPrecision[no.geo] <- geop.use
+
+# remove useless variables
+rm(list = setdiff(ls(),c('df.bio','add.var')))
+```
+
+
+
+
+```{r setup, include=FALSE echo=TRUE}
+##################################
+## Geographical error detection
+####################################
+library(sp)
+library(rgdal)
+library(rworldxtra)
+library(countrycode)
+library(rworldmap)
+library(biogeo)
+library(maptools)
+library(geonames)
+library(data.table)
+library(maptools)
+
+# Read world map data
+
+data(wrld_simpl) # world map in maptools R package (coarse)
+worldmap2 <- readOGR('YourPath/worldmap2.shp') # Natural earth wold map (medium)
+worldmap  <- readOGR('YourPath/gadm28_adm0.shp') # GADM world map (fine)
+
+# remove useless variables
+rm(list = setdiff(ls(),c('df.bio','add.var','taxonbind',
+                         'judge.taxon','flag.next','worldmap','worldmap2')))
+
+# Add filter variable names
+add.name <- c('GeoNotZero','OverLand','CountrySame','Adj.Overland','Adj.Type',
+              'Adj.Correct','AdjLat','AdjLon')
+source("./BDcleaner_Scripts/Script 4 Functions.R")
+############################
+# GeoNotZero: lat/lon = 0?
+############################
+GeoNotZero  <- Coord.Notzero(df.bio$decimalLatitude,df.bio$decimalLongitude)
+df.bio$GeoNotZero <- GeoNotZero
+rm(GeoNotZero)
+
+country.inf <- wrld_simpl@data
+country.inf$ISO2 <- as.character(country.inf$ISO2)
+
+# Some special lower case
+df.bio$countryCode <- toupper(df.bio$countryCode %>% as.character)
+
+# "" not NA if countryCode is NA
+```
+
+```{r setup, include=FALSE echo=TRUE}
+###################################
+## GeoFilter 2: On the Land?
+## GeoFilter 3: Country boundary
+## We used three world maps
+###################################
+Line.use <- which(df.bio$ExGeo == 1)
+df.use   <- df.bio[Line.use,]
+L.line   <- length(Line.use)
+
+pro.shp <- SpatialPointsDataFrame(df.use[,c('decimalLongitude','decimalLatitude')],
+                                  data = df.use[,c("scientificNamDe",'FlagCountry','countryCode')],
+                                  proj4string = CRS("+proj=longlat +datum=WGS84"))
+rm(df.use)
+
+overlay.land <- rep(0,L.line)
+country.same <- rep('Simple',L.line)
+
+# Simple world map (in maptools package)
+pro.shp@proj4string <- wrld_simpl@proj4string
+
+# split data to ensure enough computer memory
+use.ci <- sp.mt(1,nrow(pro.shp),3000000)
+
+# Initializing the loop process
+o1 <- over(pro.shp[1,],wrld_simpl)
+over.shp1 <- data.frame(array(NA,dim = c(nrow(pro.shp),ncol(o1))))
+names(over.shp1) <- names(o1)
+
+## Overlay analysis
+for(i in 1:nrow(use.ci))
+{
+  over.pro <- pro.shp[use.ci$start[i]:use.ci$end[i],]
+  overuse  <- over(over.pro,wrld_simpl)
+  
+  overuse$FIPS      <- as.character(overuse$FIPS)
+  overuse$ISO2      <- as.character(overuse$ISO2)
+  overuse$ISO3      <- as.character(overuse$ISO3)
+  overuse$UN        <- as.character(overuse$UN)
+  overuse$NAME      <- as.character(overuse$NAME)
+  overuse$REGION    <- as.character(overuse$REGION)
+  overuse$SUBREGION <- as.character(overuse$SUBREGION)
+  
+  over.shp1[use.ci$start[i]:use.ci$end[i],] <- overuse
+  
+  rm(overuse); rm(over.pro)
+  print(i)
+}
+
+# Flag "simple" when the points located on simple world map
+land.notna               <- which(!is.na(over.shp1$ISO2))
+overlay.land[land.notna] <- 'Simple'
+
+
+## Country boundary detection
+dif.ju    <- as.character(over.shp1$ISO2) == pro.shp@data$countryCode
+NA.number <- which(is.na(dif.ju))
+same.diff <- sort(union(which(!dif.ju),NA.number))
+country.same[same.diff] <- 0
+#country.same[NA.number] <- NA
+
+# Natural world map
+pro.shp2  <- pro.shp[same.diff,]
+pro.shp2@proj4string <- worldmap2@proj4string
+overuse.shp2         <- over(pro.shp2,worldmap2)
+
+overland2 <- which(!is.na(overuse.shp2$ISO_A2))
+overlay.land[same.diff[overland2]] <- str_replace_all(overlay.land[same.diff[overland2]],'0','NE')
+
+
+dif.ju2    <- as.character(overuse.shp2$ISO_A2) == pro.shp2@data$countryCode
+NA.number2 <- which(is.na(dif.ju2))
+same.diff2 <- sort(union(which(!dif.ju2),NA.number2))
+country.same[same.diff[which(dif.ju2)]] <- str_replace_all(country.same[same.diff[which(dif.ju2)]],'0','NE')
+
+diff.use <- same.diff[same.diff2]
+
+if(length(same.diff2) != 0)
+{
+  # GADM worldmap overlay
+  pro.shp3 <- pro.shp2[same.diff2,]
+  pro.shp3@proj4string <- worldmap@proj4string
+  
+  # overuse.shp3        <- over(pro.shp3,worldmap)
+  
+  use.ci3 <- sp.mt(1,nrow(pro.shp3),20000)
+  
+  o3 <- over(pro.shp3[1,],worldmap)
+  over.shp3 <- data.frame(array(NA,dim = c(nrow(pro.shp3),ncol(o3))))
+  names(over.shp3) <- names(o3)
+  
+  
+  for(i in 1:nrow(use.ci3))
+  {
+    over.pro <- pro.shp3[use.ci3$start[i]:use.ci3$end[i],]
+    overuse  <- over(over.pro,worldmap)
+    
+    overuse$NAME_ENGLI <- as.character(overuse$NAME_ENGLI)
+    overuse$ISO2       <- as.character(overuse$ISO2)
+    overuse$ISO        <- as.character(overuse$ISO)
+    
+    
+    over.shp3[use.ci3$start[i]:use.ci3$end[i],] <- overuse
+    
+    rm(overuse); rm(over.pro)
+    print(i)
+    
+  }
+  
+  # GADM world map results
+  overland3 <- which(!is.na(over.shp3$ISO2))
+  overlay.land[same.diff[same.diff2[overland3]]] <- str_replace_all(overlay.land[same.diff[same.diff2[overland3]]],'0','GADM')
+  dif.ju3    <- as.character(over.shp3$ISO2) == pro.shp3@data$countryCode
+  NA.number3 <- which(is.na(dif.ju3))
+  same.diff3 <- sort(union(which(!dif.ju3),NA.number3))
+  country.same[same.diff[same.diff2[which(dif.ju3)]]] <- str_replace_all(country.same[same.diff[same.diff2[which(dif.ju3)]]],'0','GADM')
+  ####################################
+  diff.use <- same.diff[same.diff2[same.diff3]]
+  # save.image('file')
+}
+
+################################################################
+## Correct coordinates
+################################################################
+adj.type     <- rep(NA,L.line) # transform types of coordinates
+adj.lat      <- rep(NA,L.line) # latitude after correction
+adj.lon      <- rep(NA,L.line) # longitude after correction
+adj.correct  <- rep(NA,L.line) # Whether the coordinate need correct
+adj.over     <- rep(NA,L.line) # After the correction process, where the coordinate located in?
+
+
+## 7 types
+coord.save   <- data.frame(x = rep(NA,length(diff.use)*7),y = rep(NA,length(diff.use)*7))
+country.save <- rep(NA,length(diff.use)*7)
+diff.save    <- rep(NA,length(diff.use)*7)
+
+# country.same[diff.use[which(df.use$countryCode[diff.use] == "")]] <- NA
+diff.use <- setdiff(diff.use, diff.use[which(df.use$countryCode[diff.use] == "")])
+
+x <- df.use$decimalLongitude[diff.use]
+y <- df.use$decimalLatitude[diff.use]
+use.iso2 <- df.use$countryCode[diff.use] %>% as.character
+
+# Transformation process and tests (Simple world map)
+over.list1  <- Coord8.Out(coordx = x, coordy = y, worldmap_use = wrld_simpl)
+match.trans <- Coord.match.trans(ISO.rec = use.iso2, match.overlist = over.list1,
+                                 NameVec = 'ISO2')
+
+# If the correction process were successed, we flag some variables
+adj.correct[diff.use[which(!is.na(match.trans))]] <- 1
+adj.over[diff.use[which(!is.na(match.trans))]] <- 'Simple'
+adj.type[diff.use[which(!is.na(match.trans))]] <- match.trans[which(!is.na(match.trans))]
+
+
+
+# Transformation process and tests (Natural Earth world map)
+diff.use2 <- diff.use[which(is.na(match.trans))]
+use.iso2.2 <- use.iso2[which(is.na(match.trans))]
+
+x2 <- df.use$decimalLongitude[diff.use2]
+y2 <- df.use$decimalLatitude[diff.use2]
+
+over.list2 <- Coord8.Out(coordx = x2, coordy = y2, 
+                         worldmap_use = worldmap2)
+match.trans2 <- Coord.match.trans(ISO.rec = use.iso2.2, 
+                                  match.overlist = over.list2,
+                                  NameVec = 'ISO_A2')
+
+table(match.trans2)
+adj.correct[diff.use2[which(!is.na(match.trans2))]] <- 1
+adj.over[diff.use2[which(!is.na(match.trans2))]] <- 'NE'
+adj.type[diff.use2[which(!is.na(match.trans2))]] <- match.trans2[which(!is.na(match.trans2))]
+
+# Transformation process and tests (GADM world map)
+diff.use3 <- diff.use2[which(is.na(match.trans2))]
+use.iso3 <- use.iso2.2[which(is.na(match.trans2))]
+
+x3 <- df.use$decimalLongitude[diff.use3]
+y3 <- df.use$decimalLatitude[diff.use3]
+
+over.list3 <- Coord8.Out(coordx = x3, coordy = y3, worldmap_use = worldmap)
+match.trans2 <- Coord.match.trans(ISO.rec = use.iso3, match.overlist = over.list3,
+                                  NameVec = 'ISO')
+
+# Flag relative variables in df.bio data.frame
+df.bio$CountrySame[Line.use]   <- country.same
+df.bio$Overland[Line.use]      <- overlay.land
+df.bio$Adj.Coord[Line.use]     <- adj.correct
+df.bio$Adj.overMap[Line.use]   <- adj.over
+df.bio$Adj.TransTypr[Line.use] <- adj.type
+
+# remove useless variables
+rm(list = setdiff(ls(),c('df.bio','add.var','taxonbind',
+                         'judge.taxon','flag.next','add.name')))
+
+
+
+############################################
+## Potential error test in space dimension
+############################################
+library(plyr)
+
+# Read distribution data
+tb.coord <- count(df.bio[,c('decimalLatitude','decimalLongitude')])
+tb.coord$sumcoord <- tb.coord$decimalLatitude+tb.coord$decimalLongitude
+
+# Institution data processing
+# Data source: Zizka et al. (2019)
+use.ins <- fread('L:/dropbox/Dropbox/Dropbox/Dropbox/data/institutions.csv')
+loop.i  <- setdiff(1:nrow(tb.coord),which(is.na(tb.coord$sumcoord)))
+pro1    <- which((tb.coord$decimalLatitude %in% use.ins$Lat) & 
+                   (tb.coord$decimalLongitude %in% use.ins$Lon))
+
+tb.coord$flag <- NA
+
+for(i in pro1)
+{
+  sub1  <- subset(use.ins, Lat == tb.coord$decimalLatitude[i])
+  j.num <- which(sub1$Lon == tb.coord$decimalLongitude[i])[1]
+  
+  if(length(j.num) != 0) {tb.coord$flag[i] <- sub1$Name[j.num]}
+}
+
+table(tb.coord$flag)
+
+# Centroid data processing (GeoUse)
+use.cent <- fread('YourPath/GeoNames_centroid.csv')
+pro2     <- which((tb.coord$decimalLatitude %in% use.cent$lat) & 
+                    (tb.coord$decimalLongitude %in% use.cent$long))
+tb.coord$flagCent <- NA
+
+for(i in pro2)
+{
+  sub1  <- subset(use.cent, lat == tb.coord$decimalLatitude[i])
+  j.num <- which(sub1$long == tb.coord$decimalLongitude[i])[1]
+  
+  if(length(j.num) != 0) {tb.coord$flagCent[i] <- sub1$name[j.num]}
+}
+
+table(tb.coord$flagCent)
+
+# Country data processing (MEE use)
+library(CoordinateCleaner)
+coord.inf <- countryref
+loop.i  <- setdiff(1:nrow(tb.coord),which(is.na(tb.coord$sumcoord)))
+pro3.1  <- which((tb.coord$decimalLatitude %in% coord.inf$centroid.lat) & 
+                   (tb.coord$decimalLongitude %in% coord.inf$centroid.lon))
+pro3.2  <- which((tb.coord$decimalLatitude %in% coord.inf$capital.lat) & 
+                   (tb.coord$decimalLongitude %in% coord.inf$capital.lon))
+
+
+tb.coord$flagMeeRef1 <- NA
+tb.coord$flagMeeRef2 <- NA
+
+for(i in pro3.1)
+{
+  sub1  <- subset(coord.inf, centroid.lat == tb.coord$decimalLatitude[i])
+  j.num <- which(sub1$centroid.lon == tb.coord$decimalLongitude[i])[1]
+  
+  if(length(j.num) != 0) {tb.coord$flagMeeRef1[i] <- sub1$name[j.num];print(i)}
+}
+
+
+for(i in pro3.2[-1])
+{
+  sub1  <- subset(coord.inf, capital.lat == tb.coord$decimalLatitude[i])
+  j.num <- which(sub1$capital.lon == tb.coord$decimalLongitude[i])[1]
+  
+  if(length(j.num) != 0) {tb.coord$flagMeeRef2[i] <- paste0(sub1$name[j.num],'_cap');print(i)}
+}
+table(tb.coord$flag)
+
+
+
+# Institution and centroid data processing (to vector)
+subcoord  <- subset(df.bio, select = c('scientificName','decimalLatitude',
+                                       'decimalLongitude','ExGeo'))
+flag.ins  <- rep(NA,nrow(df.bio))
+flag.cent <- rep(NA,nrow(df.bio))
+
+process1  <- which(!is.na(tb.coord$flag))
+for(i in process1)
+{
+  rep.no <- which(subcoord$decimalLatitude == tb.coord$decimalLatitude[i] & 
+                    subcoord$decimalLongitude == tb.coord$decimalLongitude[i])
+  flag.ins[rep.no] <- tb.coord$flag[i]
+  rm(rep.no)
+}
+
+process2 <- which(!is.na(tb.coord$flagCent))
+for(i in process2)
+{
+  rep.no2 <- which(subcoord$decimalLatitude == tb.coord$decimalLatitude[i] & 
+                     subcoord$decimalLongitude == tb.coord$decimalLongitude[i])
+  flag.cent[rep.no2] <- tb.coord$flagCent[i]
+  rm(rep.no2)
+}
+
+flag.ref1 <- rep(NA,nrow(df.bio))
+process3.1 <- which(!is.na(tb.coord$flagMeeRef1))
+for(i in process3.1)
+{
+  rep.no3.1 <- which(subcoord$decimalLatitude == tb.coord$decimalLatitude[i] & 
+                     subcoord$decimalLongitude == tb.coord$decimalLongitude[i])
+  flag.ref1[rep.no3.1] <- tb.coord$flagMeeRef1[i]
+  rm(rep.no3.1)
+}
+
+flag.ref2 <- rep(NA,nrow(df.bio))
+process3.2 <- which(!is.na(tb.coord$flagMeeRef2))
+for(i in process3.2)
+{
+  rep.no3.2 <- which(subcoord$decimalLatitude == tb.coord$decimalLatitude[i] & 
+                     subcoord$decimalLongitude == tb.coord$decimalLongitude[i])
+  flag.ref2[rep.no3.2] <- tb.coord$flagMeeRef2[i]
+  rm(rep.noe.2)
+}
+
+# Save results
+table(flag.cent)
+table(flag.ins)
+table(flag.ref1)
+table(flag.ref2)
+
+df.bio$FlagCent  <- flag.cent # centroid
+df.bio$FlagIns   <- flag.ins  # institution
+df.bio$FlagRef1  <- flag.ref1 # adjusted coordinates
+df.bio$FlagRef2  <- flag.ref2 # adjusted coordinates
+
+
+#######################################
+## Botanic Garden Filter
+#######################################
+library(data.table)
+library(stringr)
+
+garden.inf <- read.csv('YourPath/GardenInformation.csv', encongding='UTF-8')
+NameGarden <- tolower(str_trim(as.character(garden.inf$`Institution Name`)))
+
+## flag variable
+flag.garden         <- rep(NA,nrow(df.bio))
+
+# extract coordinates
+garden.coord            <- garden.inf[,c("Latitude","Longitude")]
+row.names(garden.coord) <- paste0('BGCI',1:nrow(garden.inf))
+garden.uni.coord        <- unique(garden.coord)
+
+na.row <- NULL
+for(i in 1:nrow(garden.uni.coord))
+{
+  if( is.na(garden.uni.coord$Latitude[i]) | is.na(garden.uni.coord$Longitude[i]))
+  {
+    na.row <- c(na.row,i)
+  }
+}
+
+garden.uni.coord <- garden.uni.coord[-na.row,]
+
+# Adjusted coordinates results
+num.adj <- which(df.bio$Adj.Coord == 1)
+df.adj <- data.frame(num.row = num.adj, Type = df.bio$Adj.TransTypr[num.adj], 
+                     Lon = df.bio$decimalLongitude[num.adj], 
+                     Lat = df.bio$decimalLatitude[num.adj],
+                     AdjLon = NA, AdjLat = NA)
+
+for(i in 1:nrow(df.adj))
+{
+  coord.adj <- Coord8.single(x = df.adj$Lon[i], y = df.adj$Lat[i],type = df.adj$Type[i])
+  df.adj[i,5:6] <- coord.adj
+}
+
+## Filter: coordinate, same with botanic garden in BGCI database
+for(i in 1:nrow(garden.uni.coord))
+{
+  lati      <- garden.uni.coord$Latitude[i]; loni <- garden.uni.coord$Longitude[i]
+  flagname  <- row.names(garden.uni.coord)[i]
+
+  flag1.geo <- which(df.bio$decimalLatitude == lati & df.bio$decimalLongitude == loni & is.na(df.bio$Adj.Coord))
+  flag2.geo <- df.adj$num.row[which(df.adj$AdjLat == lati & df.adj$AdjLon == loni)]
+  flag.geo  <- c(flag1.geo,flag2.geo)
+  
+  if(length(flag.geo) != 0)
+  {
+    flag.garden[flag.geo] <- flagname
+    print(i)
+  } else {next}
+  
+}
+
+table(flag.garden)
+
+######
+df.bio$FlagBGCI <- flag.garden
+rm(list = setdiff(ls(),c('df.bio','add.var','taxonbind',
+                         'judge.taxon','flag.next','add.name')))
+# save.image('YourPath')
+
+
+
+```
