@@ -6,7 +6,7 @@ output: html_document
 ---
 # Example using <i>Sphagnum auriculatum</i>
 
-In this example of running through the work flow I have downloaded data from GBIF on the species <i>S. auriculatum</i> and <i>S. denticulatum</i> in Europe. These are currently listed as separate speceis in the GBIF backbone but the European checklist and dyntaxa.se list them (correctly) as both being synonyms of <i>S. aurculatu</i>. This data set  
+In this example of running through the work flow I have downloaded data from GBIF on the species <i>S. auriculatum</i> and <i>S. denticulatum</i> in Europe. These are currently listed as separate species in the GBIF backbone but the European checklist and dyntaxa.se list them (correctly) as both being synonyms of <i>S. aurculatu</i>. This data set gives and opportunity to run through a simplified version of the BDcleanR scripts with data that are known to be incorrect at least in one dimension. 
 ```{r setup, include=FALSE}
 ############################################
 ## Data 1. Botanical Garden Information
@@ -16,6 +16,7 @@ In this example of running through the work flow I have downloaded data from GBI
 library(RCurl)
 library(httr)
 library(XML)
+library(stringr)
 
 # Automatic collection of botanical garden information in BGCI garden search
 # Read Garden name and correspongding websites
