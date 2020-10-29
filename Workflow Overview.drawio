@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-10-29T17:52:26.013Z" agent="5.0 (Windows)" etag="3JCN22gZF0dR8OUTjB2e" version="13.8.6" type="github">
+<mxfile host="app.diagrams.net" modified="2020-10-29T18:24:28.946Z" agent="5.0 (Windows)" etag="O0fEB5YyiMZz9jb8-12B" version="13.8.6" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="8679" dy="3443" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2339" pageHeight="3300" math="0" shadow="0">
+    <mxGraphModel dx="6143" dy="2066" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2339" pageHeight="3300" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -256,6 +256,9 @@
             </Array>
           </mxGeometry>
         </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-63" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jumpStyle=arc;jumpSize=9;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=24;" edge="1" parent="w-YvjRMWvmcFSU0H_ef8-45" source="K3oOLh2pZVhGYxKfuLFw-23" target="K3oOLh2pZVhGYxKfuLFw-58">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="K3oOLh2pZVhGYxKfuLFw-23" value="&lt;h1&gt;Visualisation of data&lt;br&gt;&lt;/h1&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="w-YvjRMWvmcFSU0H_ef8-45">
           <mxGeometry x="1075" y="460" width="280" height="50" as="geometry" />
         </mxCell>
@@ -425,7 +428,7 @@
           <mxGeometry x="-410" y="3050" width="340" height="210" as="geometry" />
         </mxCell>
         <mxCell id="w-YvjRMWvmcFSU0H_ef8-23" value="&lt;h1&gt;Permutational statistics&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="180" y="3300" width="340" height="180" as="geometry" />
+          <mxGeometry x="50" y="3210" width="340" height="130" as="geometry" />
         </mxCell>
         <mxCell id="w-YvjRMWvmcFSU0H_ef8-30" value="&lt;h1&gt;Classic &lt;span&gt;β &lt;/span&gt;diversity measures and dissimilarities&lt;br&gt;&lt;/h1&gt;&lt;div&gt;There are many measures of &lt;span&gt;β diversity. These include many of the more commonly used dissimilarity measures. There have been several reviews of such measures&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;Some of the most commonly used are:&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;Jaccard&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;Sorrenen&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;Bray-Curtis&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;Gower&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;Hellinger&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;R libraries: Vegan, Betapart, &lt;/b&gt;&lt;br&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="-17.5" y="2800" width="537.5" height="280" as="geometry" />
