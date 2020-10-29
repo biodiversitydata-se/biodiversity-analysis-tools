@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-10-29T11:09:42.615Z" agent="5.0 (Windows)" etag="uIQKRK4lcR7WljRkcBwN" version="13.8.6" type="github">
+<mxfile host="app.diagrams.net" modified="2020-10-29T11:10:41.715Z" agent="5.0 (Windows)" etag="On0e8m7QxWJ7ZwO6QDue" version="13.8.6" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="6143" dy="2066" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2339" pageHeight="3300" math="0" shadow="0">
       <root>
@@ -437,7 +437,7 @@
           <mxGeometry x="1270" y="3770" width="490" height="180" as="geometry" />
         </mxCell>
         <mxCell id="w-YvjRMWvmcFSU0H_ef8-36" value="&lt;h1&gt;Decompositional Diversity measures&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Measures of species richness and diversity are unified &lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="-140" y="1940" width="340" height="180" as="geometry" />
+          <mxGeometry x="-136.25" y="2110" width="340" height="180" as="geometry" />
         </mxCell>
         <mxCell id="w-YvjRMWvmcFSU0H_ef8-39" value="Community matrix" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="3590" y="2330" width="130" height="80" as="geometry" />
@@ -469,9 +469,6 @@
         </mxCell>
         <mxCell id="xw4S7eZGQW3ErX5LzovB-0" value="&lt;h1&gt;MSI-tool&lt;/h1&gt;&lt;p&gt;Multi-species monte carlo method for assessing species trends from a reference year. Used for calculation fo SEBI 1 (&lt;a class=&quot;doi&quot; href=&quot;https://doi.org/10.1016/j.ecolind.2017.05.033&quot; target=&quot;_blank&quot; title=&quot;Persistent link using digital object identifier&quot;&gt;https://doi.org/10.1016/j.ecolind.2017.05.033). &lt;br&gt;&lt;/a&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="1280" y="4040" width="200" height="140" as="geometry" />
-        </mxCell>
-        <mxCell id="xw4S7eZGQW3ErX5LzovB-3" value="&lt;h1&gt;Taxonomic Diversity&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="100" y="3040" width="390" height="160" as="geometry" />
         </mxCell>
         <mxCell id="xw4S7eZGQW3ErX5LzovB-4" value="&lt;h1&gt;Functional Diversity&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="520" y="3480" width="390" height="160" as="geometry" />
