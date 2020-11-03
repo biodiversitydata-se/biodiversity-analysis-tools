@@ -1,0 +1,73 @@
+---
+title: "Community Matrix"
+author: "Charlie Campbell"
+date: "23/10/2020"
+output: html_document
+---
+
+# Community matrices 
+
+These are examples of 
+
+```{r setup, include=FALSE}
+library(finch)
+library(reshape2)
+library(dplyr)
+library(kableExtra)
+
+fileDirs <- list.dirs("./BDcleaner_Scripts/Example/Downloads/ignored data/Grazing experiments/Hol")
+vegData <-  finch::dwca_read( list.files( fileDirs,
+                     full.names = TRUE), read = TRUE)
+paste(vegData$data$event.txt %>%
+        select())
+kable(vegData$data$event.txt)
+```
+
+
+
+```{r}
+library(dplyr)
+vegData$data$event.txt <- vegData$data$event.txt %>%
+mutate(Q = paste( fieldNumber, substr(year,3,4), sep = "-"))
+
+vegData$data$occurrence.txt <- vegData$data$occurrence.txt %>%
+                                left_join(vegData$data$event.txt[,c("id","Q")], by = "id")
+
+vegData$data$measurementorfact.txt <- merge(vegData$data$measurementorfact.txt,
+                                        vegData$data$event.txt[,c("id","Q","year","fieldNumber")], by = "id")
+
+
+```
+
+
+
+```{r}
+library(vegan)
+library(tidyr)
+library(adiv)
+
+
+comm <- dcast(data = vegData$data$occurrence.txt,
+              Q ~ scientificName,
+              value.var = "organismQuantity",
+              fill = 0,
+              margins = TRUE)
+rownames(comm) <- comm$Q
+env <- dcast(data = vegData$data$measurementorfact.txt,
+              Q+fieldNumber+year ~ measurementRemarks,
+              value.var = "measurementValue",
+              fill = 0,
+             
+              margins = TRUE)
+env <- env[duplicated(env[,-c(2:3)])==FALSE,]
+
+rownames(env) <- env$Q
+
+
+prcom
+ord <- metaMDS(comm[,-1],)
+plot(renyi(comm[1:3,-1],scales = c(0:10),hill = TRUE))
+ordiplot(ord)
+ordihull(ord,vegData$data$e)
+betadiver(comm[,-1])
+```

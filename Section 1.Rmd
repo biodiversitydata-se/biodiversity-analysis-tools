@@ -1,0 +1,17 @@
+---
+title: "Section 1"
+author: "Charlie Campbell"
+date: "03/11/2020"
+output: html_document
+---
+
+# Section 1 - Questions, Taxonomies and Data
+
+## Questions
+Any question to be asked of biodiversity data should be put as simply and succinctly as possible. With the number of different subject areas and techniques used analyses can quickly become complex. There are a number if 
+
+## Taxonomies
+
+
+## Data
+

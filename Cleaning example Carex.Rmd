@@ -1,0 +1,200 @@
+---
+title: "Data Cleaning Cyoeraceae Sweden"
+author: "Charlie Campbell"
+date: "19/10/2020"
+output: html_document
+---
+# Cyperaceeae of Sweden
+In this example I have downloaded the occurances of the Cyperaceae family in Sweden from GBIF. This is a single data set from an area with an agreed taxonomy (dyntaxa.se). Our aim here is to take a group of records from GBIF and using Dyntaxa as a backbone clean the records to be in such a state as to be used for various things.
+
+First we give each record in the assembled data set a unique ID. In this case it could be possible to use the GBIFid. In data sets sourced from mulitple sources it is a good idea to create a unique ID related to the data source.
+
+```{r}
+library(data.table)
+library(dplyr)
+
+Carex <- fread(list.files("./BDcleaner_Scripts/Example/Downloads/ignored data/cyperaceae/",
+                          pattern = ".csv",
+                          full.names = TRUE), encoding =  "UTF-8")
+
+Carex$ID <- paste0("car-",1:nrow(Carex))
+save(Carex ,file = "./BDcleaner_Scripts/Example/Downloads/ignored data/Cyperacea_SWE.data")
+```
+
+In cleaning data there are a number of dimensions of uncertainty we shall fir
+
+## Taxonomy
+In the species column there are records with no Species given in the species column. We then check the scientificName for whether there is useful information there
+```{r setup, include=FALSE}
+
+Carex %>%
+  filter(species == "") %>%
+  distinct(scientificName)
+
+```
+In this case there are only genre recorded.
+
+We then check for data about species in the locality information for which there are no species data given in the species column. Here there are enough unique values to be checked easily within R. It is possible that in large data sets that there may be very many records for which there is useful information 
+
+```{r }
+Carex %>%
+  filter(species == "") %>%
+  select(locality) %>%
+  distinct()
+```
+
+There are no species data in the locality field and so we begin a vector of IDs that are not at the required data resolution.
+```{r }
+unUseful <- Carex %>%
+            filter(Carex$species == "")%>%
+            .$ID
+
+```
+
+
+We now need to check that the species names in the records that we are using are valid for the area which we are looking at i.e. Sweden. There are several resources out there that do this (HERE I SUGGEST A LINK TO A WEBSITE LISTING LIBRARIES AND RESOURCES FOR THE VALIDITY OF NAMES). As we are looking specifically and solely at Sweden there is [Dyntaxa.se](https://www.dyntaxa.se/). There is also and R interface as part of the [Bioatlas of Sweden](https://github.com/bioatlas) github repository. For wider applicability we will export the unique names from the Carex data frame. These will then be copied to the [Dyntaxa portal](https://www.dyntaxa.se/Match/Settings/0) for matching multiple names. The results are checked against the Swedish lists and unknown species or uncertainties are flagged. Names can be copied directly into a box in Dyntaxa or may be imported directly as an xlsx file. Here we shall export just the species names. There are multiple options. 
+
+```{r}
+library(openxlsx)
+SpeciesNames <- Carex %>%
+  filter(!ID %in% unUseful)%>%
+  select(species)%>%
+  distinct()
+
+#write.xlsx(SpeciesNames,"./BDcleaner_Scripts/Example/UniqueCarexTaxa.xlsx")
+
+```
+ Dyntaxa provides options for any taxononmic uncertainties and lists the species for which no match can be made. Having made selections it exports as a .xlslx file. We can then check what those species for which there is no information about what they are. In this case there are an number of species which are likely to be horticultural, a few taxa which are of hybrid origin which are in the Dyntaxa with the addition of '×' between genus and species, and *Carex utriculata* a species from North America. This last could be a misidentification of *C. rostrata*. We will exclude the horticultural and uncertain species. We do this by adding a **Species** column in the Dyntaxa file and then load that file into R. 
+
+```{r}
+library(openxlsx)
+SpeciesNames <- read.xlsx("./BDcleaner_Scripts/Example/matchCarex.xlsx")
+
+Carex <- merge(Carex, 
+               SpeciesNames[,c("Provided.string","SpeciesDyn")],
+               by.x = "species",by.y = "Provided.string",
+               all.x = TRUE)
+```
+We then add IDs of the rows with taxa which are to be excluded to the unUseful vector. It is possible that there is overlap between these vectors. Rather than overwriting the vector we join the vectors together and use unique to get a vector with no duplications.
+```{r}
+unUseful <- unique( 
+  c(unUseful,
+  Carex %>%
+  filter(is.na(SpeciesDyn)) %>%
+  .$ID))
+```
+
+##Coordinate Cleaning
+
+We need to extract locality data for rows where there is no lat/lon information to geocode it, producing a latitude and longitude for each locality. This can be carried out in a similar way as for species ie the merging of data frames. This can be also be done automatically in R using the geocode feature of the libraries tidygeocoder or ggmap. Some of these services require an API key (eg. google). See the documentation for the lin for more information
+```{r}
+Localities <- Carex %>%
+              filter(is.na(decimalLongitude))%>%
+              select(locality) %>%
+              distinct()
+write.csv(Localities,"./BDcleaner_Scripts/Example/Localities.csv",row.names = FALSE)
+```
+
+For brevity we will simply include the records with no lat/lon info in the unUseful vector. These will ultimately not be used.
+```{r}
+unUseful <- unique(c(unUseful,
+                     Carex%>%
+                       filter(is.na(decimalLatitude))%>%
+                       .$ID))
+```
+
+We now have an index of records we can't use owing to incomplete taxonomy or incomplete location information. We save these before cleaning the coordinates.
+
+```{r}
+
+save(Carex, unUseful, file = "./BDcleaner_Scripts/Example/Downloads/ignored data/Cyperacea_SWE.data")
+```
+
+Before cleaning the coordinates we simplify the data retaining columns that have information directly related to the collection of the data.
+
+```{r}
+Carex <- Carex %>%
+        select(SpeciesDyn,
+               decimalLongitude,
+               decimalLatitude,
+               coordinateUncertaintyInMeters,
+               locality,
+               recordedBy,
+               countryCode,
+               eventDate,
+               institutionCode,
+               collectionCode,
+               catalogNumber,
+               ID)%>%
+          filter(!ID %in% unUseful)
+```
+
+
+
+We then filter out the data rows for which we can not use ie those of too great taxanomic uncertainty. The data may then be cleaned. 
+
+There are a number of things to consider when cleaning data:
+
+  * How precise are the locations? Coordinate uncertainty ranges in the Cyperaceae of Sweden from 1 m - 30.5 km.
+  * Are interpreted coordinates sufficient? These interpreted coordinates may imply a greater precision than is necessarily true
+  * Are the locations likely to be errors? Errors can relate to where a sample is (eg herbarium location) rather than where it came from.
+  * Are the locations in the country claimed? This can arrise through swapping of lat and lon.
+
+For ease of use we shall use the library CoordinateCleaner to automatically flag coordinate uncertainties. Outputs of this can be a cleaned data frame or additional columns with doubtful records flagged
+```{r}
+library(CoordinateCleaner)
+
+Carex$countryCode <- "SWE"
+
+Carex <- clean_coordinates(Carex,
+                  lon = "decimalLongitude",
+                  lat = "decimalLatitude",
+                  species = "SpeciesDyn",
+                  countries = "countryCode",
+                  tests = c("capitals", "centroids", "equal", "gbif", "institutions", "outliers", "seas", "zeros","countries")
+                  )
+
+summary(Carex)
+```
+
+I think some form of leaflet plot would be great here so that it is interactive
+```{r}
+library(dismo)
+Sweden <- getData("GADM",
+                  country = "SWE",
+                  level = 0)
+CoordSummary <- summary(Carex)
+CoordSummary <- names(CoordSummary[CoordSummary!=0])
+par(mfrow = c(2,3))
+for(i in 1:length(CoordSummary)){
+  plot(Sweden, main = CoordSummary[i])
+  points(data = Carex[Carex[,CoordSummary[i]]==FALSE,],
+         decimalLatitude~decimalLongitude)
+}
+par(mfrow = c(1,1))
+
+Carex %>%
+  filter(.otl==FALSE)
+  select(locality) %>%
+  distinct()
+plot(data=Carex[Carex$.otl==FALSE,],decimalLatitude~decimalLongitude)
+Carex %>%
+  filter(locality=="Ekologihusets & Biologihusets omgivningar")
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+library(ggplot2)
+Carex %>%
+  filter(is.na(coordinateUncertaintyInMeters)) %>%
+  select(decimalLongitude,decimalLatitude)
+
+ggplot(data = Carex, aes(x = date(eventDate)))+
+  geom_histogram()+
+  scale_x_date()
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

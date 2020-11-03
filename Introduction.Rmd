@@ -1,0 +1,13 @@
+---
+title: "Introduction"
+author: "Charlie Campbell"
+date: "03/11/2020"
+output: html_document
+---
+# Introduction
+
+A BEGINNING PARAGRAPH
+
+Each reserach question draws its own challenges which are unique in themselves. Our aim here is to provide a workflow which answers and / or prompts the large scale questions that should be asked at each stage of the process. We point to resources, methods and facilities that may be useful in answering a particular question. We assume some knowledge of statistical inference and it limitations. The validity and appropriateness of a particular method is dependent on the individual researcher(s).
+
+Biodiversity resources are increasingly international. We focus on biodiversity data and resources from Sweden but our aim is to present considerations and methods that can be applied beyond Sweden's borders.
