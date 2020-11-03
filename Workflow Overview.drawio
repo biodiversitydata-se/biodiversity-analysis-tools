@@ -1,17 +1,36 @@
-<mxfile host="app.diagrams.net" modified="2020-10-09T14:36:19.766Z" agent="5.0 (Windows)" etag="Q_FVw1nLyMT3fFrVAzEw" version="13.7.9" type="github">
+<mxfile host="app.diagrams.net" modified="2020-11-03T12:20:28.298Z" agent="5.0 (Windows)" etag="sMGlmO07AabobjV2aj9W" version="13.8.8" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="2238" dy="1215" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2339" pageHeight="3300" math="0" shadow="0">
+    <mxGraphModel dx="3761" dy="763" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2339" pageHeight="3300" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-12" value="&lt;h1&gt;Data forms&lt;br&gt;&lt;/h1&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="2410" y="210" width="1290" height="1240" as="geometry" />
+        </mxCell>
         <mxCell id="aXcIpb9wPaynXJKiq8YG-6" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="1090" y="655" width="730" height="525" as="geometry" />
+          <mxGeometry x="960" y="740" width="1410" height="880" as="geometry" />
         </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-99" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="iHcdqhV0YViVewFqACI8-0" target="aXcIpb9wPaynXJKiq8YG-51">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="w-YvjRMWvmcFSU0H_ef8-57" value="" style="group" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1" connectable="0">
+          <mxGeometry x="1370" y="1020" width="410" height="360" as="geometry" />
         </mxCell>
-        <mxCell id="iHcdqhV0YViVewFqACI8-0" value="Data from Databases eg Gbif, Biocase" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="1470" y="430" width="270" height="70" as="geometry" />
+        <mxCell id="w-YvjRMWvmcFSU0H_ef8-54" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;fontSize=24;" parent="w-YvjRMWvmcFSU0H_ef8-57" vertex="1">
+          <mxGeometry width="409.99999999999994" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="w-YvjRMWvmcFSU0H_ef8-55" value="&lt;b&gt;Check coordinates:&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;" parent="w-YvjRMWvmcFSU0H_ef8-57" vertex="1">
+          <mxGeometry x="10.25" y="11.25" width="317.75" height="22.5" as="geometry" />
+        </mxCell>
+        <mxCell id="w-YvjRMWvmcFSU0H_ef8-56" value="&lt;font style=&quot;font-size: 12px&quot;&gt;There are a number of known issues with the accuracy of records data. These include but are not limited to:&lt;/font&gt;&lt;br&gt;&lt;ul style=&quot;font-size: 12px&quot;&gt;&lt;li&gt;Records outside the expected borders of the area of interest&lt;br&gt;&lt;/li&gt;&lt;li&gt;Records with unexpected coordinates eg latitude longitude = 0N, 0E&lt;/li&gt;&lt;li&gt;Records&lt;br&gt;&lt;/li&gt;&lt;li&gt;Records centred around known biodiversity institutions e.g. herbaria&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div style=&quot;font-size: 12px&quot;&gt;The R package &lt;b&gt;CoordinateCleaner &lt;/b&gt;flags records with accuracy issues. It has some flexibility and it is worthwhile considering sources of errors beyond the most easily used. For exaple it is possible to check against polygons of species known ranges provided suitable polgons.&lt;font style=&quot;font-size: 23px&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;" parent="w-YvjRMWvmcFSU0H_ef8-57" vertex="1">
+          <mxGeometry x="20.5" y="78.75" width="317.75" height="210.9375" as="geometry" />
+        </mxCell>
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-99" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="iHcdqhV0YViVewFqACI8-0" target="aXcIpb9wPaynXJKiq8YG-51" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1610" y="681" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iHcdqhV0YViVewFqACI8-0" value="&lt;div&gt;Data from Databases eg Gbif, Biocase,&lt;/div&gt;&lt;div&gt;R libraries which may be used:&lt;/div&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;Spocc&lt;/li&gt;&lt;li&gt;rgbif&lt;/li&gt;&lt;li&gt;ebird&lt;/li&gt;&lt;li&gt;auk&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="1470" y="395" width="270" height="200" as="geometry" />
         </mxCell>
         <mxCell id="iHcdqhV0YViVewFqACI8-129" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jumpStyle=arc;orthogonalLoop=1;jettySize=auto;html=1;endArrow=blockThin;endFill=1;fontSize=12;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="iHcdqhV0YViVewFqACI8-14" target="iHcdqhV0YViVewFqACI8-20" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -21,13 +40,13 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-76" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="iHcdqhV0YViVewFqACI8-14" target="i0vj7bkVoeIxhTv1__Wb-69">
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-76" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="iHcdqhV0YViVewFqACI8-14" target="i0vj7bkVoeIxhTv1__Wb-69" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="iHcdqhV0YViVewFqACI8-14" value="Do you have an agreed taxonomy with knowledge of synonyms &lt;b&gt;AND&lt;/b&gt; historical species delimitations ? Within Sweden use dyntaxa" style="rhombus;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+        <mxCell id="iHcdqhV0YViVewFqACI8-14" value="Do you have an agreed taxonomy with knowledge of synonyms &lt;b&gt;AND&lt;/b&gt; historical species delimitations (Checklist for the region)? Within Sweden use dyntaxa" style="rhombus;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="1420" y="110" width="380" height="180" as="geometry" />
         </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-97" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="iHcdqhV0YViVewFqACI8-20" target="iHcdqhV0YViVewFqACI8-14">
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-97" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="iHcdqhV0YViVewFqACI8-20" target="iHcdqhV0YViVewFqACI8-14" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="2151" y="90" />
@@ -46,9 +65,13 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="aXcIpb9wPaynXJKiq8YG-42" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="iHcdqhV0YViVewFqACI8-45" target="i0vj7bkVoeIxhTv1__Wb-4" edge="1">
+        <mxCell id="aXcIpb9wPaynXJKiq8YG-42" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="iHcdqhV0YViVewFqACI8-45" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1446" y="1412.43" as="targetPoint" />
+            <mxPoint x="1660" y="1710" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1163" y="1570" />
+              <mxPoint x="1660" y="1570" />
+            </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="aXcIpb9wPaynXJKiq8YG-45" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="aXcIpb9wPaynXJKiq8YG-42" vertex="1" connectable="0">
@@ -57,68 +80,73 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="iHcdqhV0YViVewFqACI8-45" value="Are there records with missing data " style="rhombus;whiteSpace=wrap;html=1;fontSize=12;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="1292.5" y="1222.43" width="325" height="120" as="geometry" />
+          <mxGeometry x="1000" y="1410" width="325" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-105" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontSize=12;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="iHcdqhV0YViVewFqACI8-139" target="i0vj7bkVoeIxhTv1__Wb-87">
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-105" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontSize=12;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="iHcdqhV0YViVewFqACI8-139" target="i0vj7bkVoeIxhTv1__Wb-87" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1956" y="610" />
-              <mxPoint x="1020" y="610" />
-              <mxPoint x="1020" y="849" />
+              <mxPoint x="2213" y="750" />
+              <mxPoint x="1012" y="750" />
+              <mxPoint x="1012" y="821" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="iHcdqhV0YViVewFqACI8-139" value="Extract and georeference" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=0;direction=south;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="1876" y="700" width="160" height="150" as="geometry" />
+          <mxGeometry x="2133" y="820" width="160" height="150" as="geometry" />
         </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-104" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontSize=12;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="iHcdqhV0YViVewFqACI8-140" target="i0vj7bkVoeIxhTv1__Wb-87">
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-104" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontSize=12;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="iHcdqhV0YViVewFqACI8-140" target="i0vj7bkVoeIxhTv1__Wb-87" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1860" y="940" as="sourcePoint" />
+            <mxPoint x="1852" y="1050.07" as="sourcePoint" />
             <Array as="points">
-              <mxPoint x="1911" y="920" />
-              <mxPoint x="1850" y="920" />
-              <mxPoint x="1850" y="610" />
-              <mxPoint x="1020" y="610" />
-              <mxPoint x="1020" y="849" />
+              <mxPoint x="1903" y="750" />
+              <mxPoint x="1012" y="750" />
+              <mxPoint x="1012" y="821" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="iHcdqhV0YViVewFqACI8-140" value="Extract with script" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=12;rotation=0;direction=south;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="1836" y="972.43" width="150" height="150" as="geometry" />
+          <mxGeometry x="1828" y="1082.5" width="150" height="150" as="geometry" />
         </mxCell>
-        <mxCell id="aXcIpb9wPaynXJKiq8YG-0" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="iHcdqhV0YViVewFqACI8-173" target="iHcdqhV0YViVewFqACI8-179" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="aXcIpb9wPaynXJKiq8YG-0" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="iHcdqhV0YViVewFqACI8-173" target="iHcdqhV0YViVewFqACI8-179" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1880" y="1580" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2065" y="1575" />
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="aXcIpb9wPaynXJKiq8YG-48" value="NO" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="aXcIpb9wPaynXJKiq8YG-0" vertex="1" connectable="0">
+        <mxCell id="aXcIpb9wPaynXJKiq8YG-48" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="aXcIpb9wPaynXJKiq8YG-0" vertex="1" connectable="0">
           <mxGeometry x="0.2597" y="-5" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="iHcdqhV0YViVewFqACI8-173" value="Is there relevant data in the labels" style="rhombus;whiteSpace=wrap;html=1;fontSize=12;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="1806" y="1192.43" width="230" height="180" as="geometry" />
-        </mxCell>
-        <mxCell id="aXcIpb9wPaynXJKiq8YG-26" value="" style="endArrow=classic;html=1;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="iHcdqhV0YViVewFqACI8-173" target="iHcdqhV0YViVewFqACI8-140" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="2196" y="1502.43" as="sourcePoint" />
-            <mxPoint x="2246" y="1452.43" as="targetPoint" />
+        <mxCell id="w-YvjRMWvmcFSU0H_ef8-48" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;startArrow=none;startFill=0;endArrow=none;endFill=0;fontSize=24;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="iHcdqhV0YViVewFqACI8-173" target="iHcdqhV0YViVewFqACI8-140" edge="1">
+          <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="2086" y="1282.43" />
-              <mxPoint x="2086" y="1182.43" />
-              <mxPoint x="1916" y="1182.43" />
-              <mxPoint x="1916" y="1122.43" />
+              <mxPoint x="2065" y="1290" />
+              <mxPoint x="1903" y="1290" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="aXcIpb9wPaynXJKiq8YG-32" value="Species" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="aXcIpb9wPaynXJKiq8YG-26" vertex="1" connectable="0">
-          <mxGeometry x="0.3574" y="3" relative="1" as="geometry">
+        <mxCell id="w-YvjRMWvmcFSU0H_ef8-49" value="&lt;font style=&quot;font-size: 12px&quot;&gt;Species&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=24;" parent="w-YvjRMWvmcFSU0H_ef8-48" vertex="1" connectable="0">
+          <mxGeometry x="-0.1466" y="-1" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="aXcIpb9wPaynXJKiq8YG-33" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="aXcIpb9wPaynXJKiq8YG-29" target="iHcdqhV0YViVewFqACI8-139" edge="1">
+        <mxCell id="iHcdqhV0YViVewFqACI8-173" value="&lt;div&gt;Is there relevant data in the labels?&lt;/div&gt;&lt;div&gt;Extraction of these data points may not be necessary depending on number and/or spatial spread. &lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;fontSize=12;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="1950" y="1380" width="230" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="aXcIpb9wPaynXJKiq8YG-33" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="aXcIpb9wPaynXJKiq8YG-29" target="iHcdqhV0YViVewFqACI8-139" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="2221" y="775" />
+              <mxPoint x="2213" y="1010" />
+              <mxPoint x="2213" y="1010" />
             </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PL2IbDTsPNTnv49MF6vK-0" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="aXcIpb9wPaynXJKiq8YG-33" vertex="1" connectable="0">
+          <mxGeometry x="-0.365" relative="1" as="geometry">
+            <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="aXcIpb9wPaynXJKiq8YG-34" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="aXcIpb9wPaynXJKiq8YG-29" target="iHcdqhV0YViVewFqACI8-140" edge="1">
@@ -130,214 +158,686 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="aXcIpb9wPaynXJKiq8YG-29" value="Coordinates?" style="rhombus;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="2146" y="972.43" width="150" height="150" as="geometry" />
+          <mxGeometry x="2138" y="1082.5" width="150" height="150" as="geometry" />
         </mxCell>
-        <mxCell id="aXcIpb9wPaynXJKiq8YG-30" value="" style="endArrow=classic;html=1;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="iHcdqhV0YViVewFqACI8-173" target="aXcIpb9wPaynXJKiq8YG-29" edge="1">
+        <mxCell id="aXcIpb9wPaynXJKiq8YG-30" value="" style="endArrow=classic;html=1;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="iHcdqhV0YViVewFqACI8-173" target="aXcIpb9wPaynXJKiq8YG-29" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="2396" y="1542.43" as="sourcePoint" />
-            <mxPoint x="2446" y="1492.43" as="targetPoint" />
+            <mxPoint x="2388" y="1652.5" as="sourcePoint" />
+            <mxPoint x="2438" y="1602.5" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="2086" y="1282.43" />
-              <mxPoint x="2086" y="1182.43" />
-              <mxPoint x="2221" y="1182.43" />
+              <mxPoint x="2065" y="1290" />
+              <mxPoint x="2213" y="1290" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="aXcIpb9wPaynXJKiq8YG-31" value="&lt;font style=&quot;font-size: 12px&quot;&gt;Location&lt;br&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="aXcIpb9wPaynXJKiq8YG-30" vertex="1" connectable="0">
           <mxGeometry x="0.176" y="4" relative="1" as="geometry">
-            <mxPoint x="16.67" y="4" as="offset" />
+            <mxPoint x="-28" y="1" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-86" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="aXcIpb9wPaynXJKiq8YG-51" target="i0vj7bkVoeIxhTv1__Wb-87">
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-86" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="aXcIpb9wPaynXJKiq8YG-51" target="i0vj7bkVoeIxhTv1__Wb-87" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1310" y="868.79" as="targetPoint" />
+            <mxPoint x="1302" y="978.8599999999999" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="1020" y="571" />
-              <mxPoint x="1020" y="849" />
+              <mxPoint x="1012" y="681" />
+              <mxPoint x="1012" y="821" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="aXcIpb9wPaynXJKiq8YG-51" value="create data frame ID and merge" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;direction=south;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="1420" y="540" width="112.5" height="62.5" as="geometry" />
+          <mxGeometry x="1412" y="650.0699999999999" width="112.5" height="62.5" as="geometry" />
         </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-1" value="" style="group" vertex="1" connectable="0" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="1245" y="1720" width="420" height="305" as="geometry" />
-        </mxCell>
-        <mxCell id="aXcIpb9wPaynXJKiq8YG-47" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="i0vj7bkVoeIxhTv1__Wb-1" vertex="1">
-          <mxGeometry width="420" height="305" as="geometry" />
-        </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-0" value="&lt;h1&gt;Diagnostic Plots and summary tables&lt;br&gt;&lt;/h1&gt;&lt;p&gt;There are a number of things that can be imagined. there will be overlap with what is already available in BDcleaner. &lt;br&gt;&lt;/p&gt;&lt;p&gt;Summary of number of records per species&lt;/p&gt;&lt;p&gt;Sumamry of records per country&lt;/p&gt;&lt;p&gt;Gridded records (figure of how many records per unit area)&lt;/p&gt;&lt;p&gt;Summary of time periods&lt;/p&gt;&lt;p&gt;Summary of time and space&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="i0vj7bkVoeIxhTv1__Wb-1">
-          <mxGeometry x="25" y="12.5" width="380" height="280" as="geometry" />
-        </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-13" value="Community matrix" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=40;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="80" y="2950" width="220" height="110" as="geometry" />
-        </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-14" value="Point sampling" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=40;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="900" y="2950" width="190" height="110" as="geometry" />
-        </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-15" value="Gridded data (inc. raster" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=40;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="1160" y="2950" width="260" height="110" as="geometry" />
-        </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-16" value="Multi-dimensional array" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=40;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="1460" y="2950" width="340" height="110" as="geometry" />
-        </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-17" value="Multiple community matrices" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=40;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="370" y="2950" width="470" height="110" as="geometry" />
-        </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-85" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="i0vj7bkVoeIxhTv1__Wb-21" target="i0vj7bkVoeIxhTv1__Wb-33">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-21" value="&lt;u&gt;Research Question&lt;/u&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;gradientColor=none;fontSize=40;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="40" width="320" height="180" as="geometry" />
-        </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-34" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=40;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="i0vj7bkVoeIxhTv1__Wb-79" target="iHcdqhV0YViVewFqACI8-14">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-75" value="Species focussed" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="i0vj7bkVoeIxhTv1__Wb-34">
-          <mxGeometry x="0.2017" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=40;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="i0vj7bkVoeIxhTv1__Wb-33" target="i0vj7bkVoeIxhTv1__Wb-45">
+        <mxCell id="kHVZ-IwuB8bhGgUG1t6H-6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="i0vj7bkVoeIxhTv1__Wb-21" target="kHVZ-IwuB8bhGgUG1t6H-5" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="505" y="350" as="targetPoint" />
+            <mxPoint x="470" y="110" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="495" y="250" />
-              <mxPoint x="140" y="250" />
-              <mxPoint x="140" y="350" />
+              <mxPoint x="460" y="90" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-44" value="Environmental" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=40;labelBorderColor=#000000;" vertex="1" connectable="0" parent="i0vj7bkVoeIxhTv1__Wb-43">
-          <mxGeometry x="-0.1743" y="1" relative="1" as="geometry">
-            <mxPoint as="offset" />
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-21" value="&lt;u&gt;Research Question&lt;/u&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;gradientColor=none;fontSize=40;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="40" width="320" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-34" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=40;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="i0vj7bkVoeIxhTv1__Wb-79" target="K3oOLh2pZVhGYxKfuLFw-26" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1080" y="90" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-33" value="&lt;font style=&quot;font-size: 12px&quot;&gt;What &lt;/font&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;type of data are required?&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;labelBackgroundColor=none;strokeColor=#000000;fillColor=#ffffff;gradientColor=none;fontSize=40;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="390" y="20" width="210" height="140" as="geometry" />
-        </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;fontSize=12;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="i0vj7bkVoeIxhTv1__Wb-45" target="i0vj7bkVoeIxhTv1__Wb-46">
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;fontSize=12;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="i0vj7bkVoeIxhTv1__Wb-45" target="i0vj7bkVoeIxhTv1__Wb-46" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-50" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="i0vj7bkVoeIxhTv1__Wb-48">
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-50" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" parent="i0vj7bkVoeIxhTv1__Wb-48" vertex="1" connectable="0">
           <mxGeometry x="-0.2308" y="-1" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;fontSize=12;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="i0vj7bkVoeIxhTv1__Wb-45" target="i0vj7bkVoeIxhTv1__Wb-53">
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;fontSize=12;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="i0vj7bkVoeIxhTv1__Wb-45" target="i0vj7bkVoeIxhTv1__Wb-53" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-58" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="i0vj7bkVoeIxhTv1__Wb-54">
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-58" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" parent="i0vj7bkVoeIxhTv1__Wb-54" vertex="1" connectable="0">
           <mxGeometry x="-0.4595" y="-4" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-45" value="A question related to the staticness of the environmental data required" style="rhombus;whiteSpace=wrap;html=1;labelBackgroundColor=none;strokeColor=#000000;fillColor=#ffffff;gradientColor=none;fontSize=12;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-45" value="A question related to the staticness of the environmental data required" style="rhombus;whiteSpace=wrap;html=1;labelBackgroundColor=none;strokeColor=#000000;fillColor=#ffffff;gradientColor=none;fontSize=12;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="30" y="350" width="205" height="170" as="geometry" />
         </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-46" value="Satellite databases like for example MODIS" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;labelBackgroundColor=none;strokeColor=#000000;fillColor=#ffffff;gradientColor=none;fontSize=12;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="510" y="395" width="250" height="80" as="geometry" />
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-46" value="Satellite databases like for example MODIS" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;labelBackgroundColor=none;strokeColor=#000000;fillColor=#ffffff;gradientColor=none;fontSize=12;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="290" y="572.57" width="250" height="140" as="geometry" />
         </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-53" value="Download data from data bases eg worldclim" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;labelBackgroundColor=none;strokeColor=#000000;fillColor=#ffffff;gradientColor=none;fontSize=12;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="61.25" y="650.07" width="142.5" height="185" as="geometry" />
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-53" value="Download data from data bases eg worldclim" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;labelBackgroundColor=none;strokeColor=#000000;fillColor=#ffffff;gradientColor=none;fontSize=12;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="57.5" y="570" width="142.5" height="140" as="geometry" />
         </mxCell>
-        <mxCell id="aXcIpb9wPaynXJKiq8YG-22" value="&lt;h1&gt;BDcleaner based scripts&lt;br&gt;&lt;/h1&gt;&lt;p&gt;BDcleanr is a series of 5 scripts that organise download and clean spatially and taxonomically&amp;nbsp; occurance records. As they stand they are and upgrade from simply taxize. Usefully&amp;nbsp; they seem to give a rating of taxonomic and spatial completeness. The scripts as they stand don&#39;t work without some alteration and I think it would be usefull to do. &lt;br&gt;&lt;/p&gt;&lt;br&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="1303" y="668.79" width="370" height="147.57" as="geometry" />
+        <mxCell id="aXcIpb9wPaynXJKiq8YG-22" value="&lt;h1&gt;Data cleaning&lt;br&gt;&lt;/h1&gt;&lt;p&gt;There are a number of published workflows and R packages that aim to ease the process of downloading and cleaning data these include but are not limited to: &lt;br&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;The BDverse and associated packages&lt;br&gt;&lt;/li&gt;&lt;li&gt;Wallace&lt;/li&gt;&lt;li&gt;BDcleaner&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;The use of such workflows and outputs are context specific and are dependent on researchers personal choices. Many of these workflows overlap. In this workflow we present suggestions for things to consider in cleaning data.&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;br&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="1420" y="780" width="332" height="260" as="geometry" />
         </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-96" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.519;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;fontSize=12;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="i0vj7bkVoeIxhTv1__Wb-69" target="iHcdqhV0YViVewFqACI8-0">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-69" value="Data frame of agreed synonyms" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;labelBackgroundColor=none;strokeColor=#000000;fillColor=#ffffff;gradientColor=#ffffff;fontSize=12;rounded=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="1460" y="310" width="300" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-84" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;fontSize=12;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="i0vj7bkVoeIxhTv1__Wb-79" target="iHcdqhV0YViVewFqACI8-0">
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-96" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="i0vj7bkVoeIxhTv1__Wb-69" target="iHcdqhV0YViVewFqACI8-0" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1075" y="465" />
-            </Array>
+            <mxPoint x="1610.0588235294117" y="395.03529411764725" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-113" value="Region focussed" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="i0vj7bkVoeIxhTv1__Wb-84">
-          <mxGeometry x="-0.6108" y="-3" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-69" value="Data frame of agreed synonyms" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;labelBackgroundColor=none;strokeColor=#000000;fillColor=#ffffff;gradientColor=#ffffff;fontSize=12;rounded=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="1460" y="300" width="300" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-79" value="&lt;h1 style=&quot;font-size: 40px&quot;&gt;&lt;font style=&quot;font-size: 40px&quot;&gt;Biodiversity &lt;br&gt;&lt;/font&gt;&lt;/h1&gt;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;strokeColor=#000000;fillColor=#ffffff;gradientColor=#ffffff;fontSize=12;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="960" y="60" width="250" height="60" as="geometry" />
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-79" value="&lt;h1 style=&quot;font-size: 40px&quot;&gt;&lt;font style=&quot;font-size: 40px&quot;&gt;Biodiversity &lt;br&gt;&lt;/font&gt;&lt;/h1&gt;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;strokeColor=#000000;fillColor=#ffffff;gradientColor=#ffffff;fontSize=12;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="650" y="60" width="250" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-80" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=40;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="i0vj7bkVoeIxhTv1__Wb-33" target="i0vj7bkVoeIxhTv1__Wb-79">
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-80" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=40;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="i0vj7bkVoeIxhTv1__Wb-21" target="i0vj7bkVoeIxhTv1__Wb-79" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="610" y="80" as="sourcePoint" />
+            <mxPoint x="600" y="90" as="sourcePoint" />
             <mxPoint x="1790" y="110" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-91" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="i0vj7bkVoeIxhTv1__Wb-87" target="i0vj7bkVoeIxhTv1__Wb-88">
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-91" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="i0vj7bkVoeIxhTv1__Wb-87" target="i0vj7bkVoeIxhTv1__Wb-88" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-87" value="Taxonomise with agreed list or taxise or similar" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rounded=0;labelBackgroundColor=none;strokeColor=#000000;fillColor=#ffffff;gradientColor=#ffffff;fontSize=12;direction=south;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="1172.5" y="808.79" width="220" height="81.21" as="geometry" />
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-87" value="Taxonomise with agreed list or taxise or similar" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rounded=0;labelBackgroundColor=none;strokeColor=#000000;fillColor=#ffffff;gradientColor=#ffffff;fontSize=12;direction=south;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="1160" y="779.9999999999999" width="220" height="81.21" as="geometry" />
         </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-94" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="i0vj7bkVoeIxhTv1__Wb-88" target="i0vj7bkVoeIxhTv1__Wb-92">
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-94" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="i0vj7bkVoeIxhTv1__Wb-88" target="i0vj7bkVoeIxhTv1__Wb-92" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-95" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="i0vj7bkVoeIxhTv1__Wb-94">
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-95" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" parent="i0vj7bkVoeIxhTv1__Wb-94" vertex="1" connectable="0">
           <mxGeometry x="0.1448" y="2" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-109" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="i0vj7bkVoeIxhTv1__Wb-88" target="i0vj7bkVoeIxhTv1__Wb-106">
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-109" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="i0vj7bkVoeIxhTv1__Wb-88" target="i0vj7bkVoeIxhTv1__Wb-106" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-88" value="Are there unknown taxa? Can they be resolved to species?" style="rhombus;whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=none;strokeColor=#000000;fillColor=#ffffff;gradientColor=#ffffff;fontSize=12;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="1205" y="960" width="155" height="140" as="geometry" />
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-88" value="Are there unknown taxa? Can they be resolved to species?" style="rhombus;whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=none;strokeColor=#000000;fillColor=#ffffff;gradientColor=#ffffff;fontSize=12;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="1192.5" y="890" width="155" height="140" as="geometry" />
         </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-93" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontSize=12;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="i0vj7bkVoeIxhTv1__Wb-92" target="i0vj7bkVoeIxhTv1__Wb-87">
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-93" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontSize=12;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="i0vj7bkVoeIxhTv1__Wb-92" target="i0vj7bkVoeIxhTv1__Wb-87" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1020" y="849" />
+              <mxPoint x="1012" y="821" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-92" value="Update taxonomy" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rounded=0;labelBackgroundColor=none;strokeColor=#000000;fillColor=#ffffff;gradientColor=#ffffff;fontSize=12;direction=south;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="980" y="990" width="80" height="80" as="geometry" />
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-92" value="Update taxonomy" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rounded=0;labelBackgroundColor=none;strokeColor=#000000;fillColor=#ffffff;gradientColor=#ffffff;fontSize=12;direction=south;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="972" y="920" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-100" value="" style="group" vertex="1" connectable="0" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="600" y="1430" width="1680" height="1305" as="geometry" />
-        </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-28" value="" style="group;labelBackgroundColor=none;fillColor=#f8cecc;strokeColor=#b85450;gradientColor=#ffffff;gradientDirection=north;" vertex="1" connectable="0" parent="i0vj7bkVoeIxhTv1__Wb-100">
-          <mxGeometry y="115" width="1582.5" height="1190" as="geometry" />
-        </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-59" value="&lt;b&gt;&lt;font style=&quot;font-size: 20px&quot;&gt;Data Completeness&lt;/font&gt;&lt;/b&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;labelBackgroundColor=none;strokeColor=#b85450;fillColor=#f8cecc;fontSize=12;" vertex="1" parent="i0vj7bkVoeIxhTv1__Wb-100">
-          <mxGeometry x="1500.0700000000002" width="179.93" height="179.93" as="geometry" />
-        </mxCell>
-        <mxCell id="iHcdqhV0YViVewFqACI8-179" value="Label missingness" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;" parent="i0vj7bkVoeIxhTv1__Wb-100" vertex="1">
-          <mxGeometry x="1206" y="-35" width="230" height="110" as="geometry" />
-        </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-114" value="Are the data systematically gathered or is it " style="rhombus;whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=none;strokeColor=#000000;fillColor=#ffffff;gradientColor=#ffffff;fontSize=12;" vertex="1" parent="i0vj7bkVoeIxhTv1__Wb-100">
-          <mxGeometry x="740" y="160" width="230" height="110" as="geometry" />
-        </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-115" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="i0vj7bkVoeIxhTv1__Wb-100" source="i0vj7bkVoeIxhTv1__Wb-4" target="i0vj7bkVoeIxhTv1__Wb-114">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-4" value="&lt;h1&gt;Data&lt;/h1&gt;&lt;div&gt;Frame, array or list with correct names data quality and missingness labelled. There shoudl be no taxonomic problems as there is an agreed, local taxonomy problems no should be related to spatial accuracy and sampling bias&lt;br&gt;&lt;/div&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="i0vj7bkVoeIxhTv1__Wb-100">
-          <mxGeometry x="730" y="-55" width="250" height="150" as="geometry" />
-        </mxCell>
-        <mxCell id="aXcIpb9wPaynXJKiq8YG-43" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="i0vj7bkVoeIxhTv1__Wb-100" source="iHcdqhV0YViVewFqACI8-179" target="i0vj7bkVoeIxhTv1__Wb-4" edge="1">
+        <mxCell id="w-YvjRMWvmcFSU0H_ef8-53" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;startFill=0;endArrow=classic;endFill=1;fontSize=24;entryX=0;entryY=0;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="i0vj7bkVoeIxhTv1__Wb-106" target="w-YvjRMWvmcFSU0H_ef8-54" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1046" y="109.43000000000006" as="targetPoint" />
+            <mxPoint x="1360" y="1040" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1301" y="1130" />
+              <mxPoint x="1301" y="1020" />
+            </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-101" value="&lt;font style=&quot;font-size: 40px&quot;&gt;Analysis&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;strokeColor=#000000;fillColor=#ffffff;gradientColor=#ffffff;fontSize=12;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="780" y="3140" width="120" height="60" as="geometry" />
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-106" value="&lt;div&gt;Quantify accuracy and &quot;trustworthiness&quot; of data with coordinates.&lt;/div&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rounded=0;labelBackgroundColor=none;strokeColor=#000000;fillColor=#ffffff;gradientColor=#ffffff;fontSize=12;direction=south;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="1082.5" y="1070" width="160" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-111" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="i0vj7bkVoeIxhTv1__Wb-106" target="iHcdqhV0YViVewFqACI8-45">
+        <mxCell id="w-YvjRMWvmcFSU0H_ef8-7" value="" style="endArrow=classic;html=1;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="w-YvjRMWvmcFSU0H_ef8-9" target="i0vj7bkVoeIxhTv1__Wb-45" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="360" y="90" as="sourcePoint" />
+            <mxPoint x="640" y="290" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="280" y="310" />
+              <mxPoint x="133" y="310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="w-YvjRMWvmcFSU0H_ef8-9" value="Data from Databases" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="200" y="230" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="w-YvjRMWvmcFSU0H_ef8-13" value="Data gathered with biodiversity data" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="570" y="230" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="kHVZ-IwuB8bhGgUG1t6H-18" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="w-YvjRMWvmcFSU0H_ef8-22" target="kHVZ-IwuB8bhGgUG1t6H-15" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-106" value="Quantify accuracy and &quot;trustworthiness&quot; of coordinates" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rounded=0;labelBackgroundColor=none;strokeColor=#000000;fillColor=#ffffff;gradientColor=#ffffff;fontSize=12;direction=south;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="1525" y="970" width="160" height="120" as="geometry" />
+        <mxCell id="kHVZ-IwuB8bhGgUG1t6H-19" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="w-YvjRMWvmcFSU0H_ef8-22" target="K3oOLh2pZVhGYxKfuLFw-56" edge="1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-119" value="&lt;h1&gt;Updated environemntal data&lt;br&gt;&lt;/h1&gt;&lt;div&gt;Processing and extraction of data like MODIS satlleite data.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;POssible &lt;br&gt;&lt;/div&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;labelBackgroundColor=none;fontSize=12;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="410" y="602.5" width="405" height="220" as="geometry" />
+        <mxCell id="w-YvjRMWvmcFSU0H_ef8-22" value="&lt;h1&gt;Ordination&lt;br&gt;&lt;/h1&gt;&lt;p&gt;The calculation and displaying of the relationships of species and sites. Commonly used methods are:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Principal compoant analysis&lt;/li&gt;&lt;li&gt;Correspondance analysis&lt;/li&gt;&lt;li&gt;Cannonical correspondance analysis&lt;/li&gt;&lt;li&gt;Principal coordinate analysis&lt;/li&gt;&lt;li&gt;non-metric Dimensional Scaling&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;b&gt;R libraries: stats, vegan, &lt;/b&gt;&lt;b&gt;ade4&lt;/b&gt;&lt;/div&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="-410" y="3050" width="340" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="kHVZ-IwuB8bhGgUG1t6H-20" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="w-YvjRMWvmcFSU0H_ef8-30" target="K3oOLh2pZVhGYxKfuLFw-56" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="251" y="3300" />
+              <mxPoint x="-240" y="3300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kHVZ-IwuB8bhGgUG1t6H-28" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=24;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="w-YvjRMWvmcFSU0H_ef8-30" target="w-YvjRMWvmcFSU0H_ef8-22" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="w-YvjRMWvmcFSU0H_ef8-30" value="&lt;h1&gt;Classic &lt;span&gt;β &lt;/span&gt;diversity measures and dissimilarities&lt;br&gt;&lt;/h1&gt;&lt;div&gt;There are many measures of &lt;span&gt;β diversity. These include many of the more commonly used dissimilarity measures. There have been several reviews of such measures&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;Some of the most commonly used are:&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;Jaccard&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;Sorrenen&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;Bray-Curtis&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;Gower&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;Hellinger&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;R libraries: Vegan, Betapart, &lt;/b&gt;&lt;br&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="-17.5" y="2800" width="407.5" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-0" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="w-YvjRMWvmcFSU0H_ef8-31" target="xw4S7eZGQW3ErX5LzovB-47" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="w-YvjRMWvmcFSU0H_ef8-31" value="&lt;h1&gt;Species Distribution Modelling&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Using records &lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="2310" y="2610" width="490" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="kHVZ-IwuB8bhGgUG1t6H-30" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.587;entryY=0.021;entryDx=0;entryDy=0;fontSize=24;entryPerimeter=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="nuO9TFtqxaYfnLADoFkb-13" target="K3oOLh2pZVhGYxKfuLFw-57" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1262" y="3380" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="1310" y="3385" />
+              <mxPoint x="1310" y="3472" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="w-YvjRMWvmcFSU0H_ef8-34" value="&lt;h1&gt;Single Species&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="2000" y="3920" width="490" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="w-YvjRMWvmcFSU0H_ef8-35" value="&lt;h1&gt;Multi Species&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="1400" y="3920" width="490" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="w-YvjRMWvmcFSU0H_ef8-36" value="&lt;h1&gt;Other measures of diversity (eg Hill Numbers, Diversity Profiles)&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Measures of species richness and diversity are unified in Numbers equivalents first brought to Ecology by Hill (1973) giving rise to Hill Numbers. &lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;Hill Numbers: &lt;b&gt;HillR (&lt;/b&gt;&lt;b&gt;&lt;b&gt;Td, Fd, Pd)&lt;/b&gt;, adiv &lt;/b&gt;&lt;/font&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;b&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;b&gt;(&lt;/b&gt;&lt;b&gt;&lt;b&gt;Td, Fd, Pd)&lt;/b&gt;&lt;/b&gt;&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;sub&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;Tsallis Entropy &lt;/font&gt;: &lt;b style=&quot;font-size: 12px&quot;&gt;Entropart (Td, Fd, Pd), adiv&lt;/b&gt;&lt;/sub&gt;&lt;/font&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;sub&gt;&lt;b style=&quot;font-size: 12px&quot;&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;b&gt;(&lt;/b&gt;&lt;b&gt;&lt;b&gt;Td, Fd, Pd)&lt;/b&gt;&lt;/b&gt;&lt;/font&gt;&lt;/b&gt;&lt;/sub&gt;&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;sub&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;Crossing point Theory: &lt;/font&gt;&lt;b style=&quot;font-size: 12px&quot;&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;BioFTF (Td)&lt;/font&gt;&lt;br&gt;&lt;/b&gt;&lt;/sub&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="-720" y="2000" width="630" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="w-YvjRMWvmcFSU0H_ef8-39" value="Community matrix" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="3590" y="2330" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="iHcdqhV0YViVewFqACI8-179" value="Label missingness" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="1720.0019512195122" y="1550.0027638190954" width="167.17073170731703" height="50.85427135678392" as="geometry" />
+        </mxCell>
+        <mxCell id="aXcIpb9wPaynXJKiq8YG-43" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="iHcdqhV0YViVewFqACI8-179" target="i0vj7bkVoeIxhTv1__Wb-4" edge="1">
+          <mxGeometry x="1965.2758536585366" y="2455.379396984925" as="geometry">
+            <mxPoint x="1801.739268292683" y="1636.8244221105529" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1710" y="1575" />
+              <mxPoint x="1660" y="1575" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xw4S7eZGQW3ErX5LzovB-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=24;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="i0vj7bkVoeIxhTv1__Wb-4" target="xw4S7eZGQW3ErX5LzovB-18" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-4" value="&lt;h1&gt;Data&lt;/h1&gt;&lt;div&gt;Frame, array or list with correct names data quality and missingness labelled. There shoudl be no taxonomic problems as there is an agreed, local taxonomy problems no should be related to spatial accuracy and sampling bias&lt;br&gt;&lt;/div&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="1460" y="1670" width="400" height="118.69" as="geometry" />
+        </mxCell>
+        <mxCell id="w-YvjRMWvmcFSU0H_ef8-60" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;startFill=0;endArrow=classic;endFill=1;fontSize=24;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="w-YvjRMWvmcFSU0H_ef8-54" target="iHcdqhV0YViVewFqACI8-45" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1163" y="1350" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xw4S7eZGQW3ErX5LzovB-0" value="&lt;h1&gt;MSI-tool&lt;/h1&gt;&lt;p&gt;Multi-species monte carlo method for assessing species trends from a reference year. Used for calculation fo SEBI 1 (&lt;a class=&quot;doi&quot; href=&quot;https://doi.org/10.1016/j.ecolind.2017.05.033&quot; target=&quot;_blank&quot; title=&quot;Persistent link using digital object identifier&quot;&gt;https://doi.org/10.1016/j.ecolind.2017.05.033). &lt;br&gt;&lt;/a&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="1990" y="4363" width="200" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="xw4S7eZGQW3ErX5LzovB-23" value="&lt;h1&gt;Dark Diversity&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Number of species not present in a site but within the regional species pool.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;R libraries: Darkdiv&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="-720" y="2530" width="260" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="xw4S7eZGQW3ErX5LzovB-30" value="&lt;h1&gt;Boosted regression trees (BRT)&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="3890" y="2090" width="410" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="xw4S7eZGQW3ErX5LzovB-31" value="&lt;h1&gt;Maximm Entropy (MaxEnt)&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="3890" y="2240" width="410" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="xw4S7eZGQW3ErX5LzovB-32" value="&lt;h1&gt;GLM / GAM&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="3890" y="2390" width="410" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="xw4S7eZGQW3ErX5LzovB-41" value="" style="endArrow=classic;html=1;fontSize=24;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" target="nuO9TFtqxaYfnLADoFkb-13" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1510" y="3020" as="sourcePoint" />
+            <mxPoint x="1507" y="3330" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xw4S7eZGQW3ErX5LzovB-45" value="&lt;font style=&quot;font-size: 48px&quot;&gt;&lt;b&gt;Trends and patterns&lt;/b&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=24;" parent="xw4S7eZGQW3ErX5LzovB-41" vertex="1" connectable="0">
+          <mxGeometry x="0.2848" y="-2" relative="1" as="geometry">
+            <mxPoint x="2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xw4S7eZGQW3ErX5LzovB-42" value="" style="endArrow=classic;html=1;fontSize=24;edgeStyle=orthogonalEdgeStyle;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" target="K3oOLh2pZVhGYxKfuLFw-6" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1510" y="3020" as="sourcePoint" />
+            <mxPoint x="2050" y="3060" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1510" y="3060" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xw4S7eZGQW3ErX5LzovB-44" value="&lt;div&gt;&lt;b&gt;&lt;font style=&quot;font-size: 48px&quot;&gt;Distributional data&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=24;" parent="xw4S7eZGQW3ErX5LzovB-42" vertex="1" connectable="0">
+          <mxGeometry x="-0.0065" y="4" relative="1" as="geometry">
+            <mxPoint x="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="xw4S7eZGQW3ErX5LzovB-47" target="K3oOLh2pZVhGYxKfuLFw-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="xw4S7eZGQW3ErX5LzovB-47" target="xw4S7eZGQW3ErX5LzovB-50" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xw4S7eZGQW3ErX5LzovB-47" value="Do you have absences" style="rhombus;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="2850" y="2600" width="165" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="xw4S7eZGQW3ErX5LzovB-50" target="xw4S7eZGQW3ErX5LzovB-55" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xw4S7eZGQW3ErX5LzovB-50" value="&lt;font style=&quot;font-size: 12px&quot;&gt;Will you infer absence or use background data?&lt;br&gt;&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;gradientColor=none;fontSize=24;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="2842.5" y="2815" width="180" height="165" as="geometry" />
+        </mxCell>
+        <mxCell id="xw4S7eZGQW3ErX5LzovB-55" value="&lt;h1&gt;Background data&lt;br&gt;&lt;/h1&gt;&lt;p&gt;If using a random sample from the background to model species distributions consider whether biases are adequately accounted for. &lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="2810" y="3095" width="245" height="125" as="geometry" />
+        </mxCell>
+        <mxCell id="jobuWl_KfaXL-yA0P-ZW-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=24;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="K3oOLh2pZVhGYxKfuLFw-1" target="jobuWl_KfaXL-yA0P-ZW-10" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-1" value="Will you use single models or ensemble models?" style="rhombus;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="3070" y="2590" width="190" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-6" value="&lt;h1&gt;Species ditributions&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Where the species actually are&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="2240" y="3020" width="250" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-10" value="&lt;h1&gt;Classic Measures of&lt;span&gt; α diversity&lt;br&gt;&lt;/span&gt;&lt;/h1&gt;&lt;p&gt;Species Richnes&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Shannon / Shannon- Weaver index&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Simpson Index&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Inverse Simpson&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Gini-Simpson&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;R libraries: Vegan (Td),&lt;/b&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;b&gt; adiv &lt;/b&gt;&lt;/font&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;b&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;b&gt;(&lt;/b&gt;&lt;b&gt;&lt;b&gt;Td, Fd, Pd)&lt;/b&gt;&lt;/b&gt;&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="2.5" y="2280" width="537.5" height="460" as="geometry" />
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-11" value="&lt;h1&gt;Wide form data&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Each data point is a single row and the data attributes are represented byt the columns . The most widely used example is species community data. These represent species presences at each sample point&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;table style=&quot;border: 1px solid rgb(0 , 0 , 0) ; border-collapse: collapse&quot; cellpadding=&quot;10&quot; border=&quot;1&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;br&gt;&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;Sample 1a&lt;br&gt;&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;Sample 1b&lt;br&gt;&lt;/td&gt;&lt;td style=&quot;border-collapse: collapse&quot; align=&quot;center&quot;&gt;Sample 2a&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;Species 1&lt;br&gt;&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;12&lt;br&gt;&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;4&lt;br&gt;&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;0&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;Species 2&lt;br&gt;&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;2&lt;br&gt;&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;0&lt;br&gt;&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;5&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;Species 3&lt;br&gt;&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;0&lt;br&gt;&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;0&lt;br&gt;&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;6&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;br&gt;&lt;p&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="2440" y="780" width="460" height="268.79" as="geometry" />
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-13" value="&lt;h1&gt;Long form data&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Each row represents a data point, with as many columns as there are attributes of the data&lt;/p&gt;&lt;table style=&quot;border: 1px solid rgb(51 , 51 , 51) ; border-collapse: collapse&quot; cellpadding=&quot;10&quot; border=&quot;1&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Species&lt;br&gt;&lt;/td&gt;&lt;td&gt;site&lt;br&gt;&lt;/td&gt;&lt;td&gt;sample&lt;br&gt;&lt;/td&gt;&lt;td&gt;X&lt;/td&gt;&lt;td&gt;Y&lt;/td&gt;&lt;td&gt;Quantity&lt;/td&gt;&lt;td&gt;Phenotype&lt;sub&gt;ij&lt;/sub&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;Env&lt;sub&gt;ij&lt;/sub&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Species 1&lt;br&gt;&lt;/td&gt;&lt;td&gt;1&lt;br&gt;&lt;/td&gt;&lt;td&gt;a&lt;br&gt;&lt;/td&gt;&lt;td&gt;1&lt;br&gt;&lt;/td&gt;&lt;td&gt;2&lt;br&gt;&lt;/td&gt;&lt;td&gt;12&lt;br&gt;&lt;/td&gt;&lt;td&gt;XXXX&lt;br&gt;&lt;/td&gt;&lt;td&gt;YYY&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Species 2&lt;br&gt;&lt;/td&gt;&lt;td&gt;1&lt;br&gt;&lt;/td&gt;&lt;td&gt;a&lt;br&gt;&lt;/td&gt;&lt;td&gt;1&lt;br&gt;&lt;/td&gt;&lt;td&gt;2&lt;br&gt;&lt;/td&gt;&lt;td&gt;2&lt;br&gt;&lt;/td&gt;&lt;td&gt;XXXX&lt;br&gt;&lt;/td&gt;&lt;td&gt;YYY&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Species 1&lt;br&gt;&lt;/td&gt;&lt;td&gt;1&lt;br&gt;&lt;/td&gt;&lt;td&gt;b&lt;br&gt;&lt;/td&gt;&lt;td&gt;3&lt;br&gt;&lt;/td&gt;&lt;td&gt;4&lt;br&gt;&lt;/td&gt;&lt;td&gt;4&lt;br&gt;&lt;/td&gt;&lt;td&gt;XXXX&lt;br&gt;&lt;/td&gt;&lt;td&gt;YYY&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Species 2&lt;br&gt;&lt;/td&gt;&lt;td&gt;2&lt;br&gt;&lt;/td&gt;&lt;td&gt;a&lt;br&gt;&lt;/td&gt;&lt;td&gt;5&lt;br&gt;&lt;/td&gt;&lt;td&gt;6&lt;br&gt;&lt;/td&gt;&lt;td&gt;5&lt;br&gt;&lt;/td&gt;&lt;td&gt;XXXX&lt;br&gt;&lt;/td&gt;&lt;td&gt;YYY&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Species 3&lt;br&gt;&lt;/td&gt;&lt;td&gt;2&lt;br&gt;&lt;/td&gt;&lt;td&gt;a&lt;br&gt;&lt;/td&gt;&lt;td&gt;5&lt;br&gt;&lt;/td&gt;&lt;td&gt;6&lt;br&gt;&lt;/td&gt;&lt;td&gt;6&lt;br&gt;&lt;/td&gt;&lt;td&gt;XXXX&lt;br&gt;&lt;/td&gt;&lt;td&gt;YYY&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;br&gt;&lt;p&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#fff2cc;strokeColor=#d6b656;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="2430" y="260" width="470" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-14" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;strokeWidth=2;shape=mxgraph.arrows2.arrow;dy=0.6;dx=40;notch=0;fillColor=#ffffff;rotation=90;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="2400" y="650" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="kHVZ-IwuB8bhGgUG1t6H-3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="K3oOLh2pZVhGYxKfuLFw-25" target="w-YvjRMWvmcFSU0H_ef8-13" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1370" y="540" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1350" y="420" />
+              <mxPoint x="1350" y="500" />
+              <mxPoint x="930" y="500" />
+              <mxPoint x="930" y="255" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kHVZ-IwuB8bhGgUG1t6H-11" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="K3oOLh2pZVhGYxKfuLFw-25" target="kHVZ-IwuB8bhGgUG1t6H-10" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1350" y="420" />
+              <mxPoint x="1350" y="520" />
+              <mxPoint x="655" y="520" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-25" value="&lt;h1&gt;Functional Diversity. Fd&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Measured traits. Various scales &lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=12;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="1110" y="360" width="220" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-26" value="&lt;h1&gt;Taxonomic&amp;nbsp; Diversity. Td&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Species presences/abundances&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=12;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="1110" y="25" width="220" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-27" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="i0vj7bkVoeIxhTv1__Wb-79" target="K3oOLh2pZVhGYxKfuLFw-25" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1120" y="470" as="sourcePoint" />
+            <mxPoint x="1170" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-28" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="i0vj7bkVoeIxhTv1__Wb-79" target="w-YvjRMWvmcFSU0H_ef8-19" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1120" y="470" as="sourcePoint" />
+            <mxPoint x="1170" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-29" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="K3oOLh2pZVhGYxKfuLFw-26" target="iHcdqhV0YViVewFqACI8-14" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1120" y="470" as="sourcePoint" />
+            <mxPoint x="1170" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-31" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="w-YvjRMWvmcFSU0H_ef8-19" target="kHVZ-IwuB8bhGgUG1t6H-1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1120" y="470" as="sourcePoint" />
+            <mxPoint x="990.909090909091" y="520" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1410" y="255" />
+              <mxPoint x="1410" y="570" />
+              <mxPoint x="980" y="570" />
+              <mxPoint x="980" y="620" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-37" value="&lt;h1&gt;Morans Eigenvector maps&lt;br&gt;&lt;/h1&gt;&lt;p&gt;These combine spatially explicit modelling of multivariate data&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;R libraries: adespatial&lt;/b&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="1360" y="4333" width="560" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-39" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;strokeWidth=2;shape=mxgraph.arrows2.arrow;dy=0.6;dx=40;notch=0;fillColor=#ffffff;rotation=270;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="2760" y="650" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="kHVZ-IwuB8bhGgUG1t6H-29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=24;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="K3oOLh2pZVhGYxKfuLFw-40" target="K3oOLh2pZVhGYxKfuLFw-41" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-40" value="&lt;h1&gt;Variograms&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Spatially explicit models of variation in &lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="2760" y="3450" width="490" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-41" value="&lt;h1&gt;Krigeing&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="2760" y="3720" width="490" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-45" value="" style="group" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1" connectable="0">
+          <mxGeometry x="3200" y="260" width="450" height="790" as="geometry" />
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-38" value="&lt;h1&gt;Spatial data&lt;/h1&gt;&lt;div&gt;Spatial data data are data with associated positional information. They are most associated with landscape data though their methods do not have to be. For global data there should be a Coordinate Reference System attached to the data. There are multiple software platforms for displaing and analysing them including, but not limited to:&lt;/div&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;Qgis&lt;/li&gt;&lt;li&gt;Esri ArcGIS&lt;/li&gt;&lt;li&gt;&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;p&gt;In the R environment the most common packages used are:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;sp: Classes and Methods for spatial data&lt;br&gt;&lt;/li&gt;&lt;li&gt;raster: Geographic data analysis and modelling&lt;br&gt;&lt;/li&gt;&lt;li&gt;sf: : Simple features for R&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="K3oOLh2pZVhGYxKfuLFw-45" vertex="1">
+          <mxGeometry width="450" height="790.0000000000001" as="geometry" />
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-42" value="&lt;h1&gt;Vector data &lt;br&gt;&lt;/h1&gt;&lt;p&gt;In the simplest forms these are points but can also include lines and polygons. Such shapes may have aditional information attached to them eg data frames&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="K3oOLh2pZVhGYxKfuLFw-45" vertex="1">
+          <mxGeometry x="10" y="329.1666666666667" width="430" height="131.66666666666669" as="geometry" />
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-43" value="&lt;h1&gt;Gridded data&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Gridded data are evenly spaced data sets . Grids do not have to&amp;nbsp; be square. Each point in the grid may have additional information attached to it.&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="K3oOLh2pZVhGYxKfuLFw-45" vertex="1">
+          <mxGeometry x="10" y="482.7777777777778" width="430" height="131.66666666666669" as="geometry" />
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-44" value="&lt;h1&gt;Raster data&lt;br&gt;&lt;/h1&gt;&lt;p&gt;A grid of regulalry sized pixals with information attached. These may be single or multiband rasters, where there are multiple layers of data atatched. This is a common form of environmental data from global data sets.&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="K3oOLh2pZVhGYxKfuLFw-45" vertex="1">
+          <mxGeometry x="10" y="630.9795833333335" width="430" height="131.66666666666669" as="geometry" />
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-48" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;strokeWidth=2;shape=mxgraph.arrows2.arrow;dy=0.65;dx=143.32;notch=0;fillColor=#ffffff;rotation=270;direction=south;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="2637.5" y="545" width="775" height="225" as="geometry" />
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-49" value="Coordinates" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="2990" y="650.07" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-50" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;fontSize=24;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="K3oOLh2pZVhGYxKfuLFw-49" target="K3oOLh2pZVhGYxKfuLFw-49" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kHVZ-IwuB8bhGgUG1t6H-16" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="K3oOLh2pZVhGYxKfuLFw-51" target="K3oOLh2pZVhGYxKfuLFw-57" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kHVZ-IwuB8bhGgUG1t6H-21" value="Single Taxa" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=24;" parent="kHVZ-IwuB8bhGgUG1t6H-16" vertex="1" connectable="0">
+          <mxGeometry x="-0.1493" y="-5" relative="1" as="geometry">
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kHVZ-IwuB8bhGgUG1t6H-17" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="K3oOLh2pZVhGYxKfuLFw-51" target="kHVZ-IwuB8bhGgUG1t6H-15" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kHVZ-IwuB8bhGgUG1t6H-23" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=24;" parent="kHVZ-IwuB8bhGgUG1t6H-17" vertex="1" connectable="0">
+          <mxGeometry x="-0.8071" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-51" value="Are you intereseted in the relationship of diversity and environmental covariates?" style="rhombus;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="640" y="2930" width="260" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-54" value="&lt;h1&gt;Zeta Diversity&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Degree of overlap in the type of taxa present between a set of observed communities.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;R libraries: ZetaDiv &lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="-720" y="2350" width="280" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-56" value="&lt;h1&gt;Hypervolumes&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Hutchinsonian niche theory states species live in&amp;nbsp; n-dimensional hypervolumes. It is possible to approximately calculate these hypervolmes statistically.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;R libraries: BAT&lt;/b&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="-410" y="3350" width="340" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-57" value="&lt;h1&gt;eHOF Niche models&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Heirarchical fitting of species-environment logistic models using extended model set of Huisman-Olff-Fresco (HOF) for single gradients.&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;R libraries: eHOF&lt;/b&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="860" y="3470" width="340" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-61" value="&lt;h1&gt;Rarefaction&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Estimates of the unseen species across sites and for individual sites&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;R libraries: vegan (Td)&lt;/b&gt;&lt;b&gt;,&lt;/b&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;b&gt; adiv &lt;/b&gt;&lt;/font&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;b&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;b&gt;(&lt;/b&gt;&lt;b&gt;&lt;b&gt;Td, Fd, Pd)&lt;/b&gt;&lt;/b&gt;&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="-380" y="2640" width="260" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-62" value="&lt;h1&gt;Rank abundance &lt;br&gt;&lt;/h1&gt;&lt;p&gt;Estimates of the unseen species across sites and for individual sites&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;R libraries: vegan (Td)&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="-380" y="2320" width="260" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="kHVZ-IwuB8bhGgUG1t6H-1" value="Genetic data used to create Phyolgenetic trees from samples or Data base eg Genbank" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="790" y="572.57" width="150" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="w-YvjRMWvmcFSU0H_ef8-19" value="&lt;h1&gt;Phylogenetic Diversity. Pd&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Phylogentic distances or trees&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=12;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="1110" y="175" width="220" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="kHVZ-IwuB8bhGgUG1t6H-4" value="&lt;h1 style=&quot;font-size: 40px&quot;&gt;&lt;font style=&quot;font-size: 40px&quot;&gt;Biodiversity &lt;br&gt;&lt;/font&gt;&lt;/h1&gt;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;strokeColor=#000000;fillColor=#ffffff;gradientColor=#ffffff;fontSize=12;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="650" y="60" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kHVZ-IwuB8bhGgUG1t6H-7" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="kHVZ-IwuB8bhGgUG1t6H-5" target="w-YvjRMWvmcFSU0H_ef8-13" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kHVZ-IwuB8bhGgUG1t6H-8" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="kHVZ-IwuB8bhGgUG1t6H-5" target="w-YvjRMWvmcFSU0H_ef8-9" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kHVZ-IwuB8bhGgUG1t6H-5" value="&lt;h1 style=&quot;font-size: 40px&quot;&gt;&lt;font style=&quot;font-size: 40px&quot;&gt;Environmental &lt;br&gt;&lt;/font&gt;&lt;/h1&gt;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;strokeColor=#000000;fillColor=#ffffff;gradientColor=#ffffff;fontSize=12;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="310" y="150" width="300" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kHVZ-IwuB8bhGgUG1t6H-10" value="&lt;div&gt;Trait data from established data tables or created from&amp;nbsp; published trait data including databases such as TRY. &lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="585" y="572.57" width="150" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="w-YvjRMWvmcFSU0H_ef8-45" value="" style="group" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1" connectable="0">
+          <mxGeometry x="680" y="1840" width="1580" height="1080" as="geometry" />
+        </mxCell>
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-28" value="" style="group;labelBackgroundColor=none;fillColor=#f8cecc;strokeColor=#b85450;gradientColor=#ffffff;gradientDirection=north;" parent="w-YvjRMWvmcFSU0H_ef8-45" vertex="1" connectable="0">
+          <mxGeometry y="63.68" width="1580" height="976.32" as="geometry" />
+        </mxCell>
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-59" value="&lt;div&gt;&lt;b&gt;&lt;font style=&quot;font-size: 20px&quot;&gt;Bias, &lt;br&gt;&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;font style=&quot;font-size: 20px&quot;&gt;Data Completeness&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;font style=&quot;font-size: 20px&quot;&gt;&amp;amp; &lt;br&gt;&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;font style=&quot;font-size: 20px&quot;&gt;Sampling&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;font style=&quot;font-size: 20px&quot;&gt;Effort&lt;br&gt;&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;labelBackgroundColor=none;strokeColor=#b85450;fillColor=#f8cecc;fontSize=12;" parent="w-YvjRMWvmcFSU0H_ef8-45" vertex="1">
+          <mxGeometry x="1490" y="-10" width="153.5" height="153.5" as="geometry" />
+        </mxCell>
+        <mxCell id="xw4S7eZGQW3ErX5LzovB-7" value="&lt;h1&gt;Spatial Missingness&lt;br&gt;&lt;/h1&gt;&lt;p&gt;.&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="w-YvjRMWvmcFSU0H_ef8-45" vertex="1">
+          <mxGeometry x="1120" y="300" width="190" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="xw4S7eZGQW3ErX5LzovB-8" value="&lt;h1&gt;Temporal Completeness&lt;br&gt;&lt;/h1&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="w-YvjRMWvmcFSU0H_ef8-45" vertex="1">
+          <mxGeometry x="430" y="280" width="190" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="xw4S7eZGQW3ErX5LzovB-9" value="&lt;h1&gt;Sampling effort&lt;br&gt;&lt;/h1&gt;&lt;p&gt;.&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="w-YvjRMWvmcFSU0H_ef8-45" vertex="1">
+          <mxGeometry x="780" y="290" width="190" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="xw4S7eZGQW3ErX5LzovB-18" value="Data bias, completeness and missingness are aspects of one another without strictly being the same thing" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#ffffff;strokeColor=#000000;fontSize=24;fontStyle=1" parent="w-YvjRMWvmcFSU0H_ef8-45" vertex="1">
+          <mxGeometry x="519.83" y="110" width="460" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="xw4S7eZGQW3ErX5LzovB-22" value="&lt;h1&gt;Taxonomic Completeness&lt;br&gt;&lt;/h1&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="w-YvjRMWvmcFSU0H_ef8-45" vertex="1">
+          <mxGeometry x="120" y="280" width="190" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="xw4S7eZGQW3ErX5LzovB-25" value="&lt;h1&gt;Rarefaction&lt;/h1&gt;&lt;div&gt;A &lt;br&gt;&lt;/div&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="w-YvjRMWvmcFSU0H_ef8-45" vertex="1">
+          <mxGeometry x="170.00000000000006" y="540" width="185" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="xw4S7eZGQW3ErX5LzovB-26" value="&lt;h1&gt;Ignorance scores&lt;br&gt;&lt;/h1&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="w-YvjRMWvmcFSU0H_ef8-45" vertex="1">
+          <mxGeometry x="519.83" y="560" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-17" value="" style="endArrow=classic;html=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="w-YvjRMWvmcFSU0H_ef8-45" source="xw4S7eZGQW3ErX5LzovB-22" target="xw4S7eZGQW3ErX5LzovB-25" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="670" as="sourcePoint" />
+            <mxPoint x="450" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-19" value="" style="endArrow=classic;html=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="w-YvjRMWvmcFSU0H_ef8-45" source="xw4S7eZGQW3ErX5LzovB-9" target="xw4S7eZGQW3ErX5LzovB-26" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="880" y="530" as="sourcePoint" />
+            <mxPoint x="930" y="480" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="875" y="500" />
+              <mxPoint x="660" y="500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-18" value="" style="endArrow=classic;html=1;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="w-YvjRMWvmcFSU0H_ef8-45" source="xw4S7eZGQW3ErX5LzovB-22" target="xw4S7eZGQW3ErX5LzovB-26" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="330" y="430" as="sourcePoint" />
+            <mxPoint x="654" y="551" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="215" y="470" />
+              <mxPoint x="660" y="470" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-22" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="w-YvjRMWvmcFSU0H_ef8-45" source="xw4S7eZGQW3ErX5LzovB-8" target="xw4S7eZGQW3ErX5LzovB-26" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="580" y="780" as="sourcePoint" />
+            <mxPoint x="630" y="730" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="525" y="440" />
+              <mxPoint x="660" y="440" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-63" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jumpStyle=arc;jumpSize=9;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=24;" parent="w-YvjRMWvmcFSU0H_ef8-45" source="K3oOLh2pZVhGYxKfuLFw-23" target="K3oOLh2pZVhGYxKfuLFw-58" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-23" value="&lt;h1&gt;Visualisation of data&lt;br&gt;&lt;/h1&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="w-YvjRMWvmcFSU0H_ef8-45" vertex="1">
+          <mxGeometry x="1075" y="460" width="280" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-24" value="&lt;h1&gt;Spatial point plotting&lt;br&gt;&lt;/h1&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="w-YvjRMWvmcFSU0H_ef8-45" vertex="1">
+          <mxGeometry x="930" y="560" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-21" value="" style="endArrow=classic;html=1;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="w-YvjRMWvmcFSU0H_ef8-45" source="xw4S7eZGQW3ErX5LzovB-9" target="xw4S7eZGQW3ErX5LzovB-25" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="905" y="410" as="sourcePoint" />
+            <mxPoint x="689.8299999999999" y="550" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="875" y="500" />
+              <mxPoint x="263" y="500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-58" value="&lt;h1&gt;Sample density &lt;br&gt;&lt;/h1&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="w-YvjRMWvmcFSU0H_ef8-45" vertex="1">
+          <mxGeometry x="1260" y="560" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-59" value="" style="endArrow=classic;html=1;fontSize=24;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" parent="w-YvjRMWvmcFSU0H_ef8-45" source="xw4S7eZGQW3ErX5LzovB-7" target="K3oOLh2pZVhGYxKfuLFw-23" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="910" y="430" as="sourcePoint" />
+            <mxPoint x="960" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-60" value="" style="endArrow=classic;html=1;fontSize=24;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="w-YvjRMWvmcFSU0H_ef8-45" source="K3oOLh2pZVhGYxKfuLFw-23" target="K3oOLh2pZVhGYxKfuLFw-24" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="910" y="430" as="sourcePoint" />
+            <mxPoint x="960" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kHVZ-IwuB8bhGgUG1t6H-12" value="&lt;h1&gt;Species Pool&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Estimates of the unseen species across sites and for individual sites&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;R libraries: vegan (Td)&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="-380" y="2480" width="260" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="kHVZ-IwuB8bhGgUG1t6H-13" value="&lt;h1&gt;Occupancy modelling&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Bayesian inference of species presences from repeat visits &lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="3890" y="2655" width="405" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="kHVZ-IwuB8bhGgUG1t6H-15" value="&lt;h1&gt;Correlation of scores&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Correlations of ordination scores and environmental covariates&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;R libraries: stats, vegan&lt;/b&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="370" y="3390" width="340" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="kHVZ-IwuB8bhGgUG1t6H-22" value="&lt;div&gt;Community&lt;/div&gt;&lt;div&gt;Response&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=24;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="570" y="3260" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kHVZ-IwuB8bhGgUG1t6H-24" value="&lt;h1&gt;Permanova&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Multivariate permuational analysis of variance &lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;R libraries: Vegan&lt;/b&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="370" y="3790" width="340" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="kHVZ-IwuB8bhGgUG1t6H-25" value="&lt;h1&gt;Mantel test&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Correlations of matrices&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;R libraries: Vegan, ade4&lt;/b&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="370" y="3520" width="340" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="kHVZ-IwuB8bhGgUG1t6H-26" value="&lt;h1&gt;Null Model&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Generation of &lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;R libraries: Vegan&lt;/b&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="370" y="3920" width="340" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="kHVZ-IwuB8bhGgUG1t6H-27" value="&lt;h1&gt;Analysis of similarity&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Multivariate &lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;R libraries: Vegan&lt;/b&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="370" y="3650" width="340" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="kHVZ-IwuB8bhGgUG1t6H-31" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontSize=24;" parent="WIyWlLk6GJQsqaUBKTNV-1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1507" y="3660" as="sourcePoint" />
+            <mxPoint x="1507" y="3660" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kHVZ-IwuB8bhGgUG1t6H-32" value="&lt;h1&gt;Clustering&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Grouping of species and samples &lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;R libraries: Darkdiv&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="-770" y="3060" width="260" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="kHVZ-IwuB8bhGgUG1t6H-33" value="&lt;h1&gt;Clustering&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Grouping of species and samples by proximity. THere are a number of options that include herirachical, non-heirarchical, aglomerative, divisive. Some commonly used methods are.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;UPGMA (average linkage)&lt;/li&gt;&lt;li&gt;TwinsSpan&lt;/li&gt;&lt;li&gt;Diana&lt;/li&gt;&lt;li&gt;K-means&lt;/li&gt;&lt;li&gt;Fuzzy k-means&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;b&gt;R libraries: Vegan, stats, vegclust, recluster, phylosignal&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;None R: Juice, WinTwins&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="-770" y="3060" width="260" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="kHVZ-IwuB8bhGgUG1t6H-37" value="" style="endArrow=classic;html=1;fontSize=24;edgeStyle=orthogonalEdgeStyle;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" target="K3oOLh2pZVhGYxKfuLFw-51" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1510" y="3020" as="sourcePoint" />
+            <mxPoint x="1230" y="3060" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1510" y="3060" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kHVZ-IwuB8bhGgUG1t6H-38" value="&lt;div&gt;&lt;b&gt;&lt;font style=&quot;font-size: 48px&quot;&gt;Diversity&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;font style=&quot;font-size: 24px&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=24;" parent="kHVZ-IwuB8bhGgUG1t6H-37" vertex="1" connectable="0">
+          <mxGeometry x="-0.1293" y="1" relative="1" as="geometry">
+            <mxPoint x="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nuO9TFtqxaYfnLADoFkb-0" value="&lt;h1&gt;spthinner&lt;/h1&gt;&lt;p&gt;Randomly reduces the number of records in a data set to a minimum distance between them&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="3355" y="3730" width="190" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="nuO9TFtqxaYfnLADoFkb-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="nuO9TFtqxaYfnLADoFkb-1" target="nuO9TFtqxaYfnLADoFkb-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nuO9TFtqxaYfnLADoFkb-8" value="&lt;font style=&quot;font-size: 24px&quot;&gt;Yes&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="nuO9TFtqxaYfnLADoFkb-6" vertex="1" connectable="0">
+          <mxGeometry x="-0.1625" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nuO9TFtqxaYfnLADoFkb-1" value="Is there a time compnent?" style="rhombus;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="1400" y="3600" width="220" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="nuO9TFtqxaYfnLADoFkb-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="nuO9TFtqxaYfnLADoFkb-3" target="nuO9TFtqxaYfnLADoFkb-10" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2006" y="3700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nuO9TFtqxaYfnLADoFkb-9" value="&lt;font style=&quot;font-size: 24px&quot;&gt;No&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="nuO9TFtqxaYfnLADoFkb-7" vertex="1" connectable="0">
+          <mxGeometry x="-0.1625" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nuO9TFtqxaYfnLADoFkb-3" value="Is it of direct interest to the question?" style="rhombus;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="1720" y="3600" width="220" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="nuO9TFtqxaYfnLADoFkb-10" value="Is it likely to be a confounding factor" style="rhombus;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="2040" y="3600" width="220" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="nuO9TFtqxaYfnLADoFkb-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="nuO9TFtqxaYfnLADoFkb-13" target="nuO9TFtqxaYfnLADoFkb-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nuO9TFtqxaYfnLADoFkb-13" value="It is important to remember the assumptions, caveats and limitations of statisitical tools prior to using them. I" style="rounded=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="1420" y="3300" width="180" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="nuO9TFtqxaYfnLADoFkb-15" value="&lt;h1&gt;Linear regression &lt;br&gt;&lt;/h1&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="1654.67" y="3290" width="235.33" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="nuO9TFtqxaYfnLADoFkb-16" value="&lt;h1&gt;Mixed effects Models&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="1920" y="3290" width="250" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="jobuWl_KfaXL-yA0P-ZW-0" value="&lt;h1&gt;Bayesian modelling&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="1654.67" y="3440" width="235.33" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="jobuWl_KfaXL-yA0P-ZW-1" value="&lt;h1&gt;Permuational Statistics&lt;br&gt;&lt;/h1&gt;&lt;p&gt;A family of statistics that rearranges data &lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="1928" y="3440" width="282" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="jobuWl_KfaXL-yA0P-ZW-2" value="&lt;h1&gt;Maximum entropy modelling.&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="2190" y="3290" width="360" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="jobuWl_KfaXL-yA0P-ZW-6" value="&lt;h1&gt;Trait and abundance data: Fourth corner analyses&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Using models of species abundance/presence absence and measured traits to establish the relationship of traits to the environment &lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;R libraries: ade4&lt;/b&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="-30" y="3390" width="340" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="jobuWl_KfaXL-yA0P-ZW-7" value="&lt;h1&gt;Spatial point pattern analysis&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="3890" y="2510" width="410" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="jobuWl_KfaXL-yA0P-ZW-10" value="&lt;font style=&quot;font-size: 12px&quot;&gt;Have you adequately considered Bias?&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;fontSize=24;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="3305" y="2585" width="240" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="jobuWl_KfaXL-yA0P-ZW-13" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=24;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="3280" y="2790" width="490" height="870" as="geometry" />
+        </mxCell>
+        <mxCell id="jobuWl_KfaXL-yA0P-ZW-14" value="&lt;h1&gt;BRCindicators&lt;/h1&gt;&lt;p&gt;.&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;fontSize=24;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="2255" y="4298" width="450" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="jobuWl_KfaXL-yA0P-ZW-16" value="&lt;b&gt;Bias&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="3305" y="2820" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sg-I6Dr9140E_a6tFQ04-0" value="&lt;h1&gt;Remote Data sources&lt;br&gt;&lt;/h1&gt;&lt;p&gt;MODIS.&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="280" y="750.61" width="260" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="sg-I6Dr9140E_a6tFQ04-1" value="&lt;h1&gt;Static data sources&lt;br&gt;&lt;/h1&gt;&lt;div&gt;&lt;b&gt;Worldclim - &lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;div&gt;&lt;b&gt;Climond&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Skogstyrelsen&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;b&gt;Eu data&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="2.5" y="750" width="260" height="440" as="geometry" />
+        </mxCell>
+        <mxCell id="sg-I6Dr9140E_a6tFQ04-2" value="Bias in species disteibution modelling is a much discussed topic. All data sets are biased to some degree but continental scale data sets from aggregated sources are particualarly prone. It is worth considering the " style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="3300" y="2870" width="290" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
