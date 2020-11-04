@@ -7,7 +7,7 @@ output: html_document
 
 # Community matrices 
 
-These are examples of 
+These are examples of community matrices coming from vegtation
 
 ```{r setup, include=FALSE}
 library(finch)
