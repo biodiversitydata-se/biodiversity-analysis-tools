@@ -1,0 +1,49 @@
+---
+title: "Diversity Data"
+author: "Charlie Campbell"
+date: "04/11/2020"
+output: html_document
+---
+# Diversity 
+
+Biological diversity analyses typically use multivariate techniques to assess variation in data sets comprising sampling events and cases. A sampling event can be across time and space. In biodiversity analysis three cases are the most common:
+
+- Taxonomic diversity (species);
+- Functional diversity (biological form); and
+- Genetic diversity (allelic frequency, phylogeny etc).
+
+Variation in these three dimensions can be directly compared.
+
+# Types of analyses - Patitioning $\alpha$, $\beta$, $\gamma$ *etc.* diversity
+
+Two forms of diversity analyses are currently widely used; classic diversity measures (eg species richness, shannons diversity index *etc.*) and *numbers equivalents* representation of the underlying diversity distribution. This second form was first introduced in by Mark O. Hill (1973) and a number of resources are now available for computing both forms. See the forum piece *Forum: Partitioning diversity* in Ecology (2010) volume 91, Issue 7 for a fuller discussion on the use of *numbers equivalents*. 
+
+Both types of diversity partitioning are used for all types of analyses and we present resources which are available for both forms: 
+ - Resources for classic diversity measures
+ - Resources for *numbers equivalents*.
+
+
+# Data form
+Within the R environment both methods require data to be in the **wide format**. See [link to page explaining shift from long to wide].
+
+```{r echo=FALSE}
+library(kableExtra)
+
+df <- data.frame(class_1 = sample(1:100,10,replace = TRUE),
+                 class_2 = sample(1:100,10,replace = TRUE),
+                 class_3 = sample(1:100,10,replace = TRUE),
+                 class_4 = sample(1:100,10,replace = TRUE),
+                 class_5 = sample(1:100,10,replace = TRUE),
+                 class_6 = sample(1:100,10,replace = TRUE),
+                 class_7 = sample(1:100,10,replace = TRUE),
+                 class_8 = sample(1:100,10,replace = TRUE),
+                 class_9 = sample(1:100,10,replace = TRUE),
+                 class_10 = sample(1:100,10,replace = TRUE)
+                 )
+row.names(df) <- paste("Site",
+                       1:nrow(df),sep="_")
+kable(df, booktabs = TRUE, caption = "Example of wide format")%>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F)
+
+```
