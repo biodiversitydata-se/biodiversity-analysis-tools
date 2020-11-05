@@ -1,10 +1,10 @@
-<mxfile host="app.diagrams.net" modified="2020-11-05T13:24:39.706Z" agent="5.0 (Windows)" etag="2m-wdO9h6JHrvlJvKf4F" version="13.9.1" type="github">
+<mxfile host="app.diagrams.net" modified="2020-11-05T15:06:44.740Z" agent="5.0 (Windows)" etag="aWY7S3q8bVcFyvFpBkna" version="13.9.1" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="3320" dy="526" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="0" page="1" pageScale="1" pageWidth="2339" pageHeight="3300" math="0" shadow="0">
+    <mxGraphModel dx="5183" dy="1526" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="0" page="1" pageScale="1" pageWidth="2339" pageHeight="3300" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
-        <mxCell id="0EG8Ja6DzPZJZKJsx15a-2" value="" style="group;collapsible=1;" vertex="1" connectable="0" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="0EG8Ja6DzPZJZKJsx15a-2" value="" style="group;collapsible=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1" connectable="0">
           <mxGeometry x="970" y="720.86" width="1410" height="880.0000000000001" as="geometry">
             <mxRectangle x="970" y="720.86" width="50" height="40" as="alternateBounds" />
           </mxGeometry>
@@ -181,7 +181,7 @@
             <mxPoint x="-28" y="1" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="0EG8Ja6DzPZJZKJsx15a-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.007;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="aXcIpb9wPaynXJKiq8YG-51" target="i0vj7bkVoeIxhTv1__Wb-87">
+        <mxCell id="0EG8Ja6DzPZJZKJsx15a-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.007;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="aXcIpb9wPaynXJKiq8YG-51" target="i0vj7bkVoeIxhTv1__Wb-87" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="aXcIpb9wPaynXJKiq8YG-51" value="create data frame ID and merge" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;direction=south;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
@@ -262,7 +262,7 @@
         <mxCell id="i0vj7bkVoeIxhTv1__Wb-88" value="Are there unknown taxa? Can they be resolved to species?" style="rhombus;whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=none;strokeColor=#000000;fillColor=#ffffff;gradientColor=#ffffff;fontSize=12;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="1120" y="1030" width="155" height="140" as="geometry" />
         </mxCell>
-        <mxCell id="0EG8Ja6DzPZJZKJsx15a-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="i0vj7bkVoeIxhTv1__Wb-92" target="i0vj7bkVoeIxhTv1__Wb-87">
+        <mxCell id="0EG8Ja6DzPZJZKJsx15a-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="i0vj7bkVoeIxhTv1__Wb-92" target="i0vj7bkVoeIxhTv1__Wb-87" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1030" y="970" />
@@ -825,7 +825,7 @@
         <mxCell id="jobuWl_KfaXL-yA0P-ZW-16" value="&lt;b&gt;Bias&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="3305" y="2820" width="40" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="sg-I6Dr9140E_a6tFQ04-0" value="&lt;h1&gt;Remote Data sources&lt;br&gt;&lt;/h1&gt;&lt;p&gt;MODIS.&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+        <mxCell id="sg-I6Dr9140E_a6tFQ04-0" value="&lt;h1&gt;Remote Data sources&lt;br&gt;&lt;/h1&gt;&lt;p&gt;MODIS.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Rl libraries: MODIS&lt;/b&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="280" y="750.61" width="260" height="140" as="geometry" />
         </mxCell>
         <mxCell id="sg-I6Dr9140E_a6tFQ04-1" value="&lt;h1&gt;Static data sources&lt;br&gt;&lt;/h1&gt;&lt;div&gt;&lt;b&gt;Worldclim - &lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;div&gt;&lt;b&gt;Climond&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Skogstyrelsen&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;b&gt;Eu data&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
@@ -847,9 +847,9 @@
           <mxGeometry x="3780" y="3070" width="197" height="160" as="geometry" />
         </mxCell>
         <mxCell id="sg-I6Dr9140E_a6tFQ04-7" value="Are they a mix of sources?" style="rhombus;whiteSpace=wrap;html=1;align=center;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="3384" y="3260" width="197" height="160" as="geometry" />
+          <mxGeometry x="3384" y="3305" width="197" height="160" as="geometry" />
         </mxCell>
-        <mxCell id="YJ4sYuZ42ogb50EPZfvR-1" value="Container" style="swimlane;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+        <mxCell id="YJ4sYuZ42ogb50EPZfvR-1" value="Container" style="swimlane;collapsible=1;swimlaneLine=1;startSize=23;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="-860" y="25" width="770" height="400" as="geometry">
             <mxRectangle x="-620" y="3830" width="90" height="23" as="alternateBounds" />
           </mxGeometry>
