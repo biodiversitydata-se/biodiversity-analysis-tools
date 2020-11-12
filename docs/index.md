@@ -4,7 +4,7 @@ You can use the [editor on GitHub](https://github.com/biodiversitydata-se/biodiv
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-[test](https://github.com/biodiversitydata-se/biodiversity-analysis-tools/master/docs/Workflow Overview.html) 
+[test](https://github.com/biodiversitydata-se/biodiversity-analysis-tools/master/docs/Workflow_Overview.html) 
 
 ### Markdown
 
