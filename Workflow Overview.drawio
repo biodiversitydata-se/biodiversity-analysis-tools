@@ -1,9 +1,22 @@
-<mxfile host="app.diagrams.net" modified="2020-11-18T10:08:55.995Z" agent="5.0 (Windows)" etag="NJsJIuzgcPMgjpPMJ9ju" version="13.9.9" type="github">
+<mxfile host="app.diagrams.net" modified="2020-11-18T13:13:31.885Z" agent="5.0 (Windows)" etag="46T0Pc3TuJ4p396g69fU" version="13.9.9" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="4012" dy="898" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="0" page="1" pageScale="1" pageWidth="2339" pageHeight="3300" math="0" shadow="0">
+    <mxGraphModel dx="4370" dy="1090" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="0" page="1" pageScale="1" pageWidth="2339" pageHeight="3300" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="mfQDYrMZqN6Y804PRQHQ-71" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;fontSize=24;align=left;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="4060" y="2095" width="600" height="1445" as="geometry" />
+        </mxCell>
+        <mxCell id="mfQDYrMZqN6Y804PRQHQ-51" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=24;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="hmOcISKYs5yDdYKpSmGY-7" target="mfQDYrMZqN6Y804PRQHQ-54">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2530" y="3230" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1510" y="3060" />
+              <mxPoint x="2380" y="3060" />
+              <mxPoint x="2380" y="3288" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
         <mxCell id="mfQDYrMZqN6Y804PRQHQ-42" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;fontSize=24;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="3220" y="2630" width="710" height="910" as="geometry" />
         </mxCell>
@@ -388,13 +401,13 @@
           <mxGeometry x="-720" y="2530" width="260" height="140" as="geometry" />
         </mxCell>
         <mxCell id="xw4S7eZGQW3ErX5LzovB-30" value="&lt;h1&gt;Boosted regression trees (BRT)&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="3822.5" y="3225" width="410" height="100" as="geometry" />
+          <mxGeometry x="4192.5" y="2340" width="410" height="100" as="geometry" />
         </mxCell>
         <mxCell id="xw4S7eZGQW3ErX5LzovB-31" value="&lt;h1&gt;Maximm Entropy (MaxEnt)&lt;br&gt;&lt;/h1&gt;&lt;p&gt;&lt;b&gt;R library: Dismo&lt;br&gt;&lt;/b&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="3820" y="3345" width="410" height="100" as="geometry" />
+          <mxGeometry x="4190" y="2460" width="410" height="100" as="geometry" />
         </mxCell>
         <mxCell id="xw4S7eZGQW3ErX5LzovB-32" value="&lt;h1&gt;GLM / GAM&lt;br&gt;&lt;/h1&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="3822.5" y="3475" width="410" height="100" as="geometry" />
+          <mxGeometry x="4192.5" y="2590" width="410" height="100" as="geometry" />
         </mxCell>
         <mxCell id="xw4S7eZGQW3ErX5LzovB-41" value="" style="endArrow=classic;html=1;fontSize=24;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="hmOcISKYs5yDdYKpSmGY-7" target="nuO9TFtqxaYfnLADoFkb-13" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -417,7 +430,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="xw4S7eZGQW3ErX5LzovB-44" value="&lt;div&gt;&lt;b&gt;&lt;font style=&quot;font-size: 48px&quot;&gt;Distributional data&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=24;" parent="xw4S7eZGQW3ErX5LzovB-42" vertex="1" connectable="0">
+        <mxCell id="xw4S7eZGQW3ErX5LzovB-44" value="&lt;div&gt;&lt;span style=&quot;background-color: rgb(255 , 255 , 255)&quot;&gt;&lt;b&gt;&lt;font style=&quot;font-size: 48px&quot;&gt;Distributional data&lt;/font&gt;&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=24;" parent="xw4S7eZGQW3ErX5LzovB-42" vertex="1" connectable="0">
           <mxGeometry x="-0.0065" y="4" relative="1" as="geometry">
             <mxPoint x="-1" as="offset" />
           </mxGeometry>
@@ -505,20 +518,20 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="K3oOLh2pZVhGYxKfuLFw-37" value="&lt;h1&gt;Morans Eigenvector maps&lt;br&gt;&lt;/h1&gt;&lt;p&gt;These combine spatially explicit modelling of multivariate data&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;R libraries: adespatial&lt;/b&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+        <mxCell id="K3oOLh2pZVhGYxKfuLFw-37" value="&lt;h1&gt;Morans Eigenvector maps&lt;br&gt;&lt;/h1&gt;&lt;p&gt;These combine spatially explicit modelling of multivariate data&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;R libraries: adespatial, spmoran&lt;/b&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="964.5" y="4470" width="345.5" height="170" as="geometry" />
         </mxCell>
         <mxCell id="K3oOLh2pZVhGYxKfuLFw-39" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;strokeWidth=2;shape=mxgraph.arrows2.arrow;dy=0.6;dx=40;notch=0;fillColor=#ffffff;rotation=270;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="2760" y="650" width="160" height="70" as="geometry" />
         </mxCell>
         <mxCell id="K3oOLh2pZVhGYxKfuLFw-40" value="&lt;h1&gt;Variograms&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Spatially explicit models of variation in measured variables&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="2650" y="3990" width="390" height="180" as="geometry" />
+          <mxGeometry x="2645" y="4360" width="390" height="180" as="geometry" />
         </mxCell>
         <mxCell id="l_WFNnPwY0MCgCIW6E0b-39" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jumpStyle=arc;orthogonalLoop=1;jettySize=auto;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="K3oOLh2pZVhGYxKfuLFw-41" target="K3oOLh2pZVhGYxKfuLFw-40" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="K3oOLh2pZVhGYxKfuLFw-41" value="&lt;h1&gt;Spatial interpolation &lt;br&gt;&lt;/h1&gt;&lt;p&gt;Spatial interpolation takes a set of points with data attached to them and projects the likely values of that data over a space.&amp;nbsp; There are a number of methods:&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;R Libraries: gstat,&lt;/b&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="2650" y="3680" width="390" height="180" as="geometry" />
+          <mxGeometry x="2645" y="4050" width="390" height="180" as="geometry" />
         </mxCell>
         <mxCell id="K3oOLh2pZVhGYxKfuLFw-45" value="" style="group" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1" connectable="0">
           <mxGeometry x="3200" y="260" width="450" height="790" as="geometry" />
@@ -548,13 +561,25 @@
           <mxGeometry x="-410" y="3350" width="340" height="180" as="geometry" />
         </mxCell>
         <mxCell id="K3oOLh2pZVhGYxKfuLFw-57" value="&lt;h1&gt;eHOF Niche models&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Heirarchical fitting of species-environment logistic models using extended model set of Huisman-Olff-Fresco (HOF) for single gradients.&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;R libraries: eHOF&lt;/b&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="935" y="3615" width="340" height="120" as="geometry" />
+          <mxGeometry x="880" y="3540" width="220" height="190" as="geometry" />
         </mxCell>
         <mxCell id="K3oOLh2pZVhGYxKfuLFw-61" value="&lt;h1&gt;Rarefaction&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Estimates of the unseen species across sites and for individual sites&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;R libraries: vegan (Td)&lt;/b&gt;&lt;b&gt;,&lt;/b&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;b&gt; adiv &lt;/b&gt;&lt;/font&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;b&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;b&gt;(&lt;/b&gt;&lt;b&gt;&lt;b&gt;Td, Fd, Pd)&lt;/b&gt;&lt;/b&gt;&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="-380" y="2640" width="260" height="150" as="geometry" />
         </mxCell>
         <mxCell id="K3oOLh2pZVhGYxKfuLFw-62" value="&lt;h1&gt;Rank abundance &lt;br&gt;&lt;/h1&gt;&lt;p&gt;Estimates of the unseen species across sites and for individual sites&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;R libraries: vegan (Td)&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="-380" y="2320" width="260" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="mfQDYrMZqN6Y804PRQHQ-64" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=24;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="kHVZ-IwuB8bhGgUG1t6H-1" target="mfQDYrMZqN6Y804PRQHQ-61">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="830" y="1040" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="860" y="713" />
+              <mxPoint x="860" y="1120" />
+              <mxPoint x="930" y="1120" />
+              <mxPoint x="930" y="1790" />
+              <mxPoint x="590" y="1790" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="kHVZ-IwuB8bhGgUG1t6H-1" value="Genetic data used to create Phyolgenetic trees from samples or Data base eg Genbank" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="790" y="572.57" width="150" height="140" as="geometry" />
@@ -574,6 +599,16 @@
         <mxCell id="kHVZ-IwuB8bhGgUG1t6H-5" value="&lt;h1 style=&quot;font-size: 40px&quot;&gt;&lt;font style=&quot;font-size: 40px&quot;&gt;Environmental &lt;br&gt;&lt;/font&gt;&lt;/h1&gt;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;strokeColor=#000000;fillColor=#ffffff;gradientColor=#ffffff;fontSize=12;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="310" y="150" width="300" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="mfQDYrMZqN6Y804PRQHQ-63" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=24;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="kHVZ-IwuB8bhGgUG1t6H-10" target="mfQDYrMZqN6Y804PRQHQ-61">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="660" y="1120" />
+              <mxPoint x="930" y="1120" />
+              <mxPoint x="930" y="1790" />
+              <mxPoint x="590" y="1790" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
         <mxCell id="kHVZ-IwuB8bhGgUG1t6H-10" value="&lt;div&gt;Trait data from established data tables or created from&amp;nbsp; published trait data including databases such as TRY. &lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="585" y="572.57" width="150" height="140" as="geometry" />
         </mxCell>
@@ -581,7 +616,7 @@
           <mxGeometry x="-380" y="2480" width="260" height="140" as="geometry" />
         </mxCell>
         <mxCell id="kHVZ-IwuB8bhGgUG1t6H-13" value="&lt;h1&gt;Occupancy modelling&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Bayesian inference of species presences from repeat visits &lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="3822.5" y="3745" width="405" height="180" as="geometry" />
+          <mxGeometry x="4192.5" y="2860" width="405" height="180" as="geometry" />
         </mxCell>
         <mxCell id="kHVZ-IwuB8bhGgUG1t6H-15" value="&lt;h1&gt;Correlation of scores&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Correlations of ordination scores and environmental covariates&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;R libraries: stats, vegan&lt;/b&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="370" y="3390" width="340" height="120" as="geometry" />
@@ -624,12 +659,12 @@
             <mxPoint x="-1" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="nuO9TFtqxaYfnLADoFkb-0" value="&lt;h1&gt;spthinner&lt;/h1&gt;&lt;p&gt;Randomly reduces the number of records in a data set to a minimum distance between them&lt;/p&gt;&lt;p&gt;&lt;b&gt;R library: spThinner&lt;/b&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="3570" y="2883.16" width="310" height="120" as="geometry" />
+        <mxCell id="nuO9TFtqxaYfnLADoFkb-0" value="&lt;h1&gt;Spatially Thin&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Randomly reduces the number of records in a data set to a minimum distance between them&lt;/p&gt;&lt;p&gt;&lt;b&gt;R library: spThin&lt;/b&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="3570" y="2820" width="310" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="nuO9TFtqxaYfnLADoFkb-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="nuO9TFtqxaYfnLADoFkb-13" edge="1">
+        <mxCell id="nuO9TFtqxaYfnLADoFkb-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="nuO9TFtqxaYfnLADoFkb-13" target="mfQDYrMZqN6Y804PRQHQ-75" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1520" y="3600" as="targetPoint" />
+            <mxPoint x="1510" y="3670" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="nuO9TFtqxaYfnLADoFkb-13" value="It is important to remember the assumptions, caveats and limitations of statisitical tools prior to using them. " style="rounded=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
@@ -654,7 +689,7 @@
           <mxGeometry x="-37.5" y="3350" width="340" height="170" as="geometry" />
         </mxCell>
         <mxCell id="jobuWl_KfaXL-yA0P-ZW-7" value="&lt;h1&gt;Spatial point pattern analysis&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="3822.5" y="3615" width="410" height="100" as="geometry" />
+          <mxGeometry x="4192.5" y="2730" width="410" height="100" as="geometry" />
         </mxCell>
         <mxCell id="jobuWl_KfaXL-yA0P-ZW-14" value="&lt;h1&gt;&lt;font style=&quot;font-size: 24px&quot;&gt;BRCindicators&lt;/font&gt;&lt;/h1&gt;Assessment of " style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;fontSize=24;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="970" y="4160" width="340" height="250" as="geometry" />
@@ -672,7 +707,7 @@
           <mxGeometry x="-1.25" y="750" width="260" height="220" as="geometry" />
         </mxCell>
         <mxCell id="sg-I6Dr9140E_a6tFQ04-3" value="&lt;h1&gt;Joint species distribution modelling&lt;br&gt;&lt;/h1&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="3822.5" y="3955" width="405" height="160" as="geometry" />
+          <mxGeometry x="4192.5" y="3070" width="405" height="160" as="geometry" />
         </mxCell>
         <mxCell id="YJ4sYuZ42ogb50EPZfvR-1" value="Container" style="swimlane;collapsible=1;swimlaneLine=1;startSize=23;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="-860" y="25" width="770" height="400" as="geometry">
@@ -878,8 +913,8 @@
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1507.142857142857" y="1780" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="350" y="2240" />
-              <mxPoint x="820" y="2240" />
+              <mxPoint x="350" y="2260" />
+              <mxPoint x="820" y="2260" />
               <mxPoint x="820" y="2950" />
             </Array>
           </mxGeometry>
@@ -887,6 +922,18 @@
         <mxCell id="hmOcISKYs5yDdYKpSmGY-18" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=24;" parent="hmOcISKYs5yDdYKpSmGY-17" vertex="1" connectable="0">
           <mxGeometry x="-0.8744" y="-1" relative="1" as="geometry">
             <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mfQDYrMZqN6Y804PRQHQ-60" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=24;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="hmOcISKYs5yDdYKpSmGY-20" target="hmOcISKYs5yDdYKpSmGY-7">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="350.0000000000009" y="1860" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="657" y="1630" />
+              <mxPoint x="350" y="1630" />
+              <mxPoint x="350" y="2260" />
+              <mxPoint x="820" y="2260" />
+              <mxPoint x="820" y="2950" />
+            </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="hmOcISKYs5yDdYKpSmGY-20" value="Appropriately aggregate the data. " style="rounded=0;whiteSpace=wrap;html=1;fontSize=24;align=left;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
@@ -905,12 +952,11 @@
             <mxPoint x="-1" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="hmOcISKYs5yDdYKpSmGY-25" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=24;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="hmOcISKYs5yDdYKpSmGY-12" edge="1">
+        <mxCell id="hmOcISKYs5yDdYKpSmGY-25" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=24;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="hmOcISKYs5yDdYKpSmGY-12" edge="1" target="hmOcISKYs5yDdYKpSmGY-36">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="-90.00000000000091" y="1490" as="targetPoint" />
+            <mxPoint x="-110" y="1340" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="-90" y="1215" />
-              <mxPoint x="-90" y="1410" />
+              <mxPoint x="-162" y="1215" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -919,18 +965,17 @@
             <mxPoint x="-1" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="hmOcISKYs5yDdYKpSmGY-35" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=24;" parent="WIyWlLk6GJQsqaUBKTNV-1" target="hmOcISKYs5yDdYKpSmGY-7" edge="1">
+        <mxCell id="mfQDYrMZqN6Y804PRQHQ-65" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;fontSize=24;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="hmOcISKYs5yDdYKpSmGY-36" target="mfQDYrMZqN6Y804PRQHQ-61">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="-90.00000000000091" y="1610" as="sourcePoint" />
             <Array as="points">
-              <mxPoint x="-90" y="1930" />
-              <mxPoint x="820" y="1930" />
-              <mxPoint x="820" y="2950" />
+              <mxPoint x="-162" y="1670" />
+              <mxPoint x="350" y="1670" />
+              <mxPoint x="350" y="2260" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="hmOcISKYs5yDdYKpSmGY-36" value="&lt;h1&gt;Fine scale microclimates&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Microclimates may be calculated in R following Kearney et al (2019) (&lt;a href=&quot;https://doi.org/10.1111/2041-210X.13330&quot;&gt;https://doi.org/10.1111/2041-210X.13330&lt;/a&gt;). They&amp;nbsp; provide a procedure for realistically estimating conditions at fine scale (&amp;lt;30m) at any time post 1957. &lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;R libaries: N&lt;span class=&quot;smallCaps&quot;&gt;iche&lt;/span&gt;M&lt;span class=&quot;smallCaps&quot;&gt;ap&lt;/span&gt;R, &lt;span class=&quot;smallCaps&quot;&gt;microclima,&lt;/span&gt;&lt;span class=&quot;smallCaps&quot;&gt;elevatr and &lt;/span&gt;&lt;span class=&quot;smallCaps&quot;&gt;rncep&lt;/span&gt;&lt;/b&gt; &lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="-470" y="750.61" width="440" height="160" as="geometry" />
+          <mxGeometry x="-382.5" y="1460" width="440" height="160" as="geometry" />
         </mxCell>
         <mxCell id="hmOcISKYs5yDdYKpSmGY-40" value="" style="group" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1" connectable="0">
           <mxGeometry x="3230" y="2680" width="310" height="360" as="geometry" />
@@ -956,8 +1001,8 @@
         <mxCell id="hmOcISKYs5yDdYKpSmGY-45" value="&lt;h1 style=&quot;font-size: 14px&quot;&gt;Sampbias&lt;/h1&gt;&lt;p style=&quot;font-size: 12px&quot;&gt;Explicitly modelling biodiversity records with landscape accessibility covariates (eg roads) using bayesian statisitcs. &lt;br&gt;&lt;/p&gt;&lt;p style=&quot;font-size: 12px&quot;&gt;&lt;b&gt;R library: sampBias&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;font-size: 12px&quot;&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;font-size: 12px&quot;&gt;&lt;b&gt; &lt;/b&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;fontSize=14;align=left;" parent="hmOcISKYs5yDdYKpSmGY-42" vertex="1">
           <mxGeometry x="19.5" y="345" width="271" height="105" as="geometry" />
         </mxCell>
-        <mxCell id="hmOcISKYs5yDdYKpSmGY-46" value="&lt;h1&gt;Tuning Model settings&lt;br&gt;&lt;/h1&gt;&lt;div&gt;Changing model settings can affect the &lt;br&gt;&lt;/div&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="3570" y="2680" width="310" height="180" as="geometry" />
+        <mxCell id="hmOcISKYs5yDdYKpSmGY-46" value="&lt;h1&gt;Tuning Model settings&lt;br&gt;&lt;/h1&gt;&lt;div&gt;Changing model settings can affect the outputs in not insignificant ways. This is particularly true in machine learning algorithims such as MaxEnt&lt;/div&gt;&lt;div&gt;http://doi.wiley.com/10.1111/j.1600-0587.2013.07872.x&lt;br&gt;&lt;/div&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="3570" y="2680" width="310" height="110" as="geometry" />
         </mxCell>
         <mxCell id="mfQDYrMZqN6Y804PRQHQ-4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Ht7DqxaqcuQZNmXZxaJC-2" target="hmOcISKYs5yDdYKpSmGY-7">
           <mxGeometry relative="1" as="geometry">
@@ -982,11 +1027,40 @@
         <mxCell id="Ht7DqxaqcuQZNmXZxaJC-4" value="How uncertain are the coordinates" style="rhombus;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="1788" y="2088.16" width="230" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="mfQDYrMZqN6Y804PRQHQ-1" value="A number of differing " style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="1430" y="3630" width="180" height="150" as="geometry" />
+        <mxCell id="mfQDYrMZqN6Y804PRQHQ-56" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=24;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="mfQDYrMZqN6Y804PRQHQ-8" target="xw4S7eZGQW3ErX5LzovB-9">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1702" y="1880" />
+              <mxPoint x="1640" y="1880" />
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="mfQDYrMZqN6Y804PRQHQ-8" value="&lt;h1&gt;Data&lt;/h1&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="1564.5" y="1739.9999999999995" width="190" height="120" as="geometry" />
+        <mxCell id="mfQDYrMZqN6Y804PRQHQ-57" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=24;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="mfQDYrMZqN6Y804PRQHQ-8" target="xw4S7eZGQW3ErX5LzovB-7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1702" y="1880" />
+              <mxPoint x="2151" y="1880" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mfQDYrMZqN6Y804PRQHQ-58" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=24;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="mfQDYrMZqN6Y804PRQHQ-8" target="xw4S7eZGQW3ErX5LzovB-8">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1702" y="1880" />
+              <mxPoint x="1360" y="1880" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mfQDYrMZqN6Y804PRQHQ-59" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=24;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="mfQDYrMZqN6Y804PRQHQ-8" target="xw4S7eZGQW3ErX5LzovB-22">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1702" y="1880" />
+              <mxPoint x="1045" y="1880" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mfQDYrMZqN6Y804PRQHQ-8" value="&lt;h1&gt;Data&lt;/h1&gt;&lt;p&gt;This should be a data set for which is taxonomically accurate and with knowledge of spatial errors &lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="1564.5" y="1680" width="275.5" height="120" as="geometry" />
         </mxCell>
         <mxCell id="mfQDYrMZqN6Y804PRQHQ-12" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="mfQDYrMZqN6Y804PRQHQ-11" target="K3oOLh2pZVhGYxKfuLFw-10">
           <mxGeometry relative="1" as="geometry">
@@ -1068,6 +1142,27 @@
         </mxCell>
         <mxCell id="mfQDYrMZqN6Y804PRQHQ-43" value="&lt;b&gt;Methods to account for bias&lt;br&gt;&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="3240" y="2640" width="490" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="mfQDYrMZqN6Y804PRQHQ-74" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=24;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="mfQDYrMZqN6Y804PRQHQ-54" target="mfQDYrMZqN6Y804PRQHQ-68">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mfQDYrMZqN6Y804PRQHQ-54" value="&lt;h1&gt;Spatial plotting&amp;nbsp; of biodiversity data&lt;br&gt;&lt;/h1&gt;&lt;div&gt;Distribution of species presences and/or mapping of biodiversity values&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;R Libraries: Sf, Sp, Raster&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Non-R: QGIS, Esri ARCmap&lt;/b&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="2540" y="3195" width="490" height="185" as="geometry" />
+        </mxCell>
+        <mxCell id="mfQDYrMZqN6Y804PRQHQ-61" value="&lt;h1&gt;Biodiversity covarites&lt;br&gt;&lt;/h1&gt;&lt;div&gt;&lt;b&gt;Data in an approriate format for the type of analysis that is aimed for. This could be:&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;Enviornmental covariates&lt;/b&gt;&lt;/li&gt;&lt;li&gt;&lt;b&gt;Genetic data&lt;/b&gt;&lt;/li&gt;&lt;li&gt;&lt;b&gt;Trait data&lt;/b&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;b&gt;THis may also be in differnt data forms. eg:&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;Data frames &lt;br&gt;&lt;/b&gt;&lt;/li&gt;&lt;li&gt;&lt;b&gt;Gridded data including rasters&lt;br&gt;&lt;/b&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="460" y="2065" width="260" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="mfQDYrMZqN6Y804PRQHQ-66" value="&lt;h1&gt;&lt;font style=&quot;font-size: 24px&quot;&gt;Red data book analyses&lt;br&gt;&lt;/font&gt;&lt;/h1&gt;Assessment of " style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;fontSize=24;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="1380" y="4160" width="340" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="mfQDYrMZqN6Y804PRQHQ-68" value="&lt;div align=&quot;center&quot;&gt;Do you want to export spatial data out of R?&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;fontSize=24;align=center;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="2614" y="3460" width="342" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="mfQDYrMZqN6Y804PRQHQ-73" value="&lt;h1 style=&quot;font-size: 24px&quot;&gt;SDM/ENM Types&lt;br&gt;&lt;/h1&gt;&lt;p style=&quot;font-size: 24px&quot;&gt;Ecological niche models are a large subject area. Here we list some of the main types. It is possible to &lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=24;align=left;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="4090" y="2120" width="530" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="mfQDYrMZqN6Y804PRQHQ-75" value="Are you interested in time trends?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="1425" y="3670" width="170" height="160" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
