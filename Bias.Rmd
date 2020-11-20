@@ -8,7 +8,12 @@ bibliography: "./Bibliography/Bibliography.bib"
 ---
 All data sets are biased to some degree. For field data, the structure of data gathering should be robust enough to reduce the effects of bias to a minimum. Data downloaded from biodiversity databases are by their nature from different sources. Such sources may have differing causes of bias and it is important to consider if and how such biases will affect research.
 
-Sources of bias will be
+Sources of bias may include:
+
+- accesibility of the landscape;
+- human population density;
+- distribution of expertise;
+- "Charisma" of the taxa;
 
 There is a large body of literature on different methods which may be employed. One of the simplest is the selection of background points with the same spatial bias as taxa which are searched for in the manner [@phillips_sample_2009]. Such a layer can be produced using 2-dimensional kernel estimation through the **MASS** package
 ```{r, warning=FALSE, error=FALSE, message=FALSE}
@@ -28,5 +33,11 @@ Sample_bias_layer <- raster( MASS::kde2d(
  
  - **recorderMetrics** - Data derived metrics of recorder behaviour [@august_data-derived_2020]
  - **Sampbias** - Bayesian analysis to quantify the effects of accessibility on species occurrance sets [zizka_sampbias_2020]
- 
- # References
+
+Spatial sorting or disaggregating presence points can reduce the effects of bias:
+
+ - **ENMeval** - Provides methods for quickly spatially aggregating presence points for model building;
+ - **spThin** - Randomly thins the number of presences used for a model by an agreed distance. THis
+
+
+# References
