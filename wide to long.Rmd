@@ -1,0 +1,75 @@
+---
+title: "Wide to long"
+author: "Charlie Campbell"
+date: "12/11/2020"
+output: html_document
+---
+# Wide and long
+
+There are many different ways of arranging data, especially within the R environment. Two of the most frequently used are the **wide** and **long** formats. Here we show what the wide and long formats are and ways to move between the two.
+
+# Wide
+Wide format is where each row represents a data point and each column an attribute of that data point. In the example below each data point is a site, and each column is a species percentage cover.
+```{r message=FALSE, warning=FALSE, echo=FALSE}
+library(kableExtra)
+
+df_wide <- data.frame(Site = paste0("Site_",1:5),
+                 Species1 = sample(0:100,5,replace = TRUE),
+                 Species2 = sample(0:100,5,replace = TRUE),
+                 Species3 = sample(0:100,5,replace = TRUE),
+                 Species4 = sample(0:100,5,replace = TRUE),
+                 Species5 = sample(0:100,5,replace = TRUE))
+kable(df_wide, booktabs = TRUE, caption = "Example of wide format")%>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = T)
+```
+
+# Long
+Long format is where each row has a value of an attribute of the data point. Each row in the example below records what the value of a species is at a particular site.
+
+```{r message=FALSE, warning=FALSE, echo=FALSE}
+library(reshape2)
+df_long <- melt(df_wide,
+             variable.name = "Species",
+             value.name = "cover")
+kable(head(df_long),caption = "Example of long format")%>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = T)
+```
+
+There are a number of ways of moving between the two:
+
+## Wide to long
+```{r eval = FALSE, warning=FALSE, message=FALSE}
+
+library(reshape2)
+df_long <- melt(data = df_wide,
+             variable.name = "Species",
+             value.name = "cover")
+
+library(tidyr)
+
+df_long <- df_wide %>%
+  gather(key = Species,
+         value = cover,
+         Species1:Species5,  # vector of columns to gather
+         factor_key = FALSE)
+
+```
+
+## Long to Wide
+```{r eval = FALSE, warning=FALSE, message=FALSE}
+library(reshape2)
+
+df_wide <- dcast(data = df_long,
+                 Site ~ Species, 
+                 value.var = "cover")
+
+library(tidyr)
+
+df_wide <- df_long %>%
+  spread(key = Species,
+         value = cover,
+         fill = 0)
+```
+

@@ -1,0 +1,171 @@
+---
+title: "Cleaning data"
+author: "Charlie Campbell"
+date: "16/11/2020"
+bibliography: "./Bibliography/Bibliography.bib"
+output: html_document
+---
+# Cleaning data
+
+Biodiversity data repositories work hard to maintain the accuracy of their holdings. When multiple sources are involved several problems may arrise. Here we shall quickly outline what they are and possible solutions.
+
+## Resources
+There are a number of libraries, work flows and online resources for automating downloading and cleaning of data. THese include:
+
+  - The BDverse [https://bdverse.org/]. A group of libraries for cleaning biodiversity data
+  - Kurator [http://kurator.acis.ufl.edu/kurator-web/] 
+  - Wallace [https://wallaceecomod.github.io/]
+  
+
+## Taxonomies
+
+It is important to be aware of likely taxonomic anomalies prior to working within a region. Checklists are very important, especially if working over several regions / countries. Whilst there are many things that will automatically look for the validity of a name they do not check for the validity of that species occurrence. For example *Sphagnum auriculatum* Schimp.and *Sphagnum denticulatum* Bridel, 1826 are both valid names. *S. auriculatum* is the currently accepted species in Europe but in the British Isles, Ireland and the Netherlands *s. denticulatum* is the most recorded taxa. Both  are legitimate names but they are a synonymy. Both names have been used in Europe but in disitinct countries. The current European checklist [@hodgetts_annotated_2020] has *Sphagnum auriculatum* Schimp. as the accepted taxon occuring in Europe. Naive downloading would result in two taxa being present when infact it is two interepretations of the same taxon. Using data from across the European region without acknowledging this disagreement would impact the results of any research undertaken. For taxa which are known to be capable of dispersing great distances (eg birds) this becomes even more difficult especially when using community sourced data.
+
+```{r warning=FALSE,echo=FALSE,message=FALSE}
+library(data.table)
+library(sf)
+library(ggplot2)
+library(rnaturalearth)
+library(cowplot)
+library(dplyr)
+library(kableExtra)
+theme_set(theme_cowplot())
+library(rnaturalearthdata)
+library(rgbif)
+
+# Data for Sphagnum denticulatum doi: 10.15468/dl.rrp4p4
+# Data for Sphagnum auriculatum doi: 10.15468/dl.3yrtw7
+
+df <- lapply(list.files("./BDcleaner_Scripts/Example/Downloads/",
+                        full.names = TRUE,
+                        pattern = ".csv"),
+             function(q){
+               fread(q,encoding = "UTF-8")
+             })
+df <- do.call("rbind",df)
+EUR <- coastline110
+EUR <- st_as_sf(EUR)
+
+ggplot(data = EUR)+
+  geom_sf()+
+  xlim(-20,30)+
+  ylim(45,75)+
+  geom_point(data = df, aes(x = decimalLongitude,
+                                y= decimalLatitude,
+                                colour= species),
+             alpha = 0.5)+
+  theme(legend.position = "bottom",
+        axis.title = element_blank())+
+  scale_color_discrete(name = "Species")
+
+```
+
+
+Within Sweden there is an agreed taxonomy for all extant taxa accessible through [https://www.dyntaxa.se]. Checking of species lists can be done by directly copying species names into a dialogue box or uploading an excel spreadsheet in the correct format.
+
+
+## Location data 
+
+### Locality information
+
+Many records have locality information attached to them. Where there are no coordinates attached this information can be used to locate the record to within an area of where records most likely came from. There are functions for which geocoding can be done automatically within R. These are included in the libraries :
+
+- **ggmap** *requires google API key*
+- **tidygeocoder**
+
+Many localities may not be included in the gazetteers associated with these libraries but may be located using online or printed maps. This takes time but may be useful. Unique localities may be extracted, geocoded and then merged back with the data set
+```{r eval = FALSE}
+localities <- df %>%
+  filter(is.na(decimalLatitude))%>%
+  select(locality)%>%
+  distinct()
+
+write.csv(localities,"DataFrameOfLoacalities.csv",row.names = FALSE)
+
+#Add columns to each row of the exported localities with any of the localtions that may be found
+
+localities <- read.csv("DataFrameOfLoacalitiesGeodcoded.csv")
+
+recordsDataFrame <- merge(recordsDataFrame, locallities, by = "localities", all = TRUE)
+
+```
+This becomes especially important when extracting records across country boundaries as differing countries have differing numbers of georefereced data.
+```{r echo = FALSE}
+
+library(rgbif)
+
+library(countrycode)
+EU <- c('AL', 'AD', 'AM', 'AT', 'BY', 'BE', 'BA', 'BG', 'CH', 'CY', 'CZ', 'DE',
+        'DK', 'EE', 'ES', 'FO', 'FI', 'FR', 'GB', 'GE', 'GI', 'GR', 'HU', 'HR',
+        'IE', 'IS', 'IT', 'LI', 'LT', 'LU', 'LV', 'MC', 'MK', 'MT', 'NO', 'NL', 'PL',
+        'PT', 'RO', 'RU', 'SE', 'SI', 'SK', 'SM', 'TR', 'UA', 'VA')
+
+Nrecs <- data.frame(
+country=countrycode(EU,"iso2c","country.name.en"),
+TR = sapply(EU,function(q){occ_count(taxonKey = 35, country = q)}),
+Gr = sapply(EU,function(q){occ_count(taxonKey = 35, country = q, georeferenced = TRUE)}),
+Nc = sapply(EU,function(q){occ_count(taxonKey = 35, country = q, georeferenced = FALSE)})
+
+)
+Nrecs <- Nrecs %>%
+  mutate(GrP = round((Gr/TR)*100,2),
+         NcP = round((Nc/TR)*100,2))%>%
+  arrange(country)
+
+
+kable(Nrecs %>%
+  select(country,TR,GrP,NcP),
+  col.names = c("Country", "Total Records",  "% Records with coordinate","% Records without coordinates"),
+  caption = "The number and percentage of records of bryophyta per EU country with and without coordinates")%>%
+  scroll_box(height = "350px",width = "100%") %>%
+  kable_styling(bootstrap_options = c("striped", "hover"),
+                full_width = TRUE)
+```
+As can be seen from the above example for European Bryophyta (Hornworts, Liverworts and Mosses) the number of records with coordinates vastly varies between countries. For example of 959444 records in Sweden 88.24 % have coordinates in Switzerland of 117132 records only 2.29 % have coordinates.
+
+### Coordinate uncertainty
+In many cases there is now an abundance of biodiversity data with coordinates. As can be seen from a summary of the above *Sphagnum* data coordinate uncertainty can vary from less than 1 metre to multiple kilometers. 
+
+```{r echo=FALSE}
+dat <- rbind(as.data.frame(table(cut(df$coordinateUncertaintyInMeters,breaks = c(0,1,10,100,500,1000,5000,10000,50000,max(df$coordinateUncertaintyInMeters,na.rm = TRUE))))),
+                   data.frame(Var1 = "NA", Freq = sum(is.na(df$coordinateUncertaintyInMeters))))
+
+  dat$Var1<-c("<1 m",
+"1-10 m",
+"10-100 m",
+"100-500 m",
+"500-1000 m",
+"1000-5000 m",
+"5000-10000 m",
+"10000-50000 m",
+">50000 m",
+  "None")
+names(dat) <- c("Coordinate uncertainty", "Frequency")
+
+kable(t(dat))%>%
+  kable_styling() %>%
+  kable_styling(bootstrap_options = c("striped", "hover"),
+                full_width = TRUE)
+```
+
+In the above example it can be seen that two have uncertainties greater than 50 km and several thousand records that have no known error margin the location. It is important to consider what the error is and removing those records for which the uncertainty is too high. Where this point is will be dependent on the scale of the research. 
+
+Coordinates with NA as the uncertainty and those that fall below a particular threshold may be removed by:
+
+```{r eval=FALSE}
+df <- df %>%
+   filter(is.na(coordinateUncertaintyInMeters)==FALSE) %>%
+  filter(coordinateUncertaintyInMeters<50000)
+```
+
+### Coordinate errors
+
+Coordinate errors may occur for a variety of reasons. The stated accuracy of coordinates may alos be called in to doubt. The library **coordinatecleaner** is very useful for removing some of the most common errors. These include:
+
+- 0 latitude, 0 longitude
+- swapping of latitude and longitude
+- The location of the institution holding a preserved sample rather than the location of origin of that sample
+
+
+
+# References

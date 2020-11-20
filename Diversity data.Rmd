@@ -3,6 +3,7 @@ title: "Diversity Data"
 author: "Charlie Campbell"
 date: "04/11/2020"
 output: html_document
+bibliography: "./Bibliography/Bibliography.bib"  
 ---
 # Diversity 
 
@@ -10,41 +11,76 @@ Biological diversity analyses typically use multivariate techniques to assess va
 
 - Taxonomic diversity (species);
 - Functional diversity (biological form); and
-- Genetic diversity (allelic frequency, phylogeny etc).
+- Genetic diversity (allellic frequency, phylogeny etc).
 
-Variation in these three dimensions can be directly compared.
+Variation in these three dimensions can be directly compared both within and between these different dimensions of biological diversity. 
 
 # Types of analyses - Patitioning $\alpha$, $\beta$, $\gamma$ *etc.* diversity
 
-Two forms of diversity analyses are currently widely used; classic diversity measures (eg species richness, shannons diversity index *etc.*) and *numbers equivalents* representation of the underlying diversity distribution. This second form was first introduced in by Mark O. Hill (1973) and a number of resources are now available for computing both forms. See the forum piece *Forum: Partitioning diversity* in Ecology (2010) volume 91, Issue 7 for a fuller discussion on the use of *numbers equivalents*. 
+Two forms of diversity analyses are currently widely used; classic diversity measures (eg species richness, shannons diversity index *etc.*) and *numbers equivalents* representation of the underlying diversity distribution. This second form was first introduced in  Hill [-@hill_diversity_1973] and a number of resources are now available for computing both forms. See the forum piece *Forum: Partitioning diversity* in Ecology [-@ellison_partitioning_2010]  for a fuller discussion on the use of *numbers equivalents*. 
 
 Both types of diversity partitioning are used for all types of analyses and we present resources which are available for both forms: 
  - Resources for classic diversity measures
  - Resources for *numbers equivalents*.
 
-As example data we use the data set *Vegetation data from sheep grazing experiment at alpine site in Hol, Norway* CITATION
-
 # Data form
 Within the R environment both methods require data to be in the **wide format**. See [link to page explaining shift from long to wide].
 
-```{r echo=FALSE}
-library(kableExtra)
+## Classic diversity measures 
 
-df <- data.frame(class_1 = sample(1:100,10,replace = TRUE),
-                 class_2 = sample(1:100,10,replace = TRUE),
-                 class_3 = sample(1:100,10,replace = TRUE),
-                 class_4 = sample(1:100,10,replace = TRUE),
-                 class_5 = sample(1:100,10,replace = TRUE),
-                 class_6 = sample(1:100,10,replace = TRUE),
-                 class_7 = sample(1:100,10,replace = TRUE),
-                 class_8 = sample(1:100,10,replace = TRUE),
-                 class_9 = sample(1:100,10,replace = TRUE),
-                 class_10 = sample(1:100,10,replace = TRUE)
-                 )
-row.names(df) <- paste("Site",
-                       1:nrow(df),sep="_")
-kable(df, booktabs = TRUE, caption = "Example of wide format")%>%
-  kable_styling(latex_options = c("striped", "hold_position"),
-                full_width = F)
+People have used many different indices to measure diversity. These include:
 
-```
+### $\alpha$ diversity
+
+$\alpha$ diversity refers to the diversity at a single site. There are a number of different indices to caclculate the most common are:
+
+- Species richness;
+- Shannon/shannon weaver index;
+- Simpson;
+- Inverse Simpson; and
+- Gini Simpson
+
+The R libraries **vegan, adiv, abdiv** all provide methods to calculate these measures as well as a wealth of others. Within **abdiv** the funtion *alpha_diversity* lists the $\alpha$ diversity measures available within the package. Whilst not exhaustive it is a large list.
+
+There are also ways of estimating $\alpha$ diversity through rarefaction as well as modelling and visualising its different aspects in both **vegan** and **adiv**.
+
+### $\beta$ diversity and dissimilarities
+
+The $\beta$ diversity is a measure of the change in composition and/or abundance between sites. There is a long history of methods to measure this particular aspect of diversity. This has resulted in multiple indices and dissimilarities. Commonly used indices include:
+
+- Jaccard;
+- Sørrensen;
+- Bray-Curtis;
+- Hellinger distance,
+- Chord distance
+
+
+An extensive list of $\beta$ diversities are available through the function *betadiver* in the **vegan** package as well as *beta_diversity* in the **abdiv** package. 
+
+Methods for analysing $\beta$ diversity are included in the libraries **betapart, vegan, adiv and ade4**.
+
+### Additional related diversities
+
+Measures of dark diversity (those species that are absent from an ecosystem but which belong to its species pool, [@partel_dark_2011]) and $\zeta$ diversity (a measure of species pool overlap, [@hui_zeta_2014]) have been developed. These measures are instituted in the libraries:
+
+- **DarkDiv** dark diversity; and
+- **zetadiv** zeta diversity
+ 
+
+## Numbers equivalents
+
+Numbers equivalents account for the nested heirarchies in $\alpha$, $\beta$ and $\gamma$ diversity. A number of different libraries have now been developed:
+
+- Hill numbers: @hill_diversity_1973
+  - **adiv**
+  - **HillR** 
+  - **iNext**
+
+- Tsallis entropy: @marcon_decomposing_2015
+  - **adiv**
+  - **entropart**
+  
+ - Crossing point theory: @patil_diversity_1982
+    - **BioFTF**
+    
+# References

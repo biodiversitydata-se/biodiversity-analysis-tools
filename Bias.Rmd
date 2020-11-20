@@ -1,0 +1,32 @@
+---
+title: "Bias"
+author: "Charlie Campbell"
+date: "12/11/2020"
+output: html_document
+bibliography: "./Bibliography/Bibliography.bib"
+
+---
+All data sets are biased to some degree. For field data, the structure of data gathering should be robust enough to reduce the effects of bias to a minimum. Data downloaded from biodiversity databases are by their nature from different sources. Such sources may have differing causes of bias and it is important to consider if and how such biases will affect research.
+
+Sources of bias will be
+
+There is a large body of literature on different methods which may be employed. One of the simplest is the selection of background points with the same spatial bias as taxa which are searched for in the manner [@phillips_sample_2009]. Such a layer can be produced using 2-dimensional kernel estimation through the **MASS** package
+```{r, warning=FALSE, error=FALSE, message=FALSE}
+library(raster)
+library(BIRDS)
+library(MASS)
+data("bryophytaObs")
+
+Sample_bias_layer <- raster( MASS::kde2d(
+            x = bryophytaObs$decimalLongitude,
+            y = bryophytaObs$decimalLatitude,
+            h = c(100,200),
+            lims = c(10,20,55,60)))
+```
+ 
+ More complex methods of accounting for bias can be created by more explicitly modelling accessibility or the behavior of recorders themselves. There are resources for doing this, including:
+ 
+ - **recorderMetrics** - Data derived metrics of recorder behaviour [@august_data-derived_2020]
+ - **Sampbias** - Bayesian analysis to quantify the effects of accessibility on species occurrance sets [zizka_sampbias_2020]
+ 
+ # References
