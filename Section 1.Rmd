@@ -12,10 +12,47 @@ preserve_yaml: FALSE
 ## Questions
 Any question to be asked of biodiversity data should be put as simply and succinctly as possible. With the number of different subject areas and techniques used, analyses can quickly become complex.
 
+<<<<<<< HEAD
+=======
+## Taxonomies
+It is important to be aware of likely taxonomic anomalies prior to working within a region. Checklists are very important, especially if working over several regions / countries. Whilst there are many things that will automatically look for the validity of a name they do not check for the validity of that species occurrence. For example *Sphagnum auriculatum* and *S. denticulatum* are both valid names. *S. auriculatum* is the currently accepted species in Europe but in the British Isles, Ireland and the Netherlands *s. denticulatum* is the most recorded taxa. Using data from across the European region without acknowledging this disagreement would impact the results of any research undertaken. For taxa which are known to be capable of dispersing great distances (eg birds) this becomes even more difficult especially when using community sourced data.
+
+For Sweden there is an agreed taxonomy for species accesible through [https://www.dyntaxa.se/] and the R library **dyntaxa**.
+
+
+## Data Sources
+Depending on what questions are being asked there are many different resources available. We focus on biodiversity data 
+
+### Biodiversity record data
+There are a large number of available online resources. These include but are not limited to:
+
+- Artportalen [https://www.artportalen.se/] - Sweden's data portal for biodiversity data **this should perhaps be analysportalen**
+- Global Biodiversity Information Facility	[http://www.gbif.org/] - International organisation aggregating biodiversity data. Contains data from a mixture of sources; curated collections, community science data, ecological research projects etc. 
+- BioCASE	[https://www.biocase.org/] - 
+- eBird	[http://ebird.org/content/ebird/]
+- iNaturalist	http://www.inaturalist.org/
+- Berkeley ecoengine	[https://ecoengine.berkeley.edu/]
+- VertNet	[http://vertnet.org/]
+- iDigBio	[https://www.idigbio.org/]
+- OBIS	[http://www.iobis.org/]
+- ALA	[http://www.ala.org.au/]
+
+### Functional data
+Many 
+
+### Genetic data bases
+There 
+
+### Environemntal data
+
+>>>>>>> d3dd10e5b0004ae1f9dff002793e6377270b7156
 
 ### Biodiversity data
 
+<<<<<<< HEAD
 #### Taxonomic diversity
+=======
+>>>>>>> d3dd10e5b0004ae1f9dff002793e6377270b7156
 
 There are a large number of available online resources. These include but are not limited to (r libraries in **bold**:
 
