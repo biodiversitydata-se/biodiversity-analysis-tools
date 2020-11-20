@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-11-20T14:51:27.548Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" etag="kTXeG5-CBj5OZLyVzv9Q" version="13.10.0" type="github">
+<mxfile host="app.diagrams.net" modified="2020-11-20T14:54:03.239Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" etag="dIX4QIXpMIgQTPy_TeGe" version="13.10.0" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="6214" dy="5470" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="0" page="1" pageScale="1" pageWidth="2339" pageHeight="3300" math="0" shadow="0">
       <root>
@@ -17,43 +17,6 @@
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="3560" y="1950" as="sourcePoint" />
           </mxGeometry>
-        </mxCell>
-        <mxCell id="0EG8Ja6DzPZJZKJsx15a-2" value="" style="group;collapsible=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1" connectable="0">
-          <mxGeometry x="970" y="720.86" width="1410" height="880.0000000000001" as="geometry">
-            <mxRectangle x="970" y="720.86" width="50" height="40" as="alternateBounds" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="aXcIpb9wPaynXJKiq8YG-6" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="0EG8Ja6DzPZJZKJsx15a-2" vertex="1">
-          <mxGeometry width="1410" height="880" as="geometry" />
-        </mxCell>
-        <mxCell id="aXcIpb9wPaynXJKiq8YG-22" value="&lt;h1&gt;Data cleaning&lt;br&gt;&lt;/h1&gt;&lt;p&gt;There are a number of published workflows and R packages that aim to ease the process of downloading and cleaning data these include but are not limited to: &lt;br&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;The BDverse and associated packages&lt;br&gt;&lt;/li&gt;&lt;li&gt;Wallace&lt;/li&gt;&lt;li&gt;BDcleaner&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;The use of such workflows and outputs are context specific and are dependent on researchers personal choices. Many of these workflows overlap. In this workflow we present suggestions for things to consider in cleaning data.&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;br&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="0EG8Ja6DzPZJZKJsx15a-2" vertex="1">
-          <mxGeometry x="20" y="9.139999999999986" width="332" height="230" as="geometry" />
-        </mxCell>
-        <mxCell id="iHcdqhV0YViVewFqACI8-45" value="Are there records with missing data " style="rhombus;whiteSpace=wrap;html=1;fontSize=12;" parent="0EG8Ja6DzPZJZKJsx15a-2" vertex="1">
-          <mxGeometry x="27" y="679.14" width="325" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="iHcdqhV0YViVewFqACI8-173" value="&lt;div&gt;Is there relevant data in the labels?&lt;/div&gt;&lt;div&gt;Extraction of these data points may not be necessary depending on number and/or spatial spread. &lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;fontSize=12;" parent="0EG8Ja6DzPZJZKJsx15a-2" vertex="1">
-          <mxGeometry x="980" y="649.14" width="230" height="180" as="geometry" />
-        </mxCell>
-        <mxCell id="iHcdqhV0YViVewFqACI8-177" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jumpStyle=arc;orthogonalLoop=1;jettySize=auto;html=1;endArrow=blockThin;endFill=1;fontSize=12;" parent="0EG8Ja6DzPZJZKJsx15a-2" source="iHcdqhV0YViVewFqACI8-45" target="iHcdqhV0YViVewFqACI8-173" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="iHcdqhV0YViVewFqACI8-178" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" parent="iHcdqhV0YViVewFqACI8-177" vertex="1" connectable="0">
-          <mxGeometry x="-0.2734" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="w-YvjRMWvmcFSU0H_ef8-57" value="" style="group" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1" connectable="0">
-          <mxGeometry x="1370" y="1020" width="410" height="360" as="geometry" />
-        </mxCell>
-        <mxCell id="w-YvjRMWvmcFSU0H_ef8-54" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;fontSize=24;" parent="w-YvjRMWvmcFSU0H_ef8-57" vertex="1">
-          <mxGeometry width="409.99999999999994" height="360" as="geometry" />
-        </mxCell>
-        <mxCell id="w-YvjRMWvmcFSU0H_ef8-55" value="&lt;b&gt;Check coordinates:&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;" parent="w-YvjRMWvmcFSU0H_ef8-57" vertex="1">
-          <mxGeometry x="10.25" y="11.25" width="317.75" height="22.5" as="geometry" />
-        </mxCell>
-        <mxCell id="w-YvjRMWvmcFSU0H_ef8-56" value="&lt;font style=&quot;font-size: 12px&quot;&gt;There are a number of known issues with the accuracy of records data. These include but are not limited to:&lt;/font&gt;&lt;br&gt;&lt;ul style=&quot;font-size: 12px&quot;&gt;&lt;li&gt;Records outside the expected borders of the area of interest&lt;br&gt;&lt;/li&gt;&lt;li&gt;Records with unexpected coordinates eg latitude longitude = 0N, 0E&lt;/li&gt;&lt;li&gt;Records&lt;br&gt;&lt;/li&gt;&lt;li&gt;Records centred around known biodiversity institutions e.g. herbaria&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div style=&quot;font-size: 12px&quot;&gt;The R package &lt;b&gt;CoordinateCleaner &lt;/b&gt;flags records with accuracy issues. It has some flexibility and it is worthwhile considering sources of errors beyond the most easily used. For exaple it is possible to check against polygons of species known ranges provided suitable polgons.&lt;font style=&quot;font-size: 23px&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;" parent="w-YvjRMWvmcFSU0H_ef8-57" vertex="1">
-          <mxGeometry x="20.5" y="78.75" width="317.75" height="210.9375" as="geometry" />
         </mxCell>
         <mxCell id="i0vj7bkVoeIxhTv1__Wb-99" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="iHcdqhV0YViVewFqACI8-0" target="aXcIpb9wPaynXJKiq8YG-51" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -104,97 +67,6 @@
           <mxGeometry x="-0.2421" y="2" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
-        </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-105" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.005;entryY=0.495;entryDx=0;entryDy=0;fontSize=12;entryPerimeter=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="iHcdqhV0YViVewFqACI8-139" target="i0vj7bkVoeIxhTv1__Wb-87" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2213" y="750" />
-              <mxPoint x="1469" y="750" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="iHcdqhV0YViVewFqACI8-139" value="Extract and georeference" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=0;direction=south;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="2133" y="820" width="160" height="150" as="geometry" />
-        </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-104" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="iHcdqhV0YViVewFqACI8-140" target="i0vj7bkVoeIxhTv1__Wb-87" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1852" y="1050.07" as="sourcePoint" />
-            <Array as="points">
-              <mxPoint x="1903" y="750" />
-              <mxPoint x="1468" y="750" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="iHcdqhV0YViVewFqACI8-140" value="Extract with script" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=12;rotation=0;direction=south;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="1828" y="1082.5" width="150" height="150" as="geometry" />
-        </mxCell>
-        <mxCell id="aXcIpb9wPaynXJKiq8YG-0" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="iHcdqhV0YViVewFqACI8-173" target="iHcdqhV0YViVewFqACI8-179" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1880" y="1580" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="2065" y="1565" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="aXcIpb9wPaynXJKiq8YG-48" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="aXcIpb9wPaynXJKiq8YG-0" vertex="1" connectable="0">
-          <mxGeometry x="0.2597" y="-5" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="w-YvjRMWvmcFSU0H_ef8-48" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;startArrow=none;startFill=0;endArrow=none;endFill=0;fontSize=24;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="iHcdqhV0YViVewFqACI8-173" target="iHcdqhV0YViVewFqACI8-140" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2065" y="1290" />
-              <mxPoint x="1903" y="1290" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="w-YvjRMWvmcFSU0H_ef8-49" value="&lt;font style=&quot;font-size: 12px&quot;&gt;Species&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=24;" parent="w-YvjRMWvmcFSU0H_ef8-48" vertex="1" connectable="0">
-          <mxGeometry x="-0.1466" y="-1" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="aXcIpb9wPaynXJKiq8YG-33" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="aXcIpb9wPaynXJKiq8YG-29" target="iHcdqhV0YViVewFqACI8-139" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2213" y="1010" />
-              <mxPoint x="2213" y="1010" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="PL2IbDTsPNTnv49MF6vK-0" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="aXcIpb9wPaynXJKiq8YG-33" vertex="1" connectable="0">
-          <mxGeometry x="-0.365" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="aXcIpb9wPaynXJKiq8YG-34" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="aXcIpb9wPaynXJKiq8YG-29" target="iHcdqhV0YViVewFqACI8-140" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="aXcIpb9wPaynXJKiq8YG-35" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="aXcIpb9wPaynXJKiq8YG-34" vertex="1" connectable="0">
-          <mxGeometry x="-0.2376" y="-1" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="aXcIpb9wPaynXJKiq8YG-29" value="Coordinates?" style="rhombus;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="2138" y="1082.5" width="150" height="150" as="geometry" />
-        </mxCell>
-        <mxCell id="aXcIpb9wPaynXJKiq8YG-30" value="" style="endArrow=classic;html=1;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="iHcdqhV0YViVewFqACI8-173" target="aXcIpb9wPaynXJKiq8YG-29" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="2388" y="1652.5" as="sourcePoint" />
-            <mxPoint x="2438" y="1602.5" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="2065" y="1290" />
-              <mxPoint x="2213" y="1290" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="aXcIpb9wPaynXJKiq8YG-31" value="&lt;font style=&quot;font-size: 12px&quot;&gt;Location&lt;br&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="aXcIpb9wPaynXJKiq8YG-30" vertex="1" connectable="0">
-          <mxGeometry x="0.176" y="4" relative="1" as="geometry">
-            <mxPoint x="-28" y="1" as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="0EG8Ja6DzPZJZKJsx15a-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.007;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="aXcIpb9wPaynXJKiq8YG-51" target="i0vj7bkVoeIxhTv1__Wb-87" edge="1">
-          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="aXcIpb9wPaynXJKiq8YG-51" value="create data frame ID and merge" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;direction=south;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="1412" y="650.0699999999999" width="112.5" height="62.5" as="geometry" />
@@ -263,46 +135,6 @@
             <mxPoint x="1790" y="110" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-87" value="Taxonomise with agreed list or taxise or similar" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rounded=0;labelBackgroundColor=none;strokeColor=#000000;fillColor=#ffffff;gradientColor=#ffffff;fontSize=12;direction=south;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="1358.25" y="929.3999999999999" width="220" height="81.21" as="geometry" />
-        </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-94" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="i0vj7bkVoeIxhTv1__Wb-88" target="i0vj7bkVoeIxhTv1__Wb-92" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-95" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" parent="i0vj7bkVoeIxhTv1__Wb-94" vertex="1" connectable="0">
-          <mxGeometry x="0.1448" y="2" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-109" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="i0vj7bkVoeIxhTv1__Wb-88" target="i0vj7bkVoeIxhTv1__Wb-106" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-88" value="Are there unknown taxa? Can they be resolved to species?" style="rhombus;whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=none;strokeColor=#000000;fillColor=#ffffff;gradientColor=#ffffff;fontSize=12;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="1120" y="1030" width="155" height="140" as="geometry" />
-        </mxCell>
-        <mxCell id="0EG8Ja6DzPZJZKJsx15a-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="i0vj7bkVoeIxhTv1__Wb-92" target="i0vj7bkVoeIxhTv1__Wb-87" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1030" y="970" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-92" value="Update taxonomy" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rounded=0;labelBackgroundColor=none;strokeColor=#000000;fillColor=#ffffff;gradientColor=#ffffff;fontSize=12;direction=south;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="990" y="1060" width="80" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="w-YvjRMWvmcFSU0H_ef8-53" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;startFill=0;endArrow=classic;endFill=1;fontSize=24;entryX=0;entryY=0;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="i0vj7bkVoeIxhTv1__Wb-106" target="w-YvjRMWvmcFSU0H_ef8-54" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1360" y="1040" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="1197" y="1270" />
-              <mxPoint x="1301" y="1270" />
-              <mxPoint x="1301" y="1020" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-106" value="&lt;div&gt;Quantify accuracy and &quot;trustworthiness&quot; of data with coordinates.&lt;/div&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rounded=0;labelBackgroundColor=none;strokeColor=#000000;fillColor=#ffffff;gradientColor=#ffffff;fontSize=12;direction=south;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="1117.5" y="1220" width="160" height="110" as="geometry" />
-        </mxCell>
         <mxCell id="w-YvjRMWvmcFSU0H_ef8-7" value="" style="endArrow=classic;html=1;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="w-YvjRMWvmcFSU0H_ef8-9" target="i0vj7bkVoeIxhTv1__Wb-45" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="360" y="90" as="sourcePoint" />
@@ -325,16 +157,6 @@
               <mxPoint x="1804" y="1710" />
               <mxPoint x="2440" y="1710" />
               <mxPoint x="2440" y="1101" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="iHcdqhV0YViVewFqACI8-179" value="Label missingness" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="1720.0019512195122" y="1540.0027638190954" width="167.17073170731703" height="50.85427135678392" as="geometry" />
-        </mxCell>
-        <mxCell id="w-YvjRMWvmcFSU0H_ef8-60" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;startFill=0;endArrow=classic;endFill=1;fontSize=24;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="w-YvjRMWvmcFSU0H_ef8-54" target="iHcdqhV0YViVewFqACI8-45" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1163" y="1350" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -501,14 +323,6 @@
         </mxCell>
         <mxCell id="sg-I6Dr9140E_a6tFQ04-1" value="&lt;h1&gt;Static data sources&lt;br&gt;&lt;/h1&gt;&lt;div&gt;&lt;b&gt;Worldclim - &lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;div&gt;&lt;b&gt;Climond&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Skogstyrelsen&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;b&gt;Eu data&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="-1.25" y="750" width="260" height="220" as="geometry" />
-        </mxCell>
-        <mxCell id="YJ4sYuZ42ogb50EPZfvR-1" value="Container" style="swimlane;collapsible=1;swimlaneLine=1;startSize=23;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="-860" y="25" width="770" height="400" as="geometry">
-            <mxRectangle x="-620" y="3830" width="90" height="23" as="alternateBounds" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="YJ4sYuZ42ogb50EPZfvR-2" value="" style="shape=orEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="YJ4sYuZ42ogb50EPZfvR-1" vertex="1">
-          <mxGeometry x="240" y="100" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="hmOcISKYs5yDdYKpSmGY-14" value="" style="group" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1" connectable="0">
           <mxGeometry x="180" y="1090" width="340" height="250" as="geometry" />
@@ -1213,6 +1027,187 @@
         </mxCell>
         <mxCell id="i0vj7bkVoeIxhTv1__Wb-59" value="&lt;div&gt;&lt;b&gt;&lt;font style=&quot;font-size: 20px&quot;&gt;Data Completeness, Missingness&lt;br&gt;&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;font style=&quot;font-size: 20px&quot;&gt;&amp;amp; &lt;br&gt;&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;font style=&quot;font-size: 20px&quot;&gt;Sampling&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;font style=&quot;font-size: 20px&quot;&gt;Effort&lt;br&gt;&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;labelBackgroundColor=none;strokeColor=#b85450;fillColor=#f8cecc;fontSize=12;" parent="Vn1AuMzDJVdrEZINoW1q-14" vertex="1">
           <mxGeometry x="1370" y="-60" width="153.5" height="153.5" as="geometry" />
+        </mxCell>
+        <mxCell id="Vn1AuMzDJVdrEZINoW1q-16" value="" style="group" vertex="1" connectable="0" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="970" y="720.86" width="1410" height="880.0000000000001" as="geometry" />
+        </mxCell>
+        <mxCell id="0EG8Ja6DzPZJZKJsx15a-2" value="" style="group;collapsible=1;" parent="Vn1AuMzDJVdrEZINoW1q-16" vertex="1" connectable="0">
+          <mxGeometry width="1410" height="880.0000000000001" as="geometry">
+            <mxRectangle x="970" y="720.86" width="50" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aXcIpb9wPaynXJKiq8YG-6" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="0EG8Ja6DzPZJZKJsx15a-2" vertex="1">
+          <mxGeometry width="1410" height="880" as="geometry" />
+        </mxCell>
+        <mxCell id="aXcIpb9wPaynXJKiq8YG-22" value="&lt;h1&gt;Data cleaning&lt;br&gt;&lt;/h1&gt;&lt;p&gt;There are a number of published workflows and R packages that aim to ease the process of downloading and cleaning data these include but are not limited to: &lt;br&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;The BDverse and associated packages&lt;br&gt;&lt;/li&gt;&lt;li&gt;Wallace&lt;/li&gt;&lt;li&gt;BDcleaner&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;The use of such workflows and outputs are context specific and are dependent on researchers personal choices. Many of these workflows overlap. In this workflow we present suggestions for things to consider in cleaning data.&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;br&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="0EG8Ja6DzPZJZKJsx15a-2" vertex="1">
+          <mxGeometry x="20" y="9.139999999999986" width="332" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="iHcdqhV0YViVewFqACI8-45" value="Are there records with missing data " style="rhombus;whiteSpace=wrap;html=1;fontSize=12;" parent="0EG8Ja6DzPZJZKJsx15a-2" vertex="1">
+          <mxGeometry x="27" y="679.14" width="325" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="iHcdqhV0YViVewFqACI8-173" value="&lt;div&gt;Is there relevant data in the labels?&lt;/div&gt;&lt;div&gt;Extraction of these data points may not be necessary depending on number and/or spatial spread. &lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;fontSize=12;" parent="0EG8Ja6DzPZJZKJsx15a-2" vertex="1">
+          <mxGeometry x="980" y="649.14" width="230" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="iHcdqhV0YViVewFqACI8-177" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jumpStyle=arc;orthogonalLoop=1;jettySize=auto;html=1;endArrow=blockThin;endFill=1;fontSize=12;" parent="0EG8Ja6DzPZJZKJsx15a-2" source="iHcdqhV0YViVewFqACI8-45" target="iHcdqhV0YViVewFqACI8-173" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iHcdqhV0YViVewFqACI8-178" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" parent="iHcdqhV0YViVewFqACI8-177" vertex="1" connectable="0">
+          <mxGeometry x="-0.2734" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="w-YvjRMWvmcFSU0H_ef8-57" value="" style="group" parent="Vn1AuMzDJVdrEZINoW1q-16" vertex="1" connectable="0">
+          <mxGeometry x="400" y="299.14" width="410" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="w-YvjRMWvmcFSU0H_ef8-54" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;fontSize=24;" parent="w-YvjRMWvmcFSU0H_ef8-57" vertex="1">
+          <mxGeometry width="409.99999999999994" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="w-YvjRMWvmcFSU0H_ef8-55" value="&lt;b&gt;Check coordinates:&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;" parent="w-YvjRMWvmcFSU0H_ef8-57" vertex="1">
+          <mxGeometry x="10.25" y="11.25" width="317.75" height="22.5" as="geometry" />
+        </mxCell>
+        <mxCell id="w-YvjRMWvmcFSU0H_ef8-56" value="&lt;font style=&quot;font-size: 12px&quot;&gt;There are a number of known issues with the accuracy of records data. These include but are not limited to:&lt;/font&gt;&lt;br&gt;&lt;ul style=&quot;font-size: 12px&quot;&gt;&lt;li&gt;Records outside the expected borders of the area of interest&lt;br&gt;&lt;/li&gt;&lt;li&gt;Records with unexpected coordinates eg latitude longitude = 0N, 0E&lt;/li&gt;&lt;li&gt;Records&lt;br&gt;&lt;/li&gt;&lt;li&gt;Records centred around known biodiversity institutions e.g. herbaria&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div style=&quot;font-size: 12px&quot;&gt;The R package &lt;b&gt;CoordinateCleaner &lt;/b&gt;flags records with accuracy issues. It has some flexibility and it is worthwhile considering sources of errors beyond the most easily used. For exaple it is possible to check against polygons of species known ranges provided suitable polgons.&lt;font style=&quot;font-size: 23px&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;" parent="w-YvjRMWvmcFSU0H_ef8-57" vertex="1">
+          <mxGeometry x="20.5" y="78.75" width="317.75" height="210.9375" as="geometry" />
+        </mxCell>
+        <mxCell id="iHcdqhV0YViVewFqACI8-139" value="Extract and georeference" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rotation=0;direction=south;" parent="Vn1AuMzDJVdrEZINoW1q-16" vertex="1">
+          <mxGeometry x="1163" y="99.13999999999999" width="160" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="iHcdqhV0YViVewFqACI8-140" value="Extract with script" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=12;rotation=0;direction=south;" parent="Vn1AuMzDJVdrEZINoW1q-16" vertex="1">
+          <mxGeometry x="858" y="361.64" width="150" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="aXcIpb9wPaynXJKiq8YG-0" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="Vn1AuMzDJVdrEZINoW1q-16" source="iHcdqhV0YViVewFqACI8-173" target="iHcdqhV0YViVewFqACI8-179" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="910" y="859.14" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1095" y="844.14" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aXcIpb9wPaynXJKiq8YG-48" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="aXcIpb9wPaynXJKiq8YG-0" vertex="1" connectable="0">
+          <mxGeometry x="0.2597" y="-5" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="w-YvjRMWvmcFSU0H_ef8-48" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;startArrow=none;startFill=0;endArrow=none;endFill=0;fontSize=24;" parent="Vn1AuMzDJVdrEZINoW1q-16" source="iHcdqhV0YViVewFqACI8-173" target="iHcdqhV0YViVewFqACI8-140" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1095" y="569.14" />
+              <mxPoint x="933" y="569.14" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="w-YvjRMWvmcFSU0H_ef8-49" value="&lt;font style=&quot;font-size: 12px&quot;&gt;Species&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=24;" parent="w-YvjRMWvmcFSU0H_ef8-48" vertex="1" connectable="0">
+          <mxGeometry x="-0.1466" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aXcIpb9wPaynXJKiq8YG-33" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="Vn1AuMzDJVdrEZINoW1q-16" source="aXcIpb9wPaynXJKiq8YG-29" target="iHcdqhV0YViVewFqACI8-139" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1243" y="289.14" />
+              <mxPoint x="1243" y="289.14" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PL2IbDTsPNTnv49MF6vK-0" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="aXcIpb9wPaynXJKiq8YG-33" vertex="1" connectable="0">
+          <mxGeometry x="-0.365" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aXcIpb9wPaynXJKiq8YG-34" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="Vn1AuMzDJVdrEZINoW1q-16" source="aXcIpb9wPaynXJKiq8YG-29" target="iHcdqhV0YViVewFqACI8-140" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="aXcIpb9wPaynXJKiq8YG-35" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="aXcIpb9wPaynXJKiq8YG-34" vertex="1" connectable="0">
+          <mxGeometry x="-0.2376" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aXcIpb9wPaynXJKiq8YG-29" value="Coordinates?" style="rhombus;whiteSpace=wrap;html=1;" parent="Vn1AuMzDJVdrEZINoW1q-16" vertex="1">
+          <mxGeometry x="1168" y="361.64" width="150" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="aXcIpb9wPaynXJKiq8YG-30" value="" style="endArrow=classic;html=1;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="Vn1AuMzDJVdrEZINoW1q-16" source="iHcdqhV0YViVewFqACI8-173" target="aXcIpb9wPaynXJKiq8YG-29" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1418" y="931.64" as="sourcePoint" />
+            <mxPoint x="1468" y="881.64" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1095" y="569.14" />
+              <mxPoint x="1243" y="569.14" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aXcIpb9wPaynXJKiq8YG-31" value="&lt;font style=&quot;font-size: 12px&quot;&gt;Location&lt;br&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="aXcIpb9wPaynXJKiq8YG-30" vertex="1" connectable="0">
+          <mxGeometry x="0.176" y="4" relative="1" as="geometry">
+            <mxPoint x="-28" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-87" value="Taxonomise with agreed list or taxise or similar" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rounded=0;labelBackgroundColor=none;strokeColor=#000000;fillColor=#ffffff;gradientColor=#ffffff;fontSize=12;direction=south;" parent="Vn1AuMzDJVdrEZINoW1q-16" vertex="1">
+          <mxGeometry x="388.25" y="208.53999999999985" width="220" height="81.21" as="geometry" />
+        </mxCell>
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-105" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.005;entryY=0.495;entryDx=0;entryDy=0;fontSize=12;entryPerimeter=0;" parent="Vn1AuMzDJVdrEZINoW1q-16" source="iHcdqhV0YViVewFqACI8-139" target="i0vj7bkVoeIxhTv1__Wb-87" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1243" y="29.139999999999986" />
+              <mxPoint x="499" y="29.139999999999986" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-104" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="Vn1AuMzDJVdrEZINoW1q-16" source="iHcdqhV0YViVewFqACI8-140" target="i0vj7bkVoeIxhTv1__Wb-87" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="882" y="329.2099999999999" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="933" y="29.139999999999986" />
+              <mxPoint x="498" y="29.139999999999986" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-88" value="Are there unknown taxa? Can they be resolved to species?" style="rhombus;whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=none;strokeColor=#000000;fillColor=#ffffff;gradientColor=#ffffff;fontSize=12;" parent="Vn1AuMzDJVdrEZINoW1q-16" vertex="1">
+          <mxGeometry x="150" y="309.14" width="155" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="0EG8Ja6DzPZJZKJsx15a-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="Vn1AuMzDJVdrEZINoW1q-16" source="i0vj7bkVoeIxhTv1__Wb-92" target="i0vj7bkVoeIxhTv1__Wb-87" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="60" y="249.14" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-92" value="Update taxonomy" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rounded=0;labelBackgroundColor=none;strokeColor=#000000;fillColor=#ffffff;gradientColor=#ffffff;fontSize=12;direction=south;" parent="Vn1AuMzDJVdrEZINoW1q-16" vertex="1">
+          <mxGeometry x="20" y="339.14" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-94" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;" parent="Vn1AuMzDJVdrEZINoW1q-16" source="i0vj7bkVoeIxhTv1__Wb-88" target="i0vj7bkVoeIxhTv1__Wb-92" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-95" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" parent="i0vj7bkVoeIxhTv1__Wb-94" vertex="1" connectable="0">
+          <mxGeometry x="0.1448" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="w-YvjRMWvmcFSU0H_ef8-53" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;startFill=0;endArrow=classic;endFill=1;fontSize=24;entryX=0;entryY=0;entryDx=0;entryDy=0;" parent="Vn1AuMzDJVdrEZINoW1q-16" source="i0vj7bkVoeIxhTv1__Wb-106" target="w-YvjRMWvmcFSU0H_ef8-54" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="390" y="319.14" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="227" y="549.14" />
+              <mxPoint x="331" y="549.14" />
+              <mxPoint x="331" y="299.14" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-106" value="&lt;div&gt;Quantify accuracy and &quot;trustworthiness&quot; of data with coordinates.&lt;/div&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rounded=0;labelBackgroundColor=none;strokeColor=#000000;fillColor=#ffffff;gradientColor=#ffffff;fontSize=12;direction=south;" parent="Vn1AuMzDJVdrEZINoW1q-16" vertex="1">
+          <mxGeometry x="147.5" y="499.14" width="160" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-109" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="Vn1AuMzDJVdrEZINoW1q-16" source="i0vj7bkVoeIxhTv1__Wb-88" target="i0vj7bkVoeIxhTv1__Wb-106" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iHcdqhV0YViVewFqACI8-179" value="Label missingness" style="ellipse;whiteSpace=wrap;html=1;fontSize=12;" parent="Vn1AuMzDJVdrEZINoW1q-16" vertex="1">
+          <mxGeometry x="750.0019512195122" y="819.1427638190954" width="167.17073170731703" height="50.85427135678392" as="geometry" />
+        </mxCell>
+        <mxCell id="w-YvjRMWvmcFSU0H_ef8-60" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;startFill=0;endArrow=classic;endFill=1;fontSize=24;" parent="Vn1AuMzDJVdrEZINoW1q-16" source="w-YvjRMWvmcFSU0H_ef8-54" target="iHcdqhV0YViVewFqACI8-45" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="193" y="629.14" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0EG8Ja6DzPZJZKJsx15a-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.007;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="aXcIpb9wPaynXJKiq8YG-51" target="i0vj7bkVoeIxhTv1__Wb-87" edge="1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
