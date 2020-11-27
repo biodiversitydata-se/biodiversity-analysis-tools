@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-11-27T08:10:02.590Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" etag="iqB8In8BZ0Y-a4vDvcar" version="13.10.4" type="github">
+<mxfile host="app.diagrams.net" modified="2020-11-27T08:11:23.910Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" etag="LJucMqA2UQI7DVjY4Xc_" version="13.10.4" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="2031" dy="1134" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="2339" math="0" shadow="0">
       <root>
@@ -480,6 +480,9 @@
         </mxCell>
         <mxCell id="gclnOcu_DNjMdLOXnFwR-86" value="&lt;p style=&quot;color: rgb(0, 0, 0); font-family: helvetica; font-size: 12px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; word-spacing: 0px; background-color: rgb(248, 249, 250);&quot;&gt;There are a number of published workflows and R packages that aim to ease the process of downloading and cleaning data these include but are not limited to:&lt;span&gt;&amp;nbsp;&lt;/span&gt;&lt;br&gt;&lt;/p&gt;&lt;ul style=&quot;color: rgb(0, 0, 0); font-family: helvetica; font-size: 12px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; word-spacing: 0px; background-color: rgb(248, 249, 250);&quot;&gt;&lt;li&gt;The BDverse and associated packages&lt;br&gt;&lt;/li&gt;&lt;li&gt;Wallace&lt;/li&gt;&lt;li&gt;BDcleaner&lt;/li&gt;&lt;/ul&gt;&lt;div style=&quot;color: rgb(0, 0, 0); font-family: helvetica; font-size: 12px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; word-spacing: 0px; background-color: rgb(248, 249, 250);&quot;&gt;The use of such workflows and outputs are context specific and are dependent on researchers personal choices. Many of these workflows overlap. In this workflow we present suggestions for things to consider in cleaning data.&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="yJk_V7Hbr1PSN4Hg7ylu-122">
           <mxGeometry x="295" y="68.5" width="550" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="gclnOcu_DNjMdLOXnFwR-88" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn3.iconfinder.com/data/icons/materia-flat-halloween-free/24/039_007_broom_halloween_witch_magic-128.png;strokeWidth=4;align=center;" vertex="1" parent="yJk_V7Hbr1PSN4Hg7ylu-122">
+          <mxGeometry x="45" y="108.5" width="128" height="128" as="geometry" />
         </mxCell>
         <mxCell id="yJk_V7Hbr1PSN4Hg7ylu-126" value="Plot Filter and Exploration" style="swimlane;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="30" y="2460" width="4310" height="1070" as="geometry" />
