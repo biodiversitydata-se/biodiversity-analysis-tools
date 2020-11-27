@@ -1,12 +1,9 @@
-<mxfile host="app.diagrams.net" modified="2020-11-26T21:22:07.254Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" etag="9jZ2WHK97VuXLUUOb4_A" version="13.10.4" type="github">
+<mxfile host="app.diagrams.net" modified="2020-11-27T06:53:17.804Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" etag="KabACvWBTI_vGSfdOul1" version="13.10.4" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="6855" dy="6663" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="2339" math="0" shadow="0">
+    <mxGraphModel dx="1673" dy="934" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="2339" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-28" value="" style="group;labelBackgroundColor=none;fillColor=#f8cecc;strokeColor=#b85450;gradientDirection=north;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1" connectable="0">
-          <mxGeometry x="1900" y="-3650" width="1455" height="2330" as="geometry" />
-        </mxCell>
         <mxCell id="6e8Cwwr0hj-UMSGpgfXc-20" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=20;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="hmOcISKYs5yDdYKpSmGY-7" target="K3oOLh2pZVhGYxKfuLFw-37" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="2380" y="3590" as="targetPoint" />
@@ -17,7 +14,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="Vn1AuMzDJVdrEZINoW1q-0" value="" style="group" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1" connectable="0">
-          <mxGeometry x="-1730" y="330" width="1290" height="900" as="geometry" />
+          <mxGeometry x="7740" y="3400" width="1290" height="900" as="geometry" />
         </mxCell>
         <mxCell id="K3oOLh2pZVhGYxKfuLFw-12" value="&lt;h1&gt;Data forms&lt;br&gt;&lt;/h1&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="Vn1AuMzDJVdrEZINoW1q-0" vertex="1">
           <mxGeometry width="1290" height="900" as="geometry" />
@@ -78,7 +75,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="awDAAARCZt9qaH9nBusd-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.159;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="yJk_V7Hbr1PSN4Hg7ylu-94" target="awDAAARCZt9qaH9nBusd-3">
+        <mxCell id="awDAAARCZt9qaH9nBusd-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.159;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="yJk_V7Hbr1PSN4Hg7ylu-94" target="awDAAARCZt9qaH9nBusd-3" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="yJk_V7Hbr1PSN4Hg7ylu-94" value="&lt;font style=&quot;font-size: 12px&quot;&gt;Do you need to estimate&lt;br&gt;&amp;nbsp;missing absences?&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;gradientColor=none;fontSize=24;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
@@ -99,51 +96,33 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="K3oOLh2pZVhGYxKfuLFw-25" value="&lt;h1&gt;Functional Diversity&lt;/h1&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=12;fillColor=#ffffff;strokeColor=#000000;" parent="yJk_V7Hbr1PSN4Hg7ylu-46" vertex="1">
-          <mxGeometry x="200" y="223" width="170" height="77" as="geometry" />
+          <mxGeometry x="450" y="242.4999999999999" width="170" height="77" as="geometry" />
         </mxCell>
         <mxCell id="yJk_V7Hbr1PSN4Hg7ylu-130" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="yJk_V7Hbr1PSN4Hg7ylu-46" source="K3oOLh2pZVhGYxKfuLFw-26" target="yJk_V7Hbr1PSN4Hg7ylu-129" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="K3oOLh2pZVhGYxKfuLFw-26" value="&lt;h1&gt;Taxonomic&amp;nbsp; Diversity&lt;/h1&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=12;fillColor=#ffffff;strokeColor=#000000;" parent="yJk_V7Hbr1PSN4Hg7ylu-46" vertex="1">
-          <mxGeometry x="200" y="503" width="170" height="77" as="geometry" />
+          <mxGeometry x="450" y="101.5" width="170" height="77" as="geometry" />
         </mxCell>
         <mxCell id="w-YvjRMWvmcFSU0H_ef8-19" value="&lt;h1&gt;Phylogenetic Diversity&lt;/h1&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=12;fillColor=#ffffff;strokeColor=#000000;" parent="yJk_V7Hbr1PSN4Hg7ylu-46" vertex="1">
-          <mxGeometry x="200" y="377.21" width="170" height="70.86" as="geometry" />
+          <mxGeometry x="450" y="385.7099999999999" width="170" height="70.86" as="geometry" />
         </mxCell>
         <mxCell id="kHVZ-IwuB8bhGgUG1t6H-11" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="yJk_V7Hbr1PSN4Hg7ylu-46" source="K3oOLh2pZVhGYxKfuLFw-25" target="kHVZ-IwuB8bhGgUG1t6H-10" edge="1">
-          <mxGeometry y="-3.8600000000000003" as="geometry">
+          <mxGeometry x="100" y="4.6400000000001" as="geometry">
             <Array as="points" />
           </mxGeometry>
         </mxCell>
         <mxCell id="yJk_V7Hbr1PSN4Hg7ylu-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" parent="yJk_V7Hbr1PSN4Hg7ylu-46" source="w-YvjRMWvmcFSU0H_ef8-19" target="kHVZ-IwuB8bhGgUG1t6H-1" edge="1">
-          <mxGeometry y="-3.8600000000000003" as="geometry" />
+          <mxGeometry x="100" y="4.6400000000001" as="geometry" />
         </mxCell>
         <mxCell id="i0vj7bkVoeIxhTv1__Wb-21" value="&lt;u&gt;Research Question&lt;/u&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;gradientColor=none;fontSize=40;" parent="yJk_V7Hbr1PSN4Hg7ylu-46" vertex="1">
           <mxGeometry y="29.14" width="320" height="180" as="geometry" />
         </mxCell>
-        <mxCell id="yJk_V7Hbr1PSN4Hg7ylu-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="yJk_V7Hbr1PSN4Hg7ylu-46" source="K3oOLh2pZVhGYxKfuLFw-26" edge="1">
-          <mxGeometry y="-3.8600000000000003" as="geometry">
-            <mxPoint x="310.0000000000009" y="719.1400000000003" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="i0vj7bkVoeIxhTv1__Wb-69" value="Checked species &lt;br&gt;list of &lt;br&gt;agreed synonyms" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;labelBackgroundColor=none;strokeColor=#000000;fillColor=#ffffff;gradientColor=#ffffff;fontSize=12;rounded=1;" parent="yJk_V7Hbr1PSN4Hg7ylu-46" vertex="1">
+          <mxGeometry x="280" y="560" width="140" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="iHcdqhV0YViVewFqACI8-20" value="&lt;div&gt;Do this!!!&lt;/div&gt;Species concepts change over time, betweeen countries and databases. Species with the same name may not be the same concept as denoted by the species authority. " style="ellipse;whiteSpace=wrap;html=1;" parent="yJk_V7Hbr1PSN4Hg7ylu-46" vertex="1">
-          <mxGeometry x="549.9999999999998" y="711.6400000000001" width="290" height="195" as="geometry" />
-        </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-69" value="Data frame of agreed synonyms" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;labelBackgroundColor=none;strokeColor=#000000;fillColor=#ffffff;gradientColor=#ffffff;fontSize=12;rounded=1;" parent="yJk_V7Hbr1PSN4Hg7ylu-46" vertex="1">
-          <mxGeometry x="160" y="1009.1400000000001" width="300" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-76" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;" parent="yJk_V7Hbr1PSN4Hg7ylu-46" target="i0vj7bkVoeIxhTv1__Wb-69" edge="1">
-          <mxGeometry y="-3.8600000000000003" as="geometry">
-            <mxPoint x="310" y="899.1400000000003" as="sourcePoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="iHcdqhV0YViVewFqACI8-0" value="&lt;div&gt;Data from Databases eg Gbif, BIOATLAS, Biocase,&lt;/div&gt;&lt;div&gt;R libraries which may be used:&lt;/div&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;Spocc&lt;/li&gt;&lt;li&gt;rgbif&lt;/li&gt;&lt;li&gt;ebird&lt;/li&gt;&lt;li&gt;auk&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="yJk_V7Hbr1PSN4Hg7ylu-46" vertex="1">
-          <mxGeometry x="175" y="1149.14" width="270" height="200" as="geometry" />
-        </mxCell>
-        <mxCell id="i0vj7bkVoeIxhTv1__Wb-96" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="yJk_V7Hbr1PSN4Hg7ylu-46" source="i0vj7bkVoeIxhTv1__Wb-69" target="iHcdqhV0YViVewFqACI8-0" edge="1">
-          <mxGeometry y="-3.8600000000000003" as="geometry">
-            <mxPoint x="284.0588235294117" y="1094.215294117647" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="iHcdqhV0YViVewFqACI8-0" value="&lt;div style=&quot;font-size: 20px&quot;&gt;&lt;font style=&quot;font-size: 20px&quot;&gt;Biodiversity data&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 20px&quot;&gt;&lt;font style=&quot;font-size: 20px&quot;&gt;Data base&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 20px&quot;&gt;&lt;font style=&quot;font-size: 20px&quot;&gt;Gbif, Bioatlas, Biocase,&lt;/font&gt;&lt;/div&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="yJk_V7Hbr1PSN4Hg7ylu-46" vertex="1">
+          <mxGeometry x="60" y="260" width="220" height="210" as="geometry" />
         </mxCell>
         <mxCell id="aXcIpb9wPaynXJKiq8YG-51" value="create data frame ID and merge" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;direction=south;" parent="yJk_V7Hbr1PSN4Hg7ylu-46" vertex="1">
           <mxGeometry x="253.75" y="1429.1399999999999" width="112.5" height="62.5" as="geometry" />
@@ -153,17 +132,23 @@
             <Array as="points" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="yJk_V7Hbr1PSN4Hg7ylu-129" value="DynTaxa&lt;br&gt;GBIF backbone" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="yJk_V7Hbr1PSN4Hg7ylu-46" vertex="1">
-          <mxGeometry x="590" y="471.50000000000006" width="150" height="140" as="geometry" />
-        </mxCell>
         <mxCell id="kHVZ-IwuB8bhGgUG1t6H-1" value="Genbank" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="yJk_V7Hbr1PSN4Hg7ylu-46" vertex="1">
-          <mxGeometry x="590" y="342.64000000000004" width="150" height="140" as="geometry" />
+          <mxGeometry x="690" y="351.1400000000002" width="150" height="140" as="geometry" />
         </mxCell>
         <mxCell id="kHVZ-IwuB8bhGgUG1t6H-10" value="&lt;div&gt;TRY&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="yJk_V7Hbr1PSN4Hg7ylu-46" vertex="1">
-          <mxGeometry x="590" y="191.5" width="150" height="140" as="geometry" />
+          <mxGeometry x="690" y="210.9999999999999" width="150" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="yJk_V7Hbr1PSN4Hg7ylu-129" value="DynTaxa&lt;br&gt;GBIF backbone" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="yJk_V7Hbr1PSN4Hg7ylu-46" vertex="1">
+          <mxGeometry x="690" y="70" width="150" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="gclnOcu_DNjMdLOXnFwR-0" value="&lt;div style=&quot;color: rgb(0, 0, 0); font-family: helvetica; font-size: 12px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: center; text-indent: 0px; text-transform: none; word-spacing: 0px; background-color: rgb(248, 249, 250);&quot;&gt;R libraries which may be used:&lt;/div&gt;&lt;div style=&quot;color: rgb(0, 0, 0); font-family: helvetica; font-size: 12px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: center; text-indent: 0px; text-transform: none; word-spacing: 0px; background-color: rgb(248, 249, 250);&quot;&gt;&lt;ul&gt;&lt;li&gt;Spocc&lt;/li&gt;&lt;li&gt;rgbif&lt;/li&gt;&lt;li&gt;ebird&lt;/li&gt;&lt;li&gt;auk&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="yJk_V7Hbr1PSN4Hg7ylu-46">
+          <mxGeometry x="460" y="550" width="190" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="gclnOcu_DNjMdLOXnFwR-2" value="" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/mscae/Batch_AI.svg;" vertex="1" parent="yJk_V7Hbr1PSN4Hg7ylu-46">
+          <mxGeometry x="20" y="170" width="36" height="50" as="geometry" />
         </mxCell>
         <mxCell id="yJk_V7Hbr1PSN4Hg7ylu-125" value="" style="group;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1" connectable="0">
-          <mxGeometry x="905" y="10" width="1490" height="2340" as="geometry" />
+          <mxGeometry x="905" y="1.5" width="1490" height="2340" as="geometry" />
         </mxCell>
         <mxCell id="yJk_V7Hbr1PSN4Hg7ylu-122" value="Data Cleaning" style="swimlane;container=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="yJk_V7Hbr1PSN4Hg7ylu-125" vertex="1">
           <mxGeometry width="1490" height="2340" as="geometry">
@@ -360,22 +345,22 @@
         <mxCell id="yJk_V7Hbr1PSN4Hg7ylu-126" value="Plot Filter and Exploration" style="swimlane;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="30" y="2460" width="4310" height="1070" as="geometry" />
         </mxCell>
-        <mxCell id="awDAAARCZt9qaH9nBusd-2" value="" style="group" vertex="1" connectable="0" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="awDAAARCZt9qaH9nBusd-2" value="" style="group" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1" connectable="0">
           <mxGeometry x="4440" y="20" width="440" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="awDAAARCZt9qaH9nBusd-3" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;" vertex="1" parent="awDAAARCZt9qaH9nBusd-2">
+        <mxCell id="awDAAARCZt9qaH9nBusd-3" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;" parent="awDAAARCZt9qaH9nBusd-2" vertex="1">
           <mxGeometry width="440" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="awDAAARCZt9qaH9nBusd-6" value="Occupancy models" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1" vertex="1" parent="awDAAARCZt9qaH9nBusd-2">
+        <mxCell id="awDAAARCZt9qaH9nBusd-6" value="Occupancy models" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1" parent="awDAAARCZt9qaH9nBusd-2" vertex="1">
           <mxGeometry x="24.5" y="4.57" width="385.5" height="35.43" as="geometry" />
         </mxCell>
-        <mxCell id="awDAAARCZt9qaH9nBusd-8" value="" style="group" vertex="1" connectable="0" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="awDAAARCZt9qaH9nBusd-8" value="" style="group" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1" connectable="0">
           <mxGeometry x="7480" y="480.46999999999997" width="420" height="1050" as="geometry" />
         </mxCell>
         <mxCell id="mfQDYrMZqN6Y804PRQHQ-17" value="Responses to the covariates (eg environment)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=24;" parent="awDAAARCZt9qaH9nBusd-8" vertex="1">
           <mxGeometry x="30" y="36.629999999999995" width="330" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="awDAAARCZt9qaH9nBusd-10" value="Diversity" style="swimlane;container=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="awDAAARCZt9qaH9nBusd-10" value="Diversity" style="swimlane;container=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="5451.49" y="10" width="2340" height="1560" as="geometry">
             <mxRectangle width="80" height="23" as="alternateBounds" />
           </mxGeometry>
@@ -386,7 +371,7 @@
         <mxCell id="K3oOLh2pZVhGYxKfuLFw-10" value="&lt;h1&gt;Classic Measures of&lt;span&gt; α diversity&lt;br&gt;&lt;/span&gt;&lt;/h1&gt;&lt;p&gt;Species Richness&lt;/p&gt;Shannon / Shannon- Weaver index&lt;p&gt;Simpson Index&lt;br&gt;&lt;/p&gt;&lt;p&gt;Inverse Simpson&lt;/p&gt;&lt;p&gt;Gini-Simpson&lt;/p&gt;&lt;p&gt;The above are commonly and widely used measures of&lt;span&gt;&lt;font size=&quot;1&quot;&gt;&lt;span style=&quot;font-weight: normal ; font-size: 12px&quot;&gt; α diversity. There are several more in the &lt;/span&gt;&lt;/font&gt;&lt;/span&gt;&lt;b&gt;R libraries: Vegan (Td),&lt;font style=&quot;font-size: 12px&quot;&gt; adiv &lt;/font&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;(Td, Fd, Pd), abdiv,&lt;/font&gt;&lt;/font&gt; bipartite&lt;br&gt;&lt;/b&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;" parent="awDAAARCZt9qaH9nBusd-10" vertex="1">
           <mxGeometry x="138.98999999999978" y="189.53" width="392.5" height="240" as="geometry" />
         </mxCell>
-        <mxCell id="awDAAARCZt9qaH9nBusd-12" value="&lt;div style=&quot;color: rgb(0, 0, 0); font-family: helvetica; font-size: 24px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: center; text-indent: 0px; text-transform: none; word-spacing: 0px;&quot;&gt;&lt;b&gt;&lt;font style=&quot;font-size: 48px&quot;&gt;Diversity&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;br class=&quot;Apple-interchange-newline&quot;&gt;" style="text;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="awDAAARCZt9qaH9nBusd-10">
+        <mxCell id="awDAAARCZt9qaH9nBusd-12" value="&lt;div style=&quot;color: rgb(0, 0, 0); font-family: helvetica; font-size: 24px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: center; text-indent: 0px; text-transform: none; word-spacing: 0px;&quot;&gt;&lt;b&gt;&lt;font style=&quot;font-size: 48px&quot;&gt;Diversity&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;br class=&quot;Apple-interchange-newline&quot;&gt;" style="text;whiteSpace=wrap;html=1;fontSize=16;" parent="awDAAARCZt9qaH9nBusd-10" vertex="1">
           <mxGeometry x="30" y="40" width="230" height="60" as="geometry" />
         </mxCell>
         <mxCell id="w-YvjRMWvmcFSU0H_ef8-36" value="&lt;h1&gt;Other measures of diversity (eg Hill Numbers, Diversity Profiles)&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Measures of species richness and diversity are unified in Numbers equivalents first brought to Ecology by Hill (1973) giving rise to Hill Numbers. &lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;Hill Numbers: &lt;b&gt;HillR (&lt;/b&gt;&lt;b&gt;&lt;b&gt;Td, Fd, Pd)&lt;/b&gt;, adiv &lt;/b&gt;&lt;/font&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;b&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;b&gt;(&lt;/b&gt;&lt;b&gt;&lt;b&gt;Td, Fd, Pd), iNext&lt;br&gt;&lt;/b&gt;&lt;/b&gt;&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;sub&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;Tsallis Entropy &lt;/font&gt;: &lt;b style=&quot;font-size: 12px&quot;&gt;Entropart (Td, Fd, Pd), adiv&lt;/b&gt;&lt;/sub&gt;&lt;/font&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;sub&gt;&lt;b style=&quot;font-size: 12px&quot;&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;&lt;b&gt;(&lt;/b&gt;&lt;b&gt;&lt;b&gt;Td, Fd, Pd)&lt;/b&gt;&lt;/b&gt;&lt;/font&gt;&lt;/b&gt;&lt;/sub&gt;&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;sub&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;Crossing point Theory: &lt;/font&gt;&lt;b style=&quot;font-size: 12px&quot;&gt;&lt;font style=&quot;font-size: 12px&quot;&gt;BioFTF (Td)&lt;/font&gt;&lt;br&gt;&lt;/b&gt;&lt;/sub&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;" parent="awDAAARCZt9qaH9nBusd-10" vertex="1">
@@ -499,7 +484,7 @@
         <mxCell id="kHVZ-IwuB8bhGgUG1t6H-15" value="&lt;h1&gt;Correlation of scores&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Correlations of ordination scores and environmental covariates&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;R libraries: stats, vegan&lt;/b&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;" parent="awDAAARCZt9qaH9nBusd-10" vertex="1">
           <mxGeometry x="1890" y="610" width="340" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="awDAAARCZt9qaH9nBusd-14" value="Trends and pattern detection" style="swimlane;fontSize=16;container=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="awDAAARCZt9qaH9nBusd-14" value="Trends and pattern detection" style="swimlane;fontSize=16;container=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="4950" y="1580" width="1280" height="740" as="geometry">
             <mxRectangle x="6230" y="1590" width="110" height="23" as="alternateBounds" />
           </mxGeometry>
@@ -534,16 +519,16 @@
         <mxCell id="6e8Cwwr0hj-UMSGpgfXc-6" value="Species Indicator Time trends" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1" parent="awDAAARCZt9qaH9nBusd-14" vertex="1">
           <mxGeometry x="57.25" y="70" width="385.5" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="awDAAARCZt9qaH9nBusd-18" value="&lt;div style=&quot;color: rgb(0 , 0 , 0) ; font-family: &amp;#34;helvetica&amp;#34; ; font-size: 24px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px&quot;&gt;&lt;/div&gt;&lt;span style=&quot;font-size: 48px&quot;&gt;&lt;b&gt;Trends and pattern detection&lt;/b&gt;&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="awDAAARCZt9qaH9nBusd-14">
+        <mxCell id="awDAAARCZt9qaH9nBusd-18" value="&lt;div style=&quot;color: rgb(0 , 0 , 0) ; font-family: &amp;#34;helvetica&amp;#34; ; font-size: 24px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px&quot;&gt;&lt;/div&gt;&lt;span style=&quot;font-size: 48px&quot;&gt;&lt;b&gt;Trends and pattern detection&lt;/b&gt;&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=16;" parent="awDAAARCZt9qaH9nBusd-14" vertex="1">
           <mxGeometry x="30" y="577.5" width="680" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="awDAAARCZt9qaH9nBusd-19" value="Distributional data" style="swimlane;fontSize=16;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="awDAAARCZt9qaH9nBusd-19" value="Distributional data" style="swimlane;fontSize=16;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="4510" y="2330" width="2220" height="1600" as="geometry" />
         </mxCell>
         <mxCell id="w-YvjRMWvmcFSU0H_ef8-31" value="&lt;h1&gt;Species Distribution Modelling or Ecological Niche Modelling&lt;br&gt;&lt;/h1&gt;Correlative modelling of species presences and environmental variables" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#fff2cc;strokeColor=#d6b656;" parent="awDAAARCZt9qaH9nBusd-19" vertex="1">
           <mxGeometry x="80" y="70" width="490" height="150" as="geometry" />
         </mxCell>
-        <mxCell id="awDAAARCZt9qaH9nBusd-20" value="&lt;b style=&quot;color: rgb(0, 0, 0); font-family: helvetica; font-size: 24px; font-style: normal; letter-spacing: normal; text-align: center; text-indent: 0px; text-transform: none; word-spacing: 0px;&quot;&gt;&lt;font style=&quot;font-size: 48px&quot;&gt;Distributional data&lt;/font&gt;&lt;/b&gt;" style="text;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="awDAAARCZt9qaH9nBusd-19">
+        <mxCell id="awDAAARCZt9qaH9nBusd-20" value="&lt;b style=&quot;color: rgb(0, 0, 0); font-family: helvetica; font-size: 24px; font-style: normal; letter-spacing: normal; text-align: center; text-indent: 0px; text-transform: none; word-spacing: 0px;&quot;&gt;&lt;font style=&quot;font-size: 48px&quot;&gt;Distributional data&lt;/font&gt;&lt;/b&gt;" style="text;whiteSpace=wrap;html=1;fontSize=16;" parent="awDAAARCZt9qaH9nBusd-19" vertex="1">
           <mxGeometry x="621.4899999999998" y="95" width="450" height="50" as="geometry" />
         </mxCell>
         <mxCell id="mfQDYrMZqN6Y804PRQHQ-54" value="&lt;h1&gt;Spatial plotting&amp;nbsp; of biodiversity data&lt;br&gt;&lt;/h1&gt;&lt;div&gt;Distribution of species presences and/or mapping of biodiversity values&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;R Libraries: Sf, Sp, Raster&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Non-R: QGIS, Esri ARCmap&lt;/b&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="awDAAARCZt9qaH9nBusd-19" vertex="1">
@@ -604,7 +589,7 @@
         <mxCell id="sg-I6Dr9140E_a6tFQ04-3" value="&lt;h1&gt;Joint species distribution modelling&lt;/h1&gt;&lt;div&gt;Analysis of species distributions from environmental covariates AND species correlations.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;R library: jSDM&lt;/b&gt;&lt;br&gt;&lt;/div&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="awDAAARCZt9qaH9nBusd-19" vertex="1">
           <mxGeometry x="1652.499999999999" y="1259.3400000000001" width="405" height="160" as="geometry" />
         </mxCell>
-        <mxCell id="awDAAARCZt9qaH9nBusd-22" value="Container" style="swimlane;fontSize=16;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="awDAAARCZt9qaH9nBusd-22" value="Container" style="swimlane;fontSize=16;fillColor=#f8cecc;strokeColor=#b85450;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="2460" y="10" width="1530" height="2420" as="geometry">
             <mxRectangle x="2800" y="-10" width="110" height="23" as="alternateBounds" />
           </mxGeometry>
@@ -713,7 +698,7 @@
         <mxCell id="yJk_V7Hbr1PSN4Hg7ylu-111" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=24;" parent="awDAAARCZt9qaH9nBusd-22" vertex="1">
           <mxGeometry x="30" y="1870.0000000000002" width="850" height="530" as="geometry" />
         </mxCell>
-        <mxCell id="awDAAARCZt9qaH9nBusd-1" value="&lt;h1&gt;&lt;span style=&quot;font-size: 14px&quot;&gt;metrics of recorders&amp;nbsp;&lt;/span&gt;&lt;b style=&quot;font-size: 12px&quot;&gt;R library: recorderMetrics&lt;/b&gt;&lt;br&gt;&lt;/h1&gt;&lt;div style=&quot;font-size: 14px&quot;&gt;&lt;h1 style=&quot;font-size: 14px&quot;&gt;Ignorance&amp;nbsp;&lt;b style=&quot;font-size: 12px&quot;&gt;R library: BIRDS&lt;/b&gt;&lt;/h1&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px&quot;&gt;&lt;div&gt;&lt;h1 style=&quot;font-size: 14px&quot;&gt;Kernal estimation&amp;nbsp;&lt;b style=&quot;font-size: 12px&quot;&gt;R library: MASS&amp;nbsp;&lt;/b&gt;&lt;/h1&gt;&lt;/div&gt;&lt;div&gt;&lt;h1 style=&quot;font-size: 14px&quot;&gt;Sampbias&amp;nbsp;&lt;b style=&quot;font-size: 12px&quot;&gt;R library: sampBias&lt;/b&gt;&lt;/h1&gt;&lt;h1 style=&quot;font-size: 14px&quot;&gt;&lt;font&gt;Spatially Thin&lt;/font&gt;&lt;span&gt;&amp;nbsp;&lt;/span&gt;&lt;b style=&quot;font-size: 12px&quot;&gt;R library: spThin&lt;/b&gt;&lt;/h1&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="awDAAARCZt9qaH9nBusd-22">
+        <mxCell id="awDAAARCZt9qaH9nBusd-1" value="&lt;h1&gt;&lt;span style=&quot;font-size: 14px&quot;&gt;metrics of recorders&amp;nbsp;&lt;/span&gt;&lt;b style=&quot;font-size: 12px&quot;&gt;R library: recorderMetrics&lt;/b&gt;&lt;br&gt;&lt;/h1&gt;&lt;div style=&quot;font-size: 14px&quot;&gt;&lt;h1 style=&quot;font-size: 14px&quot;&gt;Ignorance&amp;nbsp;&lt;b style=&quot;font-size: 12px&quot;&gt;R library: BIRDS&lt;/b&gt;&lt;/h1&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px&quot;&gt;&lt;div&gt;&lt;h1 style=&quot;font-size: 14px&quot;&gt;Kernal estimation&amp;nbsp;&lt;b style=&quot;font-size: 12px&quot;&gt;R library: MASS&amp;nbsp;&lt;/b&gt;&lt;/h1&gt;&lt;/div&gt;&lt;div&gt;&lt;h1 style=&quot;font-size: 14px&quot;&gt;Sampbias&amp;nbsp;&lt;b style=&quot;font-size: 12px&quot;&gt;R library: sampBias&lt;/b&gt;&lt;/h1&gt;&lt;h1 style=&quot;font-size: 14px&quot;&gt;&lt;font&gt;Spatially Thin&lt;/font&gt;&lt;span&gt;&amp;nbsp;&lt;/span&gt;&lt;b style=&quot;font-size: 12px&quot;&gt;R library: spThin&lt;/b&gt;&lt;/h1&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffffff;strokeColor=#000000;" parent="awDAAARCZt9qaH9nBusd-22" vertex="1">
           <mxGeometry x="540" y="1890.0000000000002" width="310" height="180" as="geometry" />
         </mxCell>
         <mxCell id="yJk_V7Hbr1PSN4Hg7ylu-112" value="&lt;b&gt;Sampling Bias&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;" parent="awDAAARCZt9qaH9nBusd-22" vertex="1">
@@ -737,7 +722,7 @@
         <mxCell id="yJk_V7Hbr1PSN4Hg7ylu-119" value="Are there qualitative differences?" style="rhombus;whiteSpace=wrap;html=1;align=center;" parent="awDAAARCZt9qaH9nBusd-22" vertex="1">
           <mxGeometry x="294.5" y="2220" width="197" height="160" as="geometry" />
         </mxCell>
-        <mxCell id="awDAAARCZt9qaH9nBusd-24" value="&lt;div style=&quot;color: rgb(0 , 0 , 0) ; font-family: &amp;#34;helvetica&amp;#34; ; font-size: 12px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(248 , 249 , 250)&quot;&gt;&lt;b&gt;&lt;font style=&quot;font-size: 20px&quot;&gt;Data Completeness, Missingness&lt;br&gt;&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(0 , 0 , 0) ; font-family: &amp;#34;helvetica&amp;#34; ; font-size: 12px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(248 , 249 , 250)&quot;&gt;&lt;b&gt;&lt;font style=&quot;font-size: 20px&quot;&gt;&amp;amp;&lt;span&gt;&amp;nbsp;&lt;/span&gt;&lt;/font&gt;&lt;/b&gt;&lt;b&gt;&lt;font style=&quot;font-size: 20px&quot;&gt;Sampling&amp;nbsp;&lt;/font&gt;&lt;/b&gt;&lt;b&gt;&lt;font style=&quot;font-size: 20px&quot;&gt;Effort&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="awDAAARCZt9qaH9nBusd-22">
+        <mxCell id="awDAAARCZt9qaH9nBusd-24" value="&lt;div style=&quot;color: rgb(0 , 0 , 0) ; font-family: &amp;#34;helvetica&amp;#34; ; font-size: 12px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(248 , 249 , 250)&quot;&gt;&lt;b&gt;&lt;font style=&quot;font-size: 20px&quot;&gt;Data Completeness, Missingness&lt;br&gt;&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(0 , 0 , 0) ; font-family: &amp;#34;helvetica&amp;#34; ; font-size: 12px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(248 , 249 , 250)&quot;&gt;&lt;b&gt;&lt;font style=&quot;font-size: 20px&quot;&gt;&amp;amp;&lt;span&gt;&amp;nbsp;&lt;/span&gt;&lt;/font&gt;&lt;/b&gt;&lt;b&gt;&lt;font style=&quot;font-size: 20px&quot;&gt;Sampling&amp;nbsp;&lt;/font&gt;&lt;/b&gt;&lt;b&gt;&lt;font style=&quot;font-size: 20px&quot;&gt;Effort&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;fontSize=16;" parent="awDAAARCZt9qaH9nBusd-22" vertex="1">
           <mxGeometry x="20" y="40" width="340" height="70" as="geometry" />
         </mxCell>
         <mxCell id="l_WFNnPwY0MCgCIW6E0b-22" value="Does it matter if sampling effort varies in both time and space? If so how?" style="rhombus;whiteSpace=wrap;html=1;" parent="awDAAARCZt9qaH9nBusd-22" vertex="1">
@@ -795,7 +780,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="mfQDYrMZqN6Y804PRQHQ-6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1.011;exitY=0.506;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;" parent="awDAAARCZt9qaH9nBusd-22" source="hmOcISKYs5yDdYKpSmGY-9" edge="1" target="hmOcISKYs5yDdYKpSmGY-7">
+        <mxCell id="mfQDYrMZqN6Y804PRQHQ-6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1.011;exitY=0.506;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;" parent="awDAAARCZt9qaH9nBusd-22" source="hmOcISKYs5yDdYKpSmGY-9" target="hmOcISKYs5yDdYKpSmGY-7" edge="1">
           <mxGeometry x="50" y="20" as="geometry">
             <Array as="points">
               <mxPoint x="1009" y="1520" />
