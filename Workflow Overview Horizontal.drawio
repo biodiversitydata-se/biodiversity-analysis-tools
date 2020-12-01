@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-12-01T13:42:29.544Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" etag="vlX965zmcRRxWEdDZJCZ" version="13.10.4" type="github">
+<mxfile host="app.diagrams.net" modified="2020-12-01T13:45:58.389Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" etag="DDvlxyfqwMRgkDpCrLCG" version="13.10.4" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="3100" dy="1736" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="2339" math="0" shadow="0">
       <root>
@@ -303,34 +303,25 @@
           <mxGeometry x="30" y="577.5" width="680" height="60" as="geometry" />
         </mxCell>
         <mxCell id="awDAAARCZt9qaH9nBusd-19" value="SDM" style="swimlane;fontSize=16;fillColor=#d5e8d4;strokeColor=#82b366;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="3560" width="2220" height="1080" as="geometry" />
-        </mxCell>
-        <mxCell id="6e8Cwwr0hj-UMSGpgfXc-23" value="&lt;h1&gt;SDM libraries and software&lt;br&gt;&lt;/h1&gt;&lt;div&gt;There are many available resources for species distribution modelling includeing:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;R library: Dismo, ENMeval,sdm, biomod2, jSDM, brt&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Non R: maxent, SDM toolbox&lt;/b&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=15;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;align=center;verticalAlign=middle;strokeWidth=4;" parent="awDAAARCZt9qaH9nBusd-19" vertex="1">
-          <mxGeometry x="870" y="730" width="545" height="270" as="geometry" />
-        </mxCell>
-        <mxCell id="mfQDYrMZqN6Y804PRQHQ-71" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;fontSize=24;align=left;" parent="awDAAARCZt9qaH9nBusd-19" vertex="1">
-          <mxGeometry x="1500" y="130" width="600" height="820" as="geometry" />
-        </mxCell>
-        <mxCell id="6e8Cwwr0hj-UMSGpgfXc-27" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=20;" parent="awDAAARCZt9qaH9nBusd-19" source="6e8Cwwr0hj-UMSGpgfXc-23" target="mfQDYrMZqN6Y804PRQHQ-71" edge="1">
-          <mxGeometry x="418.9899999999998" y="-500" as="geometry" />
+          <mxGeometry x="3560" width="1290" height="1080" as="geometry" />
         </mxCell>
         <mxCell id="xw4S7eZGQW3ErX5LzovB-30" value="&lt;h1&gt;Boosted regression trees (BRT)&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;strokeWidth=4;" parent="awDAAARCZt9qaH9nBusd-19" vertex="1">
-          <mxGeometry x="1552.499999999999" y="175" width="410" height="100" as="geometry" />
+          <mxGeometry x="822.4999999999991" y="280" width="410" height="100" as="geometry" />
         </mxCell>
         <mxCell id="xw4S7eZGQW3ErX5LzovB-31" value="&lt;h1&gt;Maximm Entropy (MaxEnt)&lt;br&gt;&lt;/h1&gt;&lt;p&gt;&lt;b&gt;R library: Dismo&lt;br&gt;&lt;/b&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;strokeWidth=4;" parent="awDAAARCZt9qaH9nBusd-19" vertex="1">
-          <mxGeometry x="1549.999999999999" y="295" width="410" height="100" as="geometry" />
+          <mxGeometry x="819.9999999999991" y="400" width="410" height="100" as="geometry" />
         </mxCell>
         <mxCell id="xw4S7eZGQW3ErX5LzovB-32" value="&lt;h1&gt;GLM / GAM&lt;br&gt;&lt;/h1&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;strokeWidth=4;" parent="awDAAARCZt9qaH9nBusd-19" vertex="1">
-          <mxGeometry x="1552.499999999999" y="425" width="410" height="100" as="geometry" />
+          <mxGeometry x="827.4999999999991" y="525" width="410" height="100" as="geometry" />
         </mxCell>
         <mxCell id="kHVZ-IwuB8bhGgUG1t6H-13" value="&lt;h1&gt;Occupancy modelling&lt;br&gt;&lt;/h1&gt;&lt;p&gt;Bayesian inference of species presences from repeat visits&amp;nbsp;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;R library: MCMCglmmm, blmeco&lt;/b&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;strokeWidth=4;" parent="awDAAARCZt9qaH9nBusd-19" vertex="1">
-          <mxGeometry x="1562.499999999999" y="534.3400000000001" width="405" height="180" as="geometry" />
+          <mxGeometry x="832.4999999999991" y="639.3400000000001" width="405" height="180" as="geometry" />
         </mxCell>
         <mxCell id="sg-I6Dr9140E_a6tFQ04-3" value="&lt;h1&gt;Joint species distribution modelling&lt;/h1&gt;&lt;div&gt;Analysis of species distributions from environmental covariates AND species correlations.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;R library: jSDM / Hmsc&lt;/b&gt;&lt;br&gt;&lt;/div&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;strokeWidth=4;" parent="awDAAARCZt9qaH9nBusd-19" vertex="1">
-          <mxGeometry x="1562.5" y="744.34" width="405" height="185.66" as="geometry" />
+          <mxGeometry x="832.5" y="849.34" width="405" height="185.66" as="geometry" />
         </mxCell>
-        <mxCell id="Y2ZBj6na6wr-5ao4Nka5-161" value="&lt;div style=&quot;color: rgb(0 , 0 , 0) ; font-family: &amp;#34;helvetica&amp;#34; ; font-style: normal ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(248 , 249 , 250)&quot;&gt;&lt;span style=&quot;font-size: 20px&quot;&gt;&lt;b&gt;SDM&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="awDAAARCZt9qaH9nBusd-19">
-          <mxGeometry x="10" y="30" width="210" height="40" as="geometry" />
+        <mxCell id="Y2ZBj6na6wr-5ao4Nka5-161" value="&lt;div style=&quot;color: rgb(0 , 0 , 0) ; font-family: &amp;#34;helvetica&amp;#34; ; font-style: normal ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(248 , 249 , 250)&quot;&gt;&lt;span style=&quot;font-size: 20px&quot;&gt;&lt;b&gt;Species Distribution Mmodels&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="awDAAARCZt9qaH9nBusd-19">
+          <mxGeometry x="10" y="30" width="310" height="40" as="geometry" />
         </mxCell>
         <mxCell id="Y2ZBj6na6wr-5ao4Nka5-167" value="&lt;br&gt;spatial correlation" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rounded=0;labelBackgroundColor=none;strokeColor=#6c8ebf;fillColor=#dae8fc;gradientColor=none;fontSize=15;direction=south;strokeWidth=4;spacing=5;spacingTop=-20;fontStyle=1;verticalAlign=middle;size=20.000000000000227;" vertex="1" parent="awDAAARCZt9qaH9nBusd-19">
           <mxGeometry x="40.00223880596979" y="309.25" width="204.23507462686567" height="71.5" as="geometry" />
@@ -364,7 +355,7 @@
           <mxGeometry x="730.0022388059697" y="157.75" width="204.23507462686567" height="71.5" as="geometry" />
         </mxCell>
         <mxCell id="Y2ZBj6na6wr-5ao4Nka5-177" value="&lt;br&gt;variograms" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rounded=0;labelBackgroundColor=none;strokeColor=#6c8ebf;fillColor=#dae8fc;gradientColor=none;fontSize=15;direction=south;strokeWidth=4;spacing=5;spacingTop=-20;fontStyle=1;verticalAlign=middle;size=20.000000000000227;" vertex="1" parent="awDAAARCZt9qaH9nBusd-19">
-          <mxGeometry x="490.0022388059697" y="320" width="204.23507462686567" height="71.5" as="geometry" />
+          <mxGeometry x="490.0022388059697" y="300" width="204.23507462686567" height="71.5" as="geometry" />
         </mxCell>
         <mxCell id="Y2ZBj6na6wr-5ao4Nka5-184" value="ENMeval" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/285_R_Project_logo-128.png" vertex="1" parent="awDAAARCZt9qaH9nBusd-19">
           <mxGeometry x="250" y="480" width="67.74626865671642" height="67.74626865671642" as="geometry" />
