@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-12-01T07:31:25.385Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" etag="f_oZpVK2U5QR-AORxDMT" version="13.10.4" type="github">
+<mxfile host="app.diagrams.net" modified="2020-12-01T09:43:19.574Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" etag="U97sK9UTOjwd2RiqcxJo" version="13.10.4" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="1550" dy="868" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="2339" math="0" shadow="0">
       <root>
@@ -411,7 +411,7 @@
           <mxGeometry x="1484.5" y="830" width="197" height="160" as="geometry" />
         </mxCell>
         <mxCell id="awDAAARCZt9qaH9nBusd-24" value="&lt;div style=&quot;color: rgb(0 , 0 , 0) ; font-family: &amp;#34;helvetica&amp;#34; ; font-size: 12px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(248 , 249 , 250)&quot;&gt;&lt;b&gt;&lt;font style=&quot;font-size: 20px&quot;&gt;Data Completeness, Missingness&lt;br&gt;&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(0 , 0 , 0) ; font-family: &amp;#34;helvetica&amp;#34; ; font-size: 12px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(248 , 249 , 250)&quot;&gt;&lt;b&gt;&lt;font style=&quot;font-size: 20px&quot;&gt;&amp;amp;&lt;span&gt;&amp;nbsp;&lt;/span&gt;&lt;/font&gt;&lt;/b&gt;&lt;b&gt;&lt;font style=&quot;font-size: 20px&quot;&gt;Sampling&amp;nbsp;&lt;/font&gt;&lt;/b&gt;&lt;b&gt;&lt;font style=&quot;font-size: 20px&quot;&gt;Effort&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;fontSize=16;" parent="awDAAARCZt9qaH9nBusd-22" vertex="1">
-          <mxGeometry x="810" y="240" width="340" height="70" as="geometry" />
+          <mxGeometry x="790" y="140" width="340" height="70" as="geometry" />
         </mxCell>
         <mxCell id="l_WFNnPwY0MCgCIW6E0b-24" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jumpStyle=arc;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#4D9AFF;strokeWidth=6;fillColor=#7EA6E0;endFill=0;endArrow=openThin;startFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="awDAAARCZt9qaH9nBusd-22" source="l_WFNnPwY0MCgCIW6E0b-15" edge="1">
           <mxGeometry x="150" y="981.02" as="geometry">
@@ -477,6 +477,9 @@
         <mxCell id="Y7cJZKocZSNqlVmRAGfy-44" value="sampBias" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/285_R_Project_logo-128.png" parent="awDAAARCZt9qaH9nBusd-22" vertex="1">
           <mxGeometry x="803.6289552238803" y="1130" width="67.74626865671642" height="67.74626865671642" as="geometry" />
         </mxCell>
+        <mxCell id="Y2ZBj6na6wr-5ao4Nka5-3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=11;strokeColor=#4D9AFF;strokeWidth=6;fillColor=#7EA6E0;endFill=0;endArrow=openThin;startFill=0;" edge="1" parent="awDAAARCZt9qaH9nBusd-22" source="Y7cJZKocZSNqlVmRAGfy-58" target="Y2ZBj6na6wr-5ao4Nka5-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="Y7cJZKocZSNqlVmRAGfy-58" value="&lt;br&gt;define the minimum sampling unit" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rounded=0;labelBackgroundColor=none;strokeColor=#6c8ebf;fillColor=#dae8fc;gradientColor=none;fontSize=15;direction=south;strokeWidth=4;spacing=5;spacingTop=-20;fontStyle=1;verticalAlign=middle;size=20.000000000000227;" parent="awDAAARCZt9qaH9nBusd-22" vertex="1">
           <mxGeometry x="417.26223880597" y="334.87" width="204.23507462686567" height="71.5" as="geometry" />
         </mxCell>
@@ -522,6 +525,12 @@
         </mxCell>
         <mxCell id="Y7cJZKocZSNqlVmRAGfy-79" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/speedometer-128.png;fontFamily=Helvetica;fontSize=12;fontColor=#000000;align=center;strokeColor=#000000;strokeWidth=4;fillColor=#ffffff;" parent="awDAAARCZt9qaH9nBusd-22" vertex="1">
           <mxGeometry x="30" y="40" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Y2ZBj6na6wr-5ao4Nka5-2" value="It is very difficult to generalise a minimum number of observations&lt;br style=&quot;font-size: 16px;&quot;&gt;but it should back up your statistics at the minimum sampling unit" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="awDAAARCZt9qaH9nBusd-22">
+          <mxGeometry x="680" y="350.62" width="480" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Y2ZBj6na6wr-5ao4Nka5-5" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;observation index and ignorance&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;fontSize=15;rounded=0;fontStyle=1;strokeColor=#6c8ebf;strokeWidth=4;fillColor=#dae8fc;spacing=5;spacingTop=-20;" vertex="1" parent="awDAAARCZt9qaH9nBusd-22">
+          <mxGeometry x="955" y="420" width="205" height="115" as="geometry" />
         </mxCell>
         <mxCell id="gclnOcu_DNjMdLOXnFwR-67" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;startFill=0;endArrow=none;endFill=0;strokeColor=#4D9AFF;strokeWidth=6;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="gclnOcu_DNjMdLOXnFwR-44" edge="1">
           <mxGeometry relative="1" as="geometry">
