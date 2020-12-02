@@ -12,7 +12,7 @@ Biological diversity analyses typically use multivariate techniques to assess va
 
 Variation in these three dimensions can be directly compared both within and between these different dimensions of biological diversity. 
 
-# Types of analyses - Patitioning $\alpha$, $\beta$, $\gamma$ *etc.* diversity
+## Types of analyses - Patitioning $\alpha$, $\beta$, $\gamma$ *etc.* diversity
 
 Two forms of diversity analyses are currently widely used; classic diversity measures (eg species richness, shannons diversity index *etc.*) and *numbers equivalents* representation of the underlying diversity distribution. This second form was first introduced in  Hill [-@hill_diversity_1973] and a number of resources are now available for computing both forms. See the forum piece *Forum: Partitioning diversity* in Ecology [-@ellison_partitioning_2010]  for a fuller discussion on the use of *numbers equivalents*. 
 
@@ -20,8 +20,30 @@ Both types of diversity partitioning are used for all types of analyses and we p
  - Resources for classic diversity measures
  - Resources for *numbers equivalents*.
 
-# Data form
+## Data form
 Within the R environment both methods require data to be in the **wide format**. See [link to page explaining shift from long to wide].
+
+```{r echo=FALSE}
+library(kableExtra)
+
+df <- data.frame(class_1 = sample(1:100,10,replace = TRUE),
+                 class_2 = sample(1:100,10,replace = TRUE),
+                 class_3 = sample(1:100,10,replace = TRUE),
+                 class_4 = sample(1:100,10,replace = TRUE),
+                 class_5 = sample(1:100,10,replace = TRUE),
+                 class_6 = sample(1:100,10,replace = TRUE),
+                 class_7 = sample(1:100,10,replace = TRUE),
+                 class_8 = sample(1:100,10,replace = TRUE),
+                 class_9 = sample(1:100,10,replace = TRUE),
+                 class_10 = sample(1:100,10,replace = TRUE)
+                 )
+row.names(df) <- paste("Site",
+                       1:nrow(df),sep="_")
+kable(df, booktabs = TRUE, caption = "Example of wide format")%>%
+  kable_styling(latex_options = c("striped", "hold_position"),
+                full_width = F)
+
+```
 
 ## Classic diversity measures 
 
@@ -82,27 +104,49 @@ Numbers equivalents account for the nested heirarchies in $\alpha$, $\beta$ and 
     
 # References
 
-# Data form
-Within the R environment both methods require data to be in the **wide format**. See [link to page explaining shift from long to wide].
 
-```{r echo=FALSE}
+
+
+## example diversity data 
+
+In this example we use the sampling event "Vegetation data from sheep grazing experiment at alpine site in Hol, Norway" available [here](https://www.gbif.org/dataset/57d403f4-9d00-4651-8e26-1f4e81a21181). 
+
+Downloading the Darwin core archive which contains a 
+
+```{r  echo=FALSE, message=FALSE, warning=FALSE}
+library(finch)
+library(reshape2)
+library(dplyr)
+
+fileDirs <- list.dirs("./BDcleaner_Scripts/Example/Downloads/ignored data/Grazing experiments/Hol")
+vegData <-  finch::dwca_read( list.files( fileDirs,
+                     full.names = TRUE), read = TRUE)
+```
+
+
+## Event data
+
+```{r , echo=FALSE, message=FALSE, warning=FALSE}
 library(kableExtra)
 
-df <- data.frame(class_1 = sample(1:100,10,replace = TRUE),
-                 class_2 = sample(1:100,10,replace = TRUE),
-                 class_3 = sample(1:100,10,replace = TRUE),
-                 class_4 = sample(1:100,10,replace = TRUE),
-                 class_5 = sample(1:100,10,replace = TRUE),
-                 class_6 = sample(1:100,10,replace = TRUE),
-                 class_7 = sample(1:100,10,replace = TRUE),
-                 class_8 = sample(1:100,10,replace = TRUE),
-                 class_9 = sample(1:100,10,replace = TRUE),
-                 class_10 = sample(1:100,10,replace = TRUE)
-                 )
-row.names(df) <- paste("Site",
-                       1:nrow(df),sep="_")
-kable(df, booktabs = TRUE, caption = "Example of wide format")%>%
-  kable_styling(latex_options = c("striped", "hold_position"),
-                full_width = F)
+kable(head(vegData$data$event.txt)) %>%
+  kable_styling()
+```
 
+## Occurance data
+
+```{r , echo=FALSE, message=FALSE, warning=FALSE}
+library(kableExtra)
+
+kable(head(vegData$data$occurrence.txt)) %>%
+  kable_styling()
+```
+
+## measurement data
+
+```{r , echo=FALSE, message=FALSE, warning=FALSE}
+library(kableExtra)
+
+kable(head(vegData$data$occurrence.txt)) %>%
+  kable_styling()
 ```
