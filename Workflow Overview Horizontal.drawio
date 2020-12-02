@@ -1,10 +1,10 @@
-<mxfile host="app.diagrams.net" modified="2020-12-02T09:37:45.368Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" etag="rv7mJ25sWBJRqQm-5Pi0" version="13.10.4" type="github">
+<mxfile host="app.diagrams.net" modified="2020-12-02T09:39:18.194Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" etag="rleL2bVoKSRdHcvSoa8q" version="13.10.4" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="5167" dy="2893" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="2339" math="0" shadow="0">
+    <mxGraphModel dx="1550" dy="868" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="2339" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
-        <mxCell id="yJk_V7Hbr1PSN4Hg7ylu-126" value="Plot Filter and Exploration" style="swimlane;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+        <mxCell id="yJk_V7Hbr1PSN4Hg7ylu-126" value="      Exploration and Transformation" style="swimlane;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="220" y="1180" width="2980" height="540" as="geometry" />
         </mxCell>
         <mxCell id="gclnOcu_DNjMdLOXnFwR-13" value="" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/mscae/Machine_Learning_Studio_Workspaces.svg;" parent="yJk_V7Hbr1PSN4Hg7ylu-126" vertex="1">
@@ -100,7 +100,7 @@
         <mxCell id="3pJFGj4-_oHTbB4DjswW-83" value="&lt;br&gt;Visualisation" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rounded=0;labelBackgroundColor=none;strokeColor=#6c8ebf;fillColor=#dae8fc;gradientColor=none;fontSize=15;direction=south;strokeWidth=4;spacing=5;spacingTop=-20;fontStyle=1;verticalAlign=middle;size=11.75;" vertex="1" parent="yJk_V7Hbr1PSN4Hg7ylu-126">
           <mxGeometry x="594" y="60.460000000000036" width="204.23507462686567" height="71.5" as="geometry" />
         </mxCell>
-        <mxCell id="3pJFGj4-_oHTbB4DjswW-84" value="&lt;br&gt;Extraction" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rounded=0;labelBackgroundColor=none;strokeColor=#6c8ebf;fillColor=#dae8fc;gradientColor=none;fontSize=15;direction=south;strokeWidth=4;spacing=5;spacingTop=-20;fontStyle=1;verticalAlign=middle;size=11.75;" vertex="1" parent="yJk_V7Hbr1PSN4Hg7ylu-126">
+        <mxCell id="3pJFGj4-_oHTbB4DjswW-84" value="&lt;br&gt;Filter" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rounded=0;labelBackgroundColor=none;strokeColor=#6c8ebf;fillColor=#dae8fc;gradientColor=none;fontSize=15;direction=south;strokeWidth=4;spacing=5;spacingTop=-20;fontStyle=1;verticalAlign=middle;size=11.75;" vertex="1" parent="yJk_V7Hbr1PSN4Hg7ylu-126">
           <mxGeometry x="1622" y="60.460000000000036" width="204.23507462686567" height="71.5" as="geometry" />
         </mxCell>
         <mxCell id="3pJFGj4-_oHTbB4DjswW-85" value="&lt;br&gt;Summarization" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rounded=0;labelBackgroundColor=none;strokeColor=#6c8ebf;fillColor=#dae8fc;gradientColor=none;fontSize=15;direction=south;strokeWidth=4;spacing=5;spacingTop=-20;fontStyle=1;verticalAlign=middle;size=11.75;" vertex="1" parent="yJk_V7Hbr1PSN4Hg7ylu-126">
