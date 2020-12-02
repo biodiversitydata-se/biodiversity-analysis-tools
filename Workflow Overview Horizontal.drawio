@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-12-02T14:15:23.909Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" etag="_qoJdRcXY9O2pbS7oaM9" version="13.10.4" type="github">
+<mxfile host="app.diagrams.net" modified="2020-12-02T14:19:17.617Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" etag="mm9GxIBB01V6Q2jC6WPh" version="13.10.4" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="3875" dy="2028" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="2339" math="0" shadow="0">
+    <mxGraphModel dx="6200" dy="3244" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="2339" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -18,10 +18,10 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="3pJFGj4-_oHTbB4DjswW-29" value="&lt;div style=&quot;color: rgb(0 , 0 , 0) ; font-family: &amp;#34;helvetica&amp;#34; ; font-style: normal ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(248 , 249 , 250)&quot;&gt;&lt;span style=&quot;font-size: 20px&quot;&gt;&lt;b&gt;Diversity&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="awDAAARCZt9qaH9nBusd-10">
-          <mxGeometry x="120" y="40" width="100" height="40" as="geometry" />
+          <mxGeometry x="100" y="40" width="100" height="40" as="geometry" />
         </mxCell>
         <mxCell id="3pJFGj4-_oHTbB4DjswW-100" value="" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/mscae/LogDiagnostics.svg;" vertex="1" parent="awDAAARCZt9qaH9nBusd-10">
-          <mxGeometry x="40" y="39.99999999999994" width="67" height="74.44" as="geometry" />
+          <mxGeometry x="20" y="39.99999999999994" width="67" height="74.44" as="geometry" />
         </mxCell>
         <mxCell id="3pJFGj4-_oHTbB4DjswW-105" value="" style="group" vertex="1" connectable="0" parent="awDAAARCZt9qaH9nBusd-10">
           <mxGeometry x="10" y="90" width="684" height="446.5" as="geometry" />
@@ -102,7 +102,7 @@
           <mxGeometry x="20" y="40" width="1060" height="780" as="geometry" />
         </mxCell>
         <mxCell id="Y2ZBj6na6wr-5ao4Nka5-161" value="&lt;div style=&quot;color: rgb(0 , 0 , 0) ; font-family: &amp;#34;helvetica&amp;#34; ; font-style: normal ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(248 , 249 , 250)&quot;&gt;&lt;span style=&quot;font-size: 20px&quot;&gt;&lt;b&gt;Species Distribution Models&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;fontSize=16;" parent="awDAAARCZt9qaH9nBusd-19" vertex="1">
-          <mxGeometry x="167.5" y="49.75" width="310" height="40" as="geometry" />
+          <mxGeometry x="99" y="40" width="310" height="40" as="geometry" />
         </mxCell>
         <mxCell id="aQgeZc3YTdZVwDT0ifam-16" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.842;entryY=0.104;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=#4D9AFF;strokeWidth=6;fillColor=#7EA6E0;endFill=0;endArrow=openThin;startFill=0;" parent="awDAAARCZt9qaH9nBusd-19" source="Y2ZBj6na6wr-5ao4Nka5-167" target="aQgeZc3YTdZVwDT0ifam-7" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -225,7 +225,7 @@
           <mxGeometry x="49.999999999999886" y="560" width="125" height="95" as="geometry" />
         </mxCell>
         <mxCell id="3pJFGj4-_oHTbB4DjswW-99" value="" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/mscae/LogDiagnostics.svg;" vertex="1" parent="awDAAARCZt9qaH9nBusd-19">
-          <mxGeometry x="33" y="40" width="120" height="133.33" as="geometry" />
+          <mxGeometry x="20" y="40" width="67" height="74.44" as="geometry" />
         </mxCell>
         <mxCell id="3pJFGj4-_oHTbB4DjswW-123" value="Trends and pattern detection" style="swimlane;fontSize=16;container=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="3pJFGj4-_oHTbB4DjswW-112">
           <mxGeometry x="20" y="1410" width="1060" height="370" as="geometry">
@@ -259,7 +259,7 @@
           <mxGeometry x="92.25895522388032" y="273.51" width="67.74626865671642" height="67.74626865671642" as="geometry" />
         </mxCell>
         <mxCell id="3pJFGj4-_oHTbB4DjswW-130" value="&lt;div style=&quot;color: rgb(0 , 0 , 0) ; font-family: &amp;#34;helvetica&amp;#34; ; font-style: normal ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(248 , 249 , 250)&quot;&gt;&lt;span style=&quot;font-size: 20px&quot;&gt;&lt;b&gt;Trends and patterns&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="3pJFGj4-_oHTbB4DjswW-123">
-          <mxGeometry x="110" y="29.88" width="220" height="40" as="geometry" />
+          <mxGeometry x="104.62" y="40" width="220" height="40" as="geometry" />
         </mxCell>
         <mxCell id="3pJFGj4-_oHTbB4DjswW-131" value="MSI" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/285_R_Project_logo-128.png" vertex="1" parent="3pJFGj4-_oHTbB4DjswW-123">
           <mxGeometry x="279.99895522388033" y="273.51" width="67.74626865671642" height="67.74626865671642" as="geometry" />
@@ -307,7 +307,7 @@
           <mxGeometry x="30" y="195.2" width="125" height="95" as="geometry" />
         </mxCell>
         <mxCell id="3pJFGj4-_oHTbB4DjswW-147" value="" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/mscae/LogDiagnostics.svg;" vertex="1" parent="3pJFGj4-_oHTbB4DjswW-123">
-          <mxGeometry x="30" y="29.879999999999995" width="67" height="74.44" as="geometry" />
+          <mxGeometry x="20" y="39.99999999999999" width="67" height="74.44" as="geometry" />
         </mxCell>
         <mxCell id="3pJFGj4-_oHTbB4DjswW-137" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;GLM / GAM&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;fontSize=15;rounded=0;fontStyle=1;strokeColor=#6c8ebf;strokeWidth=4;fillColor=#dae8fc;spacing=5;spacingTop=-20;" vertex="1" parent="3pJFGj4-_oHTbB4DjswW-123">
           <mxGeometry x="370" y="195.2000000000001" width="125" height="95" as="geometry" />
@@ -751,7 +751,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="Y7cJZKocZSNqlVmRAGfy-79" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/speedometer-128.png;fontFamily=Helvetica;fontSize=12;fontColor=#000000;align=center;strokeColor=#000000;strokeWidth=4;fillColor=#ffffff;" parent="awDAAARCZt9qaH9nBusd-22" vertex="1">
-          <mxGeometry x="30" y="40" width="120" height="120" as="geometry" />
+          <mxGeometry x="30" y="44.99" width="110" height="110" as="geometry" />
         </mxCell>
         <mxCell id="Y2ZBj6na6wr-5ao4Nka5-2" value="It is very difficult to generalise &lt;br&gt;a minimum number &lt;br&gt;of observations&amp;nbsp;but it should &lt;br&gt;back up your statistics at the &lt;br&gt;minimum sampling unit" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=16;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="awDAAARCZt9qaH9nBusd-22" vertex="1">
           <mxGeometry x="650" y="225.63" width="230" height="100" as="geometry" />
