@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-12-02T13:26:37.422Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" etag="jewOHaX4veiFHTklCbSZ" version="13.10.4" type="github">
+<mxfile host="app.diagrams.net" modified="2020-12-02T13:37:22.537Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" etag="xrty-wXro7GT-kqaanFI" version="13.10.4" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="6200" dy="3472" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="2339" math="0" shadow="0">
+    <mxGraphModel dx="3100" dy="1622" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="2339" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -202,12 +202,6 @@
         <mxCell id="3pJFGj4-_oHTbB4DjswW-48" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;population indices&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;fontSize=15;rounded=0;fontStyle=1;strokeColor=#6c8ebf;strokeWidth=4;fillColor=#dae8fc;spacing=5;spacingTop=-20;" vertex="1" parent="awDAAARCZt9qaH9nBusd-14">
           <mxGeometry x="50" y="202.38" width="125" height="95" as="geometry" />
         </mxCell>
-        <mxCell id="3pJFGj4-_oHTbB4DjswW-96" value="" style="shape=flexArrow;endArrow=classic;html=1;strokeColor=#82b366;strokeWidth=6;fillColor=#d5e8d4;width=20;" edge="1" parent="awDAAARCZt9qaH9nBusd-14">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="39.99999999999977" y="119.22000000000014" as="sourcePoint" />
-            <mxPoint x="-50.00000000000023" y="119.22000000000014" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="3pJFGj4-_oHTbB4DjswW-98" value="" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/mscae/LogDiagnostics.svg;" vertex="1" parent="awDAAARCZt9qaH9nBusd-14">
           <mxGeometry x="30" y="29.879999999999995" width="67" height="74.44" as="geometry" />
         </mxCell>
@@ -337,32 +331,20 @@
         <mxCell id="3pJFGj4-_oHTbB4DjswW-8" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;variograms&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;fontSize=15;rounded=0;fontStyle=1;strokeColor=#6c8ebf;strokeWidth=4;fillColor=#dae8fc;spacing=5;spacingTop=-20;" vertex="1" parent="awDAAARCZt9qaH9nBusd-19">
           <mxGeometry x="49.999999999999886" y="560" width="125" height="95" as="geometry" />
         </mxCell>
-        <mxCell id="3pJFGj4-_oHTbB4DjswW-94" value="" style="shape=flexArrow;endArrow=classic;html=1;strokeColor=#82b366;strokeWidth=6;fillColor=#d5e8d4;width=20;" edge="1" parent="awDAAARCZt9qaH9nBusd-19">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="455" y="763" as="sourcePoint" />
-            <mxPoint x="455" y="853" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="3pJFGj4-_oHTbB4DjswW-99" value="" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/mscae/LogDiagnostics.svg;" vertex="1" parent="awDAAARCZt9qaH9nBusd-19">
           <mxGeometry x="33" y="40" width="120" height="133.33" as="geometry" />
         </mxCell>
-        <mxCell id="3pJFGj4-_oHTbB4DjswW-49" value="" style="shape=flexArrow;endArrow=classic;html=1;strokeColor=#82b366;strokeWidth=6;fillColor=#d5e8d4;width=20;" edge="1" parent="awDAAARCZt9qaH9nBusd-19">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="1050" y="760" as="sourcePoint" />
-            <mxPoint x="1050" y="850" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="Y2ZBj6na6wr-5ao4Nka5-153" value="Morans Eigenvector maps" style="swimlane;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;" parent="3pJFGj4-_oHTbB4DjswW-112" vertex="1">
-          <mxGeometry x="510" y="1410" width="220" height="200" as="geometry" />
+        <mxCell id="Y2ZBj6na6wr-5ao4Nka5-153" value="Spatial Multivariate Analysis" style="swimlane;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;" parent="3pJFGj4-_oHTbB4DjswW-112" vertex="1">
+          <mxGeometry x="540" y="1410" width="190" height="160" as="geometry" />
         </mxCell>
         <mxCell id="Y2ZBj6na6wr-5ao4Nka5-154" value="&lt;span style=&quot;text-align: left ; background-color: rgb(248 , 249 , 250)&quot;&gt;adespatial&lt;/span&gt;" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/285_R_Project_logo-128.png" parent="Y2ZBj6na6wr-5ao4Nka5-153" vertex="1">
-          <mxGeometry x="28.99895522388033" y="79.99999999999989" width="67.74626865671642" height="67.74626865671642" as="geometry" />
+          <mxGeometry x="19.99895522388033" y="59.999999999999886" width="67.74626865671642" height="67.74626865671642" as="geometry" />
         </mxCell>
-        <mxCell id="Y2ZBj6na6wr-5ao4Nka5-155" value="&lt;div style=&quot;color: rgb(0 , 0 , 0) ; font-family: &amp;#34;helvetica&amp;#34; ; font-style: normal ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(248 , 249 , 250)&quot;&gt;&lt;span style=&quot;font-size: 20px&quot;&gt;&lt;b&gt;Morans Eigenvector&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;fontSize=16;" parent="Y2ZBj6na6wr-5ao4Nka5-153" vertex="1">
-          <mxGeometry x="10" y="30" width="210" height="40" as="geometry" />
+        <mxCell id="Y2ZBj6na6wr-5ao4Nka5-155" value="&lt;div style=&quot;color: rgb(0 , 0 , 0) ; font-family: &amp;#34;helvetica&amp;#34; ; font-style: normal ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(248 , 249 , 250)&quot;&gt;&lt;b&gt;&lt;font style=&quot;font-size: 16px&quot;&gt;SMA&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;fontSize=16;" parent="Y2ZBj6na6wr-5ao4Nka5-153" vertex="1">
+          <mxGeometry x="10" y="30" width="50" height="30" as="geometry" />
         </mxCell>
         <mxCell id="Y2ZBj6na6wr-5ao4Nka5-156" value="spmoran" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/285_R_Project_logo-128.png" parent="Y2ZBj6na6wr-5ao4Nka5-153" vertex="1">
-          <mxGeometry x="118.99895522388033" y="79.99999999999989" width="67.74626865671642" height="67.74626865671642" as="geometry" />
+          <mxGeometry x="109.99895522388033" y="59.999999999999886" width="67.74626865671642" height="67.74626865671642" as="geometry" />
         </mxCell>
         <mxCell id="yJk_V7Hbr1PSN4Hg7ylu-126" value="      Exploration and Transformation" style="swimlane;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="220" y="1180" width="2860" height="600" as="geometry" />
