@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-12-02T09:39:18.194Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" etag="rleL2bVoKSRdHcvSoa8q" version="13.10.4" type="github">
+<mxfile host="app.diagrams.net" modified="2020-12-02T09:47:18.331Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36" etag="ZOEMwobA_kkk3E4Frtue" version="13.10.4" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="1550" dy="868" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="2339" math="0" shadow="0">
+    <mxGraphModel dx="3875" dy="2170" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="2339" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -51,17 +51,11 @@
         <mxCell id="gclnOcu_DNjMdLOXnFwR-40" value="" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/general/Dashboard.svg;" parent="yJk_V7Hbr1PSN4Hg7ylu-126" vertex="1">
           <mxGeometry x="1810" y="190" width="68" height="48" as="geometry" />
         </mxCell>
-        <mxCell id="Y7cJZKocZSNqlVmRAGfy-11" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn1.iconfinder.com/data/icons/happy-trees/100/tree-green-nature-curly-128.png;strokeWidth=4;" parent="yJk_V7Hbr1PSN4Hg7ylu-126" vertex="1">
-          <mxGeometry x="2190" y="130" width="128" height="128" as="geometry" />
-        </mxCell>
         <mxCell id="Y7cJZKocZSNqlVmRAGfy-78" value="" style="shape=flexArrow;endArrow=classic;html=1;strokeColor=#9673a6;strokeWidth=6;fillColor=#e1d5e7;width=20;" parent="yJk_V7Hbr1PSN4Hg7ylu-126" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="1131" y="39.99999999999977" as="sourcePoint" />
             <mxPoint x="1131" y="-50.00000000000023" as="targetPoint" />
           </mxGeometry>
-        </mxCell>
-        <mxCell id="Y2ZBj6na6wr-5ao4Nka5-0" value="aggregation" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="yJk_V7Hbr1PSN4Hg7ylu-126" vertex="1">
-          <mxGeometry x="2330" y="280" width="80" height="20" as="geometry" />
         </mxCell>
         <mxCell id="Y2ZBj6na6wr-5ao4Nka5-159" value="Raster" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/miu/24/editor-grid-view-block-outline-stroke-128.png;fontSize=12;" parent="yJk_V7Hbr1PSN4Hg7ylu-126" vertex="1">
           <mxGeometry x="254.23000000000002" y="340" width="67" height="67" as="geometry" />
