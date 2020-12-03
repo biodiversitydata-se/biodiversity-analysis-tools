@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>6 Essential Biodiversity Variables | A general workflow for analysis of biodiversity primary data</title>
+  <meta name="description" content="Description of purpose and elements." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="6 Essential Biodiversity Variables | A general workflow for analysis of biodiversity primary data" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Description of purpose and elements." />
+  <meta name="github-repo" content="https://github.com/biodiversitydata-se/biodiversity-analysis-tools" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="6 Essential Biodiversity Variables | A general workflow for analysis of biodiversity primary data" />
+  
+  <meta name="twitter:description" content="Description of purpose and elements." />
+  
+
+<meta name="author" content="Debora Arlt, Alejandro Ruete and Charles Campbell for the Swedish Biodiversity Data Infrastructure" />
+
+
+<meta name="date" content="2020-12-03" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="data-exploration-and-transformation.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html"><i class="fa fa-check"></i><b>2</b> The importance of questions and sources of data</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html#questions-taxonomies-and-data"><i class="fa fa-check"></i><b>2.1</b> Questions, Taxonomies and Data</a></li>
+<li class="chapter" data-level="2.2" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html#questions"><i class="fa fa-check"></i><b>2.2</b> Questions</a></li>
+<li class="chapter" data-level="2.3" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html#taxonomies"><i class="fa fa-check"></i><b>2.3</b> Taxonomies</a></li>
+<li class="chapter" data-level="2.4" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html#data-sources"><i class="fa fa-check"></i><b>2.4</b> Data Sources</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html#biodiversity-record-data"><i class="fa fa-check"></i><b>2.4.1</b> Biodiversity record data</a></li>
+<li class="chapter" data-level="2.4.2" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html#functional-data"><i class="fa fa-check"></i><b>2.4.2</b> Functional data</a></li>
+<li class="chapter" data-level="2.4.3" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html#genetic-data-bases"><i class="fa fa-check"></i><b>2.4.3</b> Genetic data bases</a></li>
+<li class="chapter" data-level="2.4.4" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html#environemntal-data"><i class="fa fa-check"></i><b>2.4.4</b> Environemntal data</a></li>
+<li class="chapter" data-level="2.4.5" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html#biodiversity-data"><i class="fa fa-check"></i><b>2.4.5</b> Biodiversity data</a></li>
+<li class="chapter" data-level="2.4.6" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html#environemntal-data-1"><i class="fa fa-check"></i><b>2.4.6</b> Environemntal data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-cleaning.html"><a href="data-cleaning.html"><i class="fa fa-check"></i><b>3</b> Data cleaning</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="data-cleaning.html"><a href="data-cleaning.html#resources"><i class="fa fa-check"></i><b>3.1</b> Resources</a></li>
+<li class="chapter" data-level="3.2" data-path="data-cleaning.html"><a href="data-cleaning.html#taxonomies-1"><i class="fa fa-check"></i><b>3.2</b> Taxonomies</a></li>
+<li class="chapter" data-level="3.3" data-path="data-cleaning.html"><a href="data-cleaning.html#location-data"><i class="fa fa-check"></i><b>3.3</b> Location data</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="data-cleaning.html"><a href="data-cleaning.html#locality-information"><i class="fa fa-check"></i><b>3.3.1</b> Locality information</a></li>
+<li class="chapter" data-level="3.3.2" data-path="data-cleaning.html"><a href="data-cleaning.html#coordinate-uncertainty"><i class="fa fa-check"></i><b>3.3.2</b> Coordinate uncertainty</a></li>
+<li class="chapter" data-level="3.3.3" data-path="data-cleaning.html"><a href="data-cleaning.html#coordinate-errors"><i class="fa fa-check"></i><b>3.3.3</b> Coordinate errors</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="data-cleaning.html"><a href="data-cleaning.html#examples"><i class="fa fa-check"></i><b>3.4</b> Examples</a></li>
+<li class="chapter" data-level="3.5" data-path="data-cleaning.html"><a href="data-cleaning.html#data-cleaning-cyoeraceae-sweden"><i class="fa fa-check"></i><b>3.5</b> Data Cleaning Cyoeraceae Sweden</a></li>
+<li class="chapter" data-level="3.6" data-path="data-cleaning.html"><a href="data-cleaning.html#cyperaceeae-of-sweden"><i class="fa fa-check"></i><b>3.6</b> Cyperaceeae of Sweden</a></li>
+<li class="chapter" data-level="3.7" data-path="data-cleaning.html"><a href="data-cleaning.html#taxonomy"><i class="fa fa-check"></i><b>3.7</b> Taxonomy</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="fitness-for-use.html"><a href="fitness-for-use.html"><i class="fa fa-check"></i><b>4</b> Fitness for use</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="fitness-for-use.html"><a href="fitness-for-use.html#bias"><i class="fa fa-check"></i><b>4.1</b> Bias</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="data-exploration-and-transformation.html"><a href="data-exploration-and-transformation.html"><i class="fa fa-check"></i><b>5</b> Data Exploration and Transformation</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="data-exploration-and-transformation.html"><a href="data-exploration-and-transformation.html#wide"><i class="fa fa-check"></i><b>5.1</b> Wide</a></li>
+<li class="chapter" data-level="5.2" data-path="data-exploration-and-transformation.html"><a href="data-exploration-and-transformation.html#long"><i class="fa fa-check"></i><b>5.2</b> Long</a></li>
+<li class="chapter" data-level="5.3" data-path="data-exploration-and-transformation.html"><a href="data-exploration-and-transformation.html#wide-to-long"><i class="fa fa-check"></i><b>5.3</b> Wide to long</a></li>
+<li class="chapter" data-level="5.4" data-path="data-exploration-and-transformation.html"><a href="data-exploration-and-transformation.html#long-to-wide"><i class="fa fa-check"></i><b>5.4</b> Long to Wide</a></li>
+<li class="chapter" data-level="5.5" data-path="data-exploration-and-transformation.html"><a href="data-exploration-and-transformation.html#spatial-data"><i class="fa fa-check"></i><b>5.5</b> Spatial data</a></li>
+<li class="chapter" data-level="5.6" data-path="data-exploration-and-transformation.html"><a href="data-exploration-and-transformation.html#exporting-data-spatial-data-from-r"><i class="fa fa-check"></i><b>5.6</b> Exporting Data spatial data from R</a></li>
+<li class="chapter" data-level="5.7" data-path="data-exploration-and-transformation.html"><a href="data-exploration-and-transformation.html#spatial-vector-data"><i class="fa fa-check"></i><b>5.7</b> Spatial vector data</a></li>
+<li class="chapter" data-level="5.8" data-path="data-exploration-and-transformation.html"><a href="data-exploration-and-transformation.html#raster"><i class="fa fa-check"></i><b>5.8</b> Raster</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html"><i class="fa fa-check"></i><b>6</b> Essential Biodiversity Variables</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html#sdm"><i class="fa fa-check"></i><b>6.1</b> SDM</a></li>
+<li class="chapter" data-level="6.2" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html#diversity"><i class="fa fa-check"></i><b>6.2</b> Diversity</a></li>
+<li class="chapter" data-level="6.3" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html#types-of-analyses---patitioning-alpha-beta-gamma-etc.-diversity"><i class="fa fa-check"></i><b>6.3</b> Types of analyses - Patitioning <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span>, <span class="math inline">\(\gamma\)</span> <em>etc.</em> diversity</a></li>
+<li class="chapter" data-level="6.4" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html#data-form"><i class="fa fa-check"></i><b>6.4</b> Data form</a></li>
+<li class="chapter" data-level="6.5" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html#classic-diversity-measures"><i class="fa fa-check"></i><b>6.5</b> Classic diversity measures</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html#alpha-diversity"><i class="fa fa-check"></i><b>6.5.1</b> <span class="math inline">\(\alpha\)</span> diversity</a></li>
+<li class="chapter" data-level="6.5.2" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html#beta-diversity-and-dissimilarities"><i class="fa fa-check"></i><b>6.5.2</b> <span class="math inline">\(\beta\)</span> diversity and dissimilarities</a></li>
+<li class="chapter" data-level="6.5.3" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html#additional-related-diversities"><i class="fa fa-check"></i><b>6.5.3</b> Additional related diversities</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html#numbers-equivalents"><i class="fa fa-check"></i><b>6.6</b> Numbers equivalents</a></li>
+<li class="chapter" data-level="6.7" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html#example-diversity-data"><i class="fa fa-check"></i><b>6.7</b> example diversity data</a></li>
+<li class="chapter" data-level="6.8" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html#event-data"><i class="fa fa-check"></i><b>6.8</b> Event data</a></li>
+<li class="chapter" data-level="6.9" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html#occurance-data"><i class="fa fa-check"></i><b>6.9</b> Occurance data</a></li>
+<li class="chapter" data-level="6.10" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html#measurement-data"><i class="fa fa-check"></i><b>6.10</b> measurement data</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A general workflow for analysis of biodiversity primary data</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="essential-biodiversity-variables" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Essential Biodiversity Variables</h1>
+<div id="sdm" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> SDM</h2>
+<p><a href="https://rspatial.org/raster/sdm/index.html" class="uri">https://rspatial.org/raster/sdm/index.html</a></p>
+</div>
+<div id="diversity" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Diversity</h2>
+<p>Biological diversity analyses typically use multivariate techniques to assess variation in data sets comprising sampling events and cases. A sampling event can be across time and space. In biodiversity analysis three cases are the most common:</p>
+<ul>
+<li><p>Taxonomic diversity (species);</p></li>
+<li><p>Functional diversity (biological form); and</p></li>
+<li><p>Genetic diversity (allellic frequency, phylogeny etc).</p></li>
+</ul>
+<p>Variation in these three dimensions can be directly compared both within and between these different dimensions of biological diversity.</p>
+</div>
+<div id="types-of-analyses---patitioning-alpha-beta-gamma-etc.-diversity" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> Types of analyses - Patitioning <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span>, <span class="math inline">\(\gamma\)</span> <em>etc.</em> diversity</h2>
+<p>Two forms of diversity analyses are currently widely used; classic diversity measures (eg species richness, shannons diversity index <em>etc.</em>) and <em>numbers equivalents</em> representation of the underlying diversity distribution. This second form was first introduced in Hill <span class="citation">(<a href="#ref-hill_diversity_1973" role="doc-biblioref">1973</a>)</span> and a number of resources are now available for computing both forms. See the forum piece <em>Forum: Partitioning diversity</em> in Ecology <span class="citation">(<a href="#ref-ellison_partitioning_2010" role="doc-biblioref">2010</a>)</span> for a fuller discussion on the use of <em>numbers equivalents</em>.</p>
+<p>Both types of diversity partitioning are used for all types of analyses and we present resources which are available for both forms:
+- Resources for classic diversity measures
+- Resources for <em>numbers equivalents</em>.</p>
+</div>
+<div id="data-form" class="section level2" number="6.4">
+<h2><span class="header-section-number">6.4</span> Data form</h2>
+<p>Within the R environment both methods require data to be in the <strong>wide format</strong>. See [link to page explaining shift from long to wide].</p>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-40">Table 6.1: </span>Example of wide format
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+class_1
+</th>
+<th style="text-align:right;">
+class_2
+</th>
+<th style="text-align:right;">
+class_3
+</th>
+<th style="text-align:right;">
+class_4
+</th>
+<th style="text-align:right;">
+class_5
+</th>
+<th style="text-align:right;">
+class_6
+</th>
+<th style="text-align:right;">
+class_7
+</th>
+<th style="text-align:right;">
+class_8
+</th>
+<th style="text-align:right;">
+class_9
+</th>
+<th style="text-align:right;">
+class_10
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Site_1
+</td>
+<td style="text-align:right;">
+68
+</td>
+<td style="text-align:right;">
+97
+</td>
+<td style="text-align:right;">
+89
+</td>
+<td style="text-align:right;">
+74
+</td>
+<td style="text-align:right;">
+44
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+81
+</td>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:right;">
+73
+</td>
+<td style="text-align:right;">
+93
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Site_2
+</td>
+<td style="text-align:right;">
+39
+</td>
+<td style="text-align:right;">
+85
+</td>
+<td style="text-align:right;">
+37
+</td>
+<td style="text-align:right;">
+42
+</td>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:right;">
+45
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:right;">
+87
+</td>
+<td style="text-align:right;">
+34
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Site_3
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+21
+</td>
+<td style="text-align:right;">
+34
+</td>
+<td style="text-align:right;">
+38
+</td>
+<td style="text-align:right;">
+70
+</td>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:right;">
+93
+</td>
+<td style="text-align:right;">
+83
+</td>
+<td style="text-align:right;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Site_4
+</td>
+<td style="text-align:right;">
+34
+</td>
+<td style="text-align:right;">
+54
+</td>
+<td style="text-align:right;">
+89
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+39
+</td>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:right;">
+28
+</td>
+<td style="text-align:right;">
+90
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Site_5
+</td>
+<td style="text-align:right;">
+87
+</td>
+<td style="text-align:right;">
+74
+</td>
+<td style="text-align:right;">
+44
+</td>
+<td style="text-align:right;">
+28
+</td>
+<td style="text-align:right;">
+51
+</td>
+<td style="text-align:right;">
+78
+</td>
+<td style="text-align:right;">
+89
+</td>
+<td style="text-align:right;">
+48
+</td>
+<td style="text-align:right;">
+48
+</td>
+<td style="text-align:right;">
+43
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Site_6
+</td>
+<td style="text-align:right;">
+43
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+79
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+42
+</td>
+<td style="text-align:right;">
+65
+</td>
+<td style="text-align:right;">
+48
+</td>
+<td style="text-align:right;">
+33
+</td>
+<td style="text-align:right;">
+64
+</td>
+<td style="text-align:right;">
+59
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Site_7
+</td>
+<td style="text-align:right;">
+14
+</td>
+<td style="text-align:right;">
+73
+</td>
+<td style="text-align:right;">
+33
+</td>
+<td style="text-align:right;">
+44
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+70
+</td>
+<td style="text-align:right;">
+89
+</td>
+<td style="text-align:right;">
+45
+</td>
+<td style="text-align:right;">
+94
+</td>
+<td style="text-align:right;">
+26
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Site_8
+</td>
+<td style="text-align:right;">
+82
+</td>
+<td style="text-align:right;">
+79
+</td>
+<td style="text-align:right;">
+84
+</td>
+<td style="text-align:right;">
+87
+</td>
+<td style="text-align:right;">
+24
+</td>
+<td style="text-align:right;">
+87
+</td>
+<td style="text-align:right;">
+23
+</td>
+<td style="text-align:right;">
+21
+</td>
+<td style="text-align:right;">
+96
+</td>
+<td style="text-align:right;">
+15
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Site_9
+</td>
+<td style="text-align:right;">
+59
+</td>
+<td style="text-align:right;">
+85
+</td>
+<td style="text-align:right;">
+35
+</td>
+<td style="text-align:right;">
+70
+</td>
+<td style="text-align:right;">
+32
+</td>
+<td style="text-align:right;">
+70
+</td>
+<td style="text-align:right;">
+84
+</td>
+<td style="text-align:right;">
+31
+</td>
+<td style="text-align:right;">
+60
+</td>
+<td style="text-align:right;">
+58
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Site_10
+</td>
+<td style="text-align:right;">
+51
+</td>
+<td style="text-align:right;">
+37
+</td>
+<td style="text-align:right;">
+70
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:right;">
+14
+</td>
+<td style="text-align:right;">
+75
+</td>
+<td style="text-align:right;">
+29
+</td>
+<td style="text-align:right;">
+17
+</td>
+<td style="text-align:right;">
+51
+</td>
+<td style="text-align:right;">
+29
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="classic-diversity-measures" class="section level2" number="6.5">
+<h2><span class="header-section-number">6.5</span> Classic diversity measures</h2>
+<p>People have used many different indices to measure diversity. These include:</p>
+<div id="alpha-diversity" class="section level3" number="6.5.1">
+<h3><span class="header-section-number">6.5.1</span> <span class="math inline">\(\alpha\)</span> diversity</h3>
+<p><span class="math inline">\(\alpha\)</span> diversity refers to the diversity at a single site. There are a number of different indices to caclculate the most common are:</p>
+<ul>
+<li>Species richness;</li>
+<li>Shannon/shannon weaver index;</li>
+<li>Simpson;</li>
+<li>Inverse Simpson; and</li>
+<li>Gini Simpson</li>
+</ul>
+<p>The R libraries <strong>vegan, adiv, abdiv</strong> all provide methods to calculate these measures as well as a wealth of others. Within <strong>abdiv</strong> the funtion <em>alpha_diversity</em> lists the <span class="math inline">\(\alpha\)</span> diversity measures available within the package. Whilst not exhaustive it is a large list.</p>
+<p>There are also ways of estimating <span class="math inline">\(\alpha\)</span> diversity through rarefaction as well as modelling and visualising its different aspects in both <strong>vegan</strong> and <strong>adiv</strong>.</p>
+</div>
+<div id="beta-diversity-and-dissimilarities" class="section level3" number="6.5.2">
+<h3><span class="header-section-number">6.5.2</span> <span class="math inline">\(\beta\)</span> diversity and dissimilarities</h3>
+<p>The <span class="math inline">\(\beta\)</span> diversity is a measure of the change in composition and/or abundance between sites. There is a long history of methods to measure this particular aspect of diversity. This has resulted in multiple indices and dissimilarities. Commonly used indices include:</p>
+<ul>
+<li>Jaccard;</li>
+<li>Sørrensen;</li>
+<li>Bray-Curtis;</li>
+<li>Hellinger distance,</li>
+<li>Chord distance</li>
+</ul>
+<p>An extensive list of <span class="math inline">\(\beta\)</span> diversities are available through the function <em>betadiver</em> in the <strong>vegan</strong> package as well as <em>beta_diversity</em> in the <strong>abdiv</strong> package.</p>
+<p>Methods for analysing <span class="math inline">\(\beta\)</span> diversity are included in the libraries <strong>betapart, vegan, adiv and ade4</strong>.</p>
+</div>
+<div id="additional-related-diversities" class="section level3" number="6.5.3">
+<h3><span class="header-section-number">6.5.3</span> Additional related diversities</h3>
+<p>Measures of dark diversity (those species that are absent from an ecosystem but which belong to its species pool, <span class="citation">(Pärtel, Szava-Kovats, and Zobel <a href="#ref-partel_dark_2011" role="doc-biblioref">2011</a>)</span>) and <span class="math inline">\(\zeta\)</span> diversity (a measure of species pool overlap, <span class="citation">(Hui and McGeoch <a href="#ref-hui_zeta_2014" role="doc-biblioref">2014</a>)</span>) have been developed. These measures are instituted in the libraries:</p>
+<ul>
+<li><strong>DarkDiv</strong> dark diversity; and</li>
+<li><strong>zetadiv</strong> zeta diversity</li>
+</ul>
+</div>
+</div>
+<div id="numbers-equivalents" class="section level2" number="6.6">
+<h2><span class="header-section-number">6.6</span> Numbers equivalents</h2>
+<p>Numbers equivalents account for the nested heirarchies in <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span> and <span class="math inline">\(\gamma\)</span> diversity. A number of different libraries have now been developed:</p>
+<ul>
+<li>Hill numbers: <span class="citation">Hill (<a href="#ref-hill_diversity_1973" role="doc-biblioref">1973</a>)</span>
+<ul>
+<li><strong>adiv</strong></li>
+<li><strong>HillR</strong></li>
+<li><strong>iNext</strong></li>
+</ul></li>
+<li>Tsallis entropy: <span class="citation">Marcon and Hérault (<a href="#ref-marcon_decomposing_2015" role="doc-biblioref">2015</a>)</span>
+<ul>
+<li><strong>adiv</strong></li>
+<li><strong>entropart</strong></li>
+</ul></li>
+<li>Crossing point theory: <span class="citation">Patil and Taillie (<a href="#ref-patil_diversity_1982" role="doc-biblioref">1982</a>)</span>
+<ul>
+<li><strong>BioFTF</strong></li>
+</ul></li>
+</ul>
+</div>
+<div id="example-diversity-data" class="section level2" number="6.7">
+<h2><span class="header-section-number">6.7</span> example diversity data</h2>
+<p>In this example we use the sampling event “Vegetation data from sheep grazing experiment at alpine site in Hol, Norway” available <a href="https://www.gbif.org/dataset/57d403f4-9d00-4651-8e26-1f4e81a21181">here</a>.</p>
+<p>Downloading the Darwin core archive which contains a</p>
+</div>
+<div id="event-data" class="section level2" number="6.8">
+<h2><span class="header-section-number">6.8</span> Event data</h2>
+</div>
+<div id="occurance-data" class="section level2" number="6.9">
+<h2><span class="header-section-number">6.9</span> Occurance data</h2>
+</div>
+<div id="measurement-data" class="section level2" number="6.10">
+<h2><span class="header-section-number">6.10</span> measurement data</h2>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-ellison_partitioning_2010">
+<p>Ellison, Aaron M. 2010. “Partitioning Diversity1.” <em>Ecology</em> 91 (7): 1962–3. <a href="https://doi.org/https://doi.org/10.1890/09-1692.1">https://doi.org/https://doi.org/10.1890/09-1692.1</a>.</p>
+</div>
+<div id="ref-hill_diversity_1973">
+<p>Hill, M. O. 1973. “Diversity and Evenness: A Unifying Notation and Its Consequences.” <em>Ecology</em> 54 (2): 427–32. <a href="https://doi.org/10.2307/1934352">https://doi.org/10.2307/1934352</a>.</p>
+</div>
+<div id="ref-hui_zeta_2014">
+<p>Hui, Cang, and Melodie A. McGeoch. 2014. “Zeta Diversity as a Concept and Metric That Unifies Incidence-Based Biodiversity Patterns.” <em>The American Naturalist</em> 184 (5): 684–94. <a href="https://doi.org/10.1086/678125">https://doi.org/10.1086/678125</a>.</p>
+</div>
+<div id="ref-marcon_decomposing_2015">
+<p>Marcon, Eric, and Bruno Hérault. 2015. “Decomposing Phylodiversity.” <em>Methods in Ecology and Evolution</em> 6 (3): 333–39. <a href="https://doi.org/https://doi.org/10.1111/2041-210X.12323">https://doi.org/https://doi.org/10.1111/2041-210X.12323</a>.</p>
+</div>
+<div id="ref-patil_diversity_1982">
+<p>Patil, G. P., and C. Taillie. 1982. “Diversity as a Concept and Its Measurement.” <em>Journal of the American Statistical Association</em> 77 (379): 548–61. <a href="https://doi.org/10.1080/01621459.1982.10477845">https://doi.org/10.1080/01621459.1982.10477845</a>.</p>
+</div>
+<div id="ref-partel_dark_2011">
+<p>Pärtel, Meelis, Robert Szava-Kovats, and Martin Zobel. 2011. “Dark Diversity: Shedding Light on Absent Species.” <em>Trends in Ecology &amp; Evolution</em> 26 (3): 124–28. <a href="https://doi.org/10.1016/j.tree.2010.12.004">https://doi.org/10.1016/j.tree.2010.12.004</a>.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="data-exploration-and-transformation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
