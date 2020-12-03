@@ -1,4 +1,4 @@
-# Data completeness 
+## Fitness for use
 
 Knowledge of the quality of data available is very important. Quantifying gaps in data taxonomic, temporal and spatial is an important step. The R package **BIRDS** provides a resource to do all of these things. It can:
 
@@ -48,7 +48,7 @@ obs
 Sp
 ```
 
-# Bias
+## Bias
 
 All data sets are biased to some degree. For field data, the structure of data gathering should be robust enough to reduce the effects of bias to a minimum. Data downloaded from biodiversity databases are by their nature from different sources. Such sources may have differing causes of bias and it is important to consider if and how such biases will affect research.
 

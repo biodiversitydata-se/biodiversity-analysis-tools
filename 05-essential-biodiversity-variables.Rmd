@@ -1,7 +1,9 @@
-# SDM 
+# Essential Biodiversity Variables
+
+## SDM 
 https://rspatial.org/raster/sdm/index.html
 
-# Diversity 
+## Diversity 
 
 Biological diversity analyses typically use multivariate techniques to assess variation in data sets comprising sampling events and cases. A sampling event can be across time and space. In biodiversity analysis three cases are the most common:
 
@@ -102,10 +104,6 @@ Numbers equivalents account for the nested heirarchies in $\alpha$, $\beta$ and 
  - Crossing point theory: @patil_diversity_1982
     - **BioFTF**
     
-# References
-
-
-
 
 ## example diversity data 
 

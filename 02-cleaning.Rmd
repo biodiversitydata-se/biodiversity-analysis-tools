@@ -1,4 +1,4 @@
-# Cleaning data
+# Data cleaning
 
 Biodiversity data repositories work hard to maintain the accuracy of their holdings. When multiple sources are involved several problems may arrise. Here we shall quickly outline what they are and possible solutions.
 
@@ -1096,5 +1096,3 @@ rm(list = setdiff(ls(),c('df.bio','add.var','taxonbind',
 
 
 ```
-
-# References

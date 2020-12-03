@@ -1,6 +1,6 @@
-# The importance of questions and sources of Data
+# The importance of questions and sources of data
 
-# Questions, Taxonomies and Data
+## Questions, Taxonomies and Data
 
 ## Questions
 Any question to be asked of biodiversity data should be put as simply and succinctly as possible. With the number of different subject areas and techniques used, analyses can quickly become complex.
@@ -87,5 +87,3 @@ There are a number of environmental repositories available. Static data sets for
 - climond [https://www.climond.org/] Global gridded climarte data at various resolutions
 - soilgrids [https://soilgrids.org/] Global gridded soil data
 - Copernicus Land monitoring servic [https://land.copernicus.eu/pan-european/corine-land-cover] Land monitoring data from across the EU
-
-# References

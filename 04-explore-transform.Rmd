@@ -1,8 +1,8 @@
-# Wide and long
+# Data Exploration and Transformation
 
 There are many different ways of arranging data, especially within the R environment. Two of the most frequently used are the **wide** and **long** formats. Here we show what the wide and long formats are and ways to move between the two.
 
-# Wide
+## Wide
 Wide format is where each row represents a data point and each column an attribute of that data point. In the example below each data point is a site, and each column is a species percentage cover.
 ```{r message=FALSE, warning=FALSE, echo=FALSE}
 library(kableExtra)
@@ -18,7 +18,7 @@ kable(df_wide, booktabs = TRUE, caption = "Example of wide format")%>%
                 full_width = T)
 ```
 
-# Long
+## Long
 Long format is where each row has a value of an attribute of the data point. Each row in the example below records what the value of a species is at a particular site.
 
 ```{r message=FALSE, warning=FALSE, echo=FALSE}
