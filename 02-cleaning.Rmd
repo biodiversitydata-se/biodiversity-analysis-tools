@@ -184,12 +184,15 @@ library(SBDI4R)
 #                           pattern = ".csv",
 #                           full.names = TRUE), encoding =  "UTF-8")
 
+## TODO optimize the search so that the dataset is smaller than 5mb
 Carex <- occurrences(taxon="Carex",
                  email="test@test.org", 
                  download_reason_id=10)
+
+Carex$data <- Carex$data[-which(is.na(Carex$data$year)),]
 Carex$data$day <- ifelse(is.na(Carex$data$day), 
-                       sample(c(1:31), 1, replace = TRUE)
-                       )
+                       sample(c(1:31), 1, replace = TRUE),
+                       Carex$data$day)
 Carex$data$month <- ifelse(Carex$data$day == 31, 
                        sample(c(1,3,5,7,8,10,12), 1, replace = TRUE),
                        ifelse(Carex$data$day>=28, 
@@ -199,6 +202,8 @@ Carex$data$month <- ifelse(Carex$data$day == 31,
                        )
 Carex <- Carex$data
 Carex$ID <- paste0("car-",1:nrow(Carex))
+
+Carex <- Carex[which(Carex$year==2019),]
 save(Carex ,file = "./data/BDcleaner_Scripts/Example/Downloads/Cyperacea_SWE.rdata")
 ```
 
@@ -240,7 +245,7 @@ We then check for data about species in the locality information for which there
 ```{r, eval=FALSE, error=FALSE, message=FALSE, warning=FALSE, include=FALSE}
 kable(head(Carex %>%
   filter(species == "") %>%
-  select(locality) %>%
+  dplyr::select(locality) %>%
   distinct())) %>%
    kable_styling(latex_options = c("striped", "hold_position"),
                 full_width = F)
@@ -348,7 +353,7 @@ There are a number of things to consider when cleaning data:
 unUseful <- unique( c(unUseful, Carex %>%
                         filter(is.na(coordinateUncertaintyInMetres)) %>%
                         .$ID))
-kable( t(table( round( Carex$coordinateUncertaintyInMetres, -2))))
+# kable( t(table( round( Carex$coordinateUncertaintyInMetres, -2))))
 
 ```
 We shall filter out all records with unknown coordinate uncertainty and all with a coordinate uncertainty more than 12.5 km.
@@ -375,7 +380,7 @@ We first remove the already labelled inaccurate data.
 
 ```{r,warning=FALSE, error=FALSE, message=FALSE}
 Carex <- Carex[-which(Carex$ID %in% unUseful),]
-Carex <- Carex[-which(is.na(Carex$day)),]
+# Carex <- Carex[-which(is.na(Carex$day)),]
 ```
 
 We then use the library CoordinateCleaner to automatically flag coordinates that may be errors. Outputs of this can be a cleaned dataframe or additional columns with doubtful records flagged. 
@@ -489,6 +494,7 @@ Sweden_sf <- st_as_sf(Sweden)
 ```
 
 ```{r, warning=FALSE, error=FALSE, message=FALSE}
+library(colorRamps)
 SB_SPat <- st_as_sf(SB$spatial)
 
 nSpecies <- ggplot(data = SB_SPat,aes(fill = nSpp))+

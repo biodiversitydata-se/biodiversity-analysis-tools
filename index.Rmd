@@ -1,17 +1,15 @@
 --- 
-title: "A general workflow for analysis of Biodiversity primary data"
-author: ''
+title: "A general workflow for analysis of biodiversity primary data"
+author: "Debora Arlt, Alejandro Ruete and Charles Campbell for the Swedish Biodiversity Data Infrastructure"
 date: "`r Sys.Date()`"
-output:
-  html_document:
-    df_print: paged
+output: bookdown::gitbook
 site: bookdown::bookdown_site
 documentclass: book
 bibliography:
-- RefLibrary.bib
+- references.bib
 biblio-style: apalike
 link-citations: yes
-github-repo: rstudio/bookdown-demo
+github-repo: https://github.com/biodiversitydata-se/biodiversity-analysis-tools
 description: Description of purpose and elements.
 ---
 
@@ -19,8 +17,8 @@ description: Description of purpose and elements.
 
 A BEGINNING PARAGRAPH
 
-Each reserach question draws its own challenges which are unique in themselves. Our aim here is to provide a workflow which answers and / or prompts the large scale questions that should be asked at each stage of the process. We point to resources, methods and facilities that may be useful in answering a particular question. We assume some knowledge of statistical inference and it limitations. The validity and appropriateness of a particular method is dependent on the individual researcher(s).
+Each research question draws its own challenges which are unique in themselves. Our aim here is to provide a workflow which answers and / or prompts the large scale questions that should be asked at each stage of the process. We point to resources, methods and facilities that may be useful in answering a particular question. We assume some knowledge of statistical inference and it limitations. The validity and appropriateness of a particular method is dependent on the individual researcher(s).
 
 Biodiversity resources are increasingly international. We focus on biodiversity data and resources from Sweden but our aim is to present considerations and methods that can be applied beyond Sweden's borders.
 
-htmltools::includeHTML("Workflow Overview Horizontal.html")
+`r htmltools::includeHTML("Workflow Overview Horizontal.html")`

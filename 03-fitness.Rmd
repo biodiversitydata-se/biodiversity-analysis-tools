@@ -1,4 +1,4 @@
-## Fitness for use
+# Fitness for use
 
 Knowledge of the quality of data available is very important. Quantifying gaps in data taxonomic, temporal and spatial is an important step. The R package **BIRDS** provides a resource to do all of these things. It can:
 

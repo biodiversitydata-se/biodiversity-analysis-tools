@@ -111,12 +111,12 @@ In this example we use the sampling event "Vegetation data from sheep grazing ex
 
 Downloading the Darwin core archive which contains a 
 
-```{r  echo=FALSE, message=FALSE, warning=FALSE}
+```{r  echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
 library(finch)
 library(reshape2)
 library(dplyr)
 
-fileDirs <- list.dirs("./BDcleaner_Scripts/Example/Downloads/ignored data/Grazing experiments/Hol")
+fileDirs <- list.dirs("./data/BDcleaner_Scripts/Example/Downloads/ignored data/Grazing experiments/Hol")
 vegData <-  finch::dwca_read( list.files( fileDirs,
                      full.names = TRUE), read = TRUE)
 ```
@@ -124,7 +124,7 @@ vegData <-  finch::dwca_read( list.files( fileDirs,
 
 ## Event data
 
-```{r , echo=FALSE, message=FALSE, warning=FALSE}
+```{r , echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
 library(kableExtra)
 
 kable(head(vegData$data$event.txt)) %>%
@@ -133,7 +133,7 @@ kable(head(vegData$data$event.txt)) %>%
 
 ## Occurance data
 
-```{r , echo=FALSE, message=FALSE, warning=FALSE}
+```{r , echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
 library(kableExtra)
 
 kable(head(vegData$data$occurrence.txt)) %>%
@@ -142,7 +142,7 @@ kable(head(vegData$data$occurrence.txt)) %>%
 
 ## measurement data
 
-```{r , echo=FALSE, message=FALSE, warning=FALSE}
+```{r , echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
 library(kableExtra)
 
 kable(head(vegData$data$occurrence.txt)) %>%
