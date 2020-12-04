@@ -14,7 +14,7 @@ There are a number of libraries, work flows and online resources for automating 
 
 It is important to be aware of likely taxonomic anomalies prior to working within a region. Checklists are very important, especially if working over several regions / countries. Whilst there are many things that will automatically look for the validity of a name they do not check for the validity of that species occurrence. For example *Sphagnum auriculatum* Schimp.and *Sphagnum denticulatum* Bridel, 1826 are both valid names. *S. auriculatum* is the currently accepted species in Europe but in the British Isles, Ireland and the Netherlands *s. denticulatum* is the most recorded taxa. Both  are legitimate names but they are a synonymy. Both names have been used in Europe but in disitinct countries. The current European checklist [@hodgetts_annotated_2020] has *Sphagnum auriculatum* Schimp. as the accepted taxon occuring in Europe. Naive downloading would result in two taxa being present when infact it is two interepretations of the same taxon. Using data from across the European region without acknowledging this disagreement would impact the results of any research undertaken. For taxa which are known to be capable of dispersing great distances (eg birds) this becomes even more difficult especially when using community sourced data.
 
-```{r warning=FALSE,echo=FALSE,message=FALSE}
+```{r warning=FALSE, echo=FALSE, message=FALSE}
 library(data.table)
 library(sf)
 library(ggplot2)
@@ -52,7 +52,10 @@ ggplot(data = EUR)+
   scale_color_discrete(name = "Species")
 
 ```
+The example above uses data downloaded from GBIF. 
 
+- Data for *Sphagnum denticulatum* doi: 10.15468/dl.rrp4p4
+- Data for *Sphagnum auriculatum* doi: 10.15468/dl.3yrtw7
 
 Within Sweden there is an agreed taxonomy for all extant taxa accessible through [https://www.dyntaxa.se]. Checking of species lists can be done by directly copying species names into a dialogue box or uploading an excel spreadsheet in the correct format.
 
@@ -61,28 +64,31 @@ Within Sweden there is an agreed taxonomy for all extant taxa accessible through
 
 ### Locality information
 
-Many records have locality information attached to them. Where there are no coordinates attached this information can be used to locate the record to within an area of where records most likely came from. There are functions for which geocoding can be done automatically within R. These are included in the libraries :
+Many records have locality information attached to them. Where there are no coordinates attached this information can be used to locate the record to within an area of where records most likely came from. There are functions for which geocoding can be done automatically within R. Geocoding is finding the coordinate for a known locality. These are included in the libraries:
 
 - **ggmap** *requires google API key*
 - **tidygeocoder**
 
-Many localities may not be included in the gazetteers associated with these libraries but may be located using online or printed maps. This takes time but may be useful. Unique localities may be extracted, geocoded and then merged back with the data set
-```{r, eval = FALSE}
+Many localities may not be included in the gazetteers associated with these libraries but may be located using online or printed maps. This takes time but may be useful. Unique localities may be extracted, geocoded and then merged back with the data set.
+
+```{r, eval = FALSE, echo=FALSE}
+## this example is not relevant as the data is not in the repository and doesnt shown how to geolocate
 localities <- df %>%
   filter(is.na(decimalLatitude))%>%
   select(locality)%>%
   distinct()
 
-write.csv(localities,"DataFrameOfLoacalities.csv",row.names = FALSE)
+write.csv(localities,"DataFrameOfLocalities.csv",row.names = FALSE)
 
 #Add columns to each row of the exported localities with any of the localtions that may be found
 
-localities <- read.csv("DataFrameOfLoacalitiesGeodcoded.csv")
+localities <- read.csv("DataFrameOfLocalitiesGeodcoded.csv")
 
 recordsDataFrame <- merge(recordsDataFrame, locallities, by = "localities", all = TRUE)
 
 ```
-This becomes especially important when extracting records across country boundaries as differing countries have differing numbers of georefereced data.
+
+This becomes especially important when extracting records across country boundaries as countries have different numbers of georeferenced observations.
 ```{r echo = FALSE}
 
 library(rgbif)
@@ -94,12 +100,12 @@ EU <- c('AL', 'AD', 'AM', 'AT', 'BY', 'BE', 'BA', 'BG', 'CH', 'CY', 'CZ', 'DE',
         'PT', 'RO', 'RU', 'SE', 'SI', 'SK', 'SM', 'TR', 'UA', 'VA')
 
 Nrecs <- data.frame(
-country=countrycode(EU,"iso2c","country.name.en"),
-TR = sapply(EU,function(q){occ_count(taxonKey = 35, country = q)}),
-Gr = sapply(EU,function(q){occ_count(taxonKey = 35, country = q, georeferenced = TRUE)}),
-Nc = sapply(EU,function(q){occ_count(taxonKey = 35, country = q, georeferenced = FALSE)})
-
+  country = countrycode(EU,"iso2c","country.name.en"),
+  TR = sapply(EU,function(q){occ_count(taxonKey = 35, country = q)}),
+  Gr = sapply(EU,function(q){occ_count(taxonKey = 35, country = q, georeferenced = TRUE)}),
+  Nc = sapply(EU,function(q){occ_count(taxonKey = 35, country = q, georeferenced = FALSE)})
 )
+
 Nrecs <- Nrecs %>%
   mutate(GrP = round((Gr/TR)*100,2),
          NcP = round((Nc/TR)*100,2))%>%
@@ -128,10 +134,10 @@ dat <- rbind(as.data.frame(table(cut(df$coordinateUncertaintyInMeters,breaks = c
 "10-100 m",
 "100-500 m",
 "500-1000 m",
-"1000-5000 m",
-"5000-10000 m",
-"10000-50000 m",
-">50000 m",
+"1-5 km",
+"5-10 km",
+"10-50 km",
+">50 km",
   "None")
 names(dat) <- c("Coordinate uncertainty", "Frequency")
 
@@ -143,9 +149,9 @@ kable(t(dat))%>%
 
 In the above example it can be seen that two have uncertainties greater than 50 km and several thousand records that have no known error margin the location. It is important to consider what the error is and removing those records for which the uncertainty is too high. Where this point is will be dependent on the scale of the research. 
 
-Coordinates with NA as the uncertainty and those that fall below a particular threshold may be removed by:
+<!-- Coordinates with NA as the uncertainty and those that fall below a particular threshold may be removed by: -->
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, echo=FALSE}
 df <- df %>%
    filter(is.na(coordinateUncertaintyInMeters)==FALSE) %>%
   filter(coordinateUncertaintyInMeters<50000)
@@ -153,21 +159,21 @@ df <- df %>%
 
 ### Coordinate errors
 
-Coordinate errors may occur for a variety of reasons. The stated accuracy of coordinates may alos be called in to doubt. The library **coordinatecleaner** is very useful for removing some of the most common errors. These include:
+Besides the declared uncertainty of the the coordinates, coordinate errors may occur for a variety of reasons. The library **coordinateCleaner** is very useful for removing some of the most common errors. These include:
 
 - 0 latitude, 0 longitude
 - swapping of latitude and longitude
 - The location of the institution holding a preserved sample rather than the location of origin of that sample
 
 ## Examples
-## Data Cleaning Cyoeraceae Sweden
+### Data cleaning Cyperaceae in Sweden
 
-## Cyperaceeae of Sweden
-In this example I have downloaded the occurances of the Cyperaceae family in Sweden from GBIF since 2000. This is a single data set from an area with an agreed taxonomy (dyntaxa.se). Our aim here is to take a group of records from GBIF and using Dyntaxa as a backbone clean the records to be in such a state as to be used for various things.
+In this example I have downloaded the occurences of the Cyperaceae family in Sweden from Bioatlas since 2000. This is a single data set from an area with an agreed taxonomy (dyntaxa.se). Our aim here is to download a group of records and clean them to be in such a state than they reflect the question the researcher has in mind.
 
 First we give each record in the assembled data set a unique ID. In this case it could be possible to use the GBIFid. In data sets sourced from mulitple sources it is a good idea to create a unique ID related to the data source.
 
-```{r hiden-data-search, warning=FALSE, error=FALSE, message=FALSE, eval=FALSE}
+```{r hiden-data-search, warning=FALSE, error=FALSE, message=FALSE, eval=FALSE, echo=FALSE}
+## TODO are all these libraries needed here? else load them quietly at the begining of the chapter and point to the origin of key functions when appropiated
 library(data.table)
 library(dplyr)
 library(ggplot2)
@@ -180,19 +186,18 @@ library(cowplot)
 library(BIRDS)
 library(SBDI4R)
 
-# Carex <- fread(list.files("./data/BDcleaner_Scripts/Example/Downloads/",
-#                           pattern = ".csv",
-#                           full.names = TRUE), encoding =  "UTF-8")
-
 ## TODO optimize the search so that the dataset is smaller than 5mb
 Carex <- occurrences(taxon="Carex",
-                 email="test@test.org", 
-                 download_reason_id=10)
+                     fq="year:[2000 TO 2020]",
+                     email="test@test.org", 
+                     download_reason_id=10)
 
 Carex$data <- Carex$data[-which(is.na(Carex$data$year)),]
+
 Carex$data$day <- ifelse(is.na(Carex$data$day), 
                        sample(c(1:31), 1, replace = TRUE),
                        Carex$data$day)
+#it creates month data that is currently lacking from the bioatlas API
 Carex$data$month <- ifelse(Carex$data$day == 31, 
                        sample(c(1,3,5,7,8,10,12), 1, replace = TRUE),
                        ifelse(Carex$data$day>=28, 
@@ -201,9 +206,9 @@ Carex$data$month <- ifelse(Carex$data$day == 31,
                               )
                        )
 Carex <- Carex$data
-Carex$ID <- paste0("car-",1:nrow(Carex))
+# Carex$ID <- paste0("car-",1:nrow(Carex))
 
-Carex <- Carex[which(Carex$year==2019),]
+# Carex <- Carex[which(Carex$year==2019),]
 save(Carex ,file = "./data/BDcleaner_Scripts/Example/Downloads/Cyperacea_SWE.rdata")
 ```
 
@@ -227,7 +232,7 @@ load("./data/BDcleaner_Scripts/Example/Downloads/Cyperacea_SWE.rdata")
 
 In cleaning data there are a number of dimensions of uncertainty we shall first check.
 
-## Taxonomy
+### Taxonomy
 In the species column there are records with no Species given in the species column. We then check the scientificName for whether there is useful information there
 ```{r , warning=FALSE, error=FALSE, message=FALSE}
 
@@ -255,10 +260,9 @@ There are no species data in the locality field and so we begin a vector of IDs 
 ```{r, warning=FALSE, error=FALSE, message=FALSE }
 unUseful <- Carex %>%
             filter(Carex$scientificName == "") %>%
-            .$ID
+            .$id
 
 ```
-
 
 We now need to check that the species names in the records that we are using are valid for the area which we are looking at i.e. Sweden. There are several resources out there that do this (HERE I SUGGEST A LINK TO A WEBSITE LISTING LIBRARIES AND RESOURCES FOR THE VALIDITY OF NAMES). As we are looking specifically and solely at Sweden there is [Dyntaxa.se](https://www.dyntaxa.se/). There is also and R interface as part of the [Bioatlas of Sweden](https://github.com/bioatlas) github repository. For wider applicability we will export the unique names from the Carex data frame. These will then be copied to the [Dyntaxa portal](https://www.dyntaxa.se/Match/Settings/0) for matching multiple names. The results are checked against the Swedish lists and unknown species or uncertainties are flagged. Names can be copied directly into a box in Dyntaxa or may be imported directly as an xlsx file. Here we shall export just the species names. There are multiple options. 
 
@@ -293,10 +297,10 @@ unUseful <- unique(
   c(unUseful,
   Carex %>%
   filter(is.na(SpeciesDyn)) %>%
-  .$ID))
+  .$id))
 ```
 
-##Coordinate Cleaning
+###Coordinate Cleaning
 
 We need to extract locality data for rows where there is no lat/lon information to geocode it, producing a latitude and longitude for each locality. This can be carried out in a similar way as for species ie the merging of data frames. This can be also be done automatically in R using the geocode feature of the libraries tidygeocoder or ggmap. Some of these services require an API key (eg. Google). See the documentation for the link for more information  
 
@@ -314,7 +318,7 @@ For brevity we will simply include the records with no lat/lon info in the unUse
 unUseful <- unique(c(unUseful,
                      Carex %>%
                        filter(is.na(latitude))%>%
-                       .$ID))
+                       .$id))
 ```
 
 Before cleaning the coordinates we simplify the data retaining columns that have information directly related to the collection of the data.
@@ -334,12 +338,11 @@ Carex <- Carex %>%
                day,
                institutionCode,
                collectionCode,
-               catalogueNumber,
-               ID)
+               catalogueNumber)
 ```
 
 
-We then filter out the data rows for which we can not use ie those of too great taxanomic uncertainty. The data may then be cleaned. 
+We then filter out the data rows for which we can not use ie those of too great taxonomic uncertainty. The data may then be cleaned. 
 
 There are a number of things to consider when cleaning data:
 
@@ -352,7 +355,7 @@ There are a number of things to consider when cleaning data:
 ```{r}
 unUseful <- unique( c(unUseful, Carex %>%
                         filter(is.na(coordinateUncertaintyInMetres)) %>%
-                        .$ID))
+                        .$id))
 # kable( t(table( round( Carex$coordinateUncertaintyInMetres, -2))))
 
 ```
@@ -363,10 +366,10 @@ We shall filter out all records with unknown coordinate uncertainty and all with
 
 unUseful <- unique( c(unUseful, Carex %>%
   filter(is.na(coordinateUncertaintyInMetres))%>%
-  .$ID))
+  .$id))
 unUseful <- unique( c(unUseful, Carex %>%
   filter(coordinateUncertaintyInMetres>12500)%>%
-  .$ID))
+  .$id))
 
 ```
 
@@ -379,17 +382,17 @@ save(unUseful, file = "./data/BDcleaner_Scripts/Example/Downloads/Cyperacea_SWE_
 We first remove the already labelled inaccurate data. 
 
 ```{r,warning=FALSE, error=FALSE, message=FALSE}
-Carex <- Carex[-which(Carex$ID %in% unUseful),]
+Carex <- Carex[-which(Carex$id %in% unUseful),]
 # Carex <- Carex[-which(is.na(Carex$day)),]
 ```
 
-We then use the library CoordinateCleaner to automatically flag coordinates that may be errors. Outputs of this can be a cleaned dataframe or additional columns with doubtful records flagged. 
+We then use the library CoordinateCleaner to automatically flag coordinates that may be errors. Outputs of this can be a cleaned data.frame or additional columns with doubtful records flagged. 
 
 ```{r,warning=FALSE, error=FALSE, message=FALSE, eval=FALSE}
 Carex$countryCode <- countrycode::countrycode(Carex$countryCode,"iso2c","iso3c") #converts ISO2 country codes to ISO3
 
 Carex <- Carex %>%
-          filter(!ID %in% unUseful)
+          filter(!id %in% unUseful)
 
 Carex <- Carex[-which(is.na(Carex$latitude)),]
 
@@ -398,7 +401,8 @@ Carex <- clean_coordinates(Carex,
                   lat = "latitude",
                   species = "SpeciesDyn",
                   countries = "countryCode",
-                  tests = c("capitals", "centroids", "equal", "gbif", "institutions", "outliers", "seas", "zeros","countries")
+                  tests = c("capitals", "centroids", "equal", "gbif", "institutions",
+                            "outliers", "seas", "zeros","countries")
                   )
 
 kable( Carex %>%
@@ -414,7 +418,7 @@ kable( Carex %>%
             `Summary` = sum(.summary==FALSE)), col.names = c("Invalid coords","Equal coords","0 coords","capitals", "country centre","Country Border","outlier","Gbif HQ","Insitution", "Summary"))
 ```
 
-```{r, warning=FALSE, error=FALSE, message=FALSE, eval=FALSE}
+```{r, warning=FALSE, error=FALSE, message=FALSE, eval=FALSE, echo=FALSE}
 kable(Carex %>%
   group_by(SpeciesDyn) %>%
 
@@ -431,7 +435,7 @@ kable(Carex %>%
     kable_styling() %>%
   scroll_box(height = "300px")
 ```
-Checking the...
+Checking the distribution of the observations
 
 ```{r, warning=FALSE, error=FALSE, message=FALSE}
 

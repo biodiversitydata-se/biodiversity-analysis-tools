@@ -17,8 +17,10 @@ description: Description of purpose and elements.
 
 A BEGINNING PARAGRAPH
 
-Each research question draws its own challenges which are unique in themselves. Our aim here is to provide a workflow which answers and / or prompts the large scale questions that should be asked at each stage of the process. We point to resources, methods and facilities that may be useful in answering a particular question. We assume some knowledge of statistical inference and it limitations. The validity and appropriateness of a particular method is dependent on the individual researcher(s).
+Each research question draws its own challenges which are unique in themselves. Our aim here is to provide a workflow which answers and / or prompts the large scale questions that should be asked at each stage of the process. We point to resources, methods and facilities that may be useful in answering a particular question. We assume some knowledge of statistical inference and it limitations. The validity and appropriateness of a particular method is dependent on the individual researcher(s). This workflow is focused on the statistical programming language R, as an environment where the complete analysis workflow can take place and can be documented in a fully reproducible way. However, we also point to other tools that can be used at different stages, and ways to import and export the data from and to those tools.
 
 Biodiversity resources are increasingly international. We focus on biodiversity data and resources from Sweden but our aim is to present considerations and methods that can be applied beyond Sweden's borders.
+
+General description of the workflow here. Data-->Cleaning-->Fitness evaluation-->Analysis always exploring and filtering the data in light of the research question. Also say here that if known from before, the cleaning and filtering criteria can be set directly on the query! 
 
 `r htmltools::includeHTML("Workflow Overview Horizontal.html")`

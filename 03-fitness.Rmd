@@ -73,10 +73,10 @@ Sample_bias_layer <- raster( MASS::kde2d(
             lims = c(10,20,55,60)))
 ```
  
- More complex methods of accounting for bias can be created by more explicitly modelling accessibility or the behavior of recorders themselves. There are resources for doing this, including:
+ More complex methods of accounting for bias can be created by more explicitly modeling accessibility or the behavior of recorders themselves. There are resources for doing this, including:
  
  - **recorderMetrics** - Data derived metrics of recorder behaviour [@august_data-derived_2020]
- - **Sampbias** - Bayesian analysis to quantify the effects of accessibility on species occurrance sets [zizka_sampbias_2020]
+ - **Sampbias** - Bayesian analysis to quantify the effects of accessibility on species occurrence sets [zizka_sampbias_2020]
 
 Spatial sorting or disaggregating presence points can reduce the effects of bias:
 

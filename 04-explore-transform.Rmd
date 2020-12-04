@@ -82,11 +82,9 @@ Spatial data have coordinates. IN the simplest form they are a set of points. Th
     - QGIS - Open source GIS 
     - ArcGIS - Esri ArcGIS
 
-## Exporting Data spatial data from R
-
 Provided are the libraries and the appropriate functions for exporting spatial data from R
 
-## Spatial vector data
+### Spatial vector data
 ```{r eval=FALSE}
 library(sf)
 write_sf() #capable of writing multiple different file formats
@@ -97,7 +95,7 @@ writeOGR() #capable of writing multiple different file formats
 library(raster)
 shapefile() #writes ESRI shapefiles
 ```
-## Raster
+### Raster
 ```{r eval=FALSE}
 library(raster)
 writeRaster() #capable of writing multiple different file formats

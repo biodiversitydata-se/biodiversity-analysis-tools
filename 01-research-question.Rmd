@@ -1,7 +1,5 @@
 # The importance of questions and sources of data
 
-## Questions, Taxonomies and Data
-
 ## Questions
 Any question to be asked of biodiversity data should be put as simply and succinctly as possible. With the number of different subject areas and techniques used, analyses can quickly become complex.
 
@@ -15,38 +13,10 @@ For Sweden there is an agreed taxonomy for species accesible through [https://ww
 Depending on what questions are being asked there are many different resources available. We focus on biodiversity data 
 
 ### Biodiversity record data
-There are a large number of available online resources. These include but are not limited to:
+There are a large number of available online resources. These include but are not limited to (specific R libraries that connect to these databases are provided in **bold**):
 
-- Artportalen [https://www.artportalen.se/] - Sweden's data portal for biodiversity data **this should perhaps be analysportalen**
-- Global Biodiversity Information Facility	[http://www.gbif.org/] - International organisation aggregating biodiversity data. Contains data from a mixture of sources; curated collections, community science data, ecological research projects etc. 
-- BioCASE	[https://www.biocase.org/] - 
-- eBird	[http://ebird.org/content/ebird/]
-- iNaturalist	http://www.inaturalist.org/
-- Berkeley ecoengine	[https://ecoengine.berkeley.edu/]
-- VertNet	[http://vertnet.org/]
-- iDigBio	[https://www.idigbio.org/]
-- OBIS	[http://www.iobis.org/]
-- ALA	[http://www.ala.org.au/]
-
-### Functional data
-Many 
-
-### Genetic data bases
-There 
-
-### Environemntal data
-
-
-### Biodiversity data
-
-
-#### Taxonomic diversity
-
-There are a large number of available online resources. These include but are not limited to (r libraries in **bold**:
-
-- Artportalen [https://www.analysisportal.se/] - Sweden's data portal for biodiversity data 
-- Miljödata MVM [https://miljodata.slu.se/mvm/] - Environmental data from SLU for Sweden
-- Global Biodiversity Information Facility	[http://www.gbif.org/] - International organisation aggregating biodiversity data.  Contains data from a mixture of sources; curated collections, community science data, ecological research projects etc. **rgbif, spocc**
+- Artportalen [https://www.artportalen.se/] - Sweden's data portal for biodiversity data 
+- Global Biodiversity Information Facility	[http://www.gbif.org/] - International organization aggregating biodiversity data. Contains data from a mixture of sources; curated collections, community science data, ecological research projects etc. **rgbif, spocc** 
 - BioCASE	[https://www.biocase.org/] - A European transnational biodiversity repository
 - eBird	[http://ebird.org/content/ebird/] - American database of bird observations **auk, rebird,spocc**
 - iNaturalist	http://www.inaturalist.org/ - International community science observation repository **spocc**
@@ -56,22 +26,33 @@ There are a large number of available online resources. These include but are no
 - OBIS	[http://www.iobis.org/] - Ocean biodiversity information system **robis**
 - ALA	[http://www.ala.org.au/] - Atlas of living Australia **ALA4r**
 - Neotoma [https://www.neotomadb.org/] Palaeoecology databas **neotoma**
+- ...
 
-#### Functional diversity data
+### Taxonomic diversity
+To keep track of ever changing taxonomy of species there are different databases that follow different standars.
 
-Very broadly functional diversity is the diversity of what organisms do [@petchey_functional_2006]. Such diversity can be direct physical measurements of traits of the organisms involved and / or data sumamrised from published works. There are databses dedicated to the distribution of scientific data that may be used. Such resources include:
+- dyntaxa [https://www.dyntaxa.se/]
+- GBIF backbone [http://www.gbif.org/]
+- ...
+
+### Functional diversity
+Very broadly functional diversity is the diversity of what organisms do [@petchey_functional_2006]. Such diversity can be direct physical measurements of traits of the organisms involved and / or data summarized from published works. There are databases dedicated to the distribution of scientific data that may be used. Such resources include:
 
 - Dryad [https://datadryad.org/stash]
 - TRY: Plant Trait Database [https://www.try-db.org/TryWeb/Home.php]
 - Ecological indicator and traits values for Swedish vascular plants[@tyler_ecological_2021] [https://doi.org/10.1016/j.ecolind.2020.106923]
 - Vertnet [http://vertnet.org/] 
+- ...
 
-#### Genetic data
+### Genetic data bases
 
-Genetic data may be related directly to the samples used, phylogenetic trees generated from some other data set set or some other genetic aspect. Such resources include:
+Genetic data may be related directly to the samples used, phylogenetic trees generated from some other data set set or some other genetic aspect. Such resources include:  
+
 - BOLD: Barcode Of Life Data system [https://www.boldsystems.org/] Repository of gene sequences
 - Genbank. A genetic sequence repository. See [https://www.ncbi.nlm.nih.gov/genbank/] for access details.
 - Treebase [https://www.treebase.org/treebase-web/home.html] A data base of phylogenetic trees
+- ...
+
 
 ### Environemntal data
 
@@ -81,9 +62,12 @@ There are a number of environmental repositories available. Static data sets for
 
 - Skogstyrelsen [https://www.skogsstyrelsen.se/sjalvservice/karttjanster/geodatatjanster/oppna-data/] Open data supplied by Skogstyrelsen
 - Sveriges dataportal [https://www.dataportal.se/] Swedish open data provided by governmental bodies.
+- Miljödata MVM [https://miljodata.slu.se/mvm/] - Environmental data from SLU for Sweden
 
 #### Global and European 
-- wordclim [https://www.worldclim.org/] Global gridded climarte data at various resolutions
-- climond [https://www.climond.org/] Global gridded climarte data at various resolutions
+- wordclim [https://www.worldclim.org/] Global gridded climate data at various resolutions
+- climond [https://www.climond.org/] Global gridded climate data at various resolutions
 - soilgrids [https://soilgrids.org/] Global gridded soil data
-- Copernicus Land monitoring servic [https://land.copernicus.eu/pan-european/corine-land-cover] Land monitoring data from across the EU
+- Copernicus Land monitoring service [https://land.copernicus.eu/pan-european/corine-land-cover] Land monitoring data from across the EU
+
+
