@@ -1,7 +1,7 @@
-tab:unnamed-chunk-6
+tab:unnamed-chunk-5
+tab:unnamed-chunk-32
 tab:unnamed-chunk-33
-tab:unnamed-chunk-34
-tab:unnamed-chunk-40
+tab:unnamed-chunk-39
 introduction
 the-importance-of-questions-and-sources-of-data
 questions

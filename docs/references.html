@@ -24,7 +24,7 @@
 <meta name="author" content="Debora Arlt, Alejandro Ruete and Charles Campbell for the Swedish Biodiversity Data Infrastructure" />
 
 
-<meta name="date" content="2020-12-04" />
+<meta name="date" content="2020-12-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,6 @@
   
 <link rel="prev" href="essential-biodiversity-variables.html"/>
 
-<script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -55,23 +54,21 @@
 <link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
-<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -91,7 +88,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -137,12 +134,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <ul class="summary">
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html"><i class="fa fa-check"></i><b>2</b> The importance of questions and sources of data</a>
-<ul>
+<li class="chapter" data-level="2" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html"><i class="fa fa-check"></i><b>2</b> The importance of questions and sources of data</a><ul>
 <li class="chapter" data-level="2.1" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html#questions"><i class="fa fa-check"></i><b>2.1</b> Questions</a></li>
 <li class="chapter" data-level="2.2" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html#taxonomies"><i class="fa fa-check"></i><b>2.2</b> Taxonomies</a></li>
-<li class="chapter" data-level="2.3" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html#data-sources"><i class="fa fa-check"></i><b>2.3</b> Data Sources</a>
-<ul>
+<li class="chapter" data-level="2.3" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html#data-sources"><i class="fa fa-check"></i><b>2.3</b> Data Sources</a><ul>
 <li class="chapter" data-level="2.3.1" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html#biodiversity-record-data"><i class="fa fa-check"></i><b>2.3.1</b> Biodiversity record data</a></li>
 <li class="chapter" data-level="2.3.2" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html#taxonomic-diversity"><i class="fa fa-check"></i><b>2.3.2</b> Taxonomic diversity</a></li>
 <li class="chapter" data-level="2.3.3" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html#functional-diversity"><i class="fa fa-check"></i><b>2.3.3</b> Functional diversity</a></li>
@@ -150,43 +145,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3.5" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html#environemntal-data"><i class="fa fa-check"></i><b>2.3.5</b> Environemntal data</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="data-cleaning.html"><a href="data-cleaning.html"><i class="fa fa-check"></i><b>3</b> Data cleaning</a>
-<ul>
+<li class="chapter" data-level="3" data-path="data-cleaning.html"><a href="data-cleaning.html"><i class="fa fa-check"></i><b>3</b> Data cleaning</a><ul>
 <li class="chapter" data-level="3.1" data-path="data-cleaning.html"><a href="data-cleaning.html#resources"><i class="fa fa-check"></i><b>3.1</b> Resources</a></li>
 <li class="chapter" data-level="3.2" data-path="data-cleaning.html"><a href="data-cleaning.html#taxonomies-1"><i class="fa fa-check"></i><b>3.2</b> Taxonomies</a></li>
-<li class="chapter" data-level="3.3" data-path="data-cleaning.html"><a href="data-cleaning.html#location-data"><i class="fa fa-check"></i><b>3.3</b> Location data</a>
-<ul>
+<li class="chapter" data-level="3.3" data-path="data-cleaning.html"><a href="data-cleaning.html#location-data"><i class="fa fa-check"></i><b>3.3</b> Location data</a><ul>
 <li class="chapter" data-level="3.3.1" data-path="data-cleaning.html"><a href="data-cleaning.html#locality-information"><i class="fa fa-check"></i><b>3.3.1</b> Locality information</a></li>
 <li class="chapter" data-level="3.3.2" data-path="data-cleaning.html"><a href="data-cleaning.html#coordinate-uncertainty"><i class="fa fa-check"></i><b>3.3.2</b> Coordinate uncertainty</a></li>
 <li class="chapter" data-level="3.3.3" data-path="data-cleaning.html"><a href="data-cleaning.html#coordinate-errors"><i class="fa fa-check"></i><b>3.3.3</b> Coordinate errors</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="data-cleaning.html"><a href="data-cleaning.html#examples"><i class="fa fa-check"></i><b>3.4</b> Examples</a>
-<ul>
+<li class="chapter" data-level="3.4" data-path="data-cleaning.html"><a href="data-cleaning.html#examples"><i class="fa fa-check"></i><b>3.4</b> Examples</a><ul>
 <li class="chapter" data-level="3.4.1" data-path="data-cleaning.html"><a href="data-cleaning.html#data-cleaning-cyperaceae-in-sweden"><i class="fa fa-check"></i><b>3.4.1</b> Data cleaning Cyperaceae in Sweden</a></li>
 <li class="chapter" data-level="3.4.2" data-path="data-cleaning.html"><a href="data-cleaning.html#taxonomy"><i class="fa fa-check"></i><b>3.4.2</b> Taxonomy</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="fitness-for-use.html"><a href="fitness-for-use.html"><i class="fa fa-check"></i><b>4</b> Fitness for use</a>
-<ul>
+<li class="chapter" data-level="4" data-path="fitness-for-use.html"><a href="fitness-for-use.html"><i class="fa fa-check"></i><b>4</b> Fitness for use</a><ul>
 <li class="chapter" data-level="4.1" data-path="fitness-for-use.html"><a href="fitness-for-use.html#bias"><i class="fa fa-check"></i><b>4.1</b> Bias</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="data-exploration-and-transformation.html"><a href="data-exploration-and-transformation.html"><i class="fa fa-check"></i><b>5</b> Data Exploration and Transformation</a>
-<ul>
+<li class="chapter" data-level="5" data-path="data-exploration-and-transformation.html"><a href="data-exploration-and-transformation.html"><i class="fa fa-check"></i><b>5</b> Data Exploration and Transformation</a><ul>
 <li class="chapter" data-level="5.1" data-path="data-exploration-and-transformation.html"><a href="data-exploration-and-transformation.html#wide"><i class="fa fa-check"></i><b>5.1</b> Wide</a></li>
 <li class="chapter" data-level="5.2" data-path="data-exploration-and-transformation.html"><a href="data-exploration-and-transformation.html#long"><i class="fa fa-check"></i><b>5.2</b> Long</a></li>
 <li class="chapter" data-level="5.3" data-path="data-exploration-and-transformation.html"><a href="data-exploration-and-transformation.html#wide-to-long"><i class="fa fa-check"></i><b>5.3</b> Wide to long</a></li>
 <li class="chapter" data-level="5.4" data-path="data-exploration-and-transformation.html"><a href="data-exploration-and-transformation.html#long-to-wide"><i class="fa fa-check"></i><b>5.4</b> Long to Wide</a></li>
-<li class="chapter" data-level="5.5" data-path="data-exploration-and-transformation.html"><a href="data-exploration-and-transformation.html#spatial-data"><i class="fa fa-check"></i><b>5.5</b> Spatial data</a>
-<ul>
+<li class="chapter" data-level="5.5" data-path="data-exploration-and-transformation.html"><a href="data-exploration-and-transformation.html#spatial-data"><i class="fa fa-check"></i><b>5.5</b> Spatial data</a><ul>
 <li class="chapter" data-level="5.5.1" data-path="data-exploration-and-transformation.html"><a href="data-exploration-and-transformation.html#spatial-vector-data"><i class="fa fa-check"></i><b>5.5.1</b> Spatial vector data</a></li>
 <li class="chapter" data-level="5.5.2" data-path="data-exploration-and-transformation.html"><a href="data-exploration-and-transformation.html#raster"><i class="fa fa-check"></i><b>5.5.2</b> Raster</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html"><i class="fa fa-check"></i><b>6</b> Essential Biodiversity Variables</a>
-<ul>
+<li class="chapter" data-level="6" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html"><i class="fa fa-check"></i><b>6</b> Essential Biodiversity Variables</a><ul>
 <li class="chapter" data-level="6.1" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html#sdm"><i class="fa fa-check"></i><b>6.1</b> SDM</a></li>
-<li class="chapter" data-level="6.2" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html#diversity"><i class="fa fa-check"></i><b>6.2</b> Diversity</a>
-<ul>
+<li class="chapter" data-level="6.2" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html#diversity"><i class="fa fa-check"></i><b>6.2</b> Diversity</a><ul>
 <li class="chapter" data-level="6.2.1" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html#types-of-analyses---patitioning-alpha-beta-gamma-etc.-diversity"><i class="fa fa-check"></i><b>6.2.1</b> Types of analyses - Patitioning <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span>, <span class="math inline">\(\gamma\)</span> <em>etc.</em> diversity</a></li>
 <li class="chapter" data-level="6.2.2" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html#data-form"><i class="fa fa-check"></i><b>6.2.2</b> Data form</a></li>
 <li class="chapter" data-level="6.2.3" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html#classic-diversity-measures"><i class="fa fa-check"></i><b>6.2.3</b> Classic diversity measures</a></li>
@@ -195,8 +182,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.2.6" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html#additional-related-diversities"><i class="fa fa-check"></i><b>6.2.6</b> Additional related diversities</a></li>
 <li class="chapter" data-level="6.2.7" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html#numbers-equivalents"><i class="fa fa-check"></i><b>6.2.7</b> Numbers equivalents</a></li>
 <li class="chapter" data-level="6.2.8" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html#example-of-analysis-of-diversity"><i class="fa fa-check"></i><b>6.2.8</b> Example of analysis of diversity</a></li>
-<li class="chapter" data-level="6.2.9" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html#event-data"><i class="fa fa-check"></i><b>6.2.9</b> Event data</a></li>
-<li class="chapter" data-level="6.2.10" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html#occurence-data"><i class="fa fa-check"></i><b>6.2.10</b> Occurence data</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -217,10 +202,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="references" class="section level1 unnumbered" number="">
+<div id="references" class="section level1 unnumbered">
 <h1>References</h1>
 
-<div id="refs" class="references hanging-indent">
+<div id="refs" class="references">
 <div>
 <p>August, Tom, Richard Fox, David B. Roy, and Michael J. O. Pocock. 2020. “Data-Derived Metrics Describing the Behaviour of Field-Based Citizen Scientists Provide Insights for Project Design and Modelling Bias.” <em>Scientific Reports</em> 10 (1): 1–12. <a href="https://doi.org/10.1038/s41598-020-67658-3">https://doi.org/10.1038/s41598-020-67658-3</a>.</p>
 </div>
