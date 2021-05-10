@@ -502,7 +502,7 @@ nObs <- ggplot(data = SB_SPat,aes(fill = nObs))+
   theme_cowplot()+
   scale_fill_gradientn(colors = matlab.like2(100))
 
-plot_grid(nSpecies, nVisits, nObs, ncol = 3)
+plot_grid(nSpecies, nVisits, nObs, ncol = 1)
 ```
 
 <!-- ## Example using <i>Sphagnum auriculatum</i> -->

@@ -24,7 +24,7 @@
 <meta name="author" content="Debora Arlt, Alejandro Ruete and Charles Campbell for the Swedish Biodiversity Data Infrastructure" />
 
 
-<meta name="date" content="2020-12-09" />
+<meta name="date" content="2021-05-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="index.html"/>
 <link rel="next" href="data-cleaning.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,25 +51,24 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -88,7 +88,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -134,10 +134,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <ul class="summary">
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html"><i class="fa fa-check"></i><b>2</b> The importance of questions and sources of data</a><ul>
+<li class="chapter" data-level="2" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html"><i class="fa fa-check"></i><b>2</b> The importance of questions and sources of data</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html#questions"><i class="fa fa-check"></i><b>2.1</b> Questions</a></li>
 <li class="chapter" data-level="2.2" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html#taxonomies"><i class="fa fa-check"></i><b>2.2</b> Taxonomies</a></li>
-<li class="chapter" data-level="2.3" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html#data-sources"><i class="fa fa-check"></i><b>2.3</b> Data Sources</a><ul>
+<li class="chapter" data-level="2.3" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html#data-sources"><i class="fa fa-check"></i><b>2.3</b> Data Sources</a>
+<ul>
 <li class="chapter" data-level="2.3.1" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html#biodiversity-record-data"><i class="fa fa-check"></i><b>2.3.1</b> Biodiversity record data</a></li>
 <li class="chapter" data-level="2.3.2" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html#taxonomic-diversity"><i class="fa fa-check"></i><b>2.3.2</b> Taxonomic diversity</a></li>
 <li class="chapter" data-level="2.3.3" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html#functional-diversity"><i class="fa fa-check"></i><b>2.3.3</b> Functional diversity</a></li>
@@ -145,35 +147,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3.5" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html#environemntal-data"><i class="fa fa-check"></i><b>2.3.5</b> Environemntal data</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="data-cleaning.html"><a href="data-cleaning.html"><i class="fa fa-check"></i><b>3</b> Data cleaning</a><ul>
+<li class="chapter" data-level="3" data-path="data-cleaning.html"><a href="data-cleaning.html"><i class="fa fa-check"></i><b>3</b> Data cleaning</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="data-cleaning.html"><a href="data-cleaning.html#resources"><i class="fa fa-check"></i><b>3.1</b> Resources</a></li>
 <li class="chapter" data-level="3.2" data-path="data-cleaning.html"><a href="data-cleaning.html#taxonomies-1"><i class="fa fa-check"></i><b>3.2</b> Taxonomies</a></li>
-<li class="chapter" data-level="3.3" data-path="data-cleaning.html"><a href="data-cleaning.html#location-data"><i class="fa fa-check"></i><b>3.3</b> Location data</a><ul>
+<li class="chapter" data-level="3.3" data-path="data-cleaning.html"><a href="data-cleaning.html#location-data"><i class="fa fa-check"></i><b>3.3</b> Location data</a>
+<ul>
 <li class="chapter" data-level="3.3.1" data-path="data-cleaning.html"><a href="data-cleaning.html#locality-information"><i class="fa fa-check"></i><b>3.3.1</b> Locality information</a></li>
 <li class="chapter" data-level="3.3.2" data-path="data-cleaning.html"><a href="data-cleaning.html#coordinate-uncertainty"><i class="fa fa-check"></i><b>3.3.2</b> Coordinate uncertainty</a></li>
 <li class="chapter" data-level="3.3.3" data-path="data-cleaning.html"><a href="data-cleaning.html#coordinate-errors"><i class="fa fa-check"></i><b>3.3.3</b> Coordinate errors</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="data-cleaning.html"><a href="data-cleaning.html#examples"><i class="fa fa-check"></i><b>3.4</b> Examples</a><ul>
+<li class="chapter" data-level="3.4" data-path="data-cleaning.html"><a href="data-cleaning.html#examples"><i class="fa fa-check"></i><b>3.4</b> Examples</a>
+<ul>
 <li class="chapter" data-level="3.4.1" data-path="data-cleaning.html"><a href="data-cleaning.html#data-cleaning-cyperaceae-in-sweden"><i class="fa fa-check"></i><b>3.4.1</b> Data cleaning Cyperaceae in Sweden</a></li>
 <li class="chapter" data-level="3.4.2" data-path="data-cleaning.html"><a href="data-cleaning.html#taxonomy"><i class="fa fa-check"></i><b>3.4.2</b> Taxonomy</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="fitness-for-use.html"><a href="fitness-for-use.html"><i class="fa fa-check"></i><b>4</b> Fitness for use</a><ul>
+<li class="chapter" data-level="4" data-path="fitness-for-use.html"><a href="fitness-for-use.html"><i class="fa fa-check"></i><b>4</b> Fitness for use</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="fitness-for-use.html"><a href="fitness-for-use.html#bias"><i class="fa fa-check"></i><b>4.1</b> Bias</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="data-exploration-and-transformation.html"><a href="data-exploration-and-transformation.html"><i class="fa fa-check"></i><b>5</b> Data Exploration and Transformation</a><ul>
+<li class="chapter" data-level="5" data-path="data-exploration-and-transformation.html"><a href="data-exploration-and-transformation.html"><i class="fa fa-check"></i><b>5</b> Data Exploration and Transformation</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="data-exploration-and-transformation.html"><a href="data-exploration-and-transformation.html#wide"><i class="fa fa-check"></i><b>5.1</b> Wide</a></li>
 <li class="chapter" data-level="5.2" data-path="data-exploration-and-transformation.html"><a href="data-exploration-and-transformation.html#long"><i class="fa fa-check"></i><b>5.2</b> Long</a></li>
 <li class="chapter" data-level="5.3" data-path="data-exploration-and-transformation.html"><a href="data-exploration-and-transformation.html#wide-to-long"><i class="fa fa-check"></i><b>5.3</b> Wide to long</a></li>
 <li class="chapter" data-level="5.4" data-path="data-exploration-and-transformation.html"><a href="data-exploration-and-transformation.html#long-to-wide"><i class="fa fa-check"></i><b>5.4</b> Long to Wide</a></li>
-<li class="chapter" data-level="5.5" data-path="data-exploration-and-transformation.html"><a href="data-exploration-and-transformation.html#spatial-data"><i class="fa fa-check"></i><b>5.5</b> Spatial data</a><ul>
+<li class="chapter" data-level="5.5" data-path="data-exploration-and-transformation.html"><a href="data-exploration-and-transformation.html#spatial-data"><i class="fa fa-check"></i><b>5.5</b> Spatial data</a>
+<ul>
 <li class="chapter" data-level="5.5.1" data-path="data-exploration-and-transformation.html"><a href="data-exploration-and-transformation.html#spatial-vector-data"><i class="fa fa-check"></i><b>5.5.1</b> Spatial vector data</a></li>
 <li class="chapter" data-level="5.5.2" data-path="data-exploration-and-transformation.html"><a href="data-exploration-and-transformation.html#raster"><i class="fa fa-check"></i><b>5.5.2</b> Raster</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html"><i class="fa fa-check"></i><b>6</b> Essential Biodiversity Variables</a><ul>
+<li class="chapter" data-level="6" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html"><i class="fa fa-check"></i><b>6</b> Essential Biodiversity Variables</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html#sdm"><i class="fa fa-check"></i><b>6.1</b> SDM</a></li>
-<li class="chapter" data-level="6.2" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html#diversity"><i class="fa fa-check"></i><b>6.2</b> Diversity</a><ul>
+<li class="chapter" data-level="6.2" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html#diversity"><i class="fa fa-check"></i><b>6.2</b> Diversity</a>
+<ul>
 <li class="chapter" data-level="6.2.1" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html#types-of-analyses---patitioning-alpha-beta-gamma-etc.-diversity"><i class="fa fa-check"></i><b>6.2.1</b> Types of analyses - Patitioning <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span>, <span class="math inline">\(\gamma\)</span> <em>etc.</em> diversity</a></li>
 <li class="chapter" data-level="6.2.2" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html#data-form"><i class="fa fa-check"></i><b>6.2.2</b> Data form</a></li>
 <li class="chapter" data-level="6.2.3" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html#classic-diversity-measures"><i class="fa fa-check"></i><b>6.2.3</b> Classic diversity measures</a></li>
@@ -202,21 +212,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="the-importance-of-questions-and-sources-of-data" class="section level1">
+<div id="the-importance-of-questions-and-sources-of-data" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> The importance of questions and sources of data</h1>
-<div id="questions" class="section level2">
+<div id="questions" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> Questions</h2>
 <p>Any question to be asked of biodiversity data should be put as simply and succinctly as possible. With the number of different subject areas and techniques used, analyses can quickly become complex.</p>
 </div>
-<div id="taxonomies" class="section level2">
+<div id="taxonomies" class="section level2" number="2.2">
 <h2><span class="header-section-number">2.2</span> Taxonomies</h2>
 <p>It is important to be aware of likely taxonomic anomalies prior to working within a region. Checklists are very important, especially if working over several regions / countries. Whilst there are many things that will automatically look for the validity of a name they do not check for the validity of that species occurrence. For example <em>Sphagnum auriculatum</em> and <em>S. denticulatum</em> are both valid names. <em>S. auriculatum</em> is the currently accepted species in Europe but in the British Isles, Ireland and the Netherlands <em>s. denticulatum</em> is the most recorded taxa. Using data from across the European region without acknowledging this disagreement would impact the results of any research undertaken. For taxa which are known to be capable of dispersing great distances (eg birds) this becomes even more difficult especially when using community sourced data.</p>
 <p>For Sweden there is an agreed taxonomy for species accesible through [<a href="https://www.dyntaxa.se/" class="uri">https://www.dyntaxa.se/</a>] and the R library <strong>dyntaxa</strong>.</p>
 </div>
-<div id="data-sources" class="section level2">
+<div id="data-sources" class="section level2" number="2.3">
 <h2><span class="header-section-number">2.3</span> Data Sources</h2>
 <p>Depending on what questions are being asked there are many different resources available. We focus on biodiversity data</p>
-<div id="biodiversity-record-data" class="section level3">
+<div id="biodiversity-record-data" class="section level3" number="2.3.1">
 <h3><span class="header-section-number">2.3.1</span> Biodiversity record data</h3>
 <p>There are a large number of available online resources. These include but are not limited to (specific R libraries that connect to these databases are provided in <strong>bold</strong>):</p>
 <ul>
@@ -234,7 +244,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>…</li>
 </ul>
 </div>
-<div id="taxonomic-diversity" class="section level3">
+<div id="taxonomic-diversity" class="section level3" number="2.3.2">
 <h3><span class="header-section-number">2.3.2</span> Taxonomic diversity</h3>
 <p>To keep track of ever changing taxonomy of species there are different databases that follow different standars.</p>
 <ul>
@@ -243,18 +253,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>…</li>
 </ul>
 </div>
-<div id="functional-diversity" class="section level3">
+<div id="functional-diversity" class="section level3" number="2.3.3">
 <h3><span class="header-section-number">2.3.3</span> Functional diversity</h3>
-<p>Very broadly functional diversity is the diversity of what organisms do <span class="citation">(Petchey and Gaston <a href="#ref-petchey_functional_2006" role="doc-biblioref">2006</a>)</span>. Such diversity can be direct physical measurements of traits of the organisms involved and / or data summarized from published works. There are databases dedicated to the distribution of scientific data that may be used. Such resources include:</p>
+<p>Very broadly functional diversity is the diversity of what organisms do <span class="citation">(<a href="references.html#ref-petchey_functional_2006" role="doc-biblioref">Petchey and Gaston 2006</a>)</span>. Such diversity can be direct physical measurements of traits of the organisms involved and / or data summarized from published works. There are databases dedicated to the distribution of scientific data that may be used. Such resources include:</p>
 <ul>
 <li>Dryad [<a href="https://datadryad.org/stash" class="uri">https://datadryad.org/stash</a>]</li>
 <li>TRY: Plant Trait Database [<a href="https://www.try-db.org/TryWeb/Home.php" class="uri">https://www.try-db.org/TryWeb/Home.php</a>]</li>
-<li>Ecological indicator and traits values for Swedish vascular plants<span class="citation">(Tyler et al. <a href="#ref-tyler_ecological_2021" role="doc-biblioref">2021</a>)</span> [<a href="https://doi.org/10.1016/j.ecolind.2020.106923" class="uri">https://doi.org/10.1016/j.ecolind.2020.106923</a>]</li>
+<li>Ecological indicator and traits values for Swedish vascular plants<span class="citation">(<a href="references.html#ref-tyler_ecological_2021" role="doc-biblioref">Tyler et al. 2021</a>)</span> [<a href="https://doi.org/10.1016/j.ecolind.2020.106923" class="uri">https://doi.org/10.1016/j.ecolind.2020.106923</a>]</li>
 <li>Vertnet [<a href="http://vertnet.org/" class="uri">http://vertnet.org/</a>]</li>
 <li>…</li>
 </ul>
 </div>
-<div id="genetic-data-bases" class="section level3">
+<div id="genetic-data-bases" class="section level3" number="2.3.4">
 <h3><span class="header-section-number">2.3.4</span> Genetic data bases</h3>
 <p>Genetic data may be related directly to the samples used, phylogenetic trees generated from some other data set set or some other genetic aspect. Such resources include:</p>
 <ul>
@@ -264,10 +274,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>…</li>
 </ul>
 </div>
-<div id="environemntal-data" class="section level3">
+<div id="environemntal-data" class="section level3" number="2.3.5">
 <h3><span class="header-section-number">2.3.5</span> Environemntal data</h3>
 <p>There are a number of environmental repositories available. Static data sets for global resources include:</p>
-<div id="sweden" class="section level4">
+<div id="sweden" class="section level4" number="2.3.5.1">
 <h4><span class="header-section-number">2.3.5.1</span> Sweden</h4>
 <ul>
 <li>Skogstyrelsen [<a href="https://www.skogsstyrelsen.se/sjalvservice/karttjanster/geodatatjanster/oppna-data/" class="uri">https://www.skogsstyrelsen.se/sjalvservice/karttjanster/geodatatjanster/oppna-data/</a>] Open data supplied by Skogstyrelsen</li>
@@ -275,7 +285,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Miljödata MVM [<a href="https://miljodata.slu.se/mvm/" class="uri">https://miljodata.slu.se/mvm/</a>] - Environmental data from SLU for Sweden</li>
 </ul>
 </div>
-<div id="global-and-european" class="section level4">
+<div id="global-and-european" class="section level4" number="2.3.5.2">
 <h4><span class="header-section-number">2.3.5.2</span> Global and European</h4>
 <ul>
 <li>wordclim [<a href="https://www.worldclim.org/" class="uri">https://www.worldclim.org/</a>] Global gridded climate data at various resolutions</li>
@@ -286,15 +296,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </div>
 </div>
-</div>
-</div>
-<h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-petchey_functional_2006">
-<p>Petchey, Owen L., and Kevin J. Gaston. 2006. “Functional Diversity: Back to Basics and Looking Forward.” <em>Ecology Letters</em> 9 (6): 741–58. <a href="https://doi.org/10.1111/j.1461-0248.2006.00924.x">https://doi.org/10.1111/j.1461-0248.2006.00924.x</a>.</p>
-</div>
-<div id="ref-tyler_ecological_2021">
-<p>Tyler, Torbjörn, Lina Herbertsson, Johan Olofsson, and Pål Axel Olsson. 2021. “Ecological Indicator and Traits Values for Swedish Vascular Plants.” <em>Ecological Indicators</em> 120 (January): 106923. <a href="https://doi.org/10.1016/j.ecolind.2020.106923">https://doi.org/10.1016/j.ecolind.2020.106923</a>.</p>
 </div>
 </div>
             </section>

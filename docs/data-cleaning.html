@@ -24,7 +24,7 @@
 <meta name="author" content="Debora Arlt, Alejandro Ruete and Charles Campbell for the Swedish Biodiversity Data Infrastructure" />
 
 
-<meta name="date" content="2020-12-09" />
+<meta name="date" content="2021-05-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="the-importance-of-questions-and-sources-of-data.html"/>
 <link rel="next" href="fitness-for-use.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,25 +51,24 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -88,7 +88,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -134,10 +134,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <ul class="summary">
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html"><i class="fa fa-check"></i><b>2</b> The importance of questions and sources of data</a><ul>
+<li class="chapter" data-level="2" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html"><i class="fa fa-check"></i><b>2</b> The importance of questions and sources of data</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html#questions"><i class="fa fa-check"></i><b>2.1</b> Questions</a></li>
 <li class="chapter" data-level="2.2" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html#taxonomies"><i class="fa fa-check"></i><b>2.2</b> Taxonomies</a></li>
-<li class="chapter" data-level="2.3" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html#data-sources"><i class="fa fa-check"></i><b>2.3</b> Data Sources</a><ul>
+<li class="chapter" data-level="2.3" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html#data-sources"><i class="fa fa-check"></i><b>2.3</b> Data Sources</a>
+<ul>
 <li class="chapter" data-level="2.3.1" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html#biodiversity-record-data"><i class="fa fa-check"></i><b>2.3.1</b> Biodiversity record data</a></li>
 <li class="chapter" data-level="2.3.2" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html#taxonomic-diversity"><i class="fa fa-check"></i><b>2.3.2</b> Taxonomic diversity</a></li>
 <li class="chapter" data-level="2.3.3" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html#functional-diversity"><i class="fa fa-check"></i><b>2.3.3</b> Functional diversity</a></li>
@@ -145,35 +147,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3.5" data-path="the-importance-of-questions-and-sources-of-data.html"><a href="the-importance-of-questions-and-sources-of-data.html#environemntal-data"><i class="fa fa-check"></i><b>2.3.5</b> Environemntal data</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="data-cleaning.html"><a href="data-cleaning.html"><i class="fa fa-check"></i><b>3</b> Data cleaning</a><ul>
+<li class="chapter" data-level="3" data-path="data-cleaning.html"><a href="data-cleaning.html"><i class="fa fa-check"></i><b>3</b> Data cleaning</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="data-cleaning.html"><a href="data-cleaning.html#resources"><i class="fa fa-check"></i><b>3.1</b> Resources</a></li>
 <li class="chapter" data-level="3.2" data-path="data-cleaning.html"><a href="data-cleaning.html#taxonomies-1"><i class="fa fa-check"></i><b>3.2</b> Taxonomies</a></li>
-<li class="chapter" data-level="3.3" data-path="data-cleaning.html"><a href="data-cleaning.html#location-data"><i class="fa fa-check"></i><b>3.3</b> Location data</a><ul>
+<li class="chapter" data-level="3.3" data-path="data-cleaning.html"><a href="data-cleaning.html#location-data"><i class="fa fa-check"></i><b>3.3</b> Location data</a>
+<ul>
 <li class="chapter" data-level="3.3.1" data-path="data-cleaning.html"><a href="data-cleaning.html#locality-information"><i class="fa fa-check"></i><b>3.3.1</b> Locality information</a></li>
 <li class="chapter" data-level="3.3.2" data-path="data-cleaning.html"><a href="data-cleaning.html#coordinate-uncertainty"><i class="fa fa-check"></i><b>3.3.2</b> Coordinate uncertainty</a></li>
 <li class="chapter" data-level="3.3.3" data-path="data-cleaning.html"><a href="data-cleaning.html#coordinate-errors"><i class="fa fa-check"></i><b>3.3.3</b> Coordinate errors</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="data-cleaning.html"><a href="data-cleaning.html#examples"><i class="fa fa-check"></i><b>3.4</b> Examples</a><ul>
+<li class="chapter" data-level="3.4" data-path="data-cleaning.html"><a href="data-cleaning.html#examples"><i class="fa fa-check"></i><b>3.4</b> Examples</a>
+<ul>
 <li class="chapter" data-level="3.4.1" data-path="data-cleaning.html"><a href="data-cleaning.html#data-cleaning-cyperaceae-in-sweden"><i class="fa fa-check"></i><b>3.4.1</b> Data cleaning Cyperaceae in Sweden</a></li>
 <li class="chapter" data-level="3.4.2" data-path="data-cleaning.html"><a href="data-cleaning.html#taxonomy"><i class="fa fa-check"></i><b>3.4.2</b> Taxonomy</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="fitness-for-use.html"><a href="fitness-for-use.html"><i class="fa fa-check"></i><b>4</b> Fitness for use</a><ul>
+<li class="chapter" data-level="4" data-path="fitness-for-use.html"><a href="fitness-for-use.html"><i class="fa fa-check"></i><b>4</b> Fitness for use</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="fitness-for-use.html"><a href="fitness-for-use.html#bias"><i class="fa fa-check"></i><b>4.1</b> Bias</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="data-exploration-and-transformation.html"><a href="data-exploration-and-transformation.html"><i class="fa fa-check"></i><b>5</b> Data Exploration and Transformation</a><ul>
+<li class="chapter" data-level="5" data-path="data-exploration-and-transformation.html"><a href="data-exploration-and-transformation.html"><i class="fa fa-check"></i><b>5</b> Data Exploration and Transformation</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="data-exploration-and-transformation.html"><a href="data-exploration-and-transformation.html#wide"><i class="fa fa-check"></i><b>5.1</b> Wide</a></li>
 <li class="chapter" data-level="5.2" data-path="data-exploration-and-transformation.html"><a href="data-exploration-and-transformation.html#long"><i class="fa fa-check"></i><b>5.2</b> Long</a></li>
 <li class="chapter" data-level="5.3" data-path="data-exploration-and-transformation.html"><a href="data-exploration-and-transformation.html#wide-to-long"><i class="fa fa-check"></i><b>5.3</b> Wide to long</a></li>
 <li class="chapter" data-level="5.4" data-path="data-exploration-and-transformation.html"><a href="data-exploration-and-transformation.html#long-to-wide"><i class="fa fa-check"></i><b>5.4</b> Long to Wide</a></li>
-<li class="chapter" data-level="5.5" data-path="data-exploration-and-transformation.html"><a href="data-exploration-and-transformation.html#spatial-data"><i class="fa fa-check"></i><b>5.5</b> Spatial data</a><ul>
+<li class="chapter" data-level="5.5" data-path="data-exploration-and-transformation.html"><a href="data-exploration-and-transformation.html#spatial-data"><i class="fa fa-check"></i><b>5.5</b> Spatial data</a>
+<ul>
 <li class="chapter" data-level="5.5.1" data-path="data-exploration-and-transformation.html"><a href="data-exploration-and-transformation.html#spatial-vector-data"><i class="fa fa-check"></i><b>5.5.1</b> Spatial vector data</a></li>
 <li class="chapter" data-level="5.5.2" data-path="data-exploration-and-transformation.html"><a href="data-exploration-and-transformation.html#raster"><i class="fa fa-check"></i><b>5.5.2</b> Raster</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html"><i class="fa fa-check"></i><b>6</b> Essential Biodiversity Variables</a><ul>
+<li class="chapter" data-level="6" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html"><i class="fa fa-check"></i><b>6</b> Essential Biodiversity Variables</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html#sdm"><i class="fa fa-check"></i><b>6.1</b> SDM</a></li>
-<li class="chapter" data-level="6.2" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html#diversity"><i class="fa fa-check"></i><b>6.2</b> Diversity</a><ul>
+<li class="chapter" data-level="6.2" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html#diversity"><i class="fa fa-check"></i><b>6.2</b> Diversity</a>
+<ul>
 <li class="chapter" data-level="6.2.1" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html#types-of-analyses---patitioning-alpha-beta-gamma-etc.-diversity"><i class="fa fa-check"></i><b>6.2.1</b> Types of analyses - Patitioning <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span>, <span class="math inline">\(\gamma\)</span> <em>etc.</em> diversity</a></li>
 <li class="chapter" data-level="6.2.2" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html#data-form"><i class="fa fa-check"></i><b>6.2.2</b> Data form</a></li>
 <li class="chapter" data-level="6.2.3" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html#classic-diversity-measures"><i class="fa fa-check"></i><b>6.2.3</b> Classic diversity measures</a></li>
@@ -202,32 +212,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="data-cleaning" class="section level1">
+<div id="data-cleaning" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> Data cleaning</h1>
-<p>Biodiversity data repositories work hard to maintain the accuracy of their holdings. When multiple sources are involved several problems may arrise. Here we shall quickly outline what they are and possible solutions.</p>
-<div id="resources" class="section level2">
+<p>Biodiversity data repositories work hard to maintain the accuracy of their holdings. When multiple sources are involved several problems may arise. Here we shall quickly outline what they are and possible solutions.</p>
+<div id="resources" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Resources</h2>
 <p>There are a number of libraries, work flows and online resources for automating downloading and cleaning of data. THese include:</p>
 <ul>
-<li>The BDverse [<a href="https://bdverse.org/" class="uri">https://bdverse.org/</a>]. A group of libraries for cleaning biodiversity data</li>
-<li>Kurator [<a href="http://kurator.acis.ufl.edu/kurator-web/" class="uri">http://kurator.acis.ufl.edu/kurator-web/</a>]</li>
-<li>Wallace [<a href="https://wallaceecomod.github.io/" class="uri">https://wallaceecomod.github.io/</a>]</li>
+<li>The <a href="https://bdverse.org/">BDverse</a>. A group of libraries for cleaning biodiversity data</li>
+<li><a href="%5Bhttp://kurator.acis.ufl.edu/kurator-web/">Kurator</a></li>
+<li><a href="https://wallaceecomod.github.io/">Wallace</a></li>
 </ul>
 </div>
-<div id="taxonomies-1" class="section level2">
+<div id="taxonomies-1" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Taxonomies</h2>
-<p>It is important to be aware of likely taxonomic anomalies prior to working within a region. Checklists are very important, especially if working over several regions / countries. Whilst there are many things that will automatically look for the validity of a name they do not check for the validity of that species occurrence. For example <em>Sphagnum auriculatum</em> Schimp.and <em>Sphagnum denticulatum</em> Bridel, 1826 are both valid names. <em>S. auriculatum</em> is the currently accepted species in Europe but in the British Isles, Ireland and the Netherlands <em>s. denticulatum</em> is the most recorded taxa. Both are legitimate names but they are a synonymy. Both names have been used in Europe but in disitinct countries. The current European checklist <span class="citation">(Hodgetts et al. <a href="#ref-hodgetts_annotated_2020" role="doc-biblioref">2020</a>)</span> has <em>Sphagnum auriculatum</em> Schimp. as the accepted taxon occuring in Europe. Naive downloading would result in two taxa being present when infact it is two interepretations of the same taxon. Using data from across the European region without acknowledging this disagreement would impact the results of any research undertaken. For taxa which are known to be capable of dispersing great distances (eg birds) this becomes even more difficult especially when using community sourced data.</p>
+<p>It is important to be aware of likely taxonomic anomalies prior to working within a region. Checklists are very important, especially if working over several regions / countries. Whilst there are many things that will automatically look for the validity of a name they do not check for the validity of that species occurrence. For example <em>Sphagnum auriculatum</em> Schimp. and <em>Sphagnum denticulatum</em> Bridel, 1826 are both valid names. <em>S. auriculatum</em> is the currently accepted species in Europe but in the British Isles, Ireland and the Netherlands <em>s. denticulatum</em> is the most recorded taxa. Both are legitimate names but they are a synonymy. Both names have been used in Europe but in distinct countries. The current European checklist <span class="citation">(<a href="references.html#ref-hodgetts_annotated_2020" role="doc-biblioref">Hodgetts et al. 2020</a>)</span> has <em>Sphagnum auriculatum</em> Schimp. as the accepted taxon occurring in Europe. Naive downloading would result in two taxa being present when in fact it is two interpretations of the same taxon. Using data from across the European region without acknowledging this disagreement would impact the results of any research undertaken. For taxa which are known to be capable of dispersing great distances (eg. birds) this becomes even more difficult especially when using community sourced data.</p>
 <p><img src="biodiversity-analysis-tools_files/figure-html/start-up-1.png" width="\textwidth" style="display: block; margin: auto;" />
 The example above uses data downloaded from GBIF.</p>
 <ul>
 <li>Data for <em>Sphagnum denticulatum</em> doi: 10.15468/dl.rrp4p4</li>
 <li>Data for <em>Sphagnum auriculatum</em> doi: 10.15468/dl.3yrtw7</li>
 </ul>
-<p>Within Sweden there is an agreed taxonomy for all extant taxa accessible through [<a href="https://www.dyntaxa.se" class="uri">https://www.dyntaxa.se</a>]. Checking of species lists can be done by directly copying species names into a dialogue box or uploading an excel spreadsheet in the correct format.</p>
+<p>Within Sweden there is an agreed taxonomy for all extant taxa accessible through <a href="https://www.dyntaxa.se">Dyntaxa</a>. Checking of species lists can be done by directly copying species names into a dialogue box or uploading an excel spreadsheet in the correct format.</p>
 </div>
-<div id="location-data" class="section level2">
+<div id="location-data" class="section level2" number="3.3">
 <h2><span class="header-section-number">3.3</span> Location data</h2>
-<div id="locality-information" class="section level3">
+<div id="locality-information" class="section level3" number="3.3.1">
 <h3><span class="header-section-number">3.3.1</span> Locality information</h3>
 <p>Many records have locality information attached to them. Where there are no coordinates attached this information can be used to locate the record to within an area of where records most likely came from. There are functions for which geocoding can be done automatically within R. Geocoding is finding the coordinate for a known locality. These are included in the libraries:</p>
 <ul>
@@ -236,13 +246,15 @@ The example above uses data downloaded from GBIF.</p>
 </ul>
 <p>Many localities may not be included in the gazetteers associated with these libraries but may be located using online or printed maps. This takes time but may be useful. Unique localities may be extracted, geocoded and then merged back with the data set.</p>
 This becomes especially important when extracting records across country boundaries as countries have different numbers of georeferenced observations.
-<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:350px; overflow-x: scroll; width:100%;  margin-left: auto; margin-right: auto;" class="table table-striped table-hover">
+<div class="table table-striped table-hover" style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:350px; overflow-x: scroll; width:100%;  margin-left: auto; margin-right: auto;">
 <table>
 <caption>
 <span id="tab:unnamed-chunk-5">Table 3.1: </span>The number and percentage of records of bryophyta per EU country with and without coordinates
 </caption>
 <thead>
 <tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+</th>
 <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 Country
 </th>
@@ -260,257 +272,314 @@ Total Records
 <tbody>
 <tr>
 <td style="text-align:left;">
+AL
+</td>
+<td style="text-align:left;">
 Albania
 </td>
 <td style="text-align:right;">
-66
+99
 </td>
 <td style="text-align:right;">
-69.70
+79.80
 </td>
 <td style="text-align:right;">
-30.30
+20.20
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+AD
+</td>
 <td style="text-align:left;">
 Andorra
 </td>
 <td style="text-align:right;">
-2344
+2371
 </td>
 <td style="text-align:right;">
-91.42
+91.52
 </td>
 <td style="text-align:right;">
-8.58
+8.48
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+AM
+</td>
 <td style="text-align:left;">
 Armenia
 </td>
 <td style="text-align:right;">
-324
+335
 </td>
 <td style="text-align:right;">
-50.93
+54.03
 </td>
 <td style="text-align:right;">
-49.07
+45.97
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+AT
+</td>
 <td style="text-align:left;">
 Austria
 </td>
 <td style="text-align:right;">
-40994
+53346
 </td>
 <td style="text-align:right;">
-74.88
+80.45
 </td>
 <td style="text-align:right;">
-25.12
+19.55
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+BY
+</td>
 <td style="text-align:left;">
 Belarus
 </td>
 <td style="text-align:right;">
-875
+965
 </td>
 <td style="text-align:right;">
-57.60
+61.66
 </td>
 <td style="text-align:right;">
-42.40
+38.34
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+BE
+</td>
 <td style="text-align:left;">
 Belgium
 </td>
 <td style="text-align:right;">
-36712
+284611
 </td>
 <td style="text-align:right;">
-11.49
+88.44
 </td>
 <td style="text-align:right;">
-88.51
+11.56
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+BA
+</td>
 <td style="text-align:left;">
 Bosnia &amp; Herzegovina
 </td>
 <td style="text-align:right;">
-227
+231
 </td>
 <td style="text-align:right;">
-3.52
+3.90
 </td>
 <td style="text-align:right;">
-96.48
+96.10
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+BG
+</td>
 <td style="text-align:left;">
 Bulgaria
 </td>
 <td style="text-align:right;">
-867
+880
 </td>
 <td style="text-align:right;">
-47.87
+53.64
 </td>
 <td style="text-align:right;">
-52.13
+46.36
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+HR
+</td>
 <td style="text-align:left;">
 Croatia
 </td>
 <td style="text-align:right;">
-452
+483
 </td>
 <td style="text-align:right;">
-11.06
+21.74
 </td>
 <td style="text-align:right;">
-88.94
+78.26
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+CY
+</td>
 <td style="text-align:left;">
 Cyprus
 </td>
 <td style="text-align:right;">
-450
+453
 </td>
 <td style="text-align:right;">
-23.11
+22.74
 </td>
 <td style="text-align:right;">
-76.89
+77.26
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+CZ
+</td>
 <td style="text-align:left;">
 Czechia
 </td>
 <td style="text-align:right;">
-8632
+9196
 </td>
 <td style="text-align:right;">
-37.28
+44.77
 </td>
 <td style="text-align:right;">
-62.72
+55.23
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+DK
+</td>
 <td style="text-align:left;">
 Denmark
 </td>
 <td style="text-align:right;">
-745963
+823804
 </td>
 <td style="text-align:right;">
-98.81
+98.91
 </td>
 <td style="text-align:right;">
-1.19
+1.09
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+EE
+</td>
 <td style="text-align:left;">
 Estonia
 </td>
 <td style="text-align:right;">
-69245
+75932
 </td>
 <td style="text-align:right;">
-45.98
+49.63
 </td>
 <td style="text-align:right;">
-54.02
+50.37
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+FO
+</td>
 <td style="text-align:left;">
 Faroe Islands
 </td>
 <td style="text-align:right;">
-1191
+1213
 </td>
 <td style="text-align:right;">
-59.53
+59.69
 </td>
 <td style="text-align:right;">
-40.47
+40.31
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+FI
+</td>
 <td style="text-align:left;">
 Finland
 </td>
 <td style="text-align:right;">
-55056
+56181
 </td>
 <td style="text-align:right;">
-67.53
+68.17
 </td>
 <td style="text-align:right;">
-32.47
+31.83
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+FR
+</td>
 <td style="text-align:left;">
 France
 </td>
 <td style="text-align:right;">
-545698
+548365
 </td>
 <td style="text-align:right;">
-87.19
+87.12
 </td>
 <td style="text-align:right;">
-12.81
+12.88
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+GE
+</td>
 <td style="text-align:left;">
 Georgia
 </td>
 <td style="text-align:right;">
-3179
+3258
 </td>
 <td style="text-align:right;">
-14.12
+15.50
 </td>
 <td style="text-align:right;">
-85.88
+84.50
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
+DE
+</td>
+<td style="text-align:left;">
 Germany
 </td>
 <td style="text-align:right;">
-109648
+165350
 </td>
 <td style="text-align:right;">
-69.00
+81.12
 </td>
 <td style="text-align:right;">
-31.00
+18.88
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+GI
+</td>
 <td style="text-align:left;">
 Gibraltar
 </td>
@@ -526,145 +595,178 @@ Gibraltar
 </tr>
 <tr>
 <td style="text-align:left;">
+GR
+</td>
+<td style="text-align:left;">
 Greece
 </td>
 <td style="text-align:right;">
-1383
+1535
 </td>
 <td style="text-align:right;">
-29.28
+31.27
 </td>
 <td style="text-align:right;">
-70.72
+68.73
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+HU
+</td>
 <td style="text-align:left;">
 Hungary
 </td>
 <td style="text-align:right;">
-1998
+2133
 </td>
 <td style="text-align:right;">
-17.17
+19.22
 </td>
 <td style="text-align:right;">
-82.83
+80.78
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+IS
+</td>
 <td style="text-align:left;">
 Iceland
 </td>
 <td style="text-align:right;">
-41991
+42029
 </td>
 <td style="text-align:right;">
-85.56
+85.53
 </td>
 <td style="text-align:right;">
-14.44
+14.47
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+IE
+</td>
 <td style="text-align:left;">
 Ireland
 </td>
 <td style="text-align:right;">
-126866
+127055
 </td>
 <td style="text-align:right;">
-97.75
+97.68
 </td>
 <td style="text-align:right;">
-2.25
+2.32
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+IT
+</td>
 <td style="text-align:left;">
 Italy
 </td>
 <td style="text-align:right;">
-9456
+10051
 </td>
 <td style="text-align:right;">
-22.41
+25.70
 </td>
 <td style="text-align:right;">
-77.59
+74.30
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+LV
+</td>
 <td style="text-align:left;">
 Latvia
 </td>
 <td style="text-align:right;">
-1560
+1611
 </td>
 <td style="text-align:right;">
-17.31
+18.44
 </td>
 <td style="text-align:right;">
-82.69
+81.56
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+LI
+</td>
 <td style="text-align:left;">
 Liechtenstein
 </td>
 <td style="text-align:right;">
-25
+34
 </td>
 <td style="text-align:right;">
-16.00
+35.29
 </td>
 <td style="text-align:right;">
-84.00
+64.71
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+LT
+</td>
 <td style="text-align:left;">
 Lithuania
 </td>
 <td style="text-align:right;">
-1063
+1487
 </td>
 <td style="text-align:right;">
-81.19
+86.68
 </td>
 <td style="text-align:right;">
-18.81
+13.32
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+LU
+</td>
 <td style="text-align:left;">
 Luxembourg
 </td>
 <td style="text-align:right;">
-14357
+18167
 </td>
 <td style="text-align:right;">
-97.90
+97.09
 </td>
 <td style="text-align:right;">
-2.10
+2.91
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
+MT
+</td>
+<td style="text-align:left;">
 Malta
 </td>
 <td style="text-align:right;">
-68
+78
 </td>
 <td style="text-align:right;">
-58.82
+61.54
 </td>
 <td style="text-align:right;">
-41.18
+38.46
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+MC
+</td>
 <td style="text-align:left;">
 Monaco
 </td>
@@ -680,66 +782,81 @@ Monaco
 </tr>
 <tr>
 <td style="text-align:left;">
+NL
+</td>
+<td style="text-align:left;">
 Netherlands
 </td>
 <td style="text-align:right;">
-729776
+745278
 </td>
 <td style="text-align:right;">
-93.62
+91.94
 </td>
 <td style="text-align:right;">
-6.38
+8.06
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+MK
+</td>
 <td style="text-align:left;">
 North Macedonia
 </td>
 <td style="text-align:right;">
-55
+94
 </td>
 <td style="text-align:right;">
-30.91
+51.06
 </td>
 <td style="text-align:right;">
-69.09
+48.94
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+NO
+</td>
 <td style="text-align:left;">
 Norway
 </td>
 <td style="text-align:right;">
-335661
+348192
 </td>
 <td style="text-align:right;">
-83.53
+82.96
 </td>
 <td style="text-align:right;">
-16.47
+17.04
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+PL
+</td>
 <td style="text-align:left;">
 Poland
 </td>
 <td style="text-align:right;">
-22562
+23079
 </td>
 <td style="text-align:right;">
-42.69
+48.16
 </td>
 <td style="text-align:right;">
-57.31
+51.84
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
+PT
+</td>
+<td style="text-align:left;">
 Portugal
 </td>
 <td style="text-align:right;">
-329770
+330034
 </td>
 <td style="text-align:right;">
 92.63
@@ -750,33 +867,42 @@ Portugal
 </tr>
 <tr>
 <td style="text-align:left;">
+RO
+</td>
+<td style="text-align:left;">
 Romania
 </td>
 <td style="text-align:right;">
 858
 </td>
 <td style="text-align:right;">
-19.58
+20.63
 </td>
 <td style="text-align:right;">
-80.42
+79.37
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
+RU
+</td>
+<td style="text-align:left;">
 Russia
 </td>
 <td style="text-align:right;">
-140617
+148930
 </td>
 <td style="text-align:right;">
-77.01
+80.40
 </td>
 <td style="text-align:right;">
-22.99
+19.60
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+SM
+</td>
 <td style="text-align:left;">
 San Marino
 </td>
@@ -792,108 +918,132 @@ San Marino
 </tr>
 <tr>
 <td style="text-align:left;">
+SK
+</td>
+<td style="text-align:left;">
 Slovakia
 </td>
 <td style="text-align:right;">
-1719
+2013
 </td>
 <td style="text-align:right;">
-44.50
+50.72
 </td>
 <td style="text-align:right;">
-55.50
+49.28
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+SI
+</td>
 <td style="text-align:left;">
 Slovenia
 </td>
 <td style="text-align:right;">
-3181
+3244
 </td>
 <td style="text-align:right;">
-57.53
+56.72
 </td>
 <td style="text-align:right;">
-42.47
+43.28
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+ES
+</td>
 <td style="text-align:left;">
 Spain
 </td>
 <td style="text-align:right;">
-95472
+96268
 </td>
 <td style="text-align:right;">
-74.89
+74.90
 </td>
 <td style="text-align:right;">
-25.11
+25.10
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+SE
+</td>
 <td style="text-align:left;">
 Sweden
 </td>
 <td style="text-align:right;">
-960108
+1016378
 </td>
 <td style="text-align:right;">
-88.25
+88.78
 </td>
 <td style="text-align:right;">
-11.75
+11.22
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+CH
+</td>
 <td style="text-align:left;">
 Switzerland
 </td>
 <td style="text-align:right;">
-117225
+125976
 </td>
 <td style="text-align:right;">
-2.46
+7.63
 </td>
 <td style="text-align:right;">
-97.54
+92.37
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+TR
+</td>
 <td style="text-align:left;">
 Turkey
 </td>
 <td style="text-align:right;">
-8182
+8335
 </td>
 <td style="text-align:right;">
-4.35
+4.36
 </td>
 <td style="text-align:right;">
-95.65
+95.64
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+UA
+</td>
 <td style="text-align:left;">
 Ukraine
 </td>
 <td style="text-align:right;">
-1072
+6888
 </td>
 <td style="text-align:right;">
-22.67
+88.17
 </td>
 <td style="text-align:right;">
-77.33
+11.83
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
+GB
+</td>
+<td style="text-align:left;">
 United Kingdom
 </td>
 <td style="text-align:right;">
-2877837
+2930510
 </td>
 <td style="text-align:right;">
 98.86
@@ -903,6 +1053,9 @@ United Kingdom
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+VA
+</td>
 <td style="text-align:left;">
 Vatican City
 </td>
@@ -921,9 +1074,9 @@ Vatican City
 </div>
 <p>As can be seen from the above example for European Bryophyta (Hornworts, Liverworts and Mosses) the number of records with coordinates vastly varies between countries. For example of 959444 records in Sweden 88.24 % have coordinates in Switzerland of 117132 records only 2.29 % have coordinates.</p>
 </div>
-<div id="coordinate-uncertainty" class="section level3">
+<div id="coordinate-uncertainty" class="section level3" number="3.3.2">
 <h3><span class="header-section-number">3.3.2</span> Coordinate uncertainty</h3>
-<p>In many cases there is now an abundance of biodiversity data with coordinates. As can be seen from a summary of the above <em>Sphagnum</em> data coordinate uncertainty can vary from less than 1 metre to multiple kilometers.</p>
+<p>In many cases there is now an abundance of biodiversity data with coordinates. As can be seen from a summary of the above <em>Sphagnum</em> data coordinate uncertainty can vary from less than 1 meter to multiple kilometers.</p>
 <table class="table table table-striped table-hover" style="margin-left: auto; margin-right: auto; margin-left: auto; margin-right: auto;">
 <tbody>
 <tr>
@@ -1001,7 +1154,7 @@ Frequency
 <p>In the above example it can be seen that two have uncertainties greater than 50 km and several thousand records that have no known error margin the location. It is important to consider what the error is and removing those records for which the uncertainty is too high. Where this point is will be dependent on the scale of the research.</p>
 <!-- Coordinates with NA as the uncertainty and those that fall below a particular threshold may be removed by: -->
 </div>
-<div id="coordinate-errors" class="section level3">
+<div id="coordinate-errors" class="section level3" number="3.3.3">
 <h3><span class="header-section-number">3.3.3</span> Coordinate errors</h3>
 <p>Besides the declared uncertainty of the the coordinates, coordinate errors may occur for a variety of reasons. The library <strong>coordinateCleaner</strong> is very useful for removing some of the most common errors. These include:</p>
 <ul>
@@ -1011,37 +1164,37 @@ Frequency
 </ul>
 </div>
 </div>
-<div id="examples" class="section level2">
+<div id="examples" class="section level2" number="3.4">
 <h2><span class="header-section-number">3.4</span> Examples</h2>
-<div id="data-cleaning-cyperaceae-in-sweden" class="section level3">
+<div id="data-cleaning-cyperaceae-in-sweden" class="section level3" number="3.4.1">
 <h3><span class="header-section-number">3.4.1</span> Data cleaning Cyperaceae in Sweden</h3>
-<p>In this example I have downloaded the occurences of the Cyperaceae family in Sweden from Bioatlas since 2000. This is a single data set from an area with an agreed taxonomy (dyntaxa.se). Our aim here is to download a group of records and clean them to be in such a state than they reflect the question the researcher has in mind.</p>
-<p>First we give each record in the assembled data set a unique ID. In this case it could be possible to use the GBIFid. In data sets sourced from mulitple sources it is a good idea to create a unique ID related to the data source.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="data-cleaning.html#cb1-1"></a><span class="kw">library</span>(data.table)</span>
-<span id="cb1-2"><a href="data-cleaning.html#cb1-2"></a><span class="kw">library</span>(dplyr)</span>
-<span id="cb1-3"><a href="data-cleaning.html#cb1-3"></a><span class="kw">library</span>(ggplot2)</span>
-<span id="cb1-4"><a href="data-cleaning.html#cb1-4"></a><span class="kw">library</span>(CoordinateCleaner)</span>
-<span id="cb1-5"><a href="data-cleaning.html#cb1-5"></a><span class="kw">library</span>(kableExtra)</span>
-<span id="cb1-6"><a href="data-cleaning.html#cb1-6"></a><span class="kw">library</span>(dismo)</span>
-<span id="cb1-7"><a href="data-cleaning.html#cb1-7"></a><span class="kw">library</span>(sf)</span>
-<span id="cb1-8"><a href="data-cleaning.html#cb1-8"></a><span class="kw">library</span>(raster)</span>
-<span id="cb1-9"><a href="data-cleaning.html#cb1-9"></a><span class="kw">library</span>(ggplot2)</span>
-<span id="cb1-10"><a href="data-cleaning.html#cb1-10"></a><span class="kw">library</span>(cowplot)</span>
-<span id="cb1-11"><a href="data-cleaning.html#cb1-11"></a><span class="kw">library</span>(BIRDS)</span>
-<span id="cb1-12"><a href="data-cleaning.html#cb1-12"></a><span class="kw">library</span>(SBDI4R)</span>
-<span id="cb1-13"><a href="data-cleaning.html#cb1-13"></a></span>
-<span id="cb1-14"><a href="data-cleaning.html#cb1-14"></a><span class="kw">load</span>(<span class="st">&quot;./data/BDcleaner_Scripts/Example/Downloads/Cyperacea_SWE.rdata&quot;</span>) </span></code></pre></div>
+<p>In this example I have downloaded the occurrences of the Cyperaceae family in Sweden from SBDI since 2000. This is a single data set from an area with an agreed taxonomy <a href="www.dyntaxa.se">dyntaxa</a>. Our aim here is to download a group of records and clean them to be in such a state than they reflect the question the researcher has in mind.</p>
+<p>First we give each record in the assembled data set a unique ID. In this case it could be possible to use the GBIFid. In data sets sourced from multiple sources it is a good idea to create a unique ID related to the data source.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="data-cleaning.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data.table)</span>
+<span id="cb1-2"><a href="data-cleaning.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-3"><a href="data-cleaning.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-4"><a href="data-cleaning.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(CoordinateCleaner)</span>
+<span id="cb1-5"><a href="data-cleaning.html#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb1-6"><a href="data-cleaning.html#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dismo)</span>
+<span id="cb1-7"><a href="data-cleaning.html#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb1-8"><a href="data-cleaning.html#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(raster)</span>
+<span id="cb1-9"><a href="data-cleaning.html#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-10"><a href="data-cleaning.html#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cowplot)</span>
+<span id="cb1-11"><a href="data-cleaning.html#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(BIRDS)</span>
+<span id="cb1-12"><a href="data-cleaning.html#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(SBDI4R)</span>
+<span id="cb1-13"><a href="data-cleaning.html#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="data-cleaning.html#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;./data/Cyperacea_SWE.rdata&quot;</span>) </span></code></pre></div>
 <p>In cleaning data there are a number of dimensions of uncertainty we shall first check.</p>
 </div>
-<div id="taxonomy" class="section level3">
+<div id="taxonomy" class="section level3" number="3.4.2">
 <h3><span class="header-section-number">3.4.2</span> Taxonomy</h3>
-<p>In the species column there are records with no Species given in the species column. We then check the scientificName for whether there is useful information there</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="data-cleaning.html#cb2-1"></a></span>
-<span id="cb2-2"><a href="data-cleaning.html#cb2-2"></a><span class="kw">kable</span>(Carex <span class="op">%&gt;%</span></span>
-<span id="cb2-3"><a href="data-cleaning.html#cb2-3"></a><span class="st">  </span><span class="kw">filter</span>(species <span class="op">==</span><span class="st"> &quot;&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb2-4"><a href="data-cleaning.html#cb2-4"></a><span class="st">  </span><span class="kw">distinct</span>(scientificName)) <span class="op">%&gt;%</span></span>
-<span id="cb2-5"><a href="data-cleaning.html#cb2-5"></a><span class="st">   </span><span class="kw">kable_styling</span>(<span class="dt">latex_options =</span> <span class="kw">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hold_position&quot;</span>),</span>
-<span id="cb2-6"><a href="data-cleaning.html#cb2-6"></a>                <span class="dt">full_width =</span> F)</span></code></pre></div>
+<p>In the species column there are records with no Species given in the species column. We then check the <code>scientificName</code> for whether there is useful information there</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="data-cleaning.html#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="data-cleaning.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(Carex <span class="sc">%&gt;%</span></span>
+<span id="cb2-3"><a href="data-cleaning.html#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">&quot;&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-4"><a href="data-cleaning.html#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(scientificName)) <span class="sc">%&gt;%</span></span>
+<span id="cb2-5"><a href="data-cleaning.html#cb2-5" aria-hidden="true" tabindex="-1"></a>   <span class="fu">kable_styling</span>(<span class="at">latex_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hold_position&quot;</span>),</span>
+<span id="cb2-6"><a href="data-cleaning.html#cb2-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">full_width =</span> F)</span></code></pre></div>
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -1053,7 +1206,62 @@ scientificName
 <tbody>
 <tr>
 <td style="text-align:left;">
+Carex divulsa subsp. leersii (F.W.Schultz) W.Koch
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Carex L.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Carex saxatilis var. saxatilis
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Carex fuliginosa subsp. misandra (R.Br.) Nyman
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Carex bigelowii subsp. rigida (Raf.) W.Schultze-Motel
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Carex buxbaumii subsp. mutica (Hartm.) Isov.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Carex buxbaumii f. buxbaumii
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Carex norvegica subsp. inferalpina (Wahlenb.) Hultén
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Carex diandra var. major (W.D.J.Koch) Boott
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Carex buxbaumii var. mutica Hartm.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Carex cognata var. congolensis (Turrill) Lye
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Carex saxatilis subsp. laxa (Trautv.) Kalela
 </td>
 </tr>
 </tbody>
@@ -1061,185 +1269,174 @@ Carex L.
 <p>In this case there are only genre recorded.</p>
 <p>We then check for data about species in the locality information for which there are no species data given in the species column. Here there are enough unique values to be checked easily within R. It is possible that in large data sets that there may be very many records for which there is useful information</p>
 <p>There are no species data in the locality field and so we begin a vector of IDs that are not at the required data resolution.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="data-cleaning.html#cb3-1"></a>unUseful &lt;-<span class="st"> </span>Carex <span class="op">%&gt;%</span></span>
-<span id="cb3-2"><a href="data-cleaning.html#cb3-2"></a><span class="st">            </span><span class="kw">filter</span>(Carex<span class="op">$</span>scientificName <span class="op">==</span><span class="st"> &quot;&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb3-3"><a href="data-cleaning.html#cb3-3"></a><span class="st">            </span>.<span class="op">$</span>id</span></code></pre></div>
-<p>We now need to check that the species names in the records that we are using are valid for the area which we are looking at i.e. Sweden. There are several resources out there that do this (HERE I SUGGEST A LINK TO A WEBSITE LISTING LIBRARIES AND RESOURCES FOR THE VALIDITY OF NAMES). As we are looking specifically and solely at Sweden there is <a href="https://www.dyntaxa.se/">Dyntaxa.se</a>. There is also and R interface as part of the <a href="https://github.com/bioatlas">Bioatlas of Sweden</a> github repository. For wider applicability we will export the unique names from the Carex data frame. These will then be copied to the <a href="https://www.dyntaxa.se/Match/Settings/0">Dyntaxa portal</a> for matching multiple names. The results are checked against the Swedish lists and unknown species or uncertainties are flagged. Names can be copied directly into a box in Dyntaxa or may be imported directly as an xlsx file. Here we shall export just the species names. There are multiple options.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="data-cleaning.html#cb4-1"></a></span>
-<span id="cb4-2"><a href="data-cleaning.html#cb4-2"></a>SpeciesNames &lt;-<span class="st"> </span>Carex <span class="op">%&gt;%</span></span>
-<span id="cb4-3"><a href="data-cleaning.html#cb4-3"></a><span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span>ID <span class="op">%in%</span><span class="st"> </span>unUseful) <span class="op">%&gt;%</span></span>
-<span id="cb4-4"><a href="data-cleaning.html#cb4-4"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">select</span>(<span class="st">&quot;scientificName&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb4-5"><a href="data-cleaning.html#cb4-5"></a><span class="st">  </span><span class="kw">distinct</span>()</span>
-<span id="cb4-6"><a href="data-cleaning.html#cb4-6"></a></span>
-<span id="cb4-7"><a href="data-cleaning.html#cb4-7"></a><span class="co"># library(openxlsx)</span></span>
-<span id="cb4-8"><a href="data-cleaning.html#cb4-8"></a><span class="co">#write.xlsx(SpeciesNames,&quot;./data/BDcleaner_Scripts/Example/UniqueCarexTaxa.xlsx&quot;)</span></span></code></pre></div>
-<p>Dyntaxa provides options for any taxononmic uncertainties and lists the species for which no match can be made. Having made selections it exports as a .xlslx file. We can then check what those species for which there is no information about what they are. In this case there are an number of species which are likely to be horticultural, a few taxa which are of hybrid origin which are in the Dyntaxa with the addition of ‘×’ between genus and species, and <em>Carex utriculata</em> a species from North America. This last could be a misidentification of <em>C. rostrata</em>. We will exclude the horticultural and uncertain species. We do this by adding a <strong>Species</strong> column in the Dyntaxa file and then load that file into R.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="data-cleaning.html#cb5-1"></a><span class="kw">library</span>(openxlsx)</span>
-<span id="cb5-2"><a href="data-cleaning.html#cb5-2"></a>SpeciesNames &lt;-<span class="st"> </span><span class="kw">read.xlsx</span>(<span class="st">&quot;./data/BDcleaner_Scripts/Example/matchCarex.xlsx&quot;</span>) <span class="co"># From Dyntaxa</span></span>
-<span id="cb5-3"><a href="data-cleaning.html#cb5-3"></a></span>
-<span id="cb5-4"><a href="data-cleaning.html#cb5-4"></a>Carex &lt;-<span class="st"> </span><span class="kw">merge</span>(Carex, </span>
-<span id="cb5-5"><a href="data-cleaning.html#cb5-5"></a>               SpeciesNames[,<span class="kw">c</span>(<span class="st">&quot;Provided.string&quot;</span>,<span class="st">&quot;SpeciesDyn&quot;</span>)],</span>
-<span id="cb5-6"><a href="data-cleaning.html#cb5-6"></a>               <span class="dt">by.x =</span> <span class="st">&quot;species&quot;</span>,<span class="dt">by.y =</span> <span class="st">&quot;Provided.string&quot;</span>,</span>
-<span id="cb5-7"><a href="data-cleaning.html#cb5-7"></a>               <span class="dt">all.x =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="data-cleaning.html#cb3-1" aria-hidden="true" tabindex="-1"></a>unUseful <span class="ot">&lt;-</span> Carex <span class="sc">%&gt;%</span></span>
+<span id="cb3-2"><a href="data-cleaning.html#cb3-2" aria-hidden="true" tabindex="-1"></a>            <span class="fu">filter</span>(Carex<span class="sc">$</span>scientificName <span class="sc">==</span> <span class="st">&quot;&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href="data-cleaning.html#cb3-3" aria-hidden="true" tabindex="-1"></a>            .<span class="sc">$</span>id</span></code></pre></div>
+<p>We now need to check that the species names in the records that we are using are valid for the area which we are looking at i.e. Sweden. There are several resources out there that do this. As we are looking specifically and solely at Sweden there is <a href="https://www.dyntaxa.se/">Dyntaxa.se</a>. There is also an R package as part of the <a href="https://github.com/biodiversitydata-se/SBDI4R">Swedish Biodiversity Data Infrastructure</a> with examples and documentation. For wider applicability we will export the unique names from the Carex data frame. These will then be copied to the <a href="https://www.dyntaxa.se/Match/Settings/0">Dyntaxa portal</a> for matching multiple names. The results are checked against the Swedish lists and unknown species or uncertainties are flagged. Names can be copied directly into a box in Dyntaxa or may be imported directly as an <code>xlsx</code> file. Here we shall export just the species names. There are multiple options.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="data-cleaning.html#cb4-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-2"><a href="data-cleaning.html#cb4-2" aria-hidden="true" tabindex="-1"></a>SpeciesNames <span class="ot">&lt;-</span> Carex <span class="sc">%&gt;%</span></span>
+<span id="cb4-3"><a href="data-cleaning.html#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>ID <span class="sc">%in%</span> unUseful) <span class="sc">%&gt;%</span></span>
+<span id="cb4-4"><a href="data-cleaning.html#cb4-4" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="st">&quot;scientificName&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-5"><a href="data-cleaning.html#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>()</span>
+<span id="cb4-6"><a href="data-cleaning.html#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="data-cleaning.html#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># library(openxlsx)</span></span>
+<span id="cb4-8"><a href="data-cleaning.html#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">#write.xlsx(SpeciesNames,&quot;./data/BDcleaner_Scripts/Example/UniqueCarexTaxa.xlsx&quot;)</span></span></code></pre></div>
+<p>Dyntaxa provides options for any taxononmic uncertainties and lists the species for which no match can be made. Having made selections it exports as a <code>.xlslx</code> file. We can then check what those species for which there is no information about what they are. In this case there are an number of species which are likely to be horticultural, a few taxa which are of hybrid origin which are in the Dyntaxa with the addition of ‘×’ between genus and species, and <em>Carex utriculata</em> a species from North America. This last could be a misidentification of <em>C. rostrata</em>. We will exclude the horticultural and uncertain species. We do this by adding a <strong>Species</strong> column in the Dyntaxa file and then load that file into R.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="data-cleaning.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openxlsx)</span>
+<span id="cb5-2"><a href="data-cleaning.html#cb5-2" aria-hidden="true" tabindex="-1"></a>SpeciesNames <span class="ot">&lt;-</span> <span class="fu">read.xlsx</span>(<span class="st">&quot;./data/matchCarex.xlsx&quot;</span>) <span class="co"># From Dyntaxa</span></span>
+<span id="cb5-3"><a href="data-cleaning.html#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="data-cleaning.html#cb5-4" aria-hidden="true" tabindex="-1"></a>Carex <span class="ot">&lt;-</span> <span class="fu">merge</span>(Carex, </span>
+<span id="cb5-5"><a href="data-cleaning.html#cb5-5" aria-hidden="true" tabindex="-1"></a>               SpeciesNames[,<span class="fu">c</span>(<span class="st">&quot;Provided.string&quot;</span>,<span class="st">&quot;SpeciesDyn&quot;</span>)],</span>
+<span id="cb5-6"><a href="data-cleaning.html#cb5-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">by.x =</span> <span class="st">&quot;species&quot;</span>,<span class="at">by.y =</span> <span class="st">&quot;Provided.string&quot;</span>,</span>
+<span id="cb5-7"><a href="data-cleaning.html#cb5-7" aria-hidden="true" tabindex="-1"></a>               <span class="at">all.x =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <p>We then add IDs of the rows with taxa which are to be excluded to the unUseful vector. It is possible that there is overlap between these vectors. Rather than overwriting the vector we join the vectors together and use unique to get a vector with no duplications.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="data-cleaning.html#cb6-1"></a>unUseful &lt;-<span class="st"> </span><span class="kw">unique</span>( </span>
-<span id="cb6-2"><a href="data-cleaning.html#cb6-2"></a>  <span class="kw">c</span>(unUseful,</span>
-<span id="cb6-3"><a href="data-cleaning.html#cb6-3"></a>  Carex <span class="op">%&gt;%</span></span>
-<span id="cb6-4"><a href="data-cleaning.html#cb6-4"></a><span class="st">  </span><span class="kw">filter</span>(<span class="kw">is.na</span>(SpeciesDyn)) <span class="op">%&gt;%</span></span>
-<span id="cb6-5"><a href="data-cleaning.html#cb6-5"></a><span class="st">  </span>.<span class="op">$</span>id))</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="data-cleaning.html#cb6-1" aria-hidden="true" tabindex="-1"></a>unUseful <span class="ot">&lt;-</span> <span class="fu">unique</span>( </span>
+<span id="cb6-2"><a href="data-cleaning.html#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(unUseful,</span>
+<span id="cb6-3"><a href="data-cleaning.html#cb6-3" aria-hidden="true" tabindex="-1"></a>  Carex <span class="sc">%&gt;%</span></span>
+<span id="cb6-4"><a href="data-cleaning.html#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">is.na</span>(SpeciesDyn)) <span class="sc">%&gt;%</span></span>
+<span id="cb6-5"><a href="data-cleaning.html#cb6-5" aria-hidden="true" tabindex="-1"></a>  .<span class="sc">$</span>id))</span></code></pre></div>
 <p>###Coordinate Cleaning</p>
 <p>We need to extract locality data for rows where there is no lat/lon information to geocode it, producing a latitude and longitude for each locality. This can be carried out in a similar way as for species ie the merging of data frames. This can be also be done automatically in R using the geocode feature of the libraries tidygeocoder or ggmap. Some of these services require an API key (eg. Google). See the documentation for the link for more information</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="data-cleaning.html#cb7-1"></a>Localities &lt;-<span class="st"> </span>Carex <span class="op">%&gt;%</span></span>
-<span id="cb7-2"><a href="data-cleaning.html#cb7-2"></a><span class="st">              </span><span class="kw">filter</span>(<span class="kw">is.na</span>(longitude)) <span class="op">%&gt;%</span></span>
-<span id="cb7-3"><a href="data-cleaning.html#cb7-3"></a><span class="st">              </span>dplyr<span class="op">::</span><span class="kw">select</span>(locality) <span class="op">%&gt;%</span></span>
-<span id="cb7-4"><a href="data-cleaning.html#cb7-4"></a><span class="st">              </span><span class="kw">distinct</span>()</span>
-<span id="cb7-5"><a href="data-cleaning.html#cb7-5"></a><span class="kw">write.csv</span>(Localities,<span class="st">&quot;./data/BDcleaner_Scripts/Example/Localities.csv&quot;</span>,<span class="dt">row.names =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="data-cleaning.html#cb7-1" aria-hidden="true" tabindex="-1"></a>Localities <span class="ot">&lt;-</span> Carex <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="data-cleaning.html#cb7-2" aria-hidden="true" tabindex="-1"></a>              <span class="fu">filter</span>(<span class="fu">is.na</span>(longitude)) <span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a href="data-cleaning.html#cb7-3" aria-hidden="true" tabindex="-1"></a>              dplyr<span class="sc">::</span><span class="fu">select</span>(locality) <span class="sc">%&gt;%</span></span>
+<span id="cb7-4"><a href="data-cleaning.html#cb7-4" aria-hidden="true" tabindex="-1"></a>              <span class="fu">distinct</span>()</span>
+<span id="cb7-5"><a href="data-cleaning.html#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(Localities,<span class="st">&quot;./data/Localities.csv&quot;</span>,<span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <p>For brevity we will simply include the records with no lat/lon info in the unUseful vector. These will ultimately not be used.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="data-cleaning.html#cb8-1"></a>unUseful &lt;-<span class="st"> </span><span class="kw">unique</span>(<span class="kw">c</span>(unUseful,</span>
-<span id="cb8-2"><a href="data-cleaning.html#cb8-2"></a>                     Carex <span class="op">%&gt;%</span></span>
-<span id="cb8-3"><a href="data-cleaning.html#cb8-3"></a><span class="st">                       </span><span class="kw">filter</span>(<span class="kw">is.na</span>(latitude))<span class="op">%&gt;%</span></span>
-<span id="cb8-4"><a href="data-cleaning.html#cb8-4"></a><span class="st">                       </span>.<span class="op">$</span>id))</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="data-cleaning.html#cb8-1" aria-hidden="true" tabindex="-1"></a>unUseful <span class="ot">&lt;-</span> <span class="fu">unique</span>(<span class="fu">c</span>(unUseful,</span>
+<span id="cb8-2"><a href="data-cleaning.html#cb8-2" aria-hidden="true" tabindex="-1"></a>                     Carex <span class="sc">%&gt;%</span></span>
+<span id="cb8-3"><a href="data-cleaning.html#cb8-3" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">filter</span>(<span class="fu">is.na</span>(latitude))<span class="sc">%&gt;%</span></span>
+<span id="cb8-4"><a href="data-cleaning.html#cb8-4" aria-hidden="true" tabindex="-1"></a>                       .<span class="sc">$</span>id))</span></code></pre></div>
 <p>Before cleaning the coordinates we simplify the data retaining columns that have information directly related to the collection of the data.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="data-cleaning.html#cb9-1"></a>Carex &lt;-<span class="st"> </span>Carex <span class="op">%&gt;%</span></span>
-<span id="cb9-2"><a href="data-cleaning.html#cb9-2"></a><span class="st">          </span>dplyr<span class="op">::</span><span class="kw">select</span>(SpeciesDyn,</span>
-<span id="cb9-3"><a href="data-cleaning.html#cb9-3"></a>               longitude,</span>
-<span id="cb9-4"><a href="data-cleaning.html#cb9-4"></a>               latitude,</span>
-<span id="cb9-5"><a href="data-cleaning.html#cb9-5"></a>               coordinateUncertaintyInMetres,</span>
-<span id="cb9-6"><a href="data-cleaning.html#cb9-6"></a>               locality,</span>
-<span id="cb9-7"><a href="data-cleaning.html#cb9-7"></a>               <span class="co"># recordedBy,</span></span>
-<span id="cb9-8"><a href="data-cleaning.html#cb9-8"></a>               <span class="co"># countryCode,</span></span>
-<span id="cb9-9"><a href="data-cleaning.html#cb9-9"></a>               <span class="co"># eventDate,</span></span>
-<span id="cb9-10"><a href="data-cleaning.html#cb9-10"></a>               year,</span>
-<span id="cb9-11"><a href="data-cleaning.html#cb9-11"></a>               month,</span>
-<span id="cb9-12"><a href="data-cleaning.html#cb9-12"></a>               day,</span>
-<span id="cb9-13"><a href="data-cleaning.html#cb9-13"></a>               institutionCode,</span>
-<span id="cb9-14"><a href="data-cleaning.html#cb9-14"></a>               collectionCode,</span>
-<span id="cb9-15"><a href="data-cleaning.html#cb9-15"></a>               catalogueNumber)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="data-cleaning.html#cb9-1" aria-hidden="true" tabindex="-1"></a>Carex <span class="ot">&lt;-</span> Carex <span class="sc">%&gt;%</span></span>
+<span id="cb9-2"><a href="data-cleaning.html#cb9-2" aria-hidden="true" tabindex="-1"></a>          dplyr<span class="sc">::</span><span class="fu">select</span>(SpeciesDyn,</span>
+<span id="cb9-3"><a href="data-cleaning.html#cb9-3" aria-hidden="true" tabindex="-1"></a>               longitude,</span>
+<span id="cb9-4"><a href="data-cleaning.html#cb9-4" aria-hidden="true" tabindex="-1"></a>               latitude,</span>
+<span id="cb9-5"><a href="data-cleaning.html#cb9-5" aria-hidden="true" tabindex="-1"></a>               coordinateUncertaintyInMetres,</span>
+<span id="cb9-6"><a href="data-cleaning.html#cb9-6" aria-hidden="true" tabindex="-1"></a>               locality,</span>
+<span id="cb9-7"><a href="data-cleaning.html#cb9-7" aria-hidden="true" tabindex="-1"></a>               <span class="co"># recordedBy,</span></span>
+<span id="cb9-8"><a href="data-cleaning.html#cb9-8" aria-hidden="true" tabindex="-1"></a>               <span class="co"># countryCode,</span></span>
+<span id="cb9-9"><a href="data-cleaning.html#cb9-9" aria-hidden="true" tabindex="-1"></a>               <span class="co"># eventDate,</span></span>
+<span id="cb9-10"><a href="data-cleaning.html#cb9-10" aria-hidden="true" tabindex="-1"></a>               year,</span>
+<span id="cb9-11"><a href="data-cleaning.html#cb9-11" aria-hidden="true" tabindex="-1"></a>               month,</span>
+<span id="cb9-12"><a href="data-cleaning.html#cb9-12" aria-hidden="true" tabindex="-1"></a>               day,</span>
+<span id="cb9-13"><a href="data-cleaning.html#cb9-13" aria-hidden="true" tabindex="-1"></a>               institutionCode,</span>
+<span id="cb9-14"><a href="data-cleaning.html#cb9-14" aria-hidden="true" tabindex="-1"></a>               collectionCode,</span>
+<span id="cb9-15"><a href="data-cleaning.html#cb9-15" aria-hidden="true" tabindex="-1"></a>               catalogueNumber)</span></code></pre></div>
 <p>We then filter out the data rows for which we can not use ie those of too great taxonomic uncertainty. The data may then be cleaned.</p>
 <p>There are a number of things to consider when cleaning data:</p>
 <ul>
-<li>How precise are the locations? Coordinate uncertainty ranges in the Cyperaceae of Sweden from 1 m - 30.5 km.
-<ul>
+<li>How precise are the locations? Coordinate uncertainty ranges in the Cyperaceae of Sweden from 1 m - 30.5 km.</li>
 <li>Are interpreted coordinates sufficient? These interpreted coordinates may imply a greater precision than is necessarily true</li>
-<li>Are the locations likely to be errors? Errors can relate to where a sample is (eg herbarium location) rather than where it came from.</li>
-<li>Are the locations in the country claimed? This can arrise through swapping of lat and lon; duplication of latitude numbers in the longitude; or simply incorrect coordinates being given.</li>
-</ul></li>
+<li>Are the locations likely to be errors? Errors can relate to where a sample is (eg. herbarium location) rather than where it came from.</li>
+<li>Are the locations in the country claimed? This can arise through swapping of lat and lon; duplication of latitude numbers in the longitude; or simply incorrect coordinates being given.</li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="data-cleaning.html#cb10-1"></a>unUseful &lt;-<span class="st"> </span><span class="kw">unique</span>( <span class="kw">c</span>(unUseful, Carex <span class="op">%&gt;%</span></span>
-<span id="cb10-2"><a href="data-cleaning.html#cb10-2"></a><span class="st">                        </span><span class="kw">filter</span>(<span class="kw">is.na</span>(coordinateUncertaintyInMetres)) <span class="op">%&gt;%</span></span>
-<span id="cb10-3"><a href="data-cleaning.html#cb10-3"></a><span class="st">                        </span>.<span class="op">$</span>id))</span>
-<span id="cb10-4"><a href="data-cleaning.html#cb10-4"></a><span class="co"># kable( t(table( round( Carex$coordinateUncertaintyInMetres, -2))))</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="data-cleaning.html#cb10-1" aria-hidden="true" tabindex="-1"></a>unUseful <span class="ot">&lt;-</span> <span class="fu">unique</span>( <span class="fu">c</span>(unUseful, Carex <span class="sc">%&gt;%</span></span>
+<span id="cb10-2"><a href="data-cleaning.html#cb10-2" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">filter</span>(<span class="fu">is.na</span>(coordinateUncertaintyInMetres)) <span class="sc">%&gt;%</span></span>
+<span id="cb10-3"><a href="data-cleaning.html#cb10-3" aria-hidden="true" tabindex="-1"></a>                        .<span class="sc">$</span>id))</span>
+<span id="cb10-4"><a href="data-cleaning.html#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># kable( t(table( round( Carex$coordinateUncertaintyInMetres, -2))))</span></span></code></pre></div>
 <p>We shall filter out all records with unknown coordinate uncertainty and all with a coordinate uncertainty more than 12.5 km.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="data-cleaning.html#cb11-1"></a></span>
-<span id="cb11-2"><a href="data-cleaning.html#cb11-2"></a>unUseful &lt;-<span class="st"> </span><span class="kw">unique</span>( <span class="kw">c</span>(unUseful, Carex <span class="op">%&gt;%</span></span>
-<span id="cb11-3"><a href="data-cleaning.html#cb11-3"></a><span class="st">  </span><span class="kw">filter</span>(<span class="kw">is.na</span>(coordinateUncertaintyInMetres))<span class="op">%&gt;%</span></span>
-<span id="cb11-4"><a href="data-cleaning.html#cb11-4"></a><span class="st">  </span>.<span class="op">$</span>id))</span>
-<span id="cb11-5"><a href="data-cleaning.html#cb11-5"></a>unUseful &lt;-<span class="st"> </span><span class="kw">unique</span>( <span class="kw">c</span>(unUseful, Carex <span class="op">%&gt;%</span></span>
-<span id="cb11-6"><a href="data-cleaning.html#cb11-6"></a><span class="st">  </span><span class="kw">filter</span>(coordinateUncertaintyInMetres<span class="op">&gt;</span><span class="dv">12500</span>)<span class="op">%&gt;%</span></span>
-<span id="cb11-7"><a href="data-cleaning.html#cb11-7"></a><span class="st">  </span>.<span class="op">$</span>id))</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="data-cleaning.html#cb11-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-2"><a href="data-cleaning.html#cb11-2" aria-hidden="true" tabindex="-1"></a>unUseful <span class="ot">&lt;-</span> <span class="fu">unique</span>( <span class="fu">c</span>(unUseful, Carex <span class="sc">%&gt;%</span></span>
+<span id="cb11-3"><a href="data-cleaning.html#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">is.na</span>(coordinateUncertaintyInMetres))<span class="sc">%&gt;%</span></span>
+<span id="cb11-4"><a href="data-cleaning.html#cb11-4" aria-hidden="true" tabindex="-1"></a>  .<span class="sc">$</span>id))</span>
+<span id="cb11-5"><a href="data-cleaning.html#cb11-5" aria-hidden="true" tabindex="-1"></a>unUseful <span class="ot">&lt;-</span> <span class="fu">unique</span>( <span class="fu">c</span>(unUseful, Carex <span class="sc">%&gt;%</span></span>
+<span id="cb11-6"><a href="data-cleaning.html#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(coordinateUncertaintyInMetres  <span class="sc">&gt;</span> <span class="dv">12500</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb11-7"><a href="data-cleaning.html#cb11-7" aria-hidden="true" tabindex="-1"></a>  .<span class="sc">$</span>id))</span></code></pre></div>
 <p>We now have an index of records we can’t use owing to incomplete taxonomy or incomplete location information. We save these before cleaning the coordinates.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="data-cleaning.html#cb12-1"></a><span class="kw">save</span>(unUseful, <span class="dt">file =</span> <span class="st">&quot;./data/BDcleaner_Scripts/Example/Downloads/Cyperacea_SWE_unsuseful.rdata&quot;</span>)</span></code></pre></div>
-<p>We first remove the already labelled inaccurate data.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="data-cleaning.html#cb13-1"></a>Carex &lt;-<span class="st"> </span>Carex[<span class="op">-</span><span class="kw">which</span>(Carex<span class="op">$</span>id <span class="op">%in%</span><span class="st"> </span>unUseful),]</span>
-<span id="cb13-2"><a href="data-cleaning.html#cb13-2"></a><span class="co"># Carex &lt;- Carex[-which(is.na(Carex$day)),]</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="data-cleaning.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(unUseful, <span class="at">file =</span> <span class="st">&quot;./data/Cyperacea_SWE_unsuseful.rdata&quot;</span>)</span></code></pre></div>
+<p>We first remove the already labeled inaccurate data.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="data-cleaning.html#cb13-1" aria-hidden="true" tabindex="-1"></a>Carex <span class="ot">&lt;-</span> Carex[<span class="sc">-</span><span class="fu">which</span>(Carex<span class="sc">$</span>id <span class="sc">%in%</span> unUseful),]</span></code></pre></div>
 <p>We then use the library CoordinateCleaner to automatically flag coordinates that may be errors. Outputs of this can be a cleaned data.frame or additional columns with doubtful records flagged.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="data-cleaning.html#cb14-1"></a>Carex<span class="op">$</span>countryCode &lt;-<span class="st"> </span>countrycode<span class="op">::</span><span class="kw">countrycode</span>(Carex<span class="op">$</span>countryCode,<span class="st">&quot;iso2c&quot;</span>,<span class="st">&quot;iso3c&quot;</span>) <span class="co">#converts ISO2 country codes to ISO3</span></span>
-<span id="cb14-2"><a href="data-cleaning.html#cb14-2"></a></span>
-<span id="cb14-3"><a href="data-cleaning.html#cb14-3"></a>Carex &lt;-<span class="st"> </span>Carex <span class="op">%&gt;%</span></span>
-<span id="cb14-4"><a href="data-cleaning.html#cb14-4"></a><span class="st">          </span><span class="kw">filter</span>(<span class="op">!</span>id <span class="op">%in%</span><span class="st"> </span>unUseful)</span>
-<span id="cb14-5"><a href="data-cleaning.html#cb14-5"></a></span>
-<span id="cb14-6"><a href="data-cleaning.html#cb14-6"></a>Carex &lt;-<span class="st"> </span>Carex[<span class="op">-</span><span class="kw">which</span>(<span class="kw">is.na</span>(Carex<span class="op">$</span>latitude)),]</span>
-<span id="cb14-7"><a href="data-cleaning.html#cb14-7"></a></span>
-<span id="cb14-8"><a href="data-cleaning.html#cb14-8"></a>Carex &lt;-<span class="st"> </span><span class="kw">clean_coordinates</span>(Carex,</span>
-<span id="cb14-9"><a href="data-cleaning.html#cb14-9"></a>                  <span class="dt">lon =</span> <span class="st">&quot;longitude&quot;</span>,</span>
-<span id="cb14-10"><a href="data-cleaning.html#cb14-10"></a>                  <span class="dt">lat =</span> <span class="st">&quot;latitude&quot;</span>,</span>
-<span id="cb14-11"><a href="data-cleaning.html#cb14-11"></a>                  <span class="dt">species =</span> <span class="st">&quot;SpeciesDyn&quot;</span>,</span>
-<span id="cb14-12"><a href="data-cleaning.html#cb14-12"></a>                  <span class="dt">countries =</span> <span class="st">&quot;countryCode&quot;</span>,</span>
-<span id="cb14-13"><a href="data-cleaning.html#cb14-13"></a>                  <span class="dt">tests =</span> <span class="kw">c</span>(<span class="st">&quot;capitals&quot;</span>, <span class="st">&quot;centroids&quot;</span>, <span class="st">&quot;equal&quot;</span>, <span class="st">&quot;gbif&quot;</span>, <span class="st">&quot;institutions&quot;</span>,</span>
-<span id="cb14-14"><a href="data-cleaning.html#cb14-14"></a>                            <span class="st">&quot;outliers&quot;</span>, <span class="st">&quot;seas&quot;</span>, <span class="st">&quot;zeros&quot;</span>,<span class="st">&quot;countries&quot;</span>)</span>
-<span id="cb14-15"><a href="data-cleaning.html#cb14-15"></a>                  )</span>
-<span id="cb14-16"><a href="data-cleaning.html#cb14-16"></a></span>
-<span id="cb14-17"><a href="data-cleaning.html#cb14-17"></a><span class="kw">kable</span>( Carex <span class="op">%&gt;%</span></span>
-<span id="cb14-18"><a href="data-cleaning.html#cb14-18"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="st">`</span><span class="dt">Invalid coords</span><span class="st">`</span> =<span class="st"> </span><span class="kw">sum</span>(.val<span class="op">==</span><span class="ot">FALSE</span>),</span>
-<span id="cb14-19"><a href="data-cleaning.html#cb14-19"></a>            <span class="st">`</span><span class="dt">Equal coords</span><span class="st">`</span> =<span class="st"> </span><span class="kw">sum</span>(.equ<span class="op">==</span><span class="ot">FALSE</span>),</span>
-<span id="cb14-20"><a href="data-cleaning.html#cb14-20"></a>            <span class="st">`</span><span class="dt">0 coords</span><span class="st">`</span> =<span class="st"> </span><span class="kw">sum</span>(.zer<span class="op">==</span><span class="ot">FALSE</span>),</span>
-<span id="cb14-21"><a href="data-cleaning.html#cb14-21"></a>            <span class="st">`</span><span class="dt">capitals</span><span class="st">`</span> =<span class="st"> </span><span class="kw">sum</span>(.cap<span class="op">==</span><span class="ot">FALSE</span>),</span>
-<span id="cb14-22"><a href="data-cleaning.html#cb14-22"></a>            <span class="st">`</span><span class="dt">country centre</span><span class="st">`</span> =<span class="st"> </span><span class="kw">sum</span>(.cen<span class="op">==</span><span class="ot">FALSE</span>),</span>
-<span id="cb14-23"><a href="data-cleaning.html#cb14-23"></a>            <span class="st">`</span><span class="dt">Country Border</span><span class="st">`</span> =<span class="st"> </span><span class="kw">sum</span>(.con<span class="op">==</span><span class="ot">FALSE</span>),</span>
-<span id="cb14-24"><a href="data-cleaning.html#cb14-24"></a>            <span class="st">`</span><span class="dt">outlier</span><span class="st">`</span> =<span class="st"> </span><span class="kw">sum</span>(.otl<span class="op">==</span><span class="ot">FALSE</span>),</span>
-<span id="cb14-25"><a href="data-cleaning.html#cb14-25"></a>            <span class="st">`</span><span class="dt">Gbif HQ</span><span class="st">`</span> =<span class="st"> </span><span class="kw">sum</span>(.gbf<span class="op">==</span><span class="ot">FALSE</span>),</span>
-<span id="cb14-26"><a href="data-cleaning.html#cb14-26"></a>            <span class="st">`</span><span class="dt">Insitution</span><span class="st">`</span> =<span class="st"> </span><span class="kw">sum</span>(.inst<span class="op">==</span><span class="ot">FALSE</span>),</span>
-<span id="cb14-27"><a href="data-cleaning.html#cb14-27"></a>            <span class="st">`</span><span class="dt">Summary</span><span class="st">`</span> =<span class="st"> </span><span class="kw">sum</span>(.summary<span class="op">==</span><span class="ot">FALSE</span>)), <span class="dt">col.names =</span> <span class="kw">c</span>(<span class="st">&quot;Invalid coords&quot;</span>,<span class="st">&quot;Equal coords&quot;</span>,<span class="st">&quot;0 coords&quot;</span>,<span class="st">&quot;capitals&quot;</span>, <span class="st">&quot;country centre&quot;</span>,<span class="st">&quot;Country Border&quot;</span>,<span class="st">&quot;outlier&quot;</span>,<span class="st">&quot;Gbif HQ&quot;</span>,<span class="st">&quot;Insitution&quot;</span>, <span class="st">&quot;Summary&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="data-cleaning.html#cb14-1" aria-hidden="true" tabindex="-1"></a>Carex<span class="sc">$</span>countryCode <span class="ot">&lt;-</span> countrycode<span class="sc">::</span><span class="fu">countrycode</span>(Carex<span class="sc">$</span>countryCode,<span class="st">&quot;iso2c&quot;</span>,<span class="st">&quot;iso3c&quot;</span>) <span class="co">#converts ISO2 country codes to ISO3</span></span>
+<span id="cb14-2"><a href="data-cleaning.html#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="data-cleaning.html#cb14-3" aria-hidden="true" tabindex="-1"></a>Carex <span class="ot">&lt;-</span> Carex <span class="sc">%&gt;%</span></span>
+<span id="cb14-4"><a href="data-cleaning.html#cb14-4" aria-hidden="true" tabindex="-1"></a>          <span class="fu">filter</span>(<span class="sc">!</span>id <span class="sc">%in%</span> unUseful)</span>
+<span id="cb14-5"><a href="data-cleaning.html#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="data-cleaning.html#cb14-6" aria-hidden="true" tabindex="-1"></a>Carex <span class="ot">&lt;-</span> Carex[<span class="sc">-</span><span class="fu">which</span>(<span class="fu">is.na</span>(Carex<span class="sc">$</span>latitude)),]</span>
+<span id="cb14-7"><a href="data-cleaning.html#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="data-cleaning.html#cb14-8" aria-hidden="true" tabindex="-1"></a>Carex <span class="ot">&lt;-</span> <span class="fu">clean_coordinates</span>(Carex,</span>
+<span id="cb14-9"><a href="data-cleaning.html#cb14-9" aria-hidden="true" tabindex="-1"></a>                  <span class="at">lon =</span> <span class="st">&quot;longitude&quot;</span>,</span>
+<span id="cb14-10"><a href="data-cleaning.html#cb14-10" aria-hidden="true" tabindex="-1"></a>                  <span class="at">lat =</span> <span class="st">&quot;latitude&quot;</span>,</span>
+<span id="cb14-11"><a href="data-cleaning.html#cb14-11" aria-hidden="true" tabindex="-1"></a>                  <span class="at">species =</span> <span class="st">&quot;SpeciesDyn&quot;</span>,</span>
+<span id="cb14-12"><a href="data-cleaning.html#cb14-12" aria-hidden="true" tabindex="-1"></a>                  <span class="at">countries =</span> <span class="st">&quot;countryCode&quot;</span>,</span>
+<span id="cb14-13"><a href="data-cleaning.html#cb14-13" aria-hidden="true" tabindex="-1"></a>                  <span class="at">tests =</span> <span class="fu">c</span>(<span class="st">&quot;capitals&quot;</span>, <span class="st">&quot;centroids&quot;</span>, <span class="st">&quot;equal&quot;</span>, <span class="st">&quot;gbif&quot;</span>, <span class="st">&quot;institutions&quot;</span>,</span>
+<span id="cb14-14"><a href="data-cleaning.html#cb14-14" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;outliers&quot;</span>, <span class="st">&quot;seas&quot;</span>, <span class="st">&quot;zeros&quot;</span>,<span class="st">&quot;countries&quot;</span>)</span>
+<span id="cb14-15"><a href="data-cleaning.html#cb14-15" aria-hidden="true" tabindex="-1"></a>                  )</span>
+<span id="cb14-16"><a href="data-cleaning.html#cb14-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-17"><a href="data-cleaning.html#cb14-17" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>( Carex <span class="sc">%&gt;%</span></span>
+<span id="cb14-18"><a href="data-cleaning.html#cb14-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="st">`</span><span class="at">Invalid coords</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(.val<span class="sc">==</span><span class="cn">FALSE</span>),</span>
+<span id="cb14-19"><a href="data-cleaning.html#cb14-19" aria-hidden="true" tabindex="-1"></a>            <span class="st">`</span><span class="at">Equal coords</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(.equ<span class="sc">==</span><span class="cn">FALSE</span>),</span>
+<span id="cb14-20"><a href="data-cleaning.html#cb14-20" aria-hidden="true" tabindex="-1"></a>            <span class="st">`</span><span class="at">0 coords</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(.zer<span class="sc">==</span><span class="cn">FALSE</span>),</span>
+<span id="cb14-21"><a href="data-cleaning.html#cb14-21" aria-hidden="true" tabindex="-1"></a>            <span class="st">`</span><span class="at">capitals</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(.cap<span class="sc">==</span><span class="cn">FALSE</span>),</span>
+<span id="cb14-22"><a href="data-cleaning.html#cb14-22" aria-hidden="true" tabindex="-1"></a>            <span class="st">`</span><span class="at">country centre</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(.cen<span class="sc">==</span><span class="cn">FALSE</span>),</span>
+<span id="cb14-23"><a href="data-cleaning.html#cb14-23" aria-hidden="true" tabindex="-1"></a>            <span class="st">`</span><span class="at">Country Border</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(.con<span class="sc">==</span><span class="cn">FALSE</span>),</span>
+<span id="cb14-24"><a href="data-cleaning.html#cb14-24" aria-hidden="true" tabindex="-1"></a>            <span class="st">`</span><span class="at">outlier</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(.otl<span class="sc">==</span><span class="cn">FALSE</span>),</span>
+<span id="cb14-25"><a href="data-cleaning.html#cb14-25" aria-hidden="true" tabindex="-1"></a>            <span class="st">`</span><span class="at">Gbif HQ</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(.gbf<span class="sc">==</span><span class="cn">FALSE</span>),</span>
+<span id="cb14-26"><a href="data-cleaning.html#cb14-26" aria-hidden="true" tabindex="-1"></a>            <span class="st">`</span><span class="at">Insitution</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(.inst<span class="sc">==</span><span class="cn">FALSE</span>),</span>
+<span id="cb14-27"><a href="data-cleaning.html#cb14-27" aria-hidden="true" tabindex="-1"></a>            <span class="st">`</span><span class="at">Summary</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sum</span>(.summary<span class="sc">==</span><span class="cn">FALSE</span>)), </span>
+<span id="cb14-28"><a href="data-cleaning.html#cb14-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">&quot;Invalid coords&quot;</span>,<span class="st">&quot;Equal coords&quot;</span>,<span class="st">&quot;0 coords&quot;</span>,<span class="st">&quot;capitals&quot;</span>, </span>
+<span id="cb14-29"><a href="data-cleaning.html#cb14-29" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;country centre&quot;</span>,<span class="st">&quot;Country Border&quot;</span>,<span class="st">&quot;outlier&quot;</span>,<span class="st">&quot;Gbif HQ&quot;</span>,</span>
+<span id="cb14-30"><a href="data-cleaning.html#cb14-30" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;Insitution&quot;</span>, <span class="st">&quot;Summary&quot;</span>))</span></code></pre></div>
 <p>Checking the distribution of the observations</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="data-cleaning.html#cb15-1"></a></span>
-<span id="cb15-2"><a href="data-cleaning.html#cb15-2"></a>Sweden &lt;-<span class="st"> </span><span class="kw">getData</span>(<span class="st">&quot;GADM&quot;</span>, <span class="co">#raster::</span></span>
-<span id="cb15-3"><a href="data-cleaning.html#cb15-3"></a>                  <span class="dt">country =</span> <span class="st">&quot;SWE&quot;</span>,</span>
-<span id="cb15-4"><a href="data-cleaning.html#cb15-4"></a>                  <span class="dt">path =</span> <span class="st">&quot;./data/&quot;</span>,</span>
-<span id="cb15-5"><a href="data-cleaning.html#cb15-5"></a>                  <span class="dt">level =</span> <span class="dv">0</span>)</span>
-<span id="cb15-6"><a href="data-cleaning.html#cb15-6"></a>Sweden_sf &lt;-<span class="st"> </span><span class="kw">st_as_sf</span>(Sweden)</span>
-<span id="cb15-7"><a href="data-cleaning.html#cb15-7"></a></span>
-<span id="cb15-8"><a href="data-cleaning.html#cb15-8"></a>BolMar &lt;-<span class="st"> </span><span class="kw">ggplot</span>(Sweden_sf) <span class="op">+</span></span>
-<span id="cb15-9"><a href="data-cleaning.html#cb15-9"></a><span class="st">  </span><span class="kw">geom_sf</span>()<span class="op">+</span></span>
-<span id="cb15-10"><a href="data-cleaning.html#cb15-10"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">data =</span> Carex <span class="op">%&gt;%</span></span>
-<span id="cb15-11"><a href="data-cleaning.html#cb15-11"></a><span class="st">                </span><span class="kw">filter</span>(SpeciesDyn <span class="op">==</span><span class="st"> &quot;Carex capillaris&quot;</span>),<span class="co"># %&gt;%</span></span>
-<span id="cb15-12"><a href="data-cleaning.html#cb15-12"></a>                <span class="co"># filter(.con == FALSE),</span></span>
-<span id="cb15-13"><a href="data-cleaning.html#cb15-13"></a>             <span class="kw">aes</span>(<span class="dt">x =</span> longitude,</span>
-<span id="cb15-14"><a href="data-cleaning.html#cb15-14"></a>                 <span class="dt">y =</span> latitude)) <span class="op">+</span></span>
-<span id="cb15-15"><a href="data-cleaning.html#cb15-15"></a><span class="st">  </span><span class="kw">theme_cowplot</span>() <span class="op">+</span></span>
-<span id="cb15-16"><a href="data-cleaning.html#cb15-16"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Carex capillaris&quot;</span>)</span>
-<span id="cb15-17"><a href="data-cleaning.html#cb15-17"></a></span>
-<span id="cb15-18"><a href="data-cleaning.html#cb15-18"></a>CarAct &lt;-<span class="st"> </span><span class="kw">ggplot</span>(Sweden_sf) <span class="op">+</span></span>
-<span id="cb15-19"><a href="data-cleaning.html#cb15-19"></a><span class="st">  </span><span class="kw">geom_sf</span>()<span class="op">+</span></span>
-<span id="cb15-20"><a href="data-cleaning.html#cb15-20"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">data =</span> Carex <span class="op">%&gt;%</span></span>
-<span id="cb15-21"><a href="data-cleaning.html#cb15-21"></a><span class="st">              </span><span class="kw">filter</span>(SpeciesDyn <span class="op">==</span><span class="st"> &quot;Carex acuta&quot;</span>), <span class="co"># %&gt;%</span></span>
-<span id="cb15-22"><a href="data-cleaning.html#cb15-22"></a>                 <span class="co"># filter(.otl == TRUE),</span></span>
-<span id="cb15-23"><a href="data-cleaning.html#cb15-23"></a>             <span class="kw">aes</span>(<span class="dt">x =</span> longitude,</span>
-<span id="cb15-24"><a href="data-cleaning.html#cb15-24"></a>                 <span class="dt">y =</span> latitude)) <span class="op">+</span><span class="st"> </span><span class="co">#,</span></span>
-<span id="cb15-25"><a href="data-cleaning.html#cb15-25"></a><span class="st">                 </span><span class="co"># colour = .otl))+</span></span>
-<span id="cb15-26"><a href="data-cleaning.html#cb15-26"></a><span class="st">  </span><span class="kw">theme_cowplot</span>() <span class="op">+</span></span>
-<span id="cb15-27"><a href="data-cleaning.html#cb15-27"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Carex acuta&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="data-cleaning.html#cb15-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-2"><a href="data-cleaning.html#cb15-2" aria-hidden="true" tabindex="-1"></a>Sweden <span class="ot">&lt;-</span> <span class="fu">getData</span>(<span class="st">&quot;GADM&quot;</span>, <span class="co">#raster::</span></span>
+<span id="cb15-3"><a href="data-cleaning.html#cb15-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">country =</span> <span class="st">&quot;SWE&quot;</span>,</span>
+<span id="cb15-4"><a href="data-cleaning.html#cb15-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">path =</span> <span class="st">&quot;./data/&quot;</span>,</span>
+<span id="cb15-5"><a href="data-cleaning.html#cb15-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">level =</span> <span class="dv">0</span>)</span>
+<span id="cb15-6"><a href="data-cleaning.html#cb15-6" aria-hidden="true" tabindex="-1"></a>Sweden_sf <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(Sweden)</span>
+<span id="cb15-7"><a href="data-cleaning.html#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="data-cleaning.html#cb15-8" aria-hidden="true" tabindex="-1"></a>BolMar <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(Sweden_sf) <span class="sc">+</span></span>
+<span id="cb15-9"><a href="data-cleaning.html#cb15-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>()<span class="sc">+</span></span>
+<span id="cb15-10"><a href="data-cleaning.html#cb15-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> Carex <span class="sc">%&gt;%</span></span>
+<span id="cb15-11"><a href="data-cleaning.html#cb15-11" aria-hidden="true" tabindex="-1"></a>                <span class="fu">filter</span>(SpeciesDyn <span class="sc">==</span> <span class="st">&quot;Carex capillaris&quot;</span>),<span class="co"># %&gt;%</span></span>
+<span id="cb15-12"><a href="data-cleaning.html#cb15-12" aria-hidden="true" tabindex="-1"></a>                <span class="co"># filter(.con == FALSE),</span></span>
+<span id="cb15-13"><a href="data-cleaning.html#cb15-13" aria-hidden="true" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">x =</span> longitude,</span>
+<span id="cb15-14"><a href="data-cleaning.html#cb15-14" aria-hidden="true" tabindex="-1"></a>                 <span class="at">y =</span> latitude)) <span class="sc">+</span></span>
+<span id="cb15-15"><a href="data-cleaning.html#cb15-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>() <span class="sc">+</span></span>
+<span id="cb15-16"><a href="data-cleaning.html#cb15-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Carex capillaris&quot;</span>)</span>
+<span id="cb15-17"><a href="data-cleaning.html#cb15-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-18"><a href="data-cleaning.html#cb15-18" aria-hidden="true" tabindex="-1"></a>CarAct <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(Sweden_sf) <span class="sc">+</span></span>
+<span id="cb15-19"><a href="data-cleaning.html#cb15-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>()<span class="sc">+</span></span>
+<span id="cb15-20"><a href="data-cleaning.html#cb15-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> Carex <span class="sc">%&gt;%</span></span>
+<span id="cb15-21"><a href="data-cleaning.html#cb15-21" aria-hidden="true" tabindex="-1"></a>              <span class="fu">filter</span>(SpeciesDyn <span class="sc">==</span> <span class="st">&quot;Carex acuta&quot;</span>), <span class="co"># %&gt;%</span></span>
+<span id="cb15-22"><a href="data-cleaning.html#cb15-22" aria-hidden="true" tabindex="-1"></a>                 <span class="co"># filter(.otl == TRUE),</span></span>
+<span id="cb15-23"><a href="data-cleaning.html#cb15-23" aria-hidden="true" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">x =</span> longitude,</span>
+<span id="cb15-24"><a href="data-cleaning.html#cb15-24" aria-hidden="true" tabindex="-1"></a>                 <span class="at">y =</span> latitude)) <span class="sc">+</span> <span class="co">#,</span></span>
+<span id="cb15-25"><a href="data-cleaning.html#cb15-25" aria-hidden="true" tabindex="-1"></a>                 <span class="co"># colour = .otl))+</span></span>
+<span id="cb15-26"><a href="data-cleaning.html#cb15-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>() <span class="sc">+</span></span>
+<span id="cb15-27"><a href="data-cleaning.html#cb15-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Carex acuta&quot;</span>)</span></code></pre></div>
 <!-- I think some form of leaflet plot would be great here so that it is interactive -->
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="data-cleaning.html#cb16-1"></a></span>
-<span id="cb16-2"><a href="data-cleaning.html#cb16-2"></a><span class="co"># </span></span>
-<span id="cb16-3"><a href="data-cleaning.html#cb16-3"></a><span class="co"># Sweden &lt;- getData(&quot;GADM&quot;,</span></span>
-<span id="cb16-4"><a href="data-cleaning.html#cb16-4"></a><span class="co">#                   country = &quot;SWE&quot;,</span></span>
-<span id="cb16-5"><a href="data-cleaning.html#cb16-5"></a><span class="co">#                   level = 0)</span></span>
-<span id="cb16-6"><a href="data-cleaning.html#cb16-6"></a>grid_Sweden &lt;-<span class="st"> </span><span class="kw">makeGrid</span>(Sweden, <span class="dv">25</span>)</span>
-<span id="cb16-7"><a href="data-cleaning.html#cb16-7"></a></span>
-<span id="cb16-8"><a href="data-cleaning.html#cb16-8"></a>OB &lt;-<span class="st"> </span><span class="kw">organiseBirds</span>(Carex, </span>
-<span id="cb16-9"><a href="data-cleaning.html#cb16-9"></a>                    <span class="dt">idCols =</span> <span class="kw">c</span>(<span class="st">&quot;locality&quot;</span>),</span>
-<span id="cb16-10"><a href="data-cleaning.html#cb16-10"></a>                    <span class="dt">xyCols =</span> <span class="kw">c</span>(<span class="st">&quot;longitude&quot;</span>, <span class="st">&quot;latitude&quot;</span>),</span>
-<span id="cb16-11"><a href="data-cleaning.html#cb16-11"></a>                    <span class="dt">sppCol =</span> <span class="st">&quot;SpeciesDyn&quot;</span>)</span>
-<span id="cb16-12"><a href="data-cleaning.html#cb16-12"></a></span>
-<span id="cb16-13"><a href="data-cleaning.html#cb16-13"></a>SB &lt;-<span class="st"> </span><span class="kw">summariseBirds</span>(OB, grid_Sweden)</span>
-<span id="cb16-14"><a href="data-cleaning.html#cb16-14"></a>grid_Sweden &lt;-<span class="st"> </span><span class="kw">st_as_sf</span>(grid_Sweden)</span>
-<span id="cb16-15"><a href="data-cleaning.html#cb16-15"></a>Sweden_sf &lt;-<span class="st"> </span><span class="kw">st_as_sf</span>(Sweden)</span>
-<span id="cb16-16"><a href="data-cleaning.html#cb16-16"></a></span>
-<span id="cb16-17"><a href="data-cleaning.html#cb16-17"></a><span class="co"># (ggplot(grid_Sweden) +</span></span>
-<span id="cb16-18"><a href="data-cleaning.html#cb16-18"></a><span class="co">#   geom_sf() +</span></span>
-<span id="cb16-19"><a href="data-cleaning.html#cb16-19"></a><span class="co">#   geom_point(data = Carex, </span></span>
-<span id="cb16-20"><a href="data-cleaning.html#cb16-20"></a><span class="co">#              aes(x = longitude,</span></span>
-<span id="cb16-21"><a href="data-cleaning.html#cb16-21"></a><span class="co">#                  y = latitude))</span></span>
-<span id="cb16-22"><a href="data-cleaning.html#cb16-22"></a><span class="co"># )</span></span></code></pre></div>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="data-cleaning.html#cb17-1"></a><span class="kw">library</span>(colorRamps)</span>
-<span id="cb17-2"><a href="data-cleaning.html#cb17-2"></a>SB_SPat &lt;-<span class="st"> </span><span class="kw">st_as_sf</span>(SB<span class="op">$</span>spatial)</span>
-<span id="cb17-3"><a href="data-cleaning.html#cb17-3"></a></span>
-<span id="cb17-4"><a href="data-cleaning.html#cb17-4"></a>nSpecies &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> SB_SPat,<span class="kw">aes</span>(<span class="dt">fill =</span> nSpp))<span class="op">+</span></span>
-<span id="cb17-5"><a href="data-cleaning.html#cb17-5"></a><span class="st">  </span><span class="kw">geom_sf</span>()<span class="op">+</span></span>
-<span id="cb17-6"><a href="data-cleaning.html#cb17-6"></a><span class="st">  </span><span class="kw">theme_cowplot</span>()<span class="op">+</span></span>
-<span id="cb17-7"><a href="data-cleaning.html#cb17-7"></a><span class="st">  </span><span class="kw">scale_fill_gradientn</span>(<span class="dt">colors =</span> <span class="kw">matlab.like2</span>(<span class="dv">100</span>))</span>
-<span id="cb17-8"><a href="data-cleaning.html#cb17-8"></a></span>
-<span id="cb17-9"><a href="data-cleaning.html#cb17-9"></a>nVisits &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> SB_SPat,<span class="kw">aes</span>(<span class="dt">fill =</span> nVis))<span class="op">+</span></span>
-<span id="cb17-10"><a href="data-cleaning.html#cb17-10"></a><span class="st">  </span><span class="kw">geom_sf</span>()<span class="op">+</span></span>
-<span id="cb17-11"><a href="data-cleaning.html#cb17-11"></a><span class="st">  </span><span class="kw">theme_cowplot</span>()<span class="op">+</span></span>
-<span id="cb17-12"><a href="data-cleaning.html#cb17-12"></a><span class="st">  </span><span class="kw">scale_fill_gradientn</span>(<span class="dt">colors =</span> <span class="kw">matlab.like2</span>(<span class="dv">100</span>))</span>
-<span id="cb17-13"><a href="data-cleaning.html#cb17-13"></a></span>
-<span id="cb17-14"><a href="data-cleaning.html#cb17-14"></a>nObs &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> SB_SPat,<span class="kw">aes</span>(<span class="dt">fill =</span> nObs))<span class="op">+</span></span>
-<span id="cb17-15"><a href="data-cleaning.html#cb17-15"></a><span class="st">  </span><span class="kw">geom_sf</span>()<span class="op">+</span></span>
-<span id="cb17-16"><a href="data-cleaning.html#cb17-16"></a><span class="st">  </span><span class="kw">theme_cowplot</span>()<span class="op">+</span></span>
-<span id="cb17-17"><a href="data-cleaning.html#cb17-17"></a><span class="st">  </span><span class="kw">scale_fill_gradientn</span>(<span class="dt">colors =</span> <span class="kw">matlab.like2</span>(<span class="dv">100</span>))</span>
-<span id="cb17-18"><a href="data-cleaning.html#cb17-18"></a></span>
-<span id="cb17-19"><a href="data-cleaning.html#cb17-19"></a><span class="kw">plot_grid</span>(nSpecies, nVisits, nObs, <span class="dt">ncol =</span> <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="data-cleaning.html#cb16-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-2"><a href="data-cleaning.html#cb16-2" aria-hidden="true" tabindex="-1"></a>grid_Sweden <span class="ot">&lt;-</span> <span class="fu">makeGrid</span>(Sweden, <span class="dv">25</span>)</span>
+<span id="cb16-3"><a href="data-cleaning.html#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="data-cleaning.html#cb16-4" aria-hidden="true" tabindex="-1"></a>OB <span class="ot">&lt;-</span> <span class="fu">organiseBirds</span>(Carex, </span>
+<span id="cb16-5"><a href="data-cleaning.html#cb16-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">idCols =</span> <span class="fu">c</span>(<span class="st">&quot;locality&quot;</span>),</span>
+<span id="cb16-6"><a href="data-cleaning.html#cb16-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">xyCols =</span> <span class="fu">c</span>(<span class="st">&quot;longitude&quot;</span>, <span class="st">&quot;latitude&quot;</span>),</span>
+<span id="cb16-7"><a href="data-cleaning.html#cb16-7" aria-hidden="true" tabindex="-1"></a>                    <span class="at">sppCol =</span> <span class="st">&quot;SpeciesDyn&quot;</span>)</span>
+<span id="cb16-8"><a href="data-cleaning.html#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-9"><a href="data-cleaning.html#cb16-9" aria-hidden="true" tabindex="-1"></a>SB <span class="ot">&lt;-</span> <span class="fu">summariseBirds</span>(OB, grid_Sweden)</span>
+<span id="cb16-10"><a href="data-cleaning.html#cb16-10" aria-hidden="true" tabindex="-1"></a>grid_Sweden <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(grid_Sweden)</span>
+<span id="cb16-11"><a href="data-cleaning.html#cb16-11" aria-hidden="true" tabindex="-1"></a>Sweden_sf <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(Sweden)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="data-cleaning.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(colorRamps)</span>
+<span id="cb17-2"><a href="data-cleaning.html#cb17-2" aria-hidden="true" tabindex="-1"></a>SB_SPat <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(SB<span class="sc">$</span>spatial)</span>
+<span id="cb17-3"><a href="data-cleaning.html#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="data-cleaning.html#cb17-4" aria-hidden="true" tabindex="-1"></a>nSpecies <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> SB_SPat,<span class="fu">aes</span>(<span class="at">fill =</span> nSpp))<span class="sc">+</span></span>
+<span id="cb17-5"><a href="data-cleaning.html#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>()<span class="sc">+</span></span>
+<span id="cb17-6"><a href="data-cleaning.html#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()<span class="sc">+</span></span>
+<span id="cb17-7"><a href="data-cleaning.html#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradientn</span>(<span class="at">colors =</span> <span class="fu">matlab.like2</span>(<span class="dv">100</span>))</span>
+<span id="cb17-8"><a href="data-cleaning.html#cb17-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-9"><a href="data-cleaning.html#cb17-9" aria-hidden="true" tabindex="-1"></a>nVisits <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> SB_SPat,<span class="fu">aes</span>(<span class="at">fill =</span> nVis))<span class="sc">+</span></span>
+<span id="cb17-10"><a href="data-cleaning.html#cb17-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>()<span class="sc">+</span></span>
+<span id="cb17-11"><a href="data-cleaning.html#cb17-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()<span class="sc">+</span></span>
+<span id="cb17-12"><a href="data-cleaning.html#cb17-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradientn</span>(<span class="at">colors =</span> <span class="fu">matlab.like2</span>(<span class="dv">100</span>))</span>
+<span id="cb17-13"><a href="data-cleaning.html#cb17-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-14"><a href="data-cleaning.html#cb17-14" aria-hidden="true" tabindex="-1"></a>nObs <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> SB_SPat,<span class="fu">aes</span>(<span class="at">fill =</span> nObs))<span class="sc">+</span></span>
+<span id="cb17-15"><a href="data-cleaning.html#cb17-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>()<span class="sc">+</span></span>
+<span id="cb17-16"><a href="data-cleaning.html#cb17-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()<span class="sc">+</span></span>
+<span id="cb17-17"><a href="data-cleaning.html#cb17-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradientn</span>(<span class="at">colors =</span> <span class="fu">matlab.like2</span>(<span class="dv">100</span>))</span>
+<span id="cb17-18"><a href="data-cleaning.html#cb17-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-19"><a href="data-cleaning.html#cb17-19" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_grid</span>(nSpecies, nVisits, nObs, <span class="at">ncol =</span> <span class="dv">1</span>)</span></code></pre></div>
 <p><img src="biodiversity-analysis-tools_files/figure-html/unnamed-chunk-25-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
 <!-- ## Example using <i>Sphagnum auriculatum</i> -->
 <!-- In this example of running through the work flow I have downloaded data from GBIF on the species <i>S. auriculatum</i> and <i>S. denticulatum</i> in Europe. These are currently listed as separate species in the GBIF backbone but the European checklist and dyntaxa.se list them (correctly) as both being synonyms of <i>S. aurculatu</i>. This data set gives and opportunity to run through a simplified version of the BDcleanR scripts with data that are known to be incorrect at least in one dimension.  -->
@@ -1736,12 +1933,6 @@ Carex L.
 <!-- ``` -->
 
 </div>
-</div>
-</div>
-<h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-hodgetts_annotated_2020">
-<p>Hodgetts, N. G., Lars Söderström, T. L. Blockeel, S. Caspari, Michael S. Ignatov, N. A. Konstantinova, N. Lockhart, Beáta Papp, Christian Schröck, and Manuela Sim-Sim. 2020. “An Annotated Checklist of Bryophytes of Europe, Macaronesia and Cyprus.” <em>Journal of Bryology</em> 42 (1): 1–116.</p>
 </div>
 </div>
             </section>
