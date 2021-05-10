@@ -29,7 +29,7 @@ library(rgbif)
 # Data for Sphagnum denticulatum doi: 10.15468/dl.rrp4p4
 # Data for Sphagnum auriculatum doi: 10.15468/dl.3yrtw7
 
-df <- lapply(list.files("./data/BDcleaner_Scripts/Example/Downloads/",
+df <- lapply(list.files("./data/Downloads/",
                         full.names = TRUE,
                         pattern = ".csv"),
              function(q){
@@ -76,7 +76,7 @@ Many localities may not be included in the gazetteers associated with these libr
 ## this example is not relevant as the data is not in the repository and doesn't shown how to geolocate
 localities <- df %>%
   filter(is.na(decimalLatitude))%>%
-  select(locality)%>%
+  dplyr::select(locality)%>%
   distinct()
 
 write.csv(localities,"DataFrameOfLocalities.csv",row.names = FALSE)
@@ -114,9 +114,9 @@ Nrecs <- Nrecs %>%
 
 
 kable(Nrecs %>%
-  select(country,TR,GrP,NcP),
+  dplyr::select(country,TR,GrP,NcP),
   col.names = c("Country", "Total Records",  "% Records with coordinate","% Records without coordinates"),
-  caption = "The number and percentage of records of bryophyta per EU country with and without coordinates")%>%
+  caption = "The number and percentage of records of bryophyta per EU country with and without coordinates") %>%
   scroll_box(height = "350px",width = "100%") %>%
   kable_styling(bootstrap_options = c("striped", "hover"),
                 full_width = TRUE)
