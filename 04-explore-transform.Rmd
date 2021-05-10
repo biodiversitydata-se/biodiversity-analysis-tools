@@ -69,12 +69,12 @@ df_wide <- df_long %>%
 
 ## Spatial data
 
-Spatial data have coordinates. IN the simplest form they are a set of points. They may be polgonal (both regular and irregular) depicting any sort of feature. They may have additional information attached to them such as a data frame. They may take the form of a grid and may be in the raster format. Very frequently they represent the land surface and as such may have coordinate reference infomation attached (eg. SWEREF 99 TM) There are several resources for handling such data:
+Spatial data have coordinates. IN the simplest form they are a set of points. They may be polygonal (both regular and irregular) depicting any sort of feature. They may have additional information attached to them such as a data frame. They may take the form of a grid and may be in the raster format. Very frequently they represent the land surface and as such may have coordinate reference information attached (eg. SWEREF 99 TM) There are several resources for handling such data:
 
  - in R the most frequent base libraries encountered are:
  
     - **sp** - Classes and methods for spatial data 
-    - **raster** - Geographic data analysis and modelling 
+    - **raster** - Geographic data analysis and modeling 
     - **sf** - Simple features for R 
     - **rgdal** -  Bindings for the 'Geospatial' Data Abstraction Library 
   

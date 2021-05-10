@@ -54,7 +54,7 @@ All data sets are biased to some degree. For field data, the structure of data g
 
 Sources of bias may include:
 
-- accesibility of the landscape;
+- accessibility of the landscape;
 - human population density;
 - distribution of expertise;
 - "Charisma" of the taxa;
@@ -75,10 +75,10 @@ Sample_bias_layer <- raster( MASS::kde2d(
  
  More complex methods of accounting for bias can be created by more explicitly modeling accessibility or the behavior of recorders themselves. There are resources for doing this, including:
  
- - **recorderMetrics** - Data derived metrics of recorder behaviour [@august_data-derived_2020]
- - **Sampbias** - Bayesian analysis to quantify the effects of accessibility on species occurrence sets [zizka_sampbias_2020]
+ - **recorderMetrics** - Data derived metrics of recorder behavior [@august_data-derived_2020]
+ - **Sampbias** - Bayesian analysis to quantify the effects of accessibility on species occurrence sets [@zizka_sampbias_2020]
 
-Spatial sorting or disaggregating presence points can reduce the effects of bias:
+Spatial sorting or dissaggregating presence points can reduce the effects of bias:
 
  - **ENMeval** - Provides methods for quickly spatially aggregating presence points for model building;
  - **spThin** - Randomly thins the number of presences used for a model by an agreed distance. THis

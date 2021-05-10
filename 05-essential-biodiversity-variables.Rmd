@@ -1,7 +1,7 @@
 # Essential Biodiversity Variables
 
 ## SDM 
-https://rspatial.org/raster/sdm/index.html
+[https://rspatial.org/raster/sdm/index.html]
 
 ## Diversity 
 
@@ -16,7 +16,7 @@ Variation in these three dimensions can be directly compared both within and bet
 
 ### Types of analyses - Patitioning $\alpha$, $\beta$, $\gamma$ *etc.* diversity
 
-Two forms of diversity analyses are currently widely used; classic diversity measures (eg species richness, shannons diversity index *etc.*) and *numbers equivalents* representation of the underlying diversity distribution. This second form was first introduced in  Hill [-@hill_diversity_1973] and a number of resources are now available for computing both forms. See the forum piece *Forum: Partitioning diversity* in Ecology [-@ellison_partitioning_2010]  for a fuller discussion on the use of *numbers equivalents*. 
+Two forms of diversity analyses are currently widely used; classic diversity measures (eg. species richness, Shannons diversity index *etc.*) and *numbers equivalents* representation of the underlying diversity distribution. This second form was first introduced in  Hill [-@hill_diversity_1973] and a number of resources are now available for computing both forms. See the forum piece *Forum: Partitioning diversity* in Ecology [-@ellison_partitioning_2010]  for a fuller discussion on the use of *numbers equivalents*. 
 
 Both types of diversity partitioning are used for all types of analyses and we present resources which are available for both forms: 
  - Resources for classic diversity measures
@@ -63,7 +63,7 @@ $\alpha$ diversity refers to the diversity at a single site. There are a number 
 
 The R libraries **vegan, adiv, abdiv** all provide methods to calculate these measures as well as a wealth of others. Within **abdiv** the funtion *alpha_diversity* lists the $\alpha$ diversity measures available within the package. Whilst not exhaustive it is a large list.
 
-There are also ways of estimating $\alpha$ diversity through rarefaction as well as modelling and visualising its different aspects in both **vegan** and **adiv**.
+There are also ways of estimating $\alpha$ diversity through rarefaction as well as modeling and visualising its different aspects in both **vegan** and **adiv**.
 
 ### $\beta$ diversity and dissimilarities
 
@@ -116,7 +116,7 @@ library(finch)
 library(reshape2)
 library(dplyr)
 
-fileDirs <- list.dirs("./data/BDcleaner_Scripts/Example/Downloads/ignored data/Grazing experiments/Hol")
+fileDirs <- list.dirs("./data/Downloads/")
 vegData <-  finch::dwca_read( list.files( fileDirs,
                      full.names = TRUE), read = TRUE)
 ```
