@@ -4,27 +4,27 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3 Data cleaning | A general workflow for analysis of biodiversity primary data</title>
-  <meta name="description" content="Description of purpose and elements." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <title>3 Data cleaning |     A general workflow for analysis of primary biodiversity data</title>
+  <meta name="description" content="  A general workflow for analysis of primary biodiversity data" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3 Data cleaning | A general workflow for analysis of biodiversity primary data" />
+  <meta property="og:title" content="3 Data cleaning |     A general workflow for analysis of primary biodiversity data" />
   <meta property="og:type" content="book" />
   
+  <meta property="og:image" content="/images/sbdi-logo-orginal-large.png" />
   
-  <meta property="og:description" content="Description of purpose and elements." />
   <meta name="github-repo" content="https://github.com/biodiversitydata-se/biodiversity-analysis-tools" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 Data cleaning | A general workflow for analysis of biodiversity primary data" />
+  <meta name="twitter:title" content="3 Data cleaning |     A general workflow for analysis of primary biodiversity data" />
   
-  <meta name="twitter:description" content="Description of purpose and elements." />
   
+  <meta name="twitter:image" content="/images/sbdi-logo-orginal-large.png" />
 
-<meta name="author" content="Debora Arlt, Alejandro Ruete and Charles Campbell for the Swedish Biodiversity Data Infrastructure" />
+<meta name="author" content="Debora Arlt, Alejandro Ruete and Charles Campbell  for the Swedish Biodiversity Data Infrastructure" />
 
 
-<meta name="date" content="2021-05-10" />
+<meta name="date" content="2021-05-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="the-importance-of-questions-and-sources-of-data.html"/>
 <link rel="next" href="fitness-for-use.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,6 +51,8 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
@@ -119,6 +121,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 </head>
@@ -204,7 +229,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A general workflow for analysis of biodiversity primary data</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><img src='images/sbdi-logo-orginal-large.png' class='cover'/> <br><br> A general workflow for analysis of primary biodiversity data</a>
           </h1>
         </div>
 
@@ -226,7 +251,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="taxonomies-1" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Taxonomies</h2>
-<p>It is important to be aware of likely taxonomic anomalies prior to working within a region. Checklists are very important, especially if working over several regions / countries. Whilst there are many things that will automatically look for the validity of a name they do not check for the validity of that species occurrence. For example <em>Sphagnum auriculatum</em> Schimp. and <em>Sphagnum denticulatum</em> Bridel, 1826 are both valid names. <em>S. auriculatum</em> is the currently accepted species in Europe but in the British Isles, Ireland and the Netherlands <em>s. denticulatum</em> is the most recorded taxa. Both are legitimate names but they are a synonymy. Both names have been used in Europe but in distinct countries. The current European checklist <span class="citation">(<a href="references.html#ref-hodgetts_annotated_2020" role="doc-biblioref">Hodgetts et al. 2020</a>)</span> has <em>Sphagnum auriculatum</em> Schimp. as the accepted taxon occurring in Europe. Naive downloading would result in two taxa being present when in fact it is two interpretations of the same taxon. Using data from across the European region without acknowledging this disagreement would impact the results of any research undertaken. For taxa which are known to be capable of dispersing great distances (eg. birds) this becomes even more difficult especially when using community sourced data.</p>
+<p>It is important to be aware of likely taxonomic anomalies prior to working within a region. Checklists are very important, especially if working over several regions / countries. Whilst there are many things that will automatically look for the validity of a name they do not check for the validity of that species occurrence. For example <em>Sphagnum auriculatum</em> Schimp. and <em>Sphagnum denticulatum</em> Bridel, 1826 are both valid names. <em>S. auriculatum</em> is the currently accepted species in Europe but in the British Isles, Ireland and the Netherlands <em>s. denticulatum</em> is the most recorded taxa. Both are legitimate names but they are a synonymy. Both names have been used in Europe but in distinct countries. The current European checklist <span class="citation">(<a href="#ref-hodgetts_annotated_2020" role="doc-biblioref">Hodgetts et al. 2020</a>)</span> has <em>Sphagnum auriculatum</em> Schimp. as the accepted taxon occurring in Europe. Naive downloading would result in two taxa being present when in fact it is two interpretations of the same taxon. Using data from across the European region without acknowledging this disagreement would impact the results of any research undertaken. For taxa which are known to be capable of dispersing great distances (eg. birds) this becomes even more difficult especially when using community sourced data.</p>
 <p><img src="biodiversity-analysis-tools_files/figure-html/start-up-1.png" width="\textwidth" style="display: block; margin: auto;" />
 The example above uses data downloaded from GBIF.</p>
 <ul>
@@ -329,13 +354,13 @@ AT
 Austria
 </td>
 <td style="text-align:right;">
-53346
+53489
 </td>
 <td style="text-align:right;">
-80.45
+80.50
 </td>
 <td style="text-align:right;">
-19.55
+19.50
 </td>
 </tr>
 <tr>
@@ -567,7 +592,7 @@ DE
 Germany
 </td>
 <td style="text-align:right;">
-165350
+165397
 </td>
 <td style="text-align:right;">
 81.12
@@ -822,13 +847,13 @@ NO
 Norway
 </td>
 <td style="text-align:right;">
-348192
+349184
 </td>
 <td style="text-align:right;">
-82.96
+83.00
 </td>
 <td style="text-align:right;">
-17.04
+17.00
 </td>
 </tr>
 <tr>
@@ -890,13 +915,13 @@ RU
 Russia
 </td>
 <td style="text-align:right;">
-148930
+150213
 </td>
 <td style="text-align:right;">
-80.40
+80.57
 </td>
 <td style="text-align:right;">
-19.60
+19.43
 </td>
 </tr>
 <tr>
@@ -995,10 +1020,10 @@ Switzerland
 125976
 </td>
 <td style="text-align:right;">
-7.63
+7.66
 </td>
 <td style="text-align:right;">
-92.37
+92.34
 </td>
 </tr>
 <tr>
@@ -1043,7 +1068,7 @@ GB
 United Kingdom
 </td>
 <td style="text-align:right;">
-2930510
+2930508
 </td>
 <td style="text-align:right;">
 98.86
@@ -1935,6 +1960,12 @@ Carex saxatilis subsp. laxa (Trautv.) Kalela
 </div>
 </div>
 </div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-hodgetts_annotated_2020" class="csl-entry">
+Hodgetts, N. G., Lars Söderström, T. L. Blockeel, S. Caspari, Michael S. Ignatov, N. A. Konstantinova, N. Lockhart, Beáta Papp, Christian Schröck, and Manuela Sim-Sim. 2020. <span>“An Annotated Checklist of Bryophytes of <span>Europe</span>, <span>Macaronesia</span> and <span>Cyprus</span>.”</span> <em>Journal of Bryology</em> 42 (1): 1–116.
+</div>
+</div>
             </section>
 
           </div>
@@ -1964,6 +1995,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
