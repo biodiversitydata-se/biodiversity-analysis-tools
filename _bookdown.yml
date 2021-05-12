@@ -1,7 +1,23 @@
 book_filename: "biodiversity-analysis-tools"
+repo: https://github.com/biodiversitydata-se/biodiversity-analysis-tools
 delete_merged_file: true
 before_chapter_script: "_common.r"
 output_dir: "docs"
 language:
   ui:
   chapter_name: "Chapter "
+bookdown::gitbook:
+  highlight: tango
+  css: style.css
+  config:
+    toc:
+      collapse: section
+      before: |
+        <li><a href="./">Biodiversity analysis tools</a></li>
+    edit: https://github.com/biodiversitydata-se/biodiversity-analysis-tools/edit/master/%s
+    download: yes
+    sharing:
+      facebook: no
+      twitter: no
+      github: yes
+      all: []
