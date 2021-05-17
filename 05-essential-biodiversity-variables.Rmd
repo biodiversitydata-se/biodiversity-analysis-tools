@@ -1,7 +1,7 @@
 # Essential Biodiversity Variables
 
 ## SDM 
-[https://rspatial.org/raster/sdm/index.html]
+[rspatial](https://rspatial.org/raster/sdm/index.html)
 
 ## Diversity 
 
