@@ -26,6 +26,7 @@ library(kableExtra)
 theme_set(theme_cowplot())
 library(rnaturalearthdata)
 library(rgbif)
+library(BIRDS)
 
 # Data for Sphagnum denticulatum doi: 10.15468/dl.rrp4p4
 # Data for Sphagnum auriculatum doi: 10.15468/dl.3yrtw7

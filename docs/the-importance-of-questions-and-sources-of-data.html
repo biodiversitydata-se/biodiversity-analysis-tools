@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2 The importance of questions and sources of data |     A general workflow for analysis of primary biodiversity data</title>
   <meta name="description" content="  A general workflow for analysis of primary biodiversity data" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2 The importance of questions and sources of data |     A general workflow for analysis of primary biodiversity data" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:image" content="/images/sbdi-logo-orginal-large.png" />
+  <meta property="og:image" content="images/sbdi-logo-orginal-large.png" />
   
   <meta name="github-repo" content="https://github.com/biodiversitydata-se/biodiversity-analysis-tools" />
 
@@ -19,12 +19,12 @@
   <meta name="twitter:title" content="2 The importance of questions and sources of data |     A general workflow for analysis of primary biodiversity data" />
   
   
-  <meta name="twitter:image" content="/images/sbdi-logo-orginal-large.png" />
+  <meta name="twitter:image" content="images/sbdi-logo-orginal-large.png" />
 
 <meta name="author" content="Debora Arlt, Alejandro Ruete and Charles Campbell  for the Swedish Biodiversity Data Infrastructure" />
 
 
-<meta name="date" content="2021-05-12" />
+<meta name="date" content="2021-05-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="index.html"/>
 <link rel="next" href="data-cleaning.html"/>
-<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,8 +51,6 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
@@ -121,29 +119,6 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
-
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
 </style>
 
 </head>
@@ -245,27 +220,27 @@ div.csl-indent {
 </div>
 <div id="taxonomies" class="section level2" number="2.2">
 <h2><span class="header-section-number">2.2</span> Taxonomies</h2>
-<p>It is important to be aware of likely taxonomic anomalies prior to working within a region. Checklists are very important, especially if working over several regions / countries. Whilst there are many things that will automatically look for the validity of a name they do not check for the validity of that species occurrence. For example <em>Sphagnum auriculatum</em> and <em>S. denticulatum</em> are both valid names. <em>S. auriculatum</em> is the currently accepted species in Europe but in the British Isles, Ireland and the Netherlands <em>s. denticulatum</em> is the most recorded taxa. Using data from across the European region without acknowledging this disagreement would impact the results of any research undertaken. For taxa which are known to be capable of dispersing great distances (eg birds) this becomes even more difficult especially when using community sourced data.</p>
-<p>For Sweden there is an agreed taxonomy for species accesible through [<a href="https://www.dyntaxa.se/" class="uri">https://www.dyntaxa.se/</a>] and the R library <strong>dyntaxa</strong>.</p>
+<p>It is important to be aware of likely taxonomic anomalies prior to working within a region. Check-lists are very important, especially if working over several regions / countries. Whilst there are many things that will automatically look for the validity of a name they do not check for the validity of that species occurrence. For example <em>Sphagnum auriculatum</em> and <em>S. denticulatum</em> are both valid names. <em>S. auriculatum</em> is the currently accepted species in Europe but in the British Isles, Ireland and the Netherlands <em>s. denticulatum</em> is the most recorded taxa. Using data from across the European region without acknowledging this disagreement would impact the results of any research undertaken. For taxa which are known to be capable of dispersing great distances (eg birds) this becomes even more difficult especially when using community sourced data.</p>
+<p>For Sweden there is an agreed taxonomy for species accessible through <a href="https://www.dyntaxa.se/">dyntaxa</a> and the R library <strong>dyntaxa</strong>.</p>
 </div>
 <div id="data-sources" class="section level2" number="2.3">
 <h2><span class="header-section-number">2.3</span> Data Sources</h2>
 <p>Depending on what questions are being asked there are many different resources available. We focus on biodiversity data</p>
 <div id="biodiversity-record-data" class="section level3" number="2.3.1">
 <h3><span class="header-section-number">2.3.1</span> Biodiversity record data</h3>
-<p>There are a large number of available online resources. These include but are not limited to (specific R libraries that connect to these databases are provided in <strong>bold</strong>):</p>
+<p>There are a large number of available on-line resources. These include but are not limited to (specific R libraries that connect to these databases are provided in <strong>bold</strong>):</p>
 <ul>
-<li>Artportalen [<a href="https://www.artportalen.se/" class="uri">https://www.artportalen.se/</a>] - Sweden’s data portal for biodiversity data</li>
-<li>Global Biodiversity Information Facility [<a href="http://www.gbif.org/" class="uri">http://www.gbif.org/</a>] - International organization aggregating biodiversity data. Contains data from a mixture of sources; curated collections, community science data, ecological research projects etc. <strong>rgbif, spocc</strong></li>
-<li>BioCASE [<a href="https://www.biocase.org/" class="uri">https://www.biocase.org/</a>] - A European transnational biodiversity repository</li>
-<li>eBird [<a href="http://ebird.org/content/ebird/" class="uri">http://ebird.org/content/ebird/</a>] - American database of bird observations <strong>auk, rebird,spocc</strong></li>
-<li>iNaturalist <a href="http://www.inaturalist.org/" class="uri">http://www.inaturalist.org/</a> - International community science observation repository <strong>spocc</strong></li>
-<li>Berkeley ecoengine [<a href="https://ecoengine.berkeley.edu" class="uri">https://ecoengine.berkeley.edu</a>] - Access to UC Berkley’s Natural history data <strong>spocc</strong></li>
-<li>VertNet [<a href="http://vertnet.org/" class="uri">http://vertnet.org/</a>] - vertebrate biodiversity collections <strong>rvert, spocc</strong></li>
-<li>iDigBio [<a href="https://www.idigbio.org/" class="uri">https://www.idigbio.org/</a>] - Integrated digitise biodiversity collections <strong>ridigbio</strong></li>
-<li>OBIS [<a href="http://www.iobis.org/" class="uri">http://www.iobis.org/</a>] - Ocean biodiversity information system <strong>robis</strong></li>
-<li>ALA [<a href="http://www.ala.org.au/" class="uri">http://www.ala.org.au/</a>] - Atlas of living Australia <strong>ALA4r</strong></li>
-<li>Neotoma [<a href="https://www.neotomadb.org/" class="uri">https://www.neotomadb.org/</a>] Palaeoecology databas <strong>neotoma</strong></li>
+<li><a href="https://www.artportalen.se/">Swedish Biodiversity Data Infrastructure</a> - Sweden’s data portal for biodiversity data</li>
+<li><a href="http://www.gbif.org/">Global Biodiversity Information Facility</a> - International organization aggregating biodiversity data. Contains data from a mixture of sources; curated collections, community science data, ecological research projects etc. <strong>rgbif, spocc</strong></li>
+<li><a href="https://www.biocase.org/">BioCASE</a> - A European transnational biodiversity repository</li>
+<li><a href="http://ebird.org/content/ebird/">eBird</a> - American database of bird observations <strong>auk, rebird,spocc</strong></li>
+<li><a href="http://www.inaturalist.org/">iNaturalist</a> - International community science observation repository <strong>spocc</strong></li>
+<li><a href="https://ecoengine.berkeley.edu">Berkeley ecoengine</a> - Access to UC Berkley’s Natural history data <strong>spocc</strong></li>
+<li><a href="http://vertnet.org/">VertNet</a> - vertebrate biodiversity collections <strong>rvert, spocc</strong></li>
+<li><a href="https://www.idigbio.org/">iDigBio</a> - Integrated digitise biodiversity collections <strong>ridigbio</strong></li>
+<li><a href="http://www.iobis.org/">OBIS</a> - Ocean biodiversity information system <strong>robis</strong></li>
+<li><a href="http://www.ala.org.au/">ALA</a> - Atlas of living Australia <strong>ALA4r</strong></li>
+<li><a href="https://www.neotomadb.org/">Neotoma</a> Palaeoecology databas <strong>neotoma</strong></li>
 <li>…</li>
 </ul>
 </div>
@@ -273,19 +248,19 @@ div.csl-indent {
 <h3><span class="header-section-number">2.3.2</span> Taxonomic diversity</h3>
 <p>To keep track of ever changing taxonomy of species there are different databases that follow different standars.</p>
 <ul>
-<li>dyntaxa [<a href="https://www.dyntaxa.se/" class="uri">https://www.dyntaxa.se/</a>]</li>
-<li>GBIF backbone [<a href="http://www.gbif.org/" class="uri">http://www.gbif.org/</a>]</li>
+<li><a href="https://www.dyntaxa.se/">dyntaxa</a></li>
+<li><a href="http://www.gbif.org/">GBIF backbone</a></li>
 <li>…</li>
 </ul>
 </div>
 <div id="functional-diversity" class="section level3" number="2.3.3">
 <h3><span class="header-section-number">2.3.3</span> Functional diversity</h3>
-<p>Very broadly functional diversity is the diversity of what organisms do <span class="citation">(<a href="#ref-petchey_functional_2006" role="doc-biblioref">Petchey and Gaston 2006</a>)</span>. Such diversity can be direct physical measurements of traits of the organisms involved and / or data summarized from published works. There are databases dedicated to the distribution of scientific data that may be used. Such resources include:</p>
+<p>Very broadly functional diversity is the diversity of what organisms do <span class="citation">(<a href="references.html#ref-petchey_functional_2006" role="doc-biblioref">Petchey and Gaston 2006</a>)</span>. Such diversity can be direct physical measurements of traits of the organisms involved and / or data summarized from published works. There are databases dedicated to the distribution of scientific data that may be used. Such resources include:</p>
 <ul>
-<li>Dryad [<a href="https://datadryad.org/stash" class="uri">https://datadryad.org/stash</a>]</li>
-<li>TRY: Plant Trait Database [<a href="https://www.try-db.org/TryWeb/Home.php" class="uri">https://www.try-db.org/TryWeb/Home.php</a>]</li>
-<li>Ecological indicator and traits values for Swedish vascular plants<span class="citation">(<a href="#ref-tyler_ecological_2021" role="doc-biblioref">Tyler et al. 2021</a>)</span> [<a href="https://doi.org/10.1016/j.ecolind.2020.106923" class="uri">https://doi.org/10.1016/j.ecolind.2020.106923</a>]</li>
-<li>Vertnet [<a href="http://vertnet.org/" class="uri">http://vertnet.org/</a>]</li>
+<li><a href="https://datadryad.org/stash">Dryad</a></li>
+<li><a href="https://www.try-db.org/TryWeb/Home.php">TRY: Plant Trait Database</a></li>
+<li>Ecological indicator and traits values for Swedish vascular plants<span class="citation">(<a href="references.html#ref-tyler_ecological_2021" role="doc-biblioref">Tyler et al. 2021</a>)</span> [<a href="https://doi.org/10.1016/j.ecolind.2020.106923" class="uri">https://doi.org/10.1016/j.ecolind.2020.106923</a>]</li>
+<li><a href="http://vertnet.org/">Vertnet</a></li>
 <li>…</li>
 </ul>
 </div>
@@ -293,9 +268,9 @@ div.csl-indent {
 <h3><span class="header-section-number">2.3.4</span> Genetic data bases</h3>
 <p>Genetic data may be related directly to the samples used, phylogenetic trees generated from some other data set set or some other genetic aspect. Such resources include:</p>
 <ul>
-<li>BOLD: Barcode Of Life Data system [<a href="https://www.boldsystems.org/" class="uri">https://www.boldsystems.org/</a>] Repository of gene sequences</li>
-<li>Genbank. A genetic sequence repository. See [<a href="https://www.ncbi.nlm.nih.gov/genbank/" class="uri">https://www.ncbi.nlm.nih.gov/genbank/</a>] for access details.</li>
-<li>Treebase [<a href="https://www.treebase.org/treebase-web/home.html" class="uri">https://www.treebase.org/treebase-web/home.html</a>] A data base of phylogenetic trees</li>
+<li><a href="https://www.boldsystems.org/">BOLD: Barcode Of Life Data system</a> Repository of gene sequences</li>
+<li><a href="https://www.ncbi.nlm.nih.gov/genbank/">Genbank</a> A genetic sequence repository</li>
+<li><a href="https://www.treebase.org/treebase-web/home.html">Treebase</a> A data base of phylogenetic trees</li>
 <li>…</li>
 </ul>
 </div>
@@ -305,31 +280,22 @@ div.csl-indent {
 <div id="sweden" class="section level4" number="2.3.5.1">
 <h4><span class="header-section-number">2.3.5.1</span> Sweden</h4>
 <ul>
-<li>Skogstyrelsen [<a href="https://www.skogsstyrelsen.se/sjalvservice/karttjanster/geodatatjanster/oppna-data/" class="uri">https://www.skogsstyrelsen.se/sjalvservice/karttjanster/geodatatjanster/oppna-data/</a>] Open data supplied by Skogstyrelsen</li>
-<li>Sveriges dataportal [<a href="https://www.dataportal.se/" class="uri">https://www.dataportal.se/</a>] Swedish open data provided by governmental bodies.</li>
-<li>Miljödata MVM [<a href="https://miljodata.slu.se/mvm/" class="uri">https://miljodata.slu.se/mvm/</a>] - Environmental data from SLU for Sweden</li>
+<li><a href="https://www.skogsstyrelsen.se/sjalvservice/karttjanster/geodatatjanster/oppna-data/">Skogsstyrelsen</a> - Open data supplied by Skogsstyrelsen</li>
+<li><a href="https://www.dataportal.se/">Sveriges dataportal</a> - Swedish open data provided by governmental bodies.</li>
+<li><a href="https://miljodata.slu.se/mvm/">Miljödata MVM</a> - Environmental data from SLU for Sweden</li>
 </ul>
 </div>
 <div id="global-and-european" class="section level4" number="2.3.5.2">
 <h4><span class="header-section-number">2.3.5.2</span> Global and European</h4>
 <ul>
-<li>wordclim [<a href="https://www.worldclim.org/" class="uri">https://www.worldclim.org/</a>] Global gridded climate data at various resolutions</li>
-<li>climond [<a href="https://www.climond.org/" class="uri">https://www.climond.org/</a>] Global gridded climate data at various resolutions</li>
-<li>soilgrids [<a href="https://soilgrids.org/" class="uri">https://soilgrids.org/</a>] Global gridded soil data</li>
-<li>Copernicus Land monitoring service [<a href="https://land.copernicus.eu/pan-european/corine-land-cover" class="uri">https://land.copernicus.eu/pan-european/corine-land-cover</a>] Land monitoring data from across the EU</li>
+<li><a href="https://www.worldclim.org/">wordclim</a> - Global gridded climate data at various resolutions</li>
+<li><a href="https://www.climond.org/">climond</a> - Global gridded climate data at various resolutions</li>
+<li><a href="https://soilgrids.org/">soilgrids</a> - Global gridded soil data</li>
+<li><a href="https://land.copernicus.eu/pan-european/corine-land-cover">Copernicus Land monitoring service</a> - Land monitoring data from across the EU</li>
 </ul>
 
 </div>
 </div>
-</div>
-</div>
-<h3>References</h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-petchey_functional_2006" class="csl-entry">
-Petchey, Owen L., and Kevin J. Gaston. 2006. <span>“Functional Diversity: Back to Basics and Looking Forward.”</span> <em>Ecology Letters</em> 9 (6): 741–58. <a href="https://doi.org/10.1111/j.1461-0248.2006.00924.x">https://doi.org/10.1111/j.1461-0248.2006.00924.x</a>.
-</div>
-<div id="ref-tyler_ecological_2021" class="csl-entry">
-Tyler, Torbjörn, Lina Herbertsson, Johan Olofsson, and Pål Axel Olsson. 2021. <span>“Ecological Indicator and Traits Values for <span>Swedish</span> Vascular Plants.”</span> <em>Ecological Indicators</em> 120 (January): 106923. <a href="https://doi.org/10.1016/j.ecolind.2020.106923">https://doi.org/10.1016/j.ecolind.2020.106923</a>.
 </div>
 </div>
             </section>
@@ -361,7 +327,6 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
