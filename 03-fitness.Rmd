@@ -62,7 +62,6 @@ Sources of bias may include:
 There is a large body of literature on different methods which may be employed. One of the simplest is the selection of background points with the same spatial bias as taxa which are searched for in the manner [@phillips_sample_2009]. Such a layer can be produced using 2-dimensional kernel estimation through the **MASS** package
 ```{r, warning=FALSE, error=FALSE, message=FALSE}
 library(raster)
-library(BIRDS)
 library(MASS)
 data("bryophytaObs")
 

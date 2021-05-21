@@ -18,6 +18,7 @@ It is important to be aware of likely taxonomic anomalies prior to working withi
 library(data.table)
 library(sf)
 library(ggplot2)
+library(countrycode)
 library(rnaturalearth)
 library(cowplot)
 library(dplyr)
@@ -25,6 +26,7 @@ library(kableExtra)
 theme_set(theme_cowplot())
 library(rnaturalearthdata)
 library(rgbif)
+library(BIRDS)
 
 # Data for Sphagnum denticulatum doi: 10.15468/dl.rrp4p4
 # Data for Sphagnum auriculatum doi: 10.15468/dl.3yrtw7
@@ -91,10 +93,6 @@ recordsDataFrame <- merge(recordsDataFrame, locallities, by = "localities", all 
 
 This becomes especially important when extracting records across country boundaries as countries have different numbers of georeferenced observations.
 ```{r echo = FALSE}
-
-library(rgbif)
-
-library(countrycode)
 EU <- c('AL', 'AD', 'AM', 'AT', 'BY', 'BE', 'BA', 'BG', 'CH', 'CY', 'CZ', 'DE',
         'DK', 'EE', 'ES', 'FO', 'FI', 'FR', 'GB', 'GE', 'GI', 'GR', 'HU', 'HR',
         'IE', 'IS', 'IT', 'LI', 'LT', 'LU', 'LV', 'MC', 'MK', 'MT', 'NO', 'NL', 'PL',
@@ -174,16 +172,6 @@ In this example I have downloaded the occurrences of the Cyperaceae family in Sw
 First we give each record in the assembled data set a unique ID. In this case it could be possible to use the GBIFid. In data sets sourced from multiple sources it is a good idea to create a unique ID related to the data source.
 
 ```{r hiden-data-search, warning=FALSE, error=FALSE, message=FALSE, eval=FALSE, echo=FALSE}
-## TODO are all these libraries needed here? else load them quietly at the beginning of the chapter and point to the origin of key functions when appropriated
-library(data.table)
-library(dplyr)
-library(ggplot2)
-library(CoordinateCleaner)
-library(kableExtra)
-library(dismo)
-library(sf)
-library(ggplot2)
-library(cowplot)
 library(BIRDS)
 library(SBDI4R)
 
@@ -208,20 +196,7 @@ Carex <- Carex$data
 save(Carex, file = "./data/Cyperacea_SWE.rdata")
 ```
 
-```{r loadCarex, warning=FALSE, error=FALSE, message=FALSE}
-library(data.table)
-library(dplyr)
-library(ggplot2)
-library(CoordinateCleaner)
-library(kableExtra)
-library(dismo)
-library(sf)
-library(raster)
-library(ggplot2)
-library(cowplot)
-library(BIRDS)
-library(SBDI4R)
-
+```{r loadCarex, error=FALSE, message=FALSE, warning=FALSE, include=FALSE}
 load("./data/Cyperacea_SWE.rdata") 
 
 ```
@@ -231,7 +206,6 @@ In cleaning data there are a number of dimensions of uncertainty we shall first 
 ### Taxonomy
 In the species column there are records with no Species given in the species column. We then check the `scientificName` for whether there is useful information there
 ```{r , warning=FALSE, error=FALSE, message=FALSE}
-
 kable(Carex %>%
   filter(species == "") %>%
   distinct(scientificName)) %>%
@@ -265,7 +239,7 @@ We now need to check that the species names in the records that we are using are
 ```{r, warning=FALSE, error=FALSE, message=FALSE, eval=FALSE}
 
 SpeciesNames <- Carex %>%
-  filter(!ID %in% unUseful) %>%
+  filter(!id %in% unUseful) %>%
   dplyr::select("scientificName") %>%
   distinct()
 
@@ -436,7 +410,7 @@ Checking the distribution of the observations
 
 ```{r, warning=FALSE, error=FALSE, message=FALSE}
 
-Sweden <- getData("GADM", #raster::
+Sweden <- raster::getData("GADM", 
                   country = "SWE",
                   path = "./data/",
                   level = 0)
