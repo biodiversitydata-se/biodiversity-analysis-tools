@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2 The importance of questions and sources of data |     A general workflow for analysis of primary biodiversity data</title>
   <meta name="description" content="  A general workflow for analysis of primary biodiversity data" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2 The importance of questions and sources of data |     A general workflow for analysis of primary biodiversity data" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:image" content="images/sbdi-logo-orginal-large.png" />
+  <meta property="og:image" content="/images/sbdi-logo-orginal-large.png" />
   
   <meta name="github-repo" content="https://github.com/biodiversitydata-se/biodiversity-analysis-tools" />
 
@@ -19,12 +19,12 @@
   <meta name="twitter:title" content="2 The importance of questions and sources of data |     A general workflow for analysis of primary biodiversity data" />
   
   
-  <meta name="twitter:image" content="images/sbdi-logo-orginal-large.png" />
+  <meta name="twitter:image" content="/images/sbdi-logo-orginal-large.png" />
 
 <meta name="author" content="Debora Arlt, Alejandro Ruete and Charles Campbell  for the Swedish Biodiversity Data Infrastructure" />
 
 
-<meta name="date" content="2021-05-17" />
+<meta name="date" content="2021-05-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="index.html"/>
 <link rel="next" href="data-cleaning.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,6 +51,8 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
@@ -119,6 +121,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 </head>
@@ -255,11 +280,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="functional-diversity" class="section level3" number="2.3.3">
 <h3><span class="header-section-number">2.3.3</span> Functional diversity</h3>
-<p>Very broadly functional diversity is the diversity of what organisms do <span class="citation">(<a href="references.html#ref-petchey_functional_2006" role="doc-biblioref">Petchey and Gaston 2006</a>)</span>. Such diversity can be direct physical measurements of traits of the organisms involved and / or data summarized from published works. There are databases dedicated to the distribution of scientific data that may be used. Such resources include:</p>
+<p>Very broadly functional diversity is the diversity of what organisms do <span class="citation">(<a href="#ref-petchey_functional_2006" role="doc-biblioref">Petchey and Gaston 2006</a>)</span>. Such diversity can be direct physical measurements of traits of the organisms involved and / or data summarized from published works. There are databases dedicated to the distribution of scientific data that may be used. Such resources include:</p>
 <ul>
 <li><a href="https://datadryad.org/stash">Dryad</a></li>
 <li><a href="https://www.try-db.org/TryWeb/Home.php">TRY: Plant Trait Database</a></li>
-<li>Ecological indicator and traits values for Swedish vascular plants<span class="citation">(<a href="references.html#ref-tyler_ecological_2021" role="doc-biblioref">Tyler et al. 2021</a>)</span> [<a href="https://doi.org/10.1016/j.ecolind.2020.106923" class="uri">https://doi.org/10.1016/j.ecolind.2020.106923</a>]</li>
+<li>Ecological indicator and traits values for Swedish vascular plants<span class="citation">(<a href="#ref-tyler_ecological_2021" role="doc-biblioref">Tyler et al. 2021</a>)</span> [<a href="https://doi.org/10.1016/j.ecolind.2020.106923" class="uri">https://doi.org/10.1016/j.ecolind.2020.106923</a>]</li>
 <li><a href="http://vertnet.org/">Vertnet</a></li>
 <li>…</li>
 </ul>
@@ -298,6 +323,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-petchey_functional_2006" class="csl-entry">
+Petchey, Owen L., and Kevin J. Gaston. 2006. <span>“Functional Diversity: Back to Basics and Looking Forward.”</span> <em>Ecology Letters</em> 9 (6): 741–58. <a href="https://doi.org/10.1111/j.1461-0248.2006.00924.x">https://doi.org/10.1111/j.1461-0248.2006.00924.x</a>.
+</div>
+<div id="ref-tyler_ecological_2021" class="csl-entry">
+Tyler, Torbjörn, Lina Herbertsson, Johan Olofsson, and Pål Axel Olsson. 2021. <span>“Ecological Indicator and Traits Values for <span>Swedish</span> Vascular Plants.”</span> <em>Ecological Indicators</em> 120 (January): 106923. <a href="https://doi.org/10.1016/j.ecolind.2020.106923">https://doi.org/10.1016/j.ecolind.2020.106923</a>.
+</div>
+</div>
             </section>
 
           </div>
@@ -327,6 +361,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
