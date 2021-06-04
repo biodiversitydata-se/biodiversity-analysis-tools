@@ -1,0 +1,15 @@
+bookdown::gitbook:
+  highlight: tango
+  css: style.css
+  config:
+    toc:
+      collapse: section
+      before: |
+        <li><a href="./">Biodiversity analysis tools</a></li>
+  edit: https://github.com/biodiversitydata-se/biodiversity-analysis-tools/edit/master/%s
+  download: yes
+  sharing:
+    facebook: no
+    twitter: no
+    github: yes
+    all: no
