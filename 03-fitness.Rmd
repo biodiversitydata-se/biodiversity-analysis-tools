@@ -28,16 +28,16 @@ library(colorRamps)
 
 spatial_sf <- st_as_sf(SB$spatial)
 
-obs <- ggplot(data = spatial_sf ,aes( fill = nObs))+
-  geom_sf()+
-  ggtitle("Observations")+
-  scale_fill_gradientn(colors = matlab.like2(100))+
+obs <- ggplot(data = spatial_sf ,aes( fill = nObs)) +
+  geom_sf() +
+  ggtitle("Observations") +
+  scale_fill_gradientn(colors = matlab.like2(100)) +
   theme_cowplot()
 
-Sp <- ggplot(data = spatial_sf ,aes( fill = nSpp))+
-  geom_sf()+
-  ggtitle("Number of species")+
-  scale_fill_gradientn(colors = matlab.like2(100))+
+Sp <- ggplot(data = spatial_sf ,aes( fill = nSpp)) +
+  geom_sf() + 
+  ggtitle("Number of species") +
+  scale_fill_gradientn(colors = matlab.like2(100)) +
   theme_cowplot()
 
 
@@ -80,5 +80,5 @@ Sample_bias_layer <- raster( MASS::kde2d(
 Spatial sorting or dissaggregating presence points can reduce the effects of bias:
 
  - **ENMeval** - Provides methods for quickly spatially aggregating presence points for model building;
- - **spThin** - Randomly thins the number of presences used for a model by an agreed distance. THis
+ - **spThin** - Randomly thins the number of presences used for a model by an agreed distance. 
 

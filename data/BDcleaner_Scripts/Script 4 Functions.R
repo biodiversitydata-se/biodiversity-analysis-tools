@@ -346,7 +346,7 @@ Coord.match.trans <- function(ISO.rec, match.overlist, NameVec)
   df.coord1  <- data.frame(array(NA,dim = c(nrow(match.overlist[[1]]),7)))
   names(df.coord1) <- paste0('Trans',1:7)
   
-  for(d in 1:7) {df.coord1[,d] <- match.overlist[[d]][,NameVec] %>% as.character}
+  for(d in 1:7) {df.coord1[,d] <- match.overlist[[d]][,NameVec] |> as.character}
   match.trans <- rep(NA,nrow(df.coord1))
   
   for(i in 1:nrow(df.coord1))
@@ -404,7 +404,7 @@ name2iso <- function(name,df.code)
   parse.name <- parse_country(name, to = "iso2c", how = c("regex", "google", "dstk"),
                               language = c("en", "de"), factor = is.factor(x))
   name.loop <- name[which(is.na(parse.name))]
-  name2     <- name.loop %>% str_replace_all(pattern = '[:,.?!@;]$',replacement = "") %>% str_replace_all(pattern = '^[:,.?!@;]',replacement = "")
+  name2     <- name.loop |> str_replace_all(pattern = '[:,.?!@;]$',replacement = "") |> str_replace_all(pattern = '^[:,.?!@;]',replacement = "")
   
   
   for(j in 1:length(name.loop))

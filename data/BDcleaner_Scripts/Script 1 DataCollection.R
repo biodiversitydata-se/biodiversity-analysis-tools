@@ -27,9 +27,9 @@ library(magrittr)
 df.spe <- fread('YourPath/global_tree_search_trees_1_2.csv',header = T)[,1:2]
 
 # Spilit the taxonname into genus name and specific epithet
-pro1 <- df.spe$`Taxon name`  %>% 
-  str_trim %>% str_split(pattern = " ") %>% 
-  unlist %>% matrix(ncol=2,byrow = T) %>% as.data.frame
+pro1 <- df.spe$`Taxon name`  |> 
+  str_trim |> str_split(pattern = " ") |> 
+  unlist |> matrix(ncol=2,byrow = T) |> as.data.frame
 
 # Add genus and species name into this dataframe
 df.spe[,c('Genus','Species')] <- pro1
@@ -335,7 +335,7 @@ row.out2 <- which(gbif.pro$acceptedNameUsageID %in% use.id)
 
 gbif.list <- list()
 gbif.spe.name <- tolower(str_trim(attain.latin(gbif.pro$scientificName)))
-tree.latin    <- df.spe$SciName %>% tolower
+tree.latin    <- df.spe$SciName |> tolower
 
 for(i in 1:nrow(df.spe))
 {
@@ -361,7 +361,7 @@ list.taxon.tro  <- lapply(list.taxon.tro, tolower)
 
 list.bind <- list()
 
-name.df <- df.spe$SciName %>% tolower
+name.df <- df.spe$SciName |> tolower
 
 for(i in 1:nrow(df.spe))
 {

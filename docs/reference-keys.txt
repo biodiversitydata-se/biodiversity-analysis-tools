@@ -1,7 +1,7 @@
-tab:unnamed-chunk-5
-tab:unnamed-chunk-32
-tab:unnamed-chunk-33
-tab:unnamed-chunk-39
+tab:georef
+tab:wide
+tab:long
+tab:unnamed-chunk-11
 introduction
 the-importance-of-questions-and-sources-of-data
 questions
@@ -47,3 +47,11 @@ numbers-equivalents
 example-of-analysis-of-diversity
 event-data
 occurence-data
+nils-example-1
+nils-apis-query-data-via-urls
+all-data-from-endpoint-klasser
+extrahera-metadata-från-apiet-habitat
+combine-data-from-different-tables
+nils-example-2
+sdm-1
+diversity-1

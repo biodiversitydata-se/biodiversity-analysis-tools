@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 6 Essential Biodiversity Variables |     A general workflow for analysis of primary biodiversity data</title>
+  <title>Chapter 7 NILS example 1 |     A general workflow for analysis of primary biodiversity data</title>
   <meta name="description" content="  A general workflow for analysis of primary biodiversity data" />
   <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 6 Essential Biodiversity Variables |     A general workflow for analysis of primary biodiversity data" />
+  <meta property="og:title" content="Chapter 7 NILS example 1 |     A general workflow for analysis of primary biodiversity data" />
   <meta property="og:type" content="book" />
   <meta property="og:image" content="https://biodiversitydata-se.github.io/biodiversity-analysis-tools/images/sbdi-logo-orginal-large.png" />
   
   <meta name="github-repo" content="biodiversitydata-se/biodiversity-analysis-tools" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 6 Essential Biodiversity Variables |     A general workflow for analysis of primary biodiversity data" />
+  <meta name="twitter:title" content="Chapter 7 NILS example 1 |     A general workflow for analysis of primary biodiversity data" />
   
   
   <meta name="twitter:image" content="https://biodiversitydata-se.github.io/biodiversity-analysis-tools/images/sbdi-logo-orginal-large.png" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="images/favicon_io/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="data-exploration-and-transformation.html"/>
-<link rel="next" href="nils-example-1.html"/>
+<link rel="prev" href="essential-biodiversity-variables.html"/>
+<link rel="next" href="nils-example-2.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -258,517 +258,108 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="essential-biodiversity-variables" class="section level1 hasAnchor" number="6">
-<h1><span class="header-section-number">Chapter 6</span> Essential Biodiversity Variables<a href="essential-biodiversity-variables.html#essential-biodiversity-variables" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="sdm" class="section level2 hasAnchor" number="6.1">
-<h2><span class="header-section-number">6.1</span> SDM<a href="essential-biodiversity-variables.html#sdm" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><a href="https://rspatial.org/raster/sdm/index.html">rspatial</a></p>
+<div id="nils-example-1" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Chapter 7</span> NILS example 1<a href="nils-example-1.html#nils-example-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="nils-example-1.html#cb23-1" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
+<span id="cb23-2"><a href="nils-example-1.html#cb23-2" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb23-3"><a href="nils-example-1.html#cb23-3" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb23-4"><a href="nils-example-1.html#cb23-4" tabindex="-1"></a><span class="fu">library</span>(conflicted)</span>
+<span id="cb23-5"><a href="nils-example-1.html#cb23-5" tabindex="-1"></a><span class="fu">conflicts_prefer</span>( dplyr<span class="sc">::</span>select, dplyr<span class="sc">::</span>filter)</span>
+<span id="cb23-6"><a href="nils-example-1.html#cb23-6" tabindex="-1"></a><span class="co"># library(leaflet)</span></span>
+<span id="cb23-7"><a href="nils-example-1.html#cb23-7" tabindex="-1"></a><span class="co"># library(rgdal)</span></span>
+<span id="cb23-8"><a href="nils-example-1.html#cb23-8" tabindex="-1"></a><span class="fu">library</span>(glue)</span>
+<span id="cb23-9"><a href="nils-example-1.html#cb23-9" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
+<div id="nils-apis-query-data-via-urls" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> NILS APIs: query data via urls<a href="nils-example-1.html#nils-apis-query-data-via-urls" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><a href="https://landskap.slu.se/api/nils/index.html">Swagger description of NILS apis</a></p>
+<div id="all-data-from-endpoint-klasser" class="section level3 hasAnchor" number="7.1.1">
+<h3><span class="header-section-number">7.1.1</span> All data from endpoint ‘Klasser’<a href="nils-example-1.html#all-data-from-endpoint-klasser" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><a href="https://landskap.slu.se/api/nils/api/" class="uri">https://landskap.slu.se/api/nils/api/</a></p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="nils-example-1.html#cb24-1" tabindex="-1"></a>urlApi <span class="ot">&lt;-</span> <span class="st">&#39;https://landskap.slu.se/api/nils/api/&#39;</span></span>
+<span id="cb24-2"><a href="nils-example-1.html#cb24-2" tabindex="-1"></a>endpoint <span class="ot">&lt;-</span> <span class="st">&#39;Klasser&#39;</span></span>
+<span id="cb24-3"><a href="nils-example-1.html#cb24-3" tabindex="-1"></a>klasserUrl <span class="ot">&lt;-</span> <span class="fu">url</span>(<span class="fu">glue</span>(<span class="st">&#39;{urlApi}{endpoint}&#39;</span>))</span>
+<span id="cb24-4"><a href="nils-example-1.html#cb24-4" tabindex="-1"></a>klasserGet <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(klasserUrl)</span>
+<span id="cb24-5"><a href="nils-example-1.html#cb24-5" tabindex="-1"></a>klasser <span class="ot">&lt;-</span> klasserGet<span class="sc">$</span>data</span></code></pre></div>
 </div>
-<div id="diversity" class="section level2 hasAnchor" number="6.2">
-<h2><span class="header-section-number">6.2</span> Diversity<a href="essential-biodiversity-variables.html#diversity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Biological diversity analyses typically use multivariate techniques to assess variation in data sets comprising sampling events and cases. A sampling event can be across time and space. In biodiversity analysis three cases are the most common:</p>
-<ul>
-<li><p>Taxonomic diversity (species);</p></li>
-<li><p>Functional diversity (biological form); and</p></li>
-<li><p>Genetic diversity (allellic frequency, phylogeny etc).</p></li>
-</ul>
-<p>Variation in these three dimensions can be directly compared both within and between these different dimensions of biological diversity.</p>
-<div id="types-of-analyses---patitioning-alpha-beta-gamma-etc.-diversity" class="section level3 hasAnchor" number="6.2.1">
-<h3><span class="header-section-number">6.2.1</span> Types of analyses - Patitioning <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span>, <span class="math inline">\(\gamma\)</span> <em>etc.</em> diversity<a href="essential-biodiversity-variables.html#types-of-analyses---patitioning-alpha-beta-gamma-etc.-diversity" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Two forms of diversity analyses are currently widely used; classic diversity measures (eg. species richness, Shannons diversity index <em>etc.</em>) and <em>numbers equivalents</em> representation of the underlying diversity distribution. This second form was first introduced in Hill <span class="citation">(<a href="#ref-hill_diversity_1973">1973</a>)</span> and a number of resources are now available for computing both forms. See the forum piece <em>Forum: Partitioning diversity</em> in Ecology <span class="citation">(<a href="#ref-ellison_partitioning_2010">2010</a>)</span> for a fuller discussion on the use of <em>numbers equivalents</em>.</p>
-<p>Both types of diversity partitioning are used for all types of analyses and we present resources which are available for both forms:
-- Resources for classic diversity measures
-- Resources for <em>numbers equivalents</em>.</p>
+<div id="extrahera-metadata-från-apiet-habitat" class="section level3 hasAnchor" number="7.1.2">
+<h3><span class="header-section-number">7.1.2</span> Extrahera metadata från apiet habitat<a href="nils-example-1.html#extrahera-metadata-från-apiet-habitat" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>HabitatMetaUrl&lt;-
+url(‘<a href="https://landskap.slu.se/api/nils/api/HabitatKlasser/variablesMetadata" class="uri">https://landskap.slu.se/api/nils/api/HabitatKlasser/variablesMetadata</a>’)
+habitatMetaGet &lt;- fromJSON(HabitatMetaUrl) habitatMeta &lt;- habitatMetaGet$data</p>
 </div>
-<div id="data-form" class="section level3 hasAnchor" number="6.2.2">
-<h3><span class="header-section-number">6.2.2</span> Data form<a href="essential-biodiversity-variables.html#data-form" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Within the R environment both methods require data to be in the <strong>wide format</strong>. See [link to page explaining shift from long to wide].</p>
-<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
-<caption>
-<span id="tab:unnamed-chunk-11">Table 6.1: </span>Example of wide format
-</caption>
-<thead>
-<tr>
-<th style="text-align:left;">
-</th>
-<th style="text-align:right;">
-class_1
-</th>
-<th style="text-align:right;">
-class_2
-</th>
-<th style="text-align:right;">
-class_3
-</th>
-<th style="text-align:right;">
-class_4
-</th>
-<th style="text-align:right;">
-class_5
-</th>
-<th style="text-align:right;">
-class_6
-</th>
-<th style="text-align:right;">
-class_7
-</th>
-<th style="text-align:right;">
-class_8
-</th>
-<th style="text-align:right;">
-class_9
-</th>
-<th style="text-align:right;">
-class_10
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-Site_1
-</td>
-<td style="text-align:right;">
-68
-</td>
-<td style="text-align:right;">
-97
-</td>
-<td style="text-align:right;">
-89
-</td>
-<td style="text-align:right;">
-74
-</td>
-<td style="text-align:right;">
-44
-</td>
-<td style="text-align:right;">
-2
-</td>
-<td style="text-align:right;">
-81
-</td>
-<td style="text-align:right;">
-13
-</td>
-<td style="text-align:right;">
-73
-</td>
-<td style="text-align:right;">
-93
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Site_2
-</td>
-<td style="text-align:right;">
-39
-</td>
-<td style="text-align:right;">
-85
-</td>
-<td style="text-align:right;">
-37
-</td>
-<td style="text-align:right;">
-42
-</td>
-<td style="text-align:right;">
-25
-</td>
-<td style="text-align:right;">
-45
-</td>
-<td style="text-align:right;">
-100
-</td>
-<td style="text-align:right;">
-22
-</td>
-<td style="text-align:right;">
-87
-</td>
-<td style="text-align:right;">
-34
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Site_3
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-21
-</td>
-<td style="text-align:right;">
-34
-</td>
-<td style="text-align:right;">
-38
-</td>
-<td style="text-align:right;">
-70
-</td>
-<td style="text-align:right;">
-18
-</td>
-<td style="text-align:right;">
-13
-</td>
-<td style="text-align:right;">
-93
-</td>
-<td style="text-align:right;">
-83
-</td>
-<td style="text-align:right;">
-10
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Site_4
-</td>
-<td style="text-align:right;">
-34
-</td>
-<td style="text-align:right;">
-54
-</td>
-<td style="text-align:right;">
-89
-</td>
-<td style="text-align:right;">
-20
-</td>
-<td style="text-align:right;">
-39
-</td>
-<td style="text-align:right;">
-22
-</td>
-<td style="text-align:right;">
-40
-</td>
-<td style="text-align:right;">
-28
-</td>
-<td style="text-align:right;">
-90
-</td>
-<td style="text-align:right;">
-1
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Site_5
-</td>
-<td style="text-align:right;">
-87
-</td>
-<td style="text-align:right;">
-74
-</td>
-<td style="text-align:right;">
-44
-</td>
-<td style="text-align:right;">
-28
-</td>
-<td style="text-align:right;">
-51
-</td>
-<td style="text-align:right;">
-78
-</td>
-<td style="text-align:right;">
-89
-</td>
-<td style="text-align:right;">
-48
-</td>
-<td style="text-align:right;">
-48
-</td>
-<td style="text-align:right;">
-43
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Site_6
-</td>
-<td style="text-align:right;">
-43
-</td>
-<td style="text-align:right;">
-7
-</td>
-<td style="text-align:right;">
-79
-</td>
-<td style="text-align:right;">
-20
-</td>
-<td style="text-align:right;">
-42
-</td>
-<td style="text-align:right;">
-65
-</td>
-<td style="text-align:right;">
-48
-</td>
-<td style="text-align:right;">
-33
-</td>
-<td style="text-align:right;">
-64
-</td>
-<td style="text-align:right;">
-59
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Site_7
-</td>
-<td style="text-align:right;">
-14
-</td>
-<td style="text-align:right;">
-73
-</td>
-<td style="text-align:right;">
-33
-</td>
-<td style="text-align:right;">
-44
-</td>
-<td style="text-align:right;">
-6
-</td>
-<td style="text-align:right;">
-70
-</td>
-<td style="text-align:right;">
-89
-</td>
-<td style="text-align:right;">
-45
-</td>
-<td style="text-align:right;">
-94
-</td>
-<td style="text-align:right;">
-26
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Site_8
-</td>
-<td style="text-align:right;">
-82
-</td>
-<td style="text-align:right;">
-79
-</td>
-<td style="text-align:right;">
-84
-</td>
-<td style="text-align:right;">
-87
-</td>
-<td style="text-align:right;">
-24
-</td>
-<td style="text-align:right;">
-87
-</td>
-<td style="text-align:right;">
-23
-</td>
-<td style="text-align:right;">
-21
-</td>
-<td style="text-align:right;">
-96
-</td>
-<td style="text-align:right;">
-15
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Site_9
-</td>
-<td style="text-align:right;">
-59
-</td>
-<td style="text-align:right;">
-85
-</td>
-<td style="text-align:right;">
-35
-</td>
-<td style="text-align:right;">
-70
-</td>
-<td style="text-align:right;">
-32
-</td>
-<td style="text-align:right;">
-70
-</td>
-<td style="text-align:right;">
-84
-</td>
-<td style="text-align:right;">
-31
-</td>
-<td style="text-align:right;">
-60
-</td>
-<td style="text-align:right;">
-58
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Site_10
-</td>
-<td style="text-align:right;">
-51
-</td>
-<td style="text-align:right;">
-37
-</td>
-<td style="text-align:right;">
-70
-</td>
-<td style="text-align:right;">
-40
-</td>
-<td style="text-align:right;">
-14
-</td>
-<td style="text-align:right;">
-75
-</td>
-<td style="text-align:right;">
-29
-</td>
-<td style="text-align:right;">
-17
-</td>
-<td style="text-align:right;">
-51
-</td>
-<td style="text-align:right;">
-29
-</td>
-</tr>
-</tbody>
-</table>
 </div>
-<div id="classic-diversity-measures" class="section level3 hasAnchor" number="6.2.3">
-<h3><span class="header-section-number">6.2.3</span> Classic diversity measures<a href="essential-biodiversity-variables.html#classic-diversity-measures" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>People have used many different indices to measure diversity. These include:</p>
+<div id="combine-data-from-different-tables" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Combine data from different tables<a href="nils-example-1.html#combine-data-from-different-tables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Example from <span class="citation">(<a href="#ref-hedenås2016">Hedenås, Christensen, and Svensson 2016</a>)</span></p>
+<div class="float">
+<img src="images/hedenas_%20fig1_map-shows-the-location-of-stratum.png" alt="The map shows the location of stratum 10 (gray), i.e., the Swedish mountain region, and the 145 systematically placed 5 × 5 km sample units (red). The 12 circular sample plots is in the center of the sample unit with a distance of 250 m between the centers of each plot and a distance of 2125 m between the centers of each plot and the edge of the 5 × 5 km2. Each plot consists of two concentric circular plots, and different variables are recorded in these plots. Canopy cover is estimated in the 20-m radius plot, and shrub cover, cover of field vegetation, and cover of the bottom layer are estimated in the 10-m radius plot. The sample plot is divided into subplots if the sample plot contains distinct areas of different types of land use or land cover etc. (Esseen et al. 2007). The figure also shows a list of the field variables used in this study sorted size of the circular sample plots" />
+<div class="figcaption">The map shows the location of stratum 10 (gray), i.e., the Swedish mountain region,
+and the 145 systematically placed 5 × 5 km sample units (red). The 12 circular sample
+plots is in the center of the sample unit with a distance of 250 m between the centers
+of each plot and a distance of 2125 m between the centers of each plot and the edge of
+the 5 × 5 km2. Each plot consists of two concentric circular plots, and different
+variables are recorded in these plots. Canopy cover is estimated in the 20-m radius
+plot, and shrub cover, cover of field vegetation, and cover of the bottom layer are
+estimated in the 10-m radius plot. The sample plot is divided into subplots if the
+sample plot contains distinct areas of different types of land use or land cover etc.
+(Esseen et al. 2007). The figure also shows a list of the field variables used in this
+study sorted size of the circular sample
+plots</div>
 </div>
-<div id="alpha-diversity" class="section level3 hasAnchor" number="6.2.4">
-<h3><span class="header-section-number">6.2.4</span> <span class="math inline">\(\alpha\)</span> diversity<a href="essential-biodiversity-variables.html#alpha-diversity" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><span class="math inline">\(\alpha\)</span> diversity refers to the diversity at a single site. There are a number of different indices to caclculate the most common are:</p>
-<ul>
-<li>Species richness;</li>
-<li>Shannon/shannon weaver index;</li>
-<li>Simpson;</li>
-<li>Inverse Simpson; and</li>
-<li>Gini Simpson</li>
-</ul>
-<p>The R libraries <strong>vegan, adiv, abdiv</strong> all provide methods to calculate these measures as well as a wealth of others. Within <strong>abdiv</strong> the funtion <em>alpha_diversity</em> lists the <span class="math inline">\(\alpha\)</span> diversity measures available within the package. Whilst not exhaustive it is a large list.</p>
-<p>There are also ways of estimating <span class="math inline">\(\alpha\)</span> diversity through rarefaction as well as modeling and visualising its different aspects in both <strong>vegan</strong> and <strong>adiv</strong>.</p>
-</div>
-<div id="beta-diversity-and-dissimilarities" class="section level3 hasAnchor" number="6.2.5">
-<h3><span class="header-section-number">6.2.5</span> <span class="math inline">\(\beta\)</span> diversity and dissimilarities<a href="essential-biodiversity-variables.html#beta-diversity-and-dissimilarities" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The <span class="math inline">\(\beta\)</span> diversity is a measure of the change in composition and/or abundance between sites. There is a long history of methods to measure this particular aspect of diversity. This has resulted in multiple indices and dissimilarities. Commonly used indices include:</p>
-<ul>
-<li>Jaccard;</li>
-<li>Sørrensen;</li>
-<li>Bray-Curtis;</li>
-<li>Hellinger distance,</li>
-<li>Chord distance</li>
-</ul>
-<p>An extensive list of <span class="math inline">\(\beta\)</span> diversities are available through the function <em>betadiver</em> in the <strong>vegan</strong> package as well as <em>beta_diversity</em> in the <strong>abdiv</strong> package.</p>
-<p>Methods for analysing <span class="math inline">\(\beta\)</span> diversity are included in the libraries <strong>betapart, vegan, adiv and ade4</strong>.</p>
-</div>
-<div id="additional-related-diversities" class="section level3 hasAnchor" number="6.2.6">
-<h3><span class="header-section-number">6.2.6</span> Additional related diversities<a href="essential-biodiversity-variables.html#additional-related-diversities" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Measures of dark diversity (those species that are absent from an ecosystem but which belong to its species pool, <span class="citation">(<a href="#ref-partel_dark_2011">Pärtel, Szava-Kovats, and Zobel 2011</a>)</span>) and <span class="math inline">\(\zeta\)</span> diversity (a measure of species pool overlap, <span class="citation">(<a href="#ref-hui_zeta_2014">Hui and McGeoch 2014</a>)</span>) have been developed. These measures are instituted in the libraries:</p>
-<ul>
-<li><strong>DarkDiv</strong> dark diversity; and</li>
-<li><strong>zetadiv</strong> zeta diversity</li>
-</ul>
-</div>
-<div id="numbers-equivalents" class="section level3 hasAnchor" number="6.2.7">
-<h3><span class="header-section-number">6.2.7</span> Numbers equivalents<a href="essential-biodiversity-variables.html#numbers-equivalents" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Numbers equivalents account for the nested heirarchies in <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span> and <span class="math inline">\(\gamma\)</span> diversity. A number of different libraries have now been developed:</p>
-<ul>
-<li>Hill numbers: <span class="citation">Hill (<a href="#ref-hill_diversity_1973">1973</a>)</span>
-<ul>
-<li><strong>adiv</strong></li>
-<li><strong>HillR</strong></li>
-<li><strong>iNext</strong></li>
-</ul></li>
-<li>Tsallis entropy: <span class="citation">Marcon and Hérault (<a href="#ref-marcon_decomposing_2015">2015</a>)</span>
-<ul>
-<li><strong>adiv</strong></li>
-<li><strong>entropart</strong></li>
-</ul></li>
-<li>Crossing point theory: <span class="citation">Patil and Taillie (<a href="#ref-patil_diversity_1982">1982</a>)</span>
-<ul>
-<li><strong>BioFTF</strong></li>
-</ul></li>
-</ul>
-</div>
-<div id="example-of-analysis-of-diversity" class="section level3 hasAnchor" number="6.2.8">
-<h3><span class="header-section-number">6.2.8</span> Example of analysis of diversity<a href="essential-biodiversity-variables.html#example-of-analysis-of-diversity" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>In this example we use the sampling event “Vegetation data from sheep grazing experiment at alpine site in Hol, Norway” available <a href="https://www.gbif.org/dataset/57d403f4-9d00-4651-8e26-1f4e81a21181">here</a>.</p>
-<p>Downloading the Darwin core archive which contains a … TO BE DONE…</p>
-<div id="event-data" class="section level4 hasAnchor" number="6.2.8.1">
-<h4><span class="header-section-number">6.2.8.1</span> Event data<a href="essential-biodiversity-variables.html#event-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-</div>
-<div id="occurence-data" class="section level4 hasAnchor" number="6.2.8.2">
-<h4><span class="header-section-number">6.2.8.2</span> Occurence data<a href="essential-biodiversity-variables.html#occurence-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Kombinera data från apiet Klasser med data från apiet Vegetationstackning<br />
+Extrahera data från 2020 från apiet Klasser som innehåller alla delytor</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="nils-example-1.html#cb25-1" tabindex="-1"></a>years <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">c</span>(<span class="dv">2003</span><span class="sc">:</span><span class="dv">2012</span>), <span class="at">collapse =</span> <span class="st">&quot;,&quot;</span>)</span>
+<span id="cb25-2"><a href="nils-example-1.html#cb25-2" tabindex="-1"></a>klasserUrl <span class="ot">&lt;-</span> <span class="fu">url</span>(<span class="fu">glue</span>(<span class="st">&#39;https://landskap.slu.se/api/nils/api/Klasser?ArIN={years}&#39;</span>)) <span class="co">#?Ar=2020</span></span>
+<span id="cb25-3"><a href="nils-example-1.html#cb25-3" tabindex="-1"></a>klasserGet <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(klasserUrl)</span>
+<span id="cb25-4"><a href="nils-example-1.html#cb25-4" tabindex="-1"></a>klasser <span class="ot">&lt;-</span> klasserGet<span class="sc">$</span>data</span>
+<span id="cb25-5"><a href="nils-example-1.html#cb25-5" tabindex="-1"></a><span class="co"># hist(klasser$ar)</span></span></code></pre></div>
+<p>Extrahera data från apiet Vegetationstackning</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="nils-example-1.html#cb26-1" tabindex="-1"></a>vegetationUrl <span class="ot">&lt;-</span> <span class="fu">url</span>(<span class="fu">glue</span>(<span class="st">&#39;https://landskap.slu.se/api/nils/api/Vegetationstackning?ArIN={years}&#39;</span>)) <span class="co">#?Ar=2020</span></span>
+<span id="cb26-2"><a href="nils-example-1.html#cb26-2" tabindex="-1"></a>vegetationGet <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(vegetationUrl)</span>
+<span id="cb26-3"><a href="nils-example-1.html#cb26-3" tabindex="-1"></a>vegetation <span class="ot">&lt;-</span> vegetationGet<span class="sc">$</span>data <span class="sc">|&gt;</span></span>
+<span id="cb26-4"><a href="nils-example-1.html#cb26-4" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(<span class="st">&quot;koordNS&quot;</span>,<span class="st">&quot;koordEW&quot;</span>,<span class="st">&quot;lan&quot;</span>,<span class="st">&quot;kommun&quot;</span>,<span class="st">&quot;bioGeoRegion&quot;</span>,<span class="st">&quot;stratum&quot;</span>)) <span class="co"># Ta bort de kolumner som finns i bägge apierna och som inte behövs för att slå samman tabellerna</span></span>
+<span id="cb26-5"><a href="nils-example-1.html#cb26-5" tabindex="-1"></a><span class="co"># names(vegetation)</span></span></code></pre></div>
+<p>Kombinera tabellerna till en gemensam tabell</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="nils-example-1.html#cb27-1" tabindex="-1"></a>klassVegetation <span class="ot">&lt;-</span> klasser  <span class="sc">|&gt;</span> </span>
+<span id="cb27-2"><a href="nils-example-1.html#cb27-2" tabindex="-1"></a>  <span class="fu">filter</span>(lan <span class="sc">!=</span> <span class="st">&quot;Utlandet&quot;</span>, </span>
+<span id="cb27-3"><a href="nils-example-1.html#cb27-3" tabindex="-1"></a>         fjalltyp <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Fjällbjörkskog&quot;</span>, <span class="st">&quot;Område ovan SKOGSgränsen&quot;</span>),</span>
+<span id="cb27-4"><a href="nils-example-1.html#cb27-4" tabindex="-1"></a>         ar <span class="sc">&lt;=</span> <span class="dv">2012</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb27-5"><a href="nils-example-1.html#cb27-5" tabindex="-1"></a>  <span class="fu">left_join</span>(vegetation, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;ar&quot;</span>,<span class="st">&quot;rutaNummer&quot;</span>, <span class="st">&quot;provytaNummer&quot;</span>,<span class="st">&quot;delytaNummer&quot;</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb27-6"><a href="nils-example-1.html#cb27-6" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">survPer =</span> <span class="fu">ifelse</span>(ar <span class="sc">&lt;</span> <span class="dv">2007</span>, <span class="st">&quot;2003-2007&quot;</span>, <span class="st">&quot;2008-2012&quot;</span>))</span>
+<span id="cb27-7"><a href="nils-example-1.html#cb27-7" tabindex="-1"></a></span>
+<span id="cb27-8"><a href="nils-example-1.html#cb27-8" tabindex="-1"></a><span class="co"># range(klassVegetation$tradTackningTotal, na.rm = TRUE)</span></span>
+<span id="cb27-9"><a href="nils-example-1.html#cb27-9" tabindex="-1"></a><span class="co"># range(klassVegetation$ar, na.rm = TRUE)</span></span>
+<span id="cb27-10"><a href="nils-example-1.html#cb27-10" tabindex="-1"></a></span>
+<span id="cb27-11"><a href="nils-example-1.html#cb27-11" tabindex="-1"></a>klassVegetationPL <span class="ot">&lt;-</span> klassVegetation <span class="sc">|&gt;</span> </span>
+<span id="cb27-12"><a href="nils-example-1.html#cb27-12" tabindex="-1"></a>  <span class="fu">select</span>(fjalltyp, survPer, tradTackningTotal, buskTackningTotal, faltskiktTackningTotal) <span class="sc">|&gt;</span> </span>
+<span id="cb27-13"><a href="nils-example-1.html#cb27-13" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="sc">!</span><span class="fu">c</span>(fjalltyp, survPer), <span class="at">names_to =</span> <span class="st">&quot;layer&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;cover&quot;</span>)</span>
+<span id="cb27-14"><a href="nils-example-1.html#cb27-14" tabindex="-1"></a></span>
+<span id="cb27-15"><a href="nils-example-1.html#cb27-15" tabindex="-1"></a>kvSumm <span class="ot">&lt;-</span> klassVegetationPL <span class="sc">|&gt;</span> </span>
+<span id="cb27-16"><a href="nils-example-1.html#cb27-16" tabindex="-1"></a>  <span class="fu">group_by</span>(fjalltyp, survPer, layer) <span class="sc">|&gt;</span> </span>
+<span id="cb27-17"><a href="nils-example-1.html#cb27-17" tabindex="-1"></a>  <span class="fu">summarise_at</span>(<span class="at">.vars =</span> <span class="fu">vars</span>(cover), </span>
+<span id="cb27-18"><a href="nils-example-1.html#cb27-18" tabindex="-1"></a>               <span class="at">.funs =</span> <span class="fu">list</span>(<span class="at">mean =</span> <span class="sc">~</span><span class="fu">mean</span>(., <span class="at">na.rm =</span> <span class="cn">TRUE</span>), </span>
+<span id="cb27-19"><a href="nils-example-1.html#cb27-19" tabindex="-1"></a>                            <span class="at">sd =</span> <span class="sc">~</span><span class="fu">sd</span>(., <span class="at">na.rm =</span> <span class="cn">TRUE</span>)),</span>
+<span id="cb27-20"><a href="nils-example-1.html#cb27-20" tabindex="-1"></a>               <span class="at">.grups =</span> <span class="st">&quot;drop&quot;</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb27-21"><a href="nils-example-1.html#cb27-21" tabindex="-1"></a>  <span class="fu">mutate_at</span>(<span class="fu">vars</span>(fjalltyp, survPer, layer), <span class="fu">list</span>(factor)) <span class="sc">|&gt;</span> </span>
+<span id="cb27-22"><a href="nils-example-1.html#cb27-22" tabindex="-1"></a>  <span class="fu">as.data.frame</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="nils-example-1.html#cb28-1" tabindex="-1"></a><span class="fu">ggplot</span>(kvSumm, <span class="fu">aes</span>(<span class="at">x =</span> layer, <span class="at">y =</span> mean, <span class="at">color =</span> survPer)) <span class="sc">+</span></span>
+<span id="cb28-2"><a href="nils-example-1.html#cb28-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="fl">0.2</span>)) <span class="sc">+</span></span>
+<span id="cb28-3"><a href="nils-example-1.html#cb28-3" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mean <span class="sc">-</span> sd, </span>
+<span id="cb28-4"><a href="nils-example-1.html#cb28-4" tabindex="-1"></a>                    <span class="at">ymax =</span> mean <span class="sc">+</span> sd), </span>
+<span id="cb28-5"><a href="nils-example-1.html#cb28-5" tabindex="-1"></a>                <span class="at">width =</span> .<span class="dv">1</span>, </span>
+<span id="cb28-6"><a href="nils-example-1.html#cb28-6" tabindex="-1"></a>                <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="fl">0.2</span>)) <span class="sc">+</span> </span>
+<span id="cb28-7"><a href="nils-example-1.html#cb28-7" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(fjalltyp), <span class="at">labeller =</span> <span class="fu">as_labeller</span>(<span class="fu">c</span>(<span class="st">&quot;Fjällbjörkskog&quot;</span> <span class="ot">=</span> <span class="st">&quot;Mountain birch forest&quot;</span>, </span>
+<span id="cb28-8"><a href="nils-example-1.html#cb28-8" tabindex="-1"></a>                                                      <span class="st">&quot;Område ovan SKOGSgränsen&quot;</span> <span class="ot">=</span> <span class="st">&quot;Alpine&quot;</span>))) <span class="sc">+</span></span>
+<span id="cb28-9"><a href="nils-example-1.html#cb28-9" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;Total cover (%)&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Layer&quot;</span>, <span class="at">color =</span> <span class="st">&quot;Sample period&quot;</span>) <span class="sc">+</span></span>
+<span id="cb28-10"><a href="nils-example-1.html#cb28-10" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Shrub&quot;</span>, <span class="st">&quot;Field&quot;</span>, <span class="st">&quot;Tree&quot;</span>))</span></code></pre></div>
+<p><img src="biodiversity-analysis-tools_files/figure-html/plot-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
 
-</div>
-</div>
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-ellison_partitioning_2010" class="csl-entry">
-Ellison, Aaron M. 2010. <span>“Partitioning Diversity1.”</span> <em>Ecology</em> 91 (7): 1962–63. https://doi.org/<a href="https://doi.org/10.1890/09-1692.1">https://doi.org/10.1890/09-1692.1</a>.
-</div>
-<div id="ref-hill_diversity_1973" class="csl-entry">
-Hill, M. O. 1973. <span>“Diversity and <span>Evenness</span>: <span>A</span> <span>Unifying</span> <span>Notation</span> and <span>Its</span> <span>Consequences</span>.”</span> <em>Ecology</em> 54 (2): 427–32. <a href="https://doi.org/10.2307/1934352">https://doi.org/10.2307/1934352</a>.
-</div>
-<div id="ref-hui_zeta_2014" class="csl-entry">
-Hui, Cang, and Melodie A. McGeoch. 2014. <span>“Zeta <span>Diversity</span> as a <span>Concept</span> and <span>Metric</span> <span>That</span> <span>Unifies</span> <span>Incidence</span>-<span>Based</span> <span>Biodiversity</span> <span>Patterns</span>.”</span> <em>The American Naturalist</em> 184 (5): 684–94. <a href="https://doi.org/10.1086/678125">https://doi.org/10.1086/678125</a>.
-</div>
-<div id="ref-marcon_decomposing_2015" class="csl-entry">
-Marcon, Eric, and Bruno Hérault. 2015. <span>“Decomposing Phylodiversity.”</span> <em>Methods in Ecology and Evolution</em> 6 (3): 333–39. https://doi.org/<a href="https://doi.org/10.1111/2041-210X.12323">https://doi.org/10.1111/2041-210X.12323</a>.
-</div>
-<div id="ref-partel_dark_2011" class="csl-entry">
-Pärtel, Meelis, Robert Szava-Kovats, and Martin Zobel. 2011. <span>“Dark Diversity: Shedding Light on Absent Species.”</span> <em>Trends in Ecology &amp; Evolution</em> 26 (3): 124–28. <a href="https://doi.org/10.1016/j.tree.2010.12.004">https://doi.org/10.1016/j.tree.2010.12.004</a>.
-</div>
-<div id="ref-patil_diversity_1982" class="csl-entry">
-Patil, G. P., and C. Taillie. 1982. <span>“Diversity as a <span>Concept</span> and Its <span>Measurement</span>.”</span> <em>Journal of the American Statistical Association</em> 77 (379): 548–61. <a href="https://doi.org/10.1080/01621459.1982.10477845">https://doi.org/10.1080/01621459.1982.10477845</a>.
+<div id="ref-hedenås2016" class="csl-entry">
+Hedenås, Henrik, Pernilla Christensen, and Johan Svensson. 2016. <span>“Changes in Vegetation Cover and Composition in the Swedish Mountain Region.”</span> <em>Environmental Monitoring and Assessment</em> 188 (8): 452. <a href="https://doi.org/10.1007/s10661-016-5457-2">https://doi.org/10.1007/s10661-016-5457-2</a>.
 </div>
 </div>
             </section>
@@ -776,8 +367,8 @@ Patil, G. P., and C. Taillie. 1982. <span>“Diversity as a <span>Concept</span>
           </div>
         </div>
       </div>
-<a href="data-exploration-and-transformation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="nils-example-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="essential-biodiversity-variables.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="nils-example-2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

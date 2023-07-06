@@ -6,12 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 5 Data Exploration and Transformation |     A general workflow for analysis of primary biodiversity data</title>
   <meta name="description" content="  A general workflow for analysis of primary biodiversity data" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 5 Data Exploration and Transformation |     A general workflow for analysis of primary biodiversity data" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="https://biodiversitydata-se.github.io/biodiversity-analysis-tools/" />
-  <meta property="og:image" content="https://biodiversitydata-se.github.io/biodiversity-analysis-tools//images/sbdi-logo-orginal-large.png" />
+  <meta property="og:image" content="https://biodiversitydata-se.github.io/biodiversity-analysis-tools/images/sbdi-logo-orginal-large.png" />
   
   <meta name="github-repo" content="biodiversitydata-se/biodiversity-analysis-tools" />
 
@@ -19,12 +18,12 @@
   <meta name="twitter:title" content="Chapter 5 Data Exploration and Transformation |     A general workflow for analysis of primary biodiversity data" />
   
   
-  <meta name="twitter:image" content="https://biodiversitydata-se.github.io/biodiversity-analysis-tools//images/sbdi-logo-orginal-large.png" />
+  <meta name="twitter:image" content="https://biodiversitydata-se.github.io/biodiversity-analysis-tools/images/sbdi-logo-orginal-large.png" />
 
 <meta name="author" content="Debora Arlt, Alejandro Ruete and Charles Campbell  for the Swedish Biodiversity Data Infrastructure" />
 
 
-<meta name="date" content="2021-06-04" />
+<meta name="date" content="2023-07-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +32,8 @@
   <link rel="shortcut icon" href="images/favicon_io/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="fitness-for-use.html"/>
 <link rel="next" href="essential-biodiversity-variables.html"/>
-<script src="libs/header-attrs-2.8/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,9 +49,9 @@
 
 
 
-
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
@@ -63,6 +62,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -94,11 +94,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ef2929; } /* Alert */
 code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #c4a000; } /* Attribute */
+code span.at { color: #204a87; } /* Attribute */
 code span.bn { color: #0000cf; } /* BaseN */
 code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4e9a06; } /* Char */
-code span.cn { color: #000000; } /* Constant */
+code span.cn { color: #8f5902; } /* Constant */
 code span.co { color: #8f5902; font-style: italic; } /* Comment */
 code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
 code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
@@ -107,14 +107,14 @@ code span.dv { color: #0000cf; } /* DecVal */
 code span.er { color: #a40000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #0000cf; } /* Float */
-code span.fu { color: #000000; } /* Function */
+code span.fu { color: #204a87; font-weight: bold; } /* Function */
 code span.im { } /* Import */
 code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
 code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
 code span.ot { color: #8f5902; } /* Other */
 code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
-code span.sc { color: #000000; } /* SpecialChar */
+code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
 code span.ss { color: #4e9a06; } /* SpecialString */
 code span.st { color: #4e9a06; } /* String */
 code span.va { color: #000000; } /* Variable */
@@ -122,6 +122,10 @@ code span.vs { color: #4e9a06; } /* VerbatimString */
 code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
@@ -222,6 +226,20 @@ div.csl-indent {
 <li class="chapter" data-level="6.2.8" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html#example-of-analysis-of-diversity"><i class="fa fa-check"></i><b>6.2.8</b> Example of analysis of diversity</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="7" data-path="nils-example-1.html"><a href="nils-example-1.html"><i class="fa fa-check"></i><b>7</b> NILS example 1</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="nils-example-1.html"><a href="nils-example-1.html#nils-apis-query-data-via-urls"><i class="fa fa-check"></i><b>7.1</b> NILS APIs: query data via urls</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="nils-example-1.html"><a href="nils-example-1.html#all-data-from-endpoint-klasser"><i class="fa fa-check"></i><b>7.1.1</b> All data from endpoint ‘Klasser’</a></li>
+<li class="chapter" data-level="7.1.2" data-path="nils-example-1.html"><a href="nils-example-1.html#extrahera-metadata-från-apiet-habitat"><i class="fa fa-check"></i><b>7.1.2</b> Extrahera metadata från apiet habitat</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="nils-example-1.html"><a href="nils-example-1.html#combine-data-from-different-tables"><i class="fa fa-check"></i><b>7.2</b> Combine data from different tables</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="nils-example-2.html"><a href="nils-example-2.html"><i class="fa fa-check"></i><b>8</b> NILS example 2</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="nils-example-2.html"><a href="nils-example-2.html#sdm-1"><i class="fa fa-check"></i><b>8.1</b> SDM</a></li>
+<li class="chapter" data-level="8.2" data-path="nils-example-2.html"><a href="nils-example-2.html#diversity-1"><i class="fa fa-check"></i><b>8.2</b> Diversity</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
 
@@ -240,15 +258,15 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="data-exploration-and-transformation" class="section level1" number="5">
-<h1><span class="header-section-number">Chapter 5</span> Data Exploration and Transformation</h1>
+<div id="data-exploration-and-transformation" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Data Exploration and Transformation<a href="data-exploration-and-transformation.html#data-exploration-and-transformation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>There are many different ways of arranging data, especially within the R environment. Two of the most frequently used are the <strong>wide</strong> and <strong>long</strong> formats. Here we show what the wide and long formats are and ways to move between the two.</p>
-<div id="wide" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> Wide</h2>
+<div id="wide" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Wide<a href="data-exploration-and-transformation.html#wide" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 Wide format is where each row represents a data point and each column an attribute of that data point. In the example below each data point is a site, and each column is a species percentage cover.
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:unnamed-chunk-32">Table 5.1: </span>Example of wide format
+<span id="tab:wide">Table 5.1: </span>Example of wide format
 </caption>
 <thead>
 <tr>
@@ -376,12 +394,12 @@ Site_5
 </tbody>
 </table>
 </div>
-<div id="long" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> Long</h2>
+<div id="long" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Long<a href="data-exploration-and-transformation.html#long" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Long format is where each row has a value of an attribute of the data point. Each row in the example below records what the value of a species is at a particular site.</p>
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:unnamed-chunk-33">Table 5.2: </span>Example of long format
+<span id="tab:long">Table 5.2: </span>Example of long format
 </caption>
 <thead>
 <tr>
@@ -467,39 +485,33 @@ Species2
 </table>
 <p>There are a number of ways of moving between the two:</p>
 </div>
-<div id="wide-to-long" class="section level2" number="5.3">
-<h2><span class="header-section-number">5.3</span> Wide to long</h2>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="data-exploration-and-transformation.html#cb19-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-2"><a href="data-exploration-and-transformation.html#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reshape2)</span>
-<span id="cb19-3"><a href="data-exploration-and-transformation.html#cb19-3" aria-hidden="true" tabindex="-1"></a>df_long <span class="ot">&lt;-</span> <span class="fu">melt</span>(<span class="at">data =</span> df_wide,</span>
-<span id="cb19-4"><a href="data-exploration-and-transformation.html#cb19-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">variable.name =</span> <span class="st">&quot;Species&quot;</span>,</span>
-<span id="cb19-5"><a href="data-exploration-and-transformation.html#cb19-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">value.name =</span> <span class="st">&quot;cover&quot;</span>)</span>
-<span id="cb19-6"><a href="data-exploration-and-transformation.html#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-7"><a href="data-exploration-and-transformation.html#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb19-8"><a href="data-exploration-and-transformation.html#cb19-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-9"><a href="data-exploration-and-transformation.html#cb19-9" aria-hidden="true" tabindex="-1"></a>df_long <span class="ot">&lt;-</span> df_wide <span class="sc">%&gt;%</span></span>
-<span id="cb19-10"><a href="data-exploration-and-transformation.html#cb19-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather</span>(<span class="at">key =</span> Species,</span>
-<span id="cb19-11"><a href="data-exploration-and-transformation.html#cb19-11" aria-hidden="true" tabindex="-1"></a>         <span class="at">value =</span> cover,</span>
-<span id="cb19-12"><a href="data-exploration-and-transformation.html#cb19-12" aria-hidden="true" tabindex="-1"></a>         Species1<span class="sc">:</span>Species5,  <span class="co"># vector of columns to gather</span></span>
-<span id="cb19-13"><a href="data-exploration-and-transformation.html#cb19-13" aria-hidden="true" tabindex="-1"></a>         <span class="at">factor_key =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div id="wide-to-long" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Wide to long<a href="data-exploration-and-transformation.html#wide-to-long" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="data-exploration-and-transformation.html#cb19-1" tabindex="-1"></a></span>
+<span id="cb19-2"><a href="data-exploration-and-transformation.html#cb19-2" tabindex="-1"></a><span class="co"># library(reshape2)</span></span>
+<span id="cb19-3"><a href="data-exploration-and-transformation.html#cb19-3" tabindex="-1"></a>df_long <span class="ot">&lt;-</span> <span class="fu">melt</span>(<span class="at">data =</span> df_wide,</span>
+<span id="cb19-4"><a href="data-exploration-and-transformation.html#cb19-4" tabindex="-1"></a>             <span class="at">variable.name =</span> <span class="st">&quot;Species&quot;</span>,</span>
+<span id="cb19-5"><a href="data-exploration-and-transformation.html#cb19-5" tabindex="-1"></a>             <span class="at">value.name =</span> <span class="st">&quot;cover&quot;</span>)</span>
+<span id="cb19-6"><a href="data-exploration-and-transformation.html#cb19-6" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="data-exploration-and-transformation.html#cb19-7" tabindex="-1"></a>df_long <span class="ot">&lt;-</span> df_wide <span class="sc">|&gt;</span></span>
+<span id="cb19-8"><a href="data-exploration-and-transformation.html#cb19-8" tabindex="-1"></a>  <span class="fu">gather</span>(<span class="at">key =</span> Species,</span>
+<span id="cb19-9"><a href="data-exploration-and-transformation.html#cb19-9" tabindex="-1"></a>         <span class="at">value =</span> cover,</span>
+<span id="cb19-10"><a href="data-exploration-and-transformation.html#cb19-10" tabindex="-1"></a>         Species1<span class="sc">:</span>Species5,  <span class="co"># vector of columns to gather</span></span>
+<span id="cb19-11"><a href="data-exploration-and-transformation.html#cb19-11" tabindex="-1"></a>         <span class="at">factor_key =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 </div>
-<div id="long-to-wide" class="section level2" number="5.4">
-<h2><span class="header-section-number">5.4</span> Long to Wide</h2>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="data-exploration-and-transformation.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reshape2)</span>
-<span id="cb20-2"><a href="data-exploration-and-transformation.html#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-3"><a href="data-exploration-and-transformation.html#cb20-3" aria-hidden="true" tabindex="-1"></a>df_wide <span class="ot">&lt;-</span> <span class="fu">dcast</span>(<span class="at">data =</span> df_long,</span>
-<span id="cb20-4"><a href="data-exploration-and-transformation.html#cb20-4" aria-hidden="true" tabindex="-1"></a>                 Site <span class="sc">~</span> Species, </span>
-<span id="cb20-5"><a href="data-exploration-and-transformation.html#cb20-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">value.var =</span> <span class="st">&quot;cover&quot;</span>)</span>
-<span id="cb20-6"><a href="data-exploration-and-transformation.html#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-7"><a href="data-exploration-and-transformation.html#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb20-8"><a href="data-exploration-and-transformation.html#cb20-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-9"><a href="data-exploration-and-transformation.html#cb20-9" aria-hidden="true" tabindex="-1"></a>df_wide <span class="ot">&lt;-</span> df_long <span class="sc">%&gt;%</span></span>
-<span id="cb20-10"><a href="data-exploration-and-transformation.html#cb20-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">spread</span>(<span class="at">key =</span> Species,</span>
-<span id="cb20-11"><a href="data-exploration-and-transformation.html#cb20-11" aria-hidden="true" tabindex="-1"></a>         <span class="at">value =</span> cover,</span>
-<span id="cb20-12"><a href="data-exploration-and-transformation.html#cb20-12" aria-hidden="true" tabindex="-1"></a>         <span class="at">fill =</span> <span class="dv">0</span>)</span></code></pre></div>
+<div id="long-to-wide" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> Long to Wide<a href="data-exploration-and-transformation.html#long-to-wide" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="data-exploration-and-transformation.html#cb20-1" tabindex="-1"></a>df_wide <span class="ot">&lt;-</span> <span class="fu">dcast</span>(<span class="at">data =</span> df_long,</span>
+<span id="cb20-2"><a href="data-exploration-and-transformation.html#cb20-2" tabindex="-1"></a>                 Site <span class="sc">~</span> Species, </span>
+<span id="cb20-3"><a href="data-exploration-and-transformation.html#cb20-3" tabindex="-1"></a>                 <span class="at">value.var =</span> <span class="st">&quot;cover&quot;</span>)</span>
+<span id="cb20-4"><a href="data-exploration-and-transformation.html#cb20-4" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="data-exploration-and-transformation.html#cb20-5" tabindex="-1"></a>df_wide <span class="ot">&lt;-</span> df_long <span class="sc">|&gt;</span></span>
+<span id="cb20-6"><a href="data-exploration-and-transformation.html#cb20-6" tabindex="-1"></a>  <span class="fu">spread</span>(<span class="at">key =</span> Species,</span>
+<span id="cb20-7"><a href="data-exploration-and-transformation.html#cb20-7" tabindex="-1"></a>         <span class="at">value =</span> cover,</span>
+<span id="cb20-8"><a href="data-exploration-and-transformation.html#cb20-8" tabindex="-1"></a>         <span class="at">fill =</span> <span class="dv">0</span>)</span></code></pre></div>
 </div>
-<div id="spatial-data" class="section level2" number="5.5">
-<h2><span class="header-section-number">5.5</span> Spatial data</h2>
+<div id="spatial-data" class="section level2 hasAnchor" number="5.5">
+<h2><span class="header-section-number">5.5</span> Spatial data<a href="data-exploration-and-transformation.html#spatial-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Spatial data have coordinates. IN the simplest form they are a set of points. They may be polygonal (both regular and irregular) depicting any sort of feature. They may have additional information attached to them such as a data frame. They may take the form of a grid and may be in the raster format. Very frequently they represent the land surface and as such may have coordinate reference information attached (eg. SWEREF 99 TM) There are several resources for handling such data:</p>
 <ul>
 <li><p>in R the most frequent base libraries encountered are:</p>
@@ -516,21 +528,24 @@ Species2
 </ul></li>
 </ul>
 <p>Provided are the libraries and the appropriate functions for exporting spatial data from R</p>
-<div id="spatial-vector-data" class="section level3" number="5.5.1">
-<h3><span class="header-section-number">5.5.1</span> Spatial vector data</h3>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="data-exploration-and-transformation.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb21-2"><a href="data-exploration-and-transformation.html#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write_sf</span>() <span class="co">#capable of writing multiple different file formats</span></span>
-<span id="cb21-3"><a href="data-exploration-and-transformation.html#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-4"><a href="data-exploration-and-transformation.html#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rgdal)</span>
-<span id="cb21-5"><a href="data-exploration-and-transformation.html#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="fu">writeOGR</span>() <span class="co">#capable of writing multiple different file formats</span></span>
-<span id="cb21-6"><a href="data-exploration-and-transformation.html#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-7"><a href="data-exploration-and-transformation.html#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(raster)</span>
-<span id="cb21-8"><a href="data-exploration-and-transformation.html#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="fu">shapefile</span>() <span class="co">#writes ESRI shapefiles</span></span></code></pre></div>
+<div id="spatial-vector-data" class="section level3 hasAnchor" number="5.5.1">
+<h3><span class="header-section-number">5.5.1</span> Spatial vector data<a href="data-exploration-and-transformation.html#spatial-vector-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="data-exploration-and-transformation.html#cb21-1" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb21-2"><a href="data-exploration-and-transformation.html#cb21-2" tabindex="-1"></a><span class="fu">write_sf</span>() <span class="co">#capable of writing multiple different file formats</span></span>
+<span id="cb21-3"><a href="data-exploration-and-transformation.html#cb21-3" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="data-exploration-and-transformation.html#cb21-4" tabindex="-1"></a><span class="fu">library</span>(rgdal)</span>
+<span id="cb21-5"><a href="data-exploration-and-transformation.html#cb21-5" tabindex="-1"></a><span class="fu">writeOGR</span>() <span class="co">#capable of writing multiple different file formats</span></span>
+<span id="cb21-6"><a href="data-exploration-and-transformation.html#cb21-6" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="data-exploration-and-transformation.html#cb21-7" tabindex="-1"></a><span class="fu">library</span>(raster)</span>
+<span id="cb21-8"><a href="data-exploration-and-transformation.html#cb21-8" tabindex="-1"></a><span class="fu">shapefile</span>() <span class="co">#writes ESRI shapefiles</span></span></code></pre></div>
 </div>
-<div id="raster" class="section level3" number="5.5.2">
-<h3><span class="header-section-number">5.5.2</span> Raster</h3>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="data-exploration-and-transformation.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(raster)</span>
-<span id="cb22-2"><a href="data-exploration-and-transformation.html#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">writeRaster</span>() <span class="co">#capable of writing multiple different file formats</span></span></code></pre></div>
+<div id="raster" class="section level3 hasAnchor" number="5.5.2">
+<h3><span class="header-section-number">5.5.2</span> Raster<a href="data-exploration-and-transformation.html#raster" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="data-exploration-and-transformation.html#cb22-1" tabindex="-1"></a><span class="fu">library</span>(raster)</span>
+<span id="cb22-2"><a href="data-exploration-and-transformation.html#cb22-2" tabindex="-1"></a><span class="fu">writeRaster</span>() <span class="co">#capable of writing multiple different file formats</span></span>
+<span id="cb22-3"><a href="data-exploration-and-transformation.html#cb22-3" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="data-exploration-and-transformation.html#cb22-4" tabindex="-1"></a><span class="fu">library</span>(terra)</span>
+<span id="cb22-5"><a href="data-exploration-and-transformation.html#cb22-5" tabindex="-1"></a><span class="fu">writeRaster</span>() <span class="co">#capable of writing multiple different file formats</span></span></code></pre></div>
 
 </div>
 </div>
@@ -545,7 +560,6 @@ Species2
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -585,6 +599,10 @@ gitbook.start({
 "text": null
 },
 "download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "section"
 }
@@ -598,7 +616,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

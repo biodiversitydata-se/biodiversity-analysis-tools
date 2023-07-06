@@ -31,48 +31,48 @@ for(i in 1:length(tb.countrycode))
   vec.num[x.row] <- tb.countrycode[i]
 }
 wrld_simpl@data$NumOCC <- vec.num
-writeOGR(wrld_simpl,'YourPath','YourFileName',driver="ESRI Shapefile", overwrite_layer=TRUE)
+writeOGR(wrld_simpl,'YourPath','YourFileName', driver = "ESRI Shapefile", overwrite_layer = TRUE)
 
 
-df.bio$Overland %>% table()
-df.bio$overUrbanType %>% table()
+df.bio$Overland |> table()
+df.bio$overUrbanType |> table()
 
 # Number of species and number of occurrence records in each database 
 load("YourPath/EightDatabase.RData")
 
-Name.ala <- df.ALA$scientificName %>% as.character %>% unique %>% tolower %>% attain.latin() %>% unique()
+Name.ala <- df.ALA$scientificName |> as.character |> unique |> tolower |> attain.latin() |> unique()
 num.ala  <- get.speNo(Name.ala,use.spe.list)
 nrow(df.ALA)
 
-Name.idig <- df.iDig$scientificname %>% as.character %>% unique %>% tolower %>% attain.latin() %>% unique()
+Name.idig <- df.iDig$scientificname |> as.character |> unique |> tolower |> attain.latin() |> unique()
 num.idig  <- get.speNo(Name.idig,use.spe.list)
 nrow(df.iDig)
 
-Name.rainbio <- df.rainbio$species %>% as.character %>% unique %>% tolower %>% attain.latin() %>% unique()
+Name.rainbio <- df.rainbio$species |> as.character |> unique |> tolower |> attain.latin() |> unique()
 num.rainbio  <- get.speNo(Name.rainbio,use.spe.list)
 nrow(df.rainbio)
 
-Name.biotime <- df.BioTime$spe %>% as.character %>% unique %>% tolower %>% attain.latin() %>% unique()
+Name.biotime <- df.BioTime$spe |> as.character |> unique |> tolower |> attain.latin() |> unique()
 num.biotime  <- get.speNo(Name.biotime,use.spe.list)
 nrow(df.BioTime)
 
-Name.spelink <- df.SpeLink$scientificname %>% as.character %>% unique %>% tolower %>% attain.latin() %>% unique()
+Name.spelink <- df.SpeLink$scientificname |> as.character |> unique |> tolower |> attain.latin() |> unique()
 num.spelink  <- get.speNo(Name.spelink,use.spe.list)
 nrow(df.SpeLink)
 
-Name.bison <- df.Bison$scientificName %>% as.character %>% unique %>% tolower %>% attain.latin() %>% unique()
+Name.bison <- df.Bison$scientificName |> as.character |> unique |> tolower |> attain.latin() |> unique()
 num.bison  <- get.speNo(Name.bison,use.spe.list)
 nrow(df.Bison)
 
-Name.gbif <- df.GBIF$scientificName %>% as.character %>% unique %>% tolower %>% attain.latin() %>% unique()
+Name.gbif <- df.GBIF$scientificName |> as.character |> unique |> tolower |> attain.latin() |> unique()
 num.gbif  <- get.speNo(Name.gbif,use.spe.list)
 nrow(df.GBIF)
 
-Name.bien <- df.BIEN$verbatim_scientific_name %>% as.character %>% unique %>% tolower %>% attain.latin() %>% unique()
+Name.bien <- df.BIEN$verbatim_scientific_name |> as.character |> unique |> tolower |> attain.latin() |> unique()
 num.bien  <- get.speNo(Name.bien,use.spe.list)
 nrow(df.BIEN)
 
-Name.tot  <- df.bio$verbatim_scientific_name %>% as.character %>% unique %>% tolower %>% attain.latin() %>% unique()
+Name.tot  <- df.bio$verbatim_scientific_name |> as.character |> unique |> tolower |> attain.latin() |> unique()
 num.tot   <- get.speNo(Name.tot ,use.spe.list)
 nrow(df.bio)
 
@@ -96,7 +96,7 @@ tax.mat <- c("Exact Match","LD Match_Type1","LD Match_Type2","Processing Exact")
 subuse1 <- subset(df.bio, (TaxonStatus %in% c('Accepted','Synonym')) 
                   &(TaxonConf == 3)  & (TaxonType %in% tax.mat) )
 
-Name1 <- subuse1$scientificName %>% as.character %>% unique %>% tolower %>% attain.latin() %>% unique()
+Name1 <- subuse1$scientificName |> as.character |> unique |> tolower |> attain.latin() |> unique()
 num1  <- get.speNo(Name1,use.spe.list)
 num1
 vec1[1] <- nrow(subuse1); vec2[1] <- nrow(subuse1)/nrow(df.bio)
@@ -105,7 +105,7 @@ rm(subuse1)
 # Medium level
 subuse2 <- subset(df.bio, (TaxonStatus %in% c('Accepted','Synonym')) 
                   &(TaxonConf == 2)  & (TaxonType %in% tax.mat) )
-Name2 <- subuse2$scientificName %>% as.character %>% unique %>% tolower %>% attain.latin() %>% unique()
+Name2 <- subuse2$scientificName |> as.character |> unique |> tolower |> attain.latin() |> unique()
 num2  <- get.speNo(Name2,use.spe.list)
 num2
 vec1[2] <- nrow(subuse2); vec2[2] <- nrow(subuse2)/nrow(df.bio)
@@ -114,7 +114,7 @@ rm(subuse2)
 # Low level
 subuse3 <- subset(df.bio, (TaxonStatus %in% c('Accepted','Synonym')) 
                   &(TaxonConf == 1)  & (TaxonType %in% tax.mat) )
-Name3 <- subuse3$scientificName %>% as.character %>% unique %>% tolower %>% attain.latin() %>% unique()
+Name3 <- subuse3$scientificName |> as.character |> unique |> tolower |> attain.latin() |> unique()
 num3  <- get.speNo(Name3,use.spe.list)
 num3
 vec1[3] <- nrow(subuse3); vec2[3] <- nrow(subuse3)/nrow(df.bio)
@@ -161,7 +161,7 @@ vec2 <- rep(NA,3)
 subuse1 <- subset(df.bio, (ExGeo == 1) & (GeoPrecision>=3) & (GeoNotZero == 1) 
                   & !is.na(Overland) & !is.na(CountrySame) & (is.na(FlagBGCI)) 
                   & (is.na(FlagIns)) & (is.na(FlagCent)))
-Name1 <- subuse1$scientificName %>% as.character %>% unique %>% tolower %>% attain.latin() %>% unique()
+Name1 <- subuse1$scientificName |> as.character |> unique |> tolower |> attain.latin() |> unique()
 num1  <- get.speNo(Name1,use.spe.list)
 num1
 vec1[1] <- nrow(subuse1); vec2[1] <- nrow(subuse1)/nrow(df.bio)
@@ -172,7 +172,7 @@ subuse2 <- subset(df.bio, (ExGeo == 1) & (GeoPrecision==2) & (GeoNotZero == 1)
                   & !is.na(Overland) & !is.na(CountrySame) & (is.na(FlagBGCI)) 
                   & (is.na(FlagIns)) & (is.na(FlagCent)))
 vec1[2] <- nrow(subuse2); vec2[2] <- nrow(subuse2)/nrow(df.bio)
-Name2 <- subuse2$scientificName %>% as.character %>% unique %>% tolower %>% attain.latin() %>% unique()
+Name2 <- subuse2$scientificName |> as.character |> unique |> tolower |> attain.latin() |> unique()
 num2  <- get.speNo(Name2,use.spe.list)
 num2
 rm(subuse2)
@@ -183,7 +183,7 @@ subuse3 <- subset(df.bio, (ExGeo == 1) & (GeoPrecision==1) & (GeoNotZero == 1)
                   & (is.na(FlagIns)) & (is.na(FlagCent)))
 vec1[3] <- nrow(subuse3); vec2[3] <- nrow(subuse3)/nrow(df.bio)
 
-Name3 <- subuse3$scientificName %>% as.character %>% unique %>% tolower %>% attain.latin() %>% unique()
+Name3 <- subuse3$scientificName |> as.character |> unique |> tolower |> attain.latin() |> unique()
 num3  <- get.speNo(Name3,use.spe.list)
 num3
 rm(subuse3)
@@ -204,7 +204,7 @@ subuse1 <- subset(df.bio, (ExGeo == 1) & (GeoPrecision>=3) & (TaxonStatus %in% c
                   &(TaxonConf == 3)  & ((TaxonType %in% tax.mat))
                   & (GeoNotZero == 1) & !is.na(Overland) & !is.na(CountrySame) & (is.na(FlagBGCI)) & (is.na(FlagIns)) & (is.na(FlagCent)))
 vec1[1] <- nrow(subuse1); vec2[1] <- nrow(subuse1)/nrow(df.bio)
-Name1 <- subuse1$scientificName %>% as.character %>% unique %>% tolower %>% attain.latin() %>% unique()
+Name1 <- subuse1$scientificName |> as.character |> unique |> tolower |> attain.latin() |> unique()
 num1  <- get.speNo(Name1,use.spe.list)
 num1
 rm(subuse1)
@@ -222,7 +222,7 @@ subuse2 <- rbind(subuse2.1,subuse2.2)
 rm(subuse2.1);rm(subuse2.2)
 
 vec1[2] <- nrow(subuse2); vec2[2] <- nrow(subuse2)/nrow(df.bio)
-Name2 <- subuse2$scientificName %>% as.character %>% unique %>% tolower %>% attain.latin() %>% unique()
+Name2 <- subuse2$scientificName |> as.character |> unique |> tolower |> attain.latin() |> unique()
 num2  <- get.speNo(Name2,use.spe.list)
 num2
 rm(subuse2)
@@ -240,7 +240,7 @@ subuse3 <- rbind(subuse3.1,subuse3.2)
 rm(subuse3.1);rm(subuse3.2)
 vec1[3] <- nrow(subuse3); vec2[3] <- nrow(subuse3)/nrow(df.bio)
 rm(subuse3)
-Name3 <- subuse3$scientificName %>% as.character %>% unique %>% tolower %>% attain.latin() %>% unique()
+Name3 <- subuse3$scientificName |> as.character |> unique |> tolower |> attain.latin() |> unique()
 num3  <- get.speNo(Name3,use.spe.list)
 num3
 rm(subuse3)
@@ -288,7 +288,7 @@ r2   <- setValues(r1, vals)
 use.ex.r2 <- raster::extract(r2,pro.shp)
 tb.ex     <- table(use.ex.r2)
 num.value <- rep(0,360*180)
-use.num   <- names(tb.ex) %>% as.integer()
+use.num   <- names(tb.ex) |> as.integer()
 for(i in 1:length(tb.ex)) {num.value[use.num[i]] <- tb.ex[i]}
 r3 <- setValues(r2,num.value)
 
@@ -369,7 +369,7 @@ for(j in 1:3)
   use.raster <- uselist[[j]]
   num.value.l1 <- rep(0,360*180)
   tb.l1        <- table(use.raster)
-  use.num.l1   <- names(tb.l1) %>% as.integer()
+  use.num.l1   <- names(tb.l1) |> as.integer()
   for(i in 1:length(tb.l1)) {num.value.l1[use.num.l1[i]] <- tb.l1[i]}
   
   r5 <- setValues(r2,num.value.l1)
