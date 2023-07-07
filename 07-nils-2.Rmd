@@ -1,6 +1,123 @@
-# NILS example 2
+# Query data from NILS: blueberry and mountain violet occurrence in alpine region over time
 
-## SDM 
-[rspatial](https://rspatial.org/raster/sdm/index.html)
+```{r setup7, message=FALSE, warning=FALSE}
+library(jsonlite)
+library(dplyr)
+library(tidyr)
+library(conflicted)
+conflicts_prefer( dplyr::select, dplyr::filter)
+library(glue)
+library(ggplot2)
+library(sf)
+library(httr)
+```
 
-## Diversity 
+## Query data
+
+```{r querypy}
+urlApi <- 'https://landskap.slu.se/api/nils/api/'
+endpoint <- 'SmaprovytaArter'
+species <- 'Vaccinium myrtillus' #'Viola biflora'
+species <- paste0('VetenskapligtNamn=', URLencode(species, reserved = TRUE))
+years <- paste0('Ar=',c(2003:2012), collapse = '&')
+region <- 'BioGeoRegion=Alpin'
+
+pyUrl <- url(glue('{urlApi}{endpoint}?{species}&{years}&{region}'))
+pyGet <- fromJSON(pyUrl)
+py <- pyGet$data
+
+pyUrl <- url(glue('{urlApi}{endpoint}?{years}&{region}'))
+pyGet <- fromJSON(pyUrl)
+py <- pyGet$data |> 
+  mutate(uuid = glue('{rutaNummer}-{provytaNummer}')) |> 
+  mutate_at(vars(uuid, vetenskapligtNamn), list(factor))
+
+pySpp <- py |> 
+  group_by(uuid, ar) |> 
+  reframe(coordNS = unique(koordNS),
+          coordEW = unique(koordEW),
+          presBB = ifelse("Vaccinium myrtillus" %in% vetenskapligtNamn, 1, 0),
+          presAV = ifelse("Viola biflora" %in% vetenskapligtNamn, 1, 0)) |> 
+  as.data.frame()
+``` 
+
+```{r altitude}           
+### Altitud ###
+pySf <- py |> 
+  group_by(uuid) |> 
+  reframe(coordNS = unique(koordNS),
+          coordEW = unique(koordEW)) |>  
+  rowwise() |> 
+  mutate(geom = st_sfc(list(st_point(c(coordEW, coordNS))),
+                       crs = st_crs(3006))) |> 
+  st_as_sf() |> 
+  st_transform(st_crs(4326))
+
+pySf$elevation <- NA
+
+locations <- st_coordinates(pySf) |> 
+  as.data.frame() |> 
+  rename("latitude" = Y, 
+         "longitude" = X)
+
+nLocations <- nrow(locations)
+queryLimit <- 100
+lChunks <- split(seq(nLocations), ceiling(seq(nLocations)/queryLimit))
+
+for (l in seq(length(lChunks))) {
+  loc <- locations[lChunks[[l]],] |> 
+    mutate("xy" = glue("{round(latitude,5)},{round(longitude,5)}"))
+  loc <- paste0(loc$xy, collapse = "|")  
+  elevGet <- url(glue("https://api.opentopodata.org/v1/eudem25m?locations={loc}"))
+  elevation <- fromJSON(elevGet)
+  message(elevation$status)
+  elevation <- elevation$results
+  print(range(elevation$elevation))
+  
+  pySf$elevation[lChunks[[l]]] <- elevation$elevation
+  print(l)
+}
+
+```
+
+```{r summarisePY}
+pySf
+pySf$elevationBin <- cut(pySf$elevation, breaks = c(seq(300,1000, 50),Inf),
+                         include.lowest = TRUE, right = FALSE)
+
+pySpp$yearBin <- ifelse(as.numeric(as.character(pySpp$ar)) > 2007, "2008-2012", "2003-2007")
+
+pySum <- pySpp |> 
+  left_join(st_drop_geometry(pySf)) |> 
+  group_by(yearBin, elevationBin) |> 
+  reframe(count = n(),
+          sumPresBB = sum(presBB),
+          sumPresAV = sum(presAV)) |> 
+  mutate(occBB = sumPresBB/count*100,
+         occAV = sumPresAV/count*100)
+
+```
+
+```{r plotOcc}
+elevBinLabel <- c("300-349","350-399","400-449","450-499","500-549","550-599",
+                  "600-649","650-699","700-749","750-799","800-849","850-899",
+                  "900-949","950-999",">=1000")
+#### Vaccinium myrtillus
+ggplot(pySum, aes(x = elevationBin, y = occBB, color = yearBin)) +
+  geom_point(position = position_dodge(0.1)) +
+  labs(title = 'Occurrence of blueberry (Vaccinium myrtillus) in the mountains', 
+       y = "Occrrence (%)", x = "Altitude (m.a.s.l.)", color = "Inventory lap") +
+  ylim(0, 100) +
+  scale_x_discrete(labels = elevBinLabel) + 
+  theme(axis.text.x = element_text(angle = 45, vjust = 0.5))
+
+#### Viola biflora
+ggplot(pySum, aes(x = elevationBin, y = occAV, color = yearBin)) +
+  geom_point(position = position_dodge(0.1)) +
+  labs(title = 'Occurrence of alpine yellow-violet (Viola biflora) in the mountains', 
+       y = "Occrrence (%)", x = "Altitude (m.a.s.l.)", color = "Inventory lap") +
+  ylim(0, 100) +
+  scale_x_discrete(labels = elevBinLabel) + 
+  theme(axis.text.x = element_text(angle = 45, vjust = 0.5), title = ggtext::element_markdown())
+```
+

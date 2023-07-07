@@ -47,11 +47,10 @@ numbers-equivalents
 example-of-analysis-of-diversity
 event-data
 occurence-data
-nils-example-1
+query-data-from-nils-vegetation-cover-in-two-time-periods
 nils-apis-query-data-via-urls
 all-data-from-endpoint-klasser
 extrahera-metadata-från-apiet-habitat
 combine-data-from-different-tables
-nils-example-2
-sdm-1
-diversity-1
+query-data-from-nils-blueberry-and-mountain-violet-occurrence-in-alpine-region-over-time
+query-data

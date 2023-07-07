@@ -4,7 +4,7 @@ editor_options:
     wrap: 86
 ---
 
-# NILS example 1
+# Query data from NILS: Vegetation cover in two time periods
 
 ```{r setup, message=FALSE, warning=FALSE}
 library(jsonlite)
@@ -12,8 +12,6 @@ library(dplyr)
 library(tidyr)
 library(conflicted)
 conflicts_prefer( dplyr::select, dplyr::filter)
-# library(leaflet)
-# library(rgdal)
 library(glue)
 library(ggplot2)
 ```
@@ -39,9 +37,13 @@ klasser <- klasserGet$data
 
 ### Extrahera metadata från apiet habitat
 
-HabitatMetaUrl\<-
-url('<https://landskap.slu.se/api/nils/api/HabitatKlasser/variablesMetadata>')
-habitatMetaGet \<- fromJSON(HabitatMetaUrl) habitatMeta \<- habitatMetaGet\$data
+```{r}
+urlApi <- 'https://landskap.slu.se/api/nils/api/'
+endpoint <- 'HabitatKlasser/variablesMetadata'
+HabitatMetaUrl <- url(glue('{urlApi}{endpoint}'))
+habitatMetaGet <- fromJSON(HabitatMetaUrl) 
+habitatMeta <- habitatMetaGet$data
+```
 
 ## Combine data from different tables
 
@@ -58,23 +60,25 @@ estimated in the 10-m radius plot. The sample plot is divided into subplots if t
 sample plot contains distinct areas of different types of land use or land cover etc.
 (Esseen et al. 2007). The figure also shows a list of the field variables used in this
 study sorted size of the circular sample
-plots](images/hedenas_ fig1_map-shows-the-location-of-stratum.png){alt="The map shows the location of stratum 10 (gray), i.e., the Swedish mountain region, and the 145 systematically placed 5 × 5 km sample units (red). The 12 circular sample plots is in the center of the sample unit with a distance of 250 m between the centers of each plot and a distance of 2125 m between the centers of each plot and the edge of the 5 × 5 km2. Each plot consists of two concentric circular plots, and different variables are recorded in these plots. Canopy cover is estimated in the 20-m radius plot, and shrub cover, cover of field vegetation, and cover of the bottom layer are estimated in the 10-m radius plot. The sample plot is divided into subplots if the sample plot contains distinct areas of different types of land use or land cover etc. (Esseen et al. 2007). The figure also shows a list of the field variables used in this study sorted size of the circular sample plots"}
+plots](images/hedenas_%20fig1_map-shows-the-location-of-stratum.png)
 
 Kombinera data från apiet Klasser med data från apiet Vegetationstackning\
 Extrahera data från 2020 från apiet Klasser som innehåller alla delytor
 
 ```{r classes, message=FALSE, warning=FALSE}
+# years <- paste0("Ar=",c(2003:2012), collapse = "&")
 years <- paste0(c(2003:2012), collapse = ",")
-klasserUrl <- url(glue('https://landskap.slu.se/api/nils/api/Klasser?ArIN={years}')) #?Ar=2020
+endpoint <- 'Klasser'
+klasserUrl <- url(glue('{urlApi}{endpoint}?ArIN={years}'))
 klasserGet <- fromJSON(klasserUrl)
 klasser <- klasserGet$data
-# hist(klasser$ar)
 ```
 
 Extrahera data från apiet Vegetationstackning
 
 ```{r vegetation, message=FALSE, warning=FALSE}
-vegetationUrl <- url(glue('https://landskap.slu.se/api/nils/api/Vegetationstackning?ArIN={years}')) #?Ar=2020
+endpoint <- 'Vegetationstackning'
+vegetationUrl <- url(glue('{urlApi}{endpoint}?ArIN={years}'))
 vegetationGet <- fromJSON(vegetationUrl)
 vegetation <- vegetationGet$data |>
   select(-c("koordNS","koordEW","lan","kommun","bioGeoRegion","stratum")) # Ta bort de kolumner som finns i bägge apierna och som inte behövs för att slå samman tabellerna
@@ -108,16 +112,17 @@ kvSumm <- klassVegetationPL |>
   as.data.frame()
 ```
 
-```{r plot, message=FALSE, warning=FALSE}
+```{r plot_kvSumm, message=FALSE, warning=FALSE}
 ggplot(kvSumm, aes(x = layer, y = mean, color = survPer)) +
   geom_point(position = position_dodge(0.2)) +
   geom_errorbar(aes(ymin = mean - sd, 
                     ymax = mean + sd), 
                 width = .1, 
                 position = position_dodge(0.2)) + 
-  facet_wrap(vars(fjalltyp), labeller = as_labeller(c("Fjällbjörkskog" = "Mountain birch forest", 
-                                                      "Område ovan SKOGSgränsen" = "Alpine"))) +
-  labs(y = "Total cover (%)", x = "Layer", color = "Sample period") +
+  facet_wrap(vars(fjalltyp), 
+             labeller = as_labeller(c("Fjällbjörkskog" = "Mountain birch forest", 
+                                      "Område ovan SKOGSgränsen" = "Alpine"))) +
+  labs(y = "Total cover (%)", x = "Layer", color = "Inventory lap") +
   scale_x_discrete(labels = c("Shrub", "Field", "Tree"))
 
 ```
