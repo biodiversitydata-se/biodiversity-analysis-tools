@@ -12,6 +12,10 @@ library(sf)
 library(httr)
 ```
 
+On behalf of the Swedish Environmental Protection Agency, SLU documents, through NILS (National Inventory of the Landscape in Sweden), landscape and vegetation changes in Sweden and thus how the conditions for biological diversity look and change over time. The inventory is based on a random sample of permanent sample areas. NILS is the only large-scale environmental monitoring program that monitors terrestrial vegetation changes in the mountain range. It takes five years to complete an inventory lap; round 1 ran from 2003 to 2007 and round 2 from 2008 to 2012. NILS is now continuing with inventory round 3 from 2013 to 2017. Read more about NILS design at www.slu.se/nils
+
+[@hedenås2016]
+
 ## Query data
 
 ```{r querypy}
@@ -39,9 +43,9 @@ pySpp <- py |>
           presBB = ifelse("Vaccinium myrtillus" %in% vetenskapligtNamn, 1, 0),
           presAV = ifelse("Viola biflora" %in% vetenskapligtNamn, 1, 0)) |> 
   as.data.frame()
-``` 
+```
 
-```{r altitude}           
+```{r altitude}
 ### Altitud ###
 pySf <- py |> 
   group_by(uuid) |> 
@@ -120,4 +124,3 @@ ggplot(pySum, aes(x = elevationBin, y = occAV, color = yearBin)) +
   scale_x_discrete(labels = elevBinLabel) + 
   theme(axis.text.x = element_text(angle = 45, vjust = 0.5), title = ggtext::element_markdown())
 ```
-
