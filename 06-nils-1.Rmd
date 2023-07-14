@@ -37,8 +37,7 @@ sample plot contains distinct areas of different types of land use or land cover
 (Esseen et al. 2007). The figure also shows a list of the field variables used in this
 study sorted size of the circular sample
 plots](images/hedenas_%20fig1_map-shows-the-location-of-stratum.png){#figMethod
-.illustration
-alt="The map shows the location of stratum 10 (gray), i.e., the Swedish mountain region, and the 145 systematically placed 5 × 5 km sample units (red). The 12 circular sample plots is in the center of the sample unit with a distance of 250 m between the centers of each plot and a distance of 2125 m between the centers of each plot and the edge of the 5 × 5 km2. Each plot consists of two concentric circular plots, and different variables are recorded in these plots. Canopy cover is estimated in the 20-m radius plot, and shrub cover, cover of field vegetation, and cover of the bottom layer are estimated in the 10-m radius plot. The sample plot is divided into subplots if the sample plot contains distinct areas of different types of land use or land cover etc. (Esseen et al. 2007). The figure also shows a list of the field variables used in this study sorted size of the circular sample plots"}
+.illustration}
 
 This inventory contributes with an environmental target indicator for monitoring the
 environmental target "A magnificent mountain environment" - monitoring of vegetation
