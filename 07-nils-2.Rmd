@@ -1,6 +1,8 @@
 # Query data from NILS: blueberry and mountain violet occurrence in alpine region over time
 
-```{r setup7, message=FALSE, warning=FALSE}
+```{r setup_nils2, message=FALSE, warning=FALSE}
+
+# Set up
 library(jsonlite)
 library(dplyr)
 library(tidyr)
@@ -9,26 +11,19 @@ conflicts_prefer( dplyr::select, dplyr::filter)
 library(glue)
 library(ggplot2)
 library(sf)
-library(httr)
 ```
 
-On behalf of the Swedish Environmental Protection Agency, SLU documents, through NILS (National Inventory of the Landscape in Sweden), landscape and vegetation changes in Sweden and thus how the conditions for biological diversity look and change over time. The inventory is based on a random sample of permanent sample areas. NILS is the only large-scale environmental monitoring program that monitors terrestrial vegetation changes in the mountain range. It takes five years to complete an inventory lap; round 1 ran from 2003 to 2007 and round 2 from 2008 to 2012. NILS is now continuing with inventory round 3 from 2013 to 2017. Read more about NILS design at www.slu.se/nils
-
-[@hedenås2016]
+Following with NILS data we will now illustrate another example, this time from the report Skog & Mark 2015 [@naturvårdsverket2015]. In this example we reproduce the analys done in the first chapter with the aim to compare presence of two species at different altitudes in the mountain range.
 
 ## Query data
 
-```{r querypy}
+In this case we query the endpoint 'SmaprovytaArter' that contains the occurrence of different species per sample are.
+
+```{r querypy, message=FALSE, warning=FALSE}
 urlApi <- 'https://landskap.slu.se/api/nils/api/'
 endpoint <- 'SmaprovytaArter'
-species <- 'Vaccinium myrtillus' #'Viola biflora'
-species <- paste0('VetenskapligtNamn=', URLencode(species, reserved = TRUE))
 years <- paste0('Ar=',c(2003:2012), collapse = '&')
 region <- 'BioGeoRegion=Alpin'
-
-pyUrl <- url(glue('{urlApi}{endpoint}?{species}&{years}&{region}'))
-pyGet <- fromJSON(pyUrl)
-py <- pyGet$data
 
 pyUrl <- url(glue('{urlApi}{endpoint}?{years}&{region}'))
 pyGet <- fromJSON(pyUrl)
@@ -45,17 +40,18 @@ pySpp <- py |>
   as.data.frame()
 ```
 
-```{r altitude}
-### Altitud ###
+In the same way we query NILS, there are many other sources of data. We query [opentopodata.org](opentopodata.org) the obtain the altitude at specific coordinates. But first we need to convert NILS sample areas coordinates into a coordinate system that this new service can understand (WGS84). And we want to make the query only one per sample area, as they wont go anywhere between sampling events.
+
+```{r locations, message=FALSE, warning=FALSE}
 pySf <- py |> 
   group_by(uuid) |> 
   reframe(coordNS = unique(koordNS),
           coordEW = unique(koordEW)) |>  
   rowwise() |> 
   mutate(geom = st_sfc(list(st_point(c(coordEW, coordNS))),
-                       crs = st_crs(3006))) |> 
+                       crs = st_crs(3006))) |> # SWEREF99 TM
   st_as_sf() |> 
-  st_transform(st_crs(4326))
+  st_transform(st_crs(4326)) # WGS84
 
 pySf$elevation <- NA
 
@@ -63,10 +59,17 @@ locations <- st_coordinates(pySf) |>
   as.data.frame() |> 
   rename("latitude" = Y, 
          "longitude" = X)
+```
 
+We also want to iterate the query as this service has a quota of max 100 locations per call.
+
+```{r altitude, eval=FALSE}
 nLocations <- nrow(locations)
 queryLimit <- 100
 lChunks <- split(seq(nLocations), ceiling(seq(nLocations)/queryLimit))
+
+urlAlt <- "https://api.opentopodata.org/v1/"
+endpoint <- "eudem25m"
 
 for (l in seq(length(lChunks))) {
   loc <- locations[lChunks[[l]],] |> 
@@ -74,26 +77,36 @@ for (l in seq(length(lChunks))) {
   loc <- paste0(loc$xy, collapse = "|")  
   elevGet <- url(glue("https://api.opentopodata.org/v1/eudem25m?locations={loc}"))
   elevation <- fromJSON(elevGet)
-  message(elevation$status)
+  # message(elevation$status)
   elevation <- elevation$results
-  print(range(elevation$elevation))
+  # print(range(elevation$elevation))
   
   pySf$elevation[lChunks[[l]]] <- elevation$elevation
-  print(l)
+  # print(l)
 }
-
 ```
 
-```{r summarisePY}
-pySf
-pySf$elevationBin <- cut(pySf$elevation, breaks = c(seq(300,1000, 50),Inf),
+```{r savealt, eval=FALSE, echo=FALSE}
+saveRDS(pySf, file = "data/07_nils2_pySf_with_elevation.rds")
+```
+
+```{r readalt, eval=TRUE, echo=FALSE}
+pySf <- readRDS(file = "data/07_nils2_pySf_with_elevation.rds")
+```
+
+We put everything together (join) and summarise the proportion of sample areas per inventory phase and elevation group.
+
+```{r summarisePY, message=FALSE, warning=FALSE, echo=FALSE}
+pySf$elevationBin <- cut(pySf$elevation, 
+                         breaks = c(seq(300,1000, 50),Inf),
                          include.lowest = TRUE, right = FALSE)
 
-pySpp$yearBin <- ifelse(as.numeric(as.character(pySpp$ar)) > 2007, "2008-2012", "2003-2007")
+pySpp$invPha <- ifelse(as.numeric(as.character(pySpp$ar)) > 2007, 
+                        "2008-2012", "2003-2007")
 
 pySum <- pySpp |> 
   left_join(st_drop_geometry(pySf)) |> 
-  group_by(yearBin, elevationBin) |> 
+  group_by(invPha, elevationBin) |> 
   reframe(count = n(),
           sumPresBB = sum(presBB),
           sumPresAV = sum(presAV)) |> 
@@ -102,25 +115,29 @@ pySum <- pySpp |>
 
 ```
 
-```{r plotOcc}
+and finally, we create a beautiful plot.
+
+```{r plotOcc, message=FALSE, warning=FALSE}
 elevBinLabel <- c("300-349","350-399","400-449","450-499","500-549","550-599",
                   "600-649","650-699","700-749","750-799","800-849","850-899",
                   "900-949","950-999",">=1000")
 #### Vaccinium myrtillus
-ggplot(pySum, aes(x = elevationBin, y = occBB, color = yearBin)) +
+ggplot(pySum, aes(x = elevationBin, y = occBB, color = invPha)) +
   geom_point(position = position_dodge(0.1)) +
-  labs(title = 'Occurrence of blueberry (Vaccinium myrtillus) in the mountains', 
-       y = "Occrrence (%)", x = "Altitude (m.a.s.l.)", color = "Inventory lap") +
+  labs(title = "Occurrence of blueberry (Vaccinium myrtillus) \nin the mountains",
+       y = "Occrrence (%)", x = "Altitude (m.a.s.l.)", 
+       color = "Inventory phase") +
   ylim(0, 100) +
   scale_x_discrete(labels = elevBinLabel) + 
   theme(axis.text.x = element_text(angle = 45, vjust = 0.5))
 
 #### Viola biflora
-ggplot(pySum, aes(x = elevationBin, y = occAV, color = yearBin)) +
+ggplot(pySum, aes(x = elevationBin, y = occAV, color = invPha)) +
   geom_point(position = position_dodge(0.1)) +
-  labs(title = 'Occurrence of alpine yellow-violet (Viola biflora) in the mountains', 
-       y = "Occrrence (%)", x = "Altitude (m.a.s.l.)", color = "Inventory lap") +
+  labs(title = 'Occurrence of alpine yellow-violet (Viola biflora) \nin the mountains', 
+       y = "Occrrence (%)", x = "Altitude (m.a.s.l.)", 
+       color = "Inventory phase") +
   ylim(0, 100) +
   scale_x_discrete(labels = elevBinLabel) + 
-  theme(axis.text.x = element_text(angle = 45, vjust = 0.5), title = ggtext::element_markdown())
+  theme(axis.text.x = element_text(angle = 45, vjust = 0.5))
 ```

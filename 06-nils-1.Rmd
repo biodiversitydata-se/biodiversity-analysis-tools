@@ -6,48 +6,24 @@ editor_options:
 
 # Query data from NILS: Vegetation cover in two time periods
 
-```{r setup, message=FALSE, warning=FALSE}
-library(jsonlite)
-library(dplyr)
-library(tidyr)
-library(conflicted)
-conflicts_prefer( dplyr::select, dplyr::filter)
-library(glue)
-library(ggplot2)
-```
+## A brief intro to NILS
 
-## NILS APIs: query data via urls
-
-[Swagger description of NILS apis](https://landskap.slu.se/api/nils/index.html)
-
-[NILS sampling method description (in
-Swedish)](https://www.slu.se/globalassets/ew/org/centrb/nils/publikationer/2019/nils_faltinstruktion_webb_ht_2019_2.pdf)
-
-### All data from endpoint 'Klasser'
-
-<https://landskap.slu.se/api/nils/api/>
-
-```{r ex_api, eval=FALSE}
-urlApi <- 'https://landskap.slu.se/api/nils/api/'
-endpoint <- 'Klasser'
-klasserUrl <- url(glue('{urlApi}{endpoint}'))
-klasserGet <- fromJSON(klasserUrl)
-klasser <- klasserGet$data
-```
-
-### Extrahera metadata från apiet habitat
-
-```{r}
-urlApi <- 'https://landskap.slu.se/api/nils/api/'
-endpoint <- 'HabitatKlasser/variablesMetadata'
-HabitatMetaUrl <- url(glue('{urlApi}{endpoint}'))
-habitatMetaGet <- fromJSON(HabitatMetaUrl) 
-habitatMeta <- habitatMetaGet$data
-```
-
-## Combine data from different tables
-
-Example from [@hedenås2016]
+On behalf of the Swedish Environmental Protection Agency, SLU documents, through NILS
+(National Inventory of the Landscape in Sweden), landscape and vegetation changes in
+Sweden and thus how the conditions for biological diversity look and change over time.
+[NILS](https://www.slu.se/centrumbildningar-och-projekt/nils/)' base inventory took
+place in the years 2003 to 2018 throughout Sweden and in the years 2019 to 2020 only
+in the mountains. The purpose of the inventory was to collect data in the field,
+analyze and present estimates of conditions and changes. The inventory is based on a
+random sample of permanent sample areas. It takes five years to complete an inventory
+lap; round 1 ran from 2003 to 2007, round 2 from 2008 to 2012, etc. The data is
+collected via field inventory in sample areas and transects. In the sample area
+inventory, data is partly collected in larger circular sample areas with a radius of
+10 meters and in small sample areas with a radius of 0.28 m where mainly species,
+species groups, habitat types and other classifications are recorded. More information
+about design and methodology can be found
+[here](https://www.slu.se/centrumbildningar-och-projekt/nils/) and [here (in
+Swedish)](https://www.slu.se/globalassets/ew/org/centrb/nils/publikationer/2019/nils_faltinstruktion_webb_ht_2019_2.pdf).
 
 ![The map shows the location of stratum 10 (gray), i.e., the Swedish mountain region,
 and the 145 systematically placed 5 × 5 km sample units (red). The 12 circular sample
@@ -60,60 +36,142 @@ estimated in the 10-m radius plot. The sample plot is divided into subplots if t
 sample plot contains distinct areas of different types of land use or land cover etc.
 (Esseen et al. 2007). The figure also shows a list of the field variables used in this
 study sorted size of the circular sample
-plots](images/hedenas_%20fig1_map-shows-the-location-of-stratum.png)
+plots](images/hedenas_%20fig1_map-shows-the-location-of-stratum.png){#figMethod
+.illustration
+alt="The map shows the location of stratum 10 (gray), i.e., the Swedish mountain region, and the 145 systematically placed 5 × 5 km sample units (red). The 12 circular sample plots is in the center of the sample unit with a distance of 250 m between the centers of each plot and a distance of 2125 m between the centers of each plot and the edge of the 5 × 5 km2. Each plot consists of two concentric circular plots, and different variables are recorded in these plots. Canopy cover is estimated in the 20-m radius plot, and shrub cover, cover of field vegetation, and cover of the bottom layer are estimated in the 10-m radius plot. The sample plot is divided into subplots if the sample plot contains distinct areas of different types of land use or land cover etc. (Esseen et al. 2007). The figure also shows a list of the field variables used in this study sorted size of the circular sample plots"}
 
-Kombinera data från apiet Klasser med data från apiet Vegetationstackning\
-Extrahera data från 2020 från apiet Klasser som innehåller alla delytor
+This inventory contributes with an environmental target indicator for monitoring the
+environmental target "A magnificent mountain environment" - monitoring of vegetation
+changes in the mountains.
 
-```{r classes, message=FALSE, warning=FALSE}
-# years <- paste0("Ar=",c(2003:2012), collapse = "&")
-years <- paste0(c(2003:2012), collapse = ",")
+All data inventoried can be found downloade without registering and is available at
+[NILS datavärdskap](https://landskap.slu.se/nils/dv). The data is also available via
+REST APIs (Application Program Interface). More documentation can be found at [Swagger
+description of NILS' APIs](https://landskap.slu.se/api/nils/index.html). APIs are
+suitable for a replicable and streamlined analysis sending queries directly to the
+database therefore avoiding the unnecessary download of complete data sets. REST APIs
+are URL (a web address) with endpoint paths to resources and parameters for filtering
+the query. REST API URLs are often composed as follows:
+
+> [**Base URL**:
+> [http://apiserver.com](http://apiserver.com/homes?limit=5&format=json)]{.underline}
+>
+> [**Endpoint Path**:
+> [/homes](http://apiserver.com/homes?limit=5&format=json)]{.underline} for the
+> resource 'homes'
+>
+> [**Query String**:
+> [?limit=5&format=json](http://apiserver.com/homes?limit=5&format=json)]{.underline}
+>
+> [Rest API URL: **BaseURL + Endpoint path +Query string**]{.underline}
+
+## Query NILS data via APIs
+
+Here and in the next chapter we show with examples how to integrate these APIs in your
+workflow. The first example replicates Fig.3 a and b from [@hedenås2016].
+
+```{r setup_nils1, message=FALSE, warning=FALSE}
+# Set up
+library(jsonlite)
+library(dplyr)
+library(tidyr)
+library(conflicted)
+conflicts_prefer( dplyr::select, dplyr::filter)
+library(glue)
+library(ggplot2)
+```
+
+The endpoint 'Klasser' points to the table with all categorical data sampled within
+sampling areas, that is forest type, type of land cover. (Note: only for the mountain
+are at the moment).
+
+```{r ex_api, eval=FALSE}
+urlApi <- 'https://landskap.slu.se/api/nils/api/'
 endpoint <- 'Klasser'
-klasserUrl <- url(glue('{urlApi}{endpoint}?ArIN={years}'))
+klasserUrl <- url(glue('{urlApi}{endpoint}'))
 klasserGet <- fromJSON(klasserUrl)
 klasser <- klasserGet$data
 ```
 
-Extrahera data från apiet Vegetationstackning
+This is exactly what we what to avoid. We want to filter the query to obtain a
+restricted data set only containing data collected between 2003 and 2012.
+
+```{r classes, message=FALSE, warning=FALSE}
+urlApi <- 'https://landskap.slu.se/api/nils/api/'
+# years <- paste0("Ar=",c(2003:2012), collapse = "&")
+years <- paste0('Ar=',c(2003:2012), collapse = '&')
+endpoint <- 'Klasser'
+klasserUrl <- url(glue('{urlApi}{endpoint}?{years}'))
+klasserGet <- fromJSON(klasserUrl)
+klasser <- klasserGet$data
+```
+
+We also want some data from the table 'Vegetationstackning' that contains the cover
+(%) of different vegetation layers. In this case, however, we don't want to preserve
+all columns, just those that are not repeated in the klasses table.
 
 ```{r vegetation, message=FALSE, warning=FALSE}
 endpoint <- 'Vegetationstackning'
-vegetationUrl <- url(glue('{urlApi}{endpoint}?ArIN={years}'))
+vegetationUrl <- url(glue('{urlApi}{endpoint}?{years}'))
 vegetationGet <- fromJSON(vegetationUrl)
 vegetation <- vegetationGet$data |>
   select(-c("koordNS","koordEW","lan","kommun","bioGeoRegion","stratum")) # Ta bort de kolumner som finns i bägge apierna och som inte behövs för att slå samman tabellerna
 # names(vegetation)
 ```
 
-Kombinera tabellerna till en gemensam tabell
+Then, following [@hedenås2016] we proceed to:
+
+1.  filter out the the irrelevant 'lan' and leave only the mountain types
+    "Fjällbjörkskog", "Område ovan SKOGSgränsen";
+
+2.  join these tables by those fields that they have in common: "ar","rutaNummer",
+    "provytaNummer","delytaNummer"; and
+
+3.  generate a categorical variable for the inventory phase (in NILS, every sample
+    area is visited once within five years)
 
 ```{r combine, message=FALSE, warning=FALSE}
 klassVegetation <- klasser  |> 
   filter(lan != "Utlandet", 
-         fjalltyp %in% c("Fjällbjörkskog", "Område ovan SKOGSgränsen"),
-         ar <= 2012) |> 
-  left_join(vegetation, by = c("ar","rutaNummer", "provytaNummer","delytaNummer")) |> 
-  mutate(survPer = ifelse(ar < 2007, "2003-2007", "2008-2012"))
+         fjalltyp %in% c("Fjällbjörkskog", "Område ovan SKOGSgränsen")) |> #
+  left_join(vegetation, 
+            by = c("ar","rutaNummer", "provytaNummer","delytaNummer")) |> 
+  mutate(invPha = ifelse(ar < 2007, "2003-2007", "2008-2012"))
 
-# range(klassVegetation$tradTackningTotal, na.rm = TRUE)
-# range(klassVegetation$ar, na.rm = TRUE)
 
+
+
+```
+
+To be able to work further we need to transpose the 'wide' table into a 'long' table:
+
+```{r pivot, message=FALSE, warning=FALSE}
 klassVegetationPL <- klassVegetation |> 
-  select(fjalltyp, survPer, tradTackningTotal, buskTackningTotal, faltskiktTackningTotal) |> 
-  pivot_longer(!c(fjalltyp, survPer), names_to = "layer", values_to = "cover")
+  select(fjalltyp, invPha, tradTackningTotal, buskTackningTotal, faltskiktTackningTotal) |> 
+  pivot_longer(!c(fjalltyp, invPha), 
+               names_to = "layer", 
+               values_to = "cover")
+```
 
+and finally summarize per group:
+
+```{r summariseKV, message=FALSE, warning=FALSE}
 kvSumm <- klassVegetationPL |> 
-  group_by(fjalltyp, survPer, layer) |> 
+  group_by(fjalltyp, invPha, layer) |> 
   summarise_at(.vars = vars(cover), 
                .funs = list(mean = ~mean(., na.rm = TRUE), 
                             sd = ~sd(., na.rm = TRUE)),
                .grups = "drop") |> 
-  mutate_at(vars(fjalltyp, survPer, layer), list(factor)) |> 
+  mutate_at(vars(invPha), list(factor)) |> 
+  mutate(fjalltyp = factor(fjalltyp, levels = c("Område ovan SKOGSgränsen", "Fjällbjörkskog")),
+         layer = factor(layer, levels = c("tradTackningTotal", "buskTackningTotal", "faltskiktTackningTotal"))) |> # to reorder the classes
   as.data.frame()
 ```
 
+All it is left to do, is produce a nice plot.
+
 ```{r plot_kvSumm, message=FALSE, warning=FALSE}
-ggplot(kvSumm, aes(x = layer, y = mean, color = survPer)) +
+ggplot(kvSumm, aes(x = layer, y = mean, color = invPha)) +
   geom_point(position = position_dodge(0.2)) +
   geom_errorbar(aes(ymin = mean - sd, 
                     ymax = mean + sd), 
@@ -122,7 +180,7 @@ ggplot(kvSumm, aes(x = layer, y = mean, color = survPer)) +
   facet_wrap(vars(fjalltyp), 
              labeller = as_labeller(c("Fjällbjörkskog" = "Mountain birch forest", 
                                       "Område ovan SKOGSgränsen" = "Alpine"))) +
-  labs(y = "Total cover (%)", x = "Layer", color = "Inventory lap") +
-  scale_x_discrete(labels = c("Shrub", "Field", "Tree"))
+  labs(y = "Total cover (%)", x = "Layer", color = "Inventory phase") +
+  scale_x_discrete(labels = c("Tree", "Shrub", "Field"))
 
 ```

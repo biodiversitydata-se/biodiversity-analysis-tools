@@ -23,7 +23,7 @@
 <meta name="author" content="Debora Arlt, Alejandro Ruete and Charles Campbell  for the Swedish Biodiversity Data Infrastructure" />
 
 
-<meta name="date" content="2023-07-07" />
+<meta name="date" content="2023-07-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -228,12 +228,8 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="7" data-path="query-data-from-nils-vegetation-cover-in-two-time-periods.html"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html"><i class="fa fa-check"></i><b>7</b> Query data from NILS: Vegetation cover in two time periods</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="query-data-from-nils-vegetation-cover-in-two-time-periods.html"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#nils-apis-query-data-via-urls"><i class="fa fa-check"></i><b>7.1</b> NILS APIs: query data via urls</a>
-<ul>
-<li class="chapter" data-level="7.1.1" data-path="query-data-from-nils-vegetation-cover-in-two-time-periods.html"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#all-data-from-endpoint-klasser"><i class="fa fa-check"></i><b>7.1.1</b> All data from endpoint ‘Klasser’</a></li>
-<li class="chapter" data-level="7.1.2" data-path="query-data-from-nils-vegetation-cover-in-two-time-periods.html"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#extrahera-metadata-från-apiet-habitat"><i class="fa fa-check"></i><b>7.1.2</b> Extrahera metadata från apiet habitat</a></li>
-</ul></li>
-<li class="chapter" data-level="7.2" data-path="query-data-from-nils-vegetation-cover-in-two-time-periods.html"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#combine-data-from-different-tables"><i class="fa fa-check"></i><b>7.2</b> Combine data from different tables</a></li>
+<li class="chapter" data-level="7.1" data-path="query-data-from-nils-vegetation-cover-in-two-time-periods.html"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#a-brief-intro-to-nils"><i class="fa fa-check"></i><b>7.1</b> A brief intro to NILS</a></li>
+<li class="chapter" data-level="7.2" data-path="query-data-from-nils-vegetation-cover-in-two-time-periods.html"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#query-nils-data-via-apis"><i class="fa fa-check"></i><b>7.2</b> Query NILS data via APIs</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="query-data-from-nils-blueberry-and-mountain-violet-occurrence-in-alpine-region-over-time.html"><a href="query-data-from-nils-blueberry-and-mountain-violet-occurrence-in-alpine-region-over-time.html"><i class="fa fa-check"></i><b>8</b> Query data from NILS: blueberry and mountain violet occurrence in alpine region over time</a>
 <ul>
@@ -259,41 +255,26 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="query-data-from-nils-vegetation-cover-in-two-time-periods" class="section level1 hasAnchor" number="7">
 <h1><span class="header-section-number">Chapter 7</span> Query data from NILS: Vegetation cover in two time periods<a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#query-data-from-nils-vegetation-cover-in-two-time-periods" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb23-1" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
-<span id="cb23-2"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb23-2" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb23-3"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb23-3" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb23-4"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb23-4" tabindex="-1"></a><span class="fu">library</span>(conflicted)</span>
-<span id="cb23-5"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb23-5" tabindex="-1"></a><span class="fu">conflicts_prefer</span>( dplyr<span class="sc">::</span>select, dplyr<span class="sc">::</span>filter)</span>
-<span id="cb23-6"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb23-6" tabindex="-1"></a><span class="fu">library</span>(glue)</span>
-<span id="cb23-7"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb23-7" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
-<div id="nils-apis-query-data-via-urls" class="section level2 hasAnchor" number="7.1">
-<h2><span class="header-section-number">7.1</span> NILS APIs: query data via urls<a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#nils-apis-query-data-via-urls" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><a href="https://landskap.slu.se/api/nils/index.html">Swagger description of NILS apis</a></p>
-<p><a href="https://www.slu.se/globalassets/ew/org/centrb/nils/publikationer/2019/nils_faltinstruktion_webb_ht_2019_2.pdf">NILS sampling method description (in
-Swedish)</a></p>
-<div id="all-data-from-endpoint-klasser" class="section level3 hasAnchor" number="7.1.1">
-<h3><span class="header-section-number">7.1.1</span> All data from endpoint ‘Klasser’<a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#all-data-from-endpoint-klasser" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><a href="https://landskap.slu.se/api/nils/api/" class="uri">https://landskap.slu.se/api/nils/api/</a></p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb24-1" tabindex="-1"></a>urlApi <span class="ot">&lt;-</span> <span class="st">&#39;https://landskap.slu.se/api/nils/api/&#39;</span></span>
-<span id="cb24-2"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb24-2" tabindex="-1"></a>endpoint <span class="ot">&lt;-</span> <span class="st">&#39;Klasser&#39;</span></span>
-<span id="cb24-3"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb24-3" tabindex="-1"></a>klasserUrl <span class="ot">&lt;-</span> <span class="fu">url</span>(<span class="fu">glue</span>(<span class="st">&#39;{urlApi}{endpoint}&#39;</span>))</span>
-<span id="cb24-4"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb24-4" tabindex="-1"></a>klasserGet <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(klasserUrl)</span>
-<span id="cb24-5"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb24-5" tabindex="-1"></a>klasser <span class="ot">&lt;-</span> klasserGet<span class="sc">$</span>data</span></code></pre></div>
-</div>
-<div id="extrahera-metadata-från-apiet-habitat" class="section level3 hasAnchor" number="7.1.2">
-<h3><span class="header-section-number">7.1.2</span> Extrahera metadata från apiet habitat<a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#extrahera-metadata-från-apiet-habitat" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb25-1" tabindex="-1"></a>urlApi <span class="ot">&lt;-</span> <span class="st">&#39;https://landskap.slu.se/api/nils/api/&#39;</span></span>
-<span id="cb25-2"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb25-2" tabindex="-1"></a>endpoint <span class="ot">&lt;-</span> <span class="st">&#39;HabitatKlasser/variablesMetadata&#39;</span></span>
-<span id="cb25-3"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb25-3" tabindex="-1"></a>HabitatMetaUrl <span class="ot">&lt;-</span> <span class="fu">url</span>(<span class="fu">glue</span>(<span class="st">&#39;{urlApi}{endpoint}&#39;</span>))</span>
-<span id="cb25-4"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb25-4" tabindex="-1"></a>habitatMetaGet <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(HabitatMetaUrl) </span>
-<span id="cb25-5"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb25-5" tabindex="-1"></a>habitatMeta <span class="ot">&lt;-</span> habitatMetaGet<span class="sc">$</span>data</span></code></pre></div>
-</div>
-</div>
-<div id="combine-data-from-different-tables" class="section level2 hasAnchor" number="7.2">
-<h2><span class="header-section-number">7.2</span> Combine data from different tables<a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#combine-data-from-different-tables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Example from <span class="citation">(<a href="#ref-hedenås2016">Hedenås, Christensen, and Svensson 2016</a>)</span></p>
-<div class="float">
-<img src="images/hedenas_%20fig1_map-shows-the-location-of-stratum.png" alt="The map shows the location of stratum 10 (gray), i.e., the Swedish mountain region, and the 145 systematically placed 5 × 5 km sample units (red). The 12 circular sample plots is in the center of the sample unit with a distance of 250 m between the centers of each plot and a distance of 2125 m between the centers of each plot and the edge of the 5 × 5 km2. Each plot consists of two concentric circular plots, and different variables are recorded in these plots. Canopy cover is estimated in the 20-m radius plot, and shrub cover, cover of field vegetation, and cover of the bottom layer are estimated in the 10-m radius plot. The sample plot is divided into subplots if the sample plot contains distinct areas of different types of land use or land cover etc. (Esseen et al. 2007). The figure also shows a list of the field variables used in this study sorted size of the circular sample plots" />
+<div id="a-brief-intro-to-nils" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> A brief intro to NILS<a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#a-brief-intro-to-nils" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>On behalf of the Swedish Environmental Protection Agency, SLU documents, through NILS
+(National Inventory of the Landscape in Sweden), landscape and vegetation changes in
+Sweden and thus how the conditions for biological diversity look and change over time.
+<a href="https://www.slu.se/centrumbildningar-och-projekt/nils/">NILS</a>’ base inventory took
+place in the years 2003 to 2018 throughout Sweden and in the years 2019 to 2020 only
+in the mountains. The purpose of the inventory was to collect data in the field,
+analyze and present estimates of conditions and changes. The inventory is based on a
+random sample of permanent sample areas. It takes five years to complete an inventory
+lap; round 1 ran from 2003 to 2007, round 2 from 2008 to 2012, etc. The data is
+collected via field inventory in sample areas and transects. In the sample area
+inventory, data is partly collected in larger circular sample areas with a radius of
+10 meters and in small sample areas with a radius of 0.28 m where mainly species,
+species groups, habitat types and other classifications are recorded. More information
+about design and methodology can be found
+<a href="https://www.slu.se/centrumbildningar-och-projekt/nils/">here</a> and <a href="https://www.slu.se/globalassets/ew/org/centrb/nils/publikationer/2019/nils_faltinstruktion_webb_ht_2019_2.pdf">here (in
+Swedish)</a>.</p>
+<div class="float" id="figMethod">
+<img src="images/hedenas_%20fig1_map-shows-the-location-of-stratum.png" class="illustration" alt="The map shows the location of stratum 10 (gray), i.e., the Swedish mountain region, and the 145 systematically placed 5 × 5 km sample units (red). The 12 circular sample plots is in the center of the sample unit with a distance of 250 m between the centers of each plot and a distance of 2125 m between the centers of each plot and the edge of the 5 × 5 km2. Each plot consists of two concentric circular plots, and different variables are recorded in these plots. Canopy cover is estimated in the 20-m radius plot, and shrub cover, cover of field vegetation, and cover of the bottom layer are estimated in the 10-m radius plot. The sample plot is divided into subplots if the sample plot contains distinct areas of different types of land use or land cover etc. (Esseen et al. 2007). The figure also shows a list of the field variables used in this study sorted size of the circular sample plots" />
 <div class="figcaption">The map shows the location of stratum 10 (gray), i.e., the Swedish mountain region,
 and the 145 systematically placed 5 × 5 km sample units (red). The 12 circular sample
 plots is in the center of the sample unit with a distance of 250 m between the centers
@@ -307,55 +288,110 @@ sample plot contains distinct areas of different types of land use or land cover
 study sorted size of the circular sample
 plots</div>
 </div>
-<p>Kombinera data från apiet Klasser med data från apiet Vegetationstackning<br />
-Extrahera data från 2020 från apiet Klasser som innehåller alla delytor</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb26-1" tabindex="-1"></a><span class="co"># years &lt;- paste0(&quot;Ar=&quot;,c(2003:2012), collapse = &quot;&amp;&quot;)</span></span>
-<span id="cb26-2"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb26-2" tabindex="-1"></a>years <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">c</span>(<span class="dv">2003</span><span class="sc">:</span><span class="dv">2012</span>), <span class="at">collapse =</span> <span class="st">&quot;,&quot;</span>)</span>
-<span id="cb26-3"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb26-3" tabindex="-1"></a>endpoint <span class="ot">&lt;-</span> <span class="st">&#39;Klasser&#39;</span></span>
-<span id="cb26-4"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb26-4" tabindex="-1"></a>klasserUrl <span class="ot">&lt;-</span> <span class="fu">url</span>(<span class="fu">glue</span>(<span class="st">&#39;{urlApi}{endpoint}?ArIN={years}&#39;</span>))</span>
-<span id="cb26-5"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb26-5" tabindex="-1"></a>klasserGet <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(klasserUrl)</span>
-<span id="cb26-6"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb26-6" tabindex="-1"></a>klasser <span class="ot">&lt;-</span> klasserGet<span class="sc">$</span>data</span></code></pre></div>
-<p>Extrahera data från apiet Vegetationstackning</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb27-1" tabindex="-1"></a>endpoint <span class="ot">&lt;-</span> <span class="st">&#39;Vegetationstackning&#39;</span></span>
-<span id="cb27-2"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb27-2" tabindex="-1"></a>vegetationUrl <span class="ot">&lt;-</span> <span class="fu">url</span>(<span class="fu">glue</span>(<span class="st">&#39;{urlApi}{endpoint}?ArIN={years}&#39;</span>))</span>
-<span id="cb27-3"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb27-3" tabindex="-1"></a>vegetationGet <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(vegetationUrl)</span>
-<span id="cb27-4"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb27-4" tabindex="-1"></a>vegetation <span class="ot">&lt;-</span> vegetationGet<span class="sc">$</span>data <span class="sc">|&gt;</span></span>
-<span id="cb27-5"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb27-5" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(<span class="st">&quot;koordNS&quot;</span>,<span class="st">&quot;koordEW&quot;</span>,<span class="st">&quot;lan&quot;</span>,<span class="st">&quot;kommun&quot;</span>,<span class="st">&quot;bioGeoRegion&quot;</span>,<span class="st">&quot;stratum&quot;</span>)) <span class="co"># Ta bort de kolumner som finns i bägge apierna och som inte behövs för att slå samman tabellerna</span></span>
-<span id="cb27-6"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb27-6" tabindex="-1"></a><span class="co"># names(vegetation)</span></span></code></pre></div>
-<p>Kombinera tabellerna till en gemensam tabell</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb28-1" tabindex="-1"></a>klassVegetation <span class="ot">&lt;-</span> klasser  <span class="sc">|&gt;</span> </span>
-<span id="cb28-2"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb28-2" tabindex="-1"></a>  <span class="fu">filter</span>(lan <span class="sc">!=</span> <span class="st">&quot;Utlandet&quot;</span>, </span>
-<span id="cb28-3"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb28-3" tabindex="-1"></a>         fjalltyp <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Fjällbjörkskog&quot;</span>, <span class="st">&quot;Område ovan SKOGSgränsen&quot;</span>),</span>
-<span id="cb28-4"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb28-4" tabindex="-1"></a>         ar <span class="sc">&lt;=</span> <span class="dv">2012</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb28-5"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb28-5" tabindex="-1"></a>  <span class="fu">left_join</span>(vegetation, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;ar&quot;</span>,<span class="st">&quot;rutaNummer&quot;</span>, <span class="st">&quot;provytaNummer&quot;</span>,<span class="st">&quot;delytaNummer&quot;</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb28-6"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb28-6" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">survPer =</span> <span class="fu">ifelse</span>(ar <span class="sc">&lt;</span> <span class="dv">2007</span>, <span class="st">&quot;2003-2007&quot;</span>, <span class="st">&quot;2008-2012&quot;</span>))</span>
-<span id="cb28-7"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb28-7" tabindex="-1"></a></span>
-<span id="cb28-8"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb28-8" tabindex="-1"></a><span class="co"># range(klassVegetation$tradTackningTotal, na.rm = TRUE)</span></span>
-<span id="cb28-9"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb28-9" tabindex="-1"></a><span class="co"># range(klassVegetation$ar, na.rm = TRUE)</span></span>
-<span id="cb28-10"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb28-10" tabindex="-1"></a></span>
-<span id="cb28-11"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb28-11" tabindex="-1"></a>klassVegetationPL <span class="ot">&lt;-</span> klassVegetation <span class="sc">|&gt;</span> </span>
-<span id="cb28-12"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb28-12" tabindex="-1"></a>  <span class="fu">select</span>(fjalltyp, survPer, tradTackningTotal, buskTackningTotal, faltskiktTackningTotal) <span class="sc">|&gt;</span> </span>
-<span id="cb28-13"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb28-13" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="sc">!</span><span class="fu">c</span>(fjalltyp, survPer), <span class="at">names_to =</span> <span class="st">&quot;layer&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;cover&quot;</span>)</span>
-<span id="cb28-14"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb28-14" tabindex="-1"></a></span>
-<span id="cb28-15"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb28-15" tabindex="-1"></a>kvSumm <span class="ot">&lt;-</span> klassVegetationPL <span class="sc">|&gt;</span> </span>
-<span id="cb28-16"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb28-16" tabindex="-1"></a>  <span class="fu">group_by</span>(fjalltyp, survPer, layer) <span class="sc">|&gt;</span> </span>
-<span id="cb28-17"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb28-17" tabindex="-1"></a>  <span class="fu">summarise_at</span>(<span class="at">.vars =</span> <span class="fu">vars</span>(cover), </span>
-<span id="cb28-18"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb28-18" tabindex="-1"></a>               <span class="at">.funs =</span> <span class="fu">list</span>(<span class="at">mean =</span> <span class="sc">~</span><span class="fu">mean</span>(., <span class="at">na.rm =</span> <span class="cn">TRUE</span>), </span>
-<span id="cb28-19"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb28-19" tabindex="-1"></a>                            <span class="at">sd =</span> <span class="sc">~</span><span class="fu">sd</span>(., <span class="at">na.rm =</span> <span class="cn">TRUE</span>)),</span>
-<span id="cb28-20"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb28-20" tabindex="-1"></a>               <span class="at">.grups =</span> <span class="st">&quot;drop&quot;</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb28-21"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb28-21" tabindex="-1"></a>  <span class="fu">mutate_at</span>(<span class="fu">vars</span>(fjalltyp, survPer, layer), <span class="fu">list</span>(factor)) <span class="sc">|&gt;</span> </span>
-<span id="cb28-22"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb28-22" tabindex="-1"></a>  <span class="fu">as.data.frame</span>()</span></code></pre></div>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb29-1" tabindex="-1"></a><span class="fu">ggplot</span>(kvSumm, <span class="fu">aes</span>(<span class="at">x =</span> layer, <span class="at">y =</span> mean, <span class="at">color =</span> survPer)) <span class="sc">+</span></span>
-<span id="cb29-2"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb29-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="fl">0.2</span>)) <span class="sc">+</span></span>
-<span id="cb29-3"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb29-3" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mean <span class="sc">-</span> sd, </span>
-<span id="cb29-4"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb29-4" tabindex="-1"></a>                    <span class="at">ymax =</span> mean <span class="sc">+</span> sd), </span>
-<span id="cb29-5"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb29-5" tabindex="-1"></a>                <span class="at">width =</span> .<span class="dv">1</span>, </span>
-<span id="cb29-6"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb29-6" tabindex="-1"></a>                <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="fl">0.2</span>)) <span class="sc">+</span> </span>
-<span id="cb29-7"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb29-7" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(fjalltyp), </span>
-<span id="cb29-8"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb29-8" tabindex="-1"></a>             <span class="at">labeller =</span> <span class="fu">as_labeller</span>(<span class="fu">c</span>(<span class="st">&quot;Fjällbjörkskog&quot;</span> <span class="ot">=</span> <span class="st">&quot;Mountain birch forest&quot;</span>, </span>
-<span id="cb29-9"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb29-9" tabindex="-1"></a>                                      <span class="st">&quot;Område ovan SKOGSgränsen&quot;</span> <span class="ot">=</span> <span class="st">&quot;Alpine&quot;</span>))) <span class="sc">+</span></span>
-<span id="cb29-10"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb29-10" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;Total cover (%)&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Layer&quot;</span>, <span class="at">color =</span> <span class="st">&quot;Inventory lap&quot;</span>) <span class="sc">+</span></span>
-<span id="cb29-11"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb29-11" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Shrub&quot;</span>, <span class="st">&quot;Field&quot;</span>, <span class="st">&quot;Tree&quot;</span>))</span></code></pre></div>
+<p>This inventory contributes with an environmental target indicator for monitoring the
+environmental target “A magnificent mountain environment” - monitoring of vegetation
+changes in the mountains.</p>
+<p>All data inventoried can be found downloade without registering and is available at
+<a href="https://landskap.slu.se/nils/dv">NILS datavärdskap</a>. The data is also available via
+REST APIs (Application Program Interface). More documentation can be found at <a href="https://landskap.slu.se/api/nils/index.html">Swagger
+description of NILS’ APIs</a>. APIs are
+suitable for a replicable and streamlined analysis sending queries directly to the
+database therefore avoiding the unnecessary download of complete data sets. REST APIs
+are URL (a web address) with endpoint paths to resources and parameters for filtering
+the query. REST API URLs are often composed as follows:</p>
+<blockquote>
+<p><u><strong>Base URL</strong>:
+<a href="http://apiserver.com/homes?limit=5&amp;format=json">http://apiserver.com</a></u></p>
+<p><u><strong>Endpoint Path</strong>:
+<a href="http://apiserver.com/homes?limit=5&amp;format=json">/homes</a></u> for the
+resource ‘homes’</p>
+<p><u><strong>Query String</strong>:
+<a href="http://apiserver.com/homes?limit=5&amp;format=json">?limit=5&amp;format=json</a></u></p>
+<p><u>Rest API URL: <strong>BaseURL + Endpoint path +Query string</strong></u></p>
+</blockquote>
+</div>
+<div id="query-nils-data-via-apis" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Query NILS data via APIs<a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#query-nils-data-via-apis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Here and in the next chapter we show with examples how to integrate these APIs in your
+workflow. The first example replicates Fig.3 a and b from <span class="citation">(<a href="#ref-hedenås2016">Hedenås, Christensen, and Svensson 2016</a>)</span>.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb23-1" tabindex="-1"></a><span class="co"># Set up</span></span>
+<span id="cb23-2"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb23-2" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
+<span id="cb23-3"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb23-3" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb23-4"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb23-4" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb23-5"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb23-5" tabindex="-1"></a><span class="fu">library</span>(conflicted)</span>
+<span id="cb23-6"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb23-6" tabindex="-1"></a><span class="fu">conflicts_prefer</span>( dplyr<span class="sc">::</span>select, dplyr<span class="sc">::</span>filter)</span>
+<span id="cb23-7"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb23-7" tabindex="-1"></a><span class="fu">library</span>(glue)</span>
+<span id="cb23-8"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb23-8" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
+<p>The endpoint ‘Klasser’ points to the table with all categorical data sampled within
+sampling areas, that is forest type, type of land cover. (Note: only for the mountain
+are at the moment).</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb24-1" tabindex="-1"></a>urlApi <span class="ot">&lt;-</span> <span class="st">&#39;https://landskap.slu.se/api/nils/api/&#39;</span></span>
+<span id="cb24-2"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb24-2" tabindex="-1"></a>endpoint <span class="ot">&lt;-</span> <span class="st">&#39;Klasser&#39;</span></span>
+<span id="cb24-3"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb24-3" tabindex="-1"></a>klasserUrl <span class="ot">&lt;-</span> <span class="fu">url</span>(<span class="fu">glue</span>(<span class="st">&#39;{urlApi}{endpoint}&#39;</span>))</span>
+<span id="cb24-4"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb24-4" tabindex="-1"></a>klasserGet <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(klasserUrl)</span>
+<span id="cb24-5"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb24-5" tabindex="-1"></a>klasser <span class="ot">&lt;-</span> klasserGet<span class="sc">$</span>data</span></code></pre></div>
+<p>This is exactly what we what to avoid. We want to filter the query to obtain a
+restricted data set only containing data collected between 2003 and 2012.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb25-1" tabindex="-1"></a>urlApi <span class="ot">&lt;-</span> <span class="st">&#39;https://landskap.slu.se/api/nils/api/&#39;</span></span>
+<span id="cb25-2"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb25-2" tabindex="-1"></a><span class="co"># years &lt;- paste0(&quot;Ar=&quot;,c(2003:2012), collapse = &quot;&amp;&quot;)</span></span>
+<span id="cb25-3"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb25-3" tabindex="-1"></a>years <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Ar=&#39;</span>,<span class="fu">c</span>(<span class="dv">2003</span><span class="sc">:</span><span class="dv">2012</span>), <span class="at">collapse =</span> <span class="st">&#39;&amp;&#39;</span>)</span>
+<span id="cb25-4"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb25-4" tabindex="-1"></a>endpoint <span class="ot">&lt;-</span> <span class="st">&#39;Klasser&#39;</span></span>
+<span id="cb25-5"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb25-5" tabindex="-1"></a>klasserUrl <span class="ot">&lt;-</span> <span class="fu">url</span>(<span class="fu">glue</span>(<span class="st">&#39;{urlApi}{endpoint}?{years}&#39;</span>))</span>
+<span id="cb25-6"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb25-6" tabindex="-1"></a>klasserGet <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(klasserUrl)</span>
+<span id="cb25-7"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb25-7" tabindex="-1"></a>klasser <span class="ot">&lt;-</span> klasserGet<span class="sc">$</span>data</span></code></pre></div>
+<p>We also want some data from the table ‘Vegetationstackning’ that contains the cover
+(%) of different vegetation layers. In this case, however, we don’t want to preserve
+all columns, just those that are not repeated in the klasses table.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb26-1" tabindex="-1"></a>endpoint <span class="ot">&lt;-</span> <span class="st">&#39;Vegetationstackning&#39;</span></span>
+<span id="cb26-2"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb26-2" tabindex="-1"></a>vegetationUrl <span class="ot">&lt;-</span> <span class="fu">url</span>(<span class="fu">glue</span>(<span class="st">&#39;{urlApi}{endpoint}?{years}&#39;</span>))</span>
+<span id="cb26-3"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb26-3" tabindex="-1"></a>vegetationGet <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(vegetationUrl)</span>
+<span id="cb26-4"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb26-4" tabindex="-1"></a>vegetation <span class="ot">&lt;-</span> vegetationGet<span class="sc">$</span>data <span class="sc">|&gt;</span></span>
+<span id="cb26-5"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb26-5" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(<span class="st">&quot;koordNS&quot;</span>,<span class="st">&quot;koordEW&quot;</span>,<span class="st">&quot;lan&quot;</span>,<span class="st">&quot;kommun&quot;</span>,<span class="st">&quot;bioGeoRegion&quot;</span>,<span class="st">&quot;stratum&quot;</span>)) <span class="co"># Ta bort de kolumner som finns i bägge apierna och som inte behövs för att slå samman tabellerna</span></span>
+<span id="cb26-6"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb26-6" tabindex="-1"></a><span class="co"># names(vegetation)</span></span></code></pre></div>
+<p>Then, following <span class="citation">(<a href="#ref-hedenås2016">Hedenås, Christensen, and Svensson 2016</a>)</span> we proceed to:</p>
+<ol style="list-style-type: decimal">
+<li><p>filter out the the irrelevant ‘lan’ and leave only the mountain types
+“Fjällbjörkskog”, “Område ovan SKOGSgränsen”;</p></li>
+<li><p>join these tables by those fields that they have in common: “ar”,“rutaNummer”,
+“provytaNummer”,“delytaNummer”; and</p></li>
+<li><p>generate a categorical variable for the inventory phase (in NILS, every sample
+area is visited once within five years)</p></li>
+</ol>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb27-1" tabindex="-1"></a>klassVegetation <span class="ot">&lt;-</span> klasser  <span class="sc">|&gt;</span> </span>
+<span id="cb27-2"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb27-2" tabindex="-1"></a>  <span class="fu">filter</span>(lan <span class="sc">!=</span> <span class="st">&quot;Utlandet&quot;</span>, </span>
+<span id="cb27-3"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb27-3" tabindex="-1"></a>         fjalltyp <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Fjällbjörkskog&quot;</span>, <span class="st">&quot;Område ovan SKOGSgränsen&quot;</span>)) <span class="sc">|&gt;</span> <span class="co">#</span></span>
+<span id="cb27-4"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb27-4" tabindex="-1"></a>  <span class="fu">left_join</span>(vegetation, </span>
+<span id="cb27-5"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb27-5" tabindex="-1"></a>            <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;ar&quot;</span>,<span class="st">&quot;rutaNummer&quot;</span>, <span class="st">&quot;provytaNummer&quot;</span>,<span class="st">&quot;delytaNummer&quot;</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb27-6"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb27-6" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">invPha =</span> <span class="fu">ifelse</span>(ar <span class="sc">&lt;</span> <span class="dv">2007</span>, <span class="st">&quot;2003-2007&quot;</span>, <span class="st">&quot;2008-2012&quot;</span>))</span></code></pre></div>
+<p>To be able to work further we need to transpose the ‘wide’ table into a ‘long’ table:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb28-1" tabindex="-1"></a>klassVegetationPL <span class="ot">&lt;-</span> klassVegetation <span class="sc">|&gt;</span> </span>
+<span id="cb28-2"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb28-2" tabindex="-1"></a>  <span class="fu">select</span>(fjalltyp, invPha, tradTackningTotal, buskTackningTotal, faltskiktTackningTotal) <span class="sc">|&gt;</span> </span>
+<span id="cb28-3"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb28-3" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="sc">!</span><span class="fu">c</span>(fjalltyp, invPha), </span>
+<span id="cb28-4"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb28-4" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">&quot;layer&quot;</span>, </span>
+<span id="cb28-5"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb28-5" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">&quot;cover&quot;</span>)</span></code></pre></div>
+<p>and finally summarize per group:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb29-1" tabindex="-1"></a>kvSumm <span class="ot">&lt;-</span> klassVegetationPL <span class="sc">|&gt;</span> </span>
+<span id="cb29-2"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb29-2" tabindex="-1"></a>  <span class="fu">group_by</span>(fjalltyp, invPha, layer) <span class="sc">|&gt;</span> </span>
+<span id="cb29-3"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb29-3" tabindex="-1"></a>  <span class="fu">summarise_at</span>(<span class="at">.vars =</span> <span class="fu">vars</span>(cover), </span>
+<span id="cb29-4"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb29-4" tabindex="-1"></a>               <span class="at">.funs =</span> <span class="fu">list</span>(<span class="at">mean =</span> <span class="sc">~</span><span class="fu">mean</span>(., <span class="at">na.rm =</span> <span class="cn">TRUE</span>), </span>
+<span id="cb29-5"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb29-5" tabindex="-1"></a>                            <span class="at">sd =</span> <span class="sc">~</span><span class="fu">sd</span>(., <span class="at">na.rm =</span> <span class="cn">TRUE</span>)),</span>
+<span id="cb29-6"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb29-6" tabindex="-1"></a>               <span class="at">.grups =</span> <span class="st">&quot;drop&quot;</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb29-7"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb29-7" tabindex="-1"></a>  <span class="fu">mutate_at</span>(<span class="fu">vars</span>(invPha), <span class="fu">list</span>(factor)) <span class="sc">|&gt;</span> </span>
+<span id="cb29-8"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb29-8" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">fjalltyp =</span> <span class="fu">factor</span>(fjalltyp, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;Område ovan SKOGSgränsen&quot;</span>, <span class="st">&quot;Fjällbjörkskog&quot;</span>)),</span>
+<span id="cb29-9"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb29-9" tabindex="-1"></a>         <span class="at">layer =</span> <span class="fu">factor</span>(layer, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;tradTackningTotal&quot;</span>, <span class="st">&quot;buskTackningTotal&quot;</span>, <span class="st">&quot;faltskiktTackningTotal&quot;</span>))) <span class="sc">|&gt;</span> <span class="co"># to reorder the classes</span></span>
+<span id="cb29-10"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb29-10" tabindex="-1"></a>  <span class="fu">as.data.frame</span>()</span></code></pre></div>
+<p>All it is left to do, is produce a nice plot.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb30-1" tabindex="-1"></a><span class="fu">ggplot</span>(kvSumm, <span class="fu">aes</span>(<span class="at">x =</span> layer, <span class="at">y =</span> mean, <span class="at">color =</span> invPha)) <span class="sc">+</span></span>
+<span id="cb30-2"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb30-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="fl">0.2</span>)) <span class="sc">+</span></span>
+<span id="cb30-3"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb30-3" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mean <span class="sc">-</span> sd, </span>
+<span id="cb30-4"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb30-4" tabindex="-1"></a>                    <span class="at">ymax =</span> mean <span class="sc">+</span> sd), </span>
+<span id="cb30-5"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb30-5" tabindex="-1"></a>                <span class="at">width =</span> .<span class="dv">1</span>, </span>
+<span id="cb30-6"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb30-6" tabindex="-1"></a>                <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="fl">0.2</span>)) <span class="sc">+</span> </span>
+<span id="cb30-7"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb30-7" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(fjalltyp), </span>
+<span id="cb30-8"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb30-8" tabindex="-1"></a>             <span class="at">labeller =</span> <span class="fu">as_labeller</span>(<span class="fu">c</span>(<span class="st">&quot;Fjällbjörkskog&quot;</span> <span class="ot">=</span> <span class="st">&quot;Mountain birch forest&quot;</span>, </span>
+<span id="cb30-9"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb30-9" tabindex="-1"></a>                                      <span class="st">&quot;Område ovan SKOGSgränsen&quot;</span> <span class="ot">=</span> <span class="st">&quot;Alpine&quot;</span>))) <span class="sc">+</span></span>
+<span id="cb30-10"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb30-10" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;Total cover (%)&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Layer&quot;</span>, <span class="at">color =</span> <span class="st">&quot;Inventory phase&quot;</span>) <span class="sc">+</span></span>
+<span id="cb30-11"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb30-11" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Tree&quot;</span>, <span class="st">&quot;Shrub&quot;</span>, <span class="st">&quot;Field&quot;</span>))</span></code></pre></div>
 <p><img src="biodiversity-analysis-tools_files/figure-html/plot_kvSumm-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
 
 </div>

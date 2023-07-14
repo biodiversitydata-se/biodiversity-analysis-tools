@@ -48,9 +48,7 @@ example-of-analysis-of-diversity
 event-data
 occurence-data
 query-data-from-nils-vegetation-cover-in-two-time-periods
-nils-apis-query-data-via-urls
-all-data-from-endpoint-klasser
-extrahera-metadata-från-apiet-habitat
-combine-data-from-different-tables
+a-brief-intro-to-nils
+query-nils-data-via-apis
 query-data-from-nils-blueberry-and-mountain-violet-occurrence-in-alpine-region-over-time
 query-data
