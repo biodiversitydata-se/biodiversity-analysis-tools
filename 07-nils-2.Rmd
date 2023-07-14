@@ -1,4 +1,4 @@
-# Query data from NILS: blueberry and mountain violet occurrence in alpine region over time
+# Query data from NILS: blueberry and mountain violet occurrence in the alpine region
 
 ```{r setup_nils2, message=FALSE, warning=FALSE}
 
