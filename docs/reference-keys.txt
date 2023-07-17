@@ -47,8 +47,7 @@ numbers-equivalents
 example-of-analysis-of-diversity
 event-data
 occurence-data
-query-data-from-nils-vegetation-cover-in-two-time-periods
+query-data-from-nils
 a-brief-intro-to-nils
-query-nils-data-via-apis
-query-data-from-nils-blueberry-and-mountain-violet-occurrence-in-alpine-region-over-time
-query-data
+vegetation-cover-in-two-time-periods
+blueberry-and-mountain-violet-occurrence-in-the-alpine-region

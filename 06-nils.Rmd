@@ -4,7 +4,7 @@ editor_options:
     wrap: 86
 ---
 
-# Query data from NILS: Vegetation cover in two time periods
+# Query data from NILS
 
 ## A brief intro to NILS
 
@@ -36,16 +36,16 @@ estimated in the 10-m radius plot. The sample plot is divided into subplots if t
 sample plot contains distinct areas of different types of land use or land cover etc.
 (Esseen et al. 2007). The figure also shows a list of the field variables used in this
 study sorted size of the circular sample
-plots](images/hedenas_%20fig1_map-shows-the-location-of-stratum.png){#figMethod
+plots.](images/hedenas_%20fig1_map-shows-the-location-of-stratum.png){#figMethod
 .illustration}
 
 This inventory contributes with an environmental target indicator for monitoring the
 environmental target "A magnificent mountain environment" - monitoring of vegetation
 changes in the mountains.
 
-All data inventoried can be found downloade without registering and is available at
-[NILS datavärdskap](https://landskap.slu.se/nils/dv). The data is also available via
-REST APIs (Application Program Interface). More documentation can be found at [Swagger
+All inventory data can be downloaded without registering and is available at [NILS
+datavärdskap](https://landskap.slu.se/nils/dv). The data is also available via REST
+APIs (Application Program Interface). More documentation can be found at [Swagger
 description of NILS' APIs](https://landskap.slu.se/api/nils/index.html). APIs are
 suitable for a replicable and streamlined analysis sending queries directly to the
 database therefore avoiding the unnecessary download of complete data sets. REST APIs
@@ -64,9 +64,9 @@ the query. REST API URLs are often composed as follows:
 >
 > [Rest API URL: **BaseURL + Endpoint path +Query string**]{.underline}
 
-## Query NILS data via APIs
+## Vegetation cover in two time periods
 
-Here and in the next chapter we show with examples how to integrate these APIs in your
+Here and in the next chapter we show examples of how to integrate these APIs in your
 workflow. The first example replicates Fig.3 a and b from [@hedenås2016].
 
 ```{r setup_nils1, message=FALSE, warning=FALSE}
@@ -78,11 +78,12 @@ library(conflicted)
 conflicts_prefer( dplyr::select, dplyr::filter)
 library(glue)
 library(ggplot2)
+library(sf)
 ```
 
 The endpoint 'Klasser' points to the table with all categorical data sampled within
-sampling areas, that is forest type, type of land cover. (Note: only for the mountain
-are at the moment).
+mountain areas, that is forest type, type of land cover. (Note: only for the mountain
+areas at the moment).
 
 ```{r ex_api, eval=FALSE}
 urlApi <- 'https://landskap.slu.se/api/nils/api/'
@@ -97,7 +98,6 @@ restricted data set only containing data collected between 2003 and 2012.
 
 ```{r classes, message=FALSE, warning=FALSE}
 urlApi <- 'https://landskap.slu.se/api/nils/api/'
-# years <- paste0("Ar=",c(2003:2012), collapse = "&")
 years <- paste0('Ar=',c(2003:2012), collapse = '&')
 endpoint <- 'Klasser'
 klasserUrl <- url(glue('{urlApi}{endpoint}?{years}'))
@@ -107,15 +107,15 @@ klasser <- klasserGet$data
 
 We also want some data from the table 'Vegetationstackning' that contains the cover
 (%) of different vegetation layers. In this case, however, we don't want to preserve
-all columns, just those that are not repeated in the klasses table.
+all columns, just those that are unique in the classes table.
 
 ```{r vegetation, message=FALSE, warning=FALSE}
 endpoint <- 'Vegetationstackning'
 vegetationUrl <- url(glue('{urlApi}{endpoint}?{years}'))
 vegetationGet <- fromJSON(vegetationUrl)
 vegetation <- vegetationGet$data |>
-  select(-c("koordNS","koordEW","lan","kommun","bioGeoRegion","stratum")) # Ta bort de kolumner som finns i bägge apierna och som inte behövs för att slå samman tabellerna
-# names(vegetation)
+  select(-c("koordNS","koordEW","lan","kommun","bioGeoRegion","stratum")) 
+# Ta bort de kolumner som finns i bägge apierna och som inte behövs för att slå samman tabellerna
 ```
 
 Then, following [@hedenås2016] we proceed to:
@@ -136,10 +136,6 @@ klassVegetation <- klasser  |>
   left_join(vegetation, 
             by = c("ar","rutaNummer", "provytaNummer","delytaNummer")) |> 
   mutate(invPha = ifelse(ar < 2007, "2003-2007", "2008-2012"))
-
-
-
-
 ```
 
 To be able to work further we need to transpose the 'wide' table into a 'long' table:
@@ -183,3 +179,153 @@ ggplot(kvSumm, aes(x = layer, y = mean, color = invPha)) +
   scale_x_discrete(labels = c("Tree", "Shrub", "Field"))
 
 ```
+
+The resulting graph shows the estimated total canopy cover, total cover of shrubs, and
+total cover of field vegetation, during the initial inventory (2003-- 2007) and the
+re-inventory (2008--2012) in the alpine area and in the mountain birch forest. Further
+refinement of this graph for the publication shows estimates of cover with a 95%
+confidence interval and a separation of cover types to unlink y-axis values in the
+figure.
+
+## Blueberry and mountain violet occurrence in the alpine region
+
+Following with NILS data we will now illustrate another example, this time from the
+report Skog & Mark 2015 [@naturvårdsverket2015]. In this example we reproduce the
+analys done in the first chapter with the aim to compare presence of two species at
+different altitudes in the mountain range.
+
+In this case we query the endpoint 'SmaprovytaArter' that contains the occurrence of
+different species per sample area.
+
+```{r querypy, message=FALSE, warning=FALSE}
+urlApi <- 'https://landskap.slu.se/api/nils/api/'
+endpoint <- 'SmaprovytaArter'
+years <- paste0('Ar=',c(2003:2012), collapse = '&')
+region <- 'BioGeoRegion=Alpin'
+
+pyUrl <- url(glue('{urlApi}{endpoint}?{years}&{region}'))
+pyGet <- fromJSON(pyUrl)
+py <- pyGet$data |> 
+  mutate(uuid = glue('{rutaNummer}-{provytaNummer}')) |> 
+  mutate_at(vars(uuid, vetenskapligtNamn), list(factor))
+
+pySpp <- py |> 
+  group_by(uuid, ar) |> 
+  reframe(coordNS = unique(koordNS),
+          coordEW = unique(koordEW),
+          presBB = ifelse("Vaccinium myrtillus" %in% vetenskapligtNamn, 1, 0),
+          presAV = ifelse("Viola biflora" %in% vetenskapligtNamn, 1, 0)) |> 
+  as.data.frame()
+```
+
+In the same way we query NILS, there are many other sources of data. We query
+[opentopodata.org](opentopodata.org) the obtain the altitude at specific coordinates.
+But first we need to convert NILS sample areas coordinates into a coordinate system
+that this new service can understand (WGS84). And we want to make the query only one
+per sample area, as they wont go anywhere between sampling events.
+
+```{r locations, message=FALSE, warning=FALSE}
+pySf <- py |> 
+  group_by(uuid) |> 
+  reframe(coordNS = unique(koordNS),
+          coordEW = unique(koordEW)) |>  
+  rowwise() |> 
+  mutate(geom = st_sfc(list(st_point(c(coordEW, coordNS))),
+                       crs = st_crs(3006))) |> # SWEREF99 TM
+  st_as_sf() |> 
+  st_transform(st_crs(4326)) # WGS84
+
+pySf$elevation <- NA
+
+locations <- st_coordinates(pySf) |> 
+  as.data.frame() |> 
+  rename("latitude" = Y, 
+         "longitude" = X)
+```
+
+We also want to iterate the query as this service has a quota of max 100 locations per
+call.
+
+```{r altitude, eval=FALSE}
+nLocations <- nrow(locations)
+queryLimit <- 100
+lChunks <- split(seq(nLocations), ceiling(seq(nLocations)/queryLimit))
+
+urlAlt <- "https://api.opentopodata.org/v1/"
+endpoint <- "eudem25m"
+
+for (l in seq(length(lChunks))) {
+  loc <- locations[lChunks[[l]],] |> 
+    mutate("xy" = glue("{round(latitude,5)},{round(longitude,5)}"))
+  loc <- paste0(loc$xy, collapse = "|")  
+  elevUrl <- url(glue("{urlAlt}{endpoint}?locations={loc}"))
+  elevGet <- fromJSON(elevUrl)
+  elevation <- elevGet$results
+  pySf$elevation[lChunks[[l]]] <- elevation$elevation
+}
+```
+
+```{r savealt, eval=FALSE, echo=FALSE}
+### This is not shown in the final version
+saveRDS(pySf, file = "data/07_nils2_pySf_with_elevation.rds")
+```
+
+```{r readalt, eval=TRUE, echo=FALSE}
+### This is not shown in the final version.
+pySf <- readRDS(file = "data/07_nils2_pySf_with_elevation.rds")
+```
+
+We put everything together (join) and summarise the proportion of sample areas per
+inventory phase and elevation group.
+
+```{r summarisePY, echo=TRUE, message=FALSE, warning=FALSE}
+pySf$elevationBin <- cut(pySf$elevation, 
+                         breaks = c(seq(300,1000, 50),Inf),
+                         include.lowest = TRUE, right = FALSE)
+
+elevBinLabel <- c("300-349","350-399","400-449","450-499","500-549","550-599",
+                  "600-649","650-699","700-749","750-799","800-849","850-899",
+                  "900-949","950-999",">=1000")
+
+pySpp$invPha <- ifelse(as.numeric(as.character(pySpp$ar)) > 2007, 
+                        "2008-2012", "2003-2007")
+
+pySum <- pySpp |> 
+  left_join(st_drop_geometry(pySf)) |> 
+  group_by(invPha, elevationBin) |> 
+  reframe(count = n(),
+          sumPresBB = sum(presBB),
+          sumPresAV = sum(presAV)) |> 
+  mutate(occBB = sumPresBB/count*100,
+         occAV = sumPresAV/count*100)
+
+```
+
+and finally, we create a beautiful plot.
+
+```{r plotOcc, message=FALSE, warning=FALSE}
+ggplot(pySum, aes(x = elevationBin, y = variable)) +
+  geom_point(aes(y = occBB, col = invPha), 
+             position = position_dodge(0.1), 
+             shape = 19) +
+  geom_point(aes(y = occAV, col = invPha), 
+             position = position_dodge(0.1), 
+             shape = 15) +
+  labs(title = "Occurrence of two species in the mountains",
+       y = "Occurrence (%)", x = "Altitude (m.a.s.l.)", 
+       color = "Inventory phase") +
+  ### add a dummy dataset for the shape legend
+  geom_point(aes(shape = rep(c('Blueberry','Alpine yellow-violet'), 15), 
+                 y = occBB), colour = NA) +
+  guides(color = guide_legend(override.aes = list(shape = 15, size = 2)),
+         shape = guide_legend("Species", 
+                             override.aes = list(shape = c(15,19), 
+                                                 color = "grey", size = 2))) +
+  ylim(0, 100) +
+  scale_x_discrete(labels = elevBinLabel) + 
+  theme(axis.text.x = element_text(angle = 45, vjust = 0.5))
+```
+
+The resulting graphs show the percentage of NILS sample areas with blueberries
+(*Vaccinium myrtillus*) or alpine yellow-violet (*Viola biflora*) in the mountains at
+different altitudes for both inventory phases (2003--2007, 2008--2012).

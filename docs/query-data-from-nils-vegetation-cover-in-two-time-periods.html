@@ -23,7 +23,7 @@
 <meta name="author" content="Debora Arlt, Alejandro Ruete and Charles Campbell  for the Swedish Biodiversity Data Infrastructure" />
 
 
-<meta name="date" content="2023-07-14" />
+<meta name="date" content="2023-07-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   <link rel="shortcut icon" href="images/favicon_io/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="essential-biodiversity-variables.html"/>
-<link rel="next" href="query-data-from-nils-blueberry-and-mountain-violet-occurrence-in-alpine-region-over-time.html"/>
+<link rel="next" href="query-data-from-nils-blueberry-and-mountain-violet-occurrence-in-the-alpine-region.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -231,9 +231,9 @@ div.csl-indent {
 <li class="chapter" data-level="7.1" data-path="query-data-from-nils-vegetation-cover-in-two-time-periods.html"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#a-brief-intro-to-nils"><i class="fa fa-check"></i><b>7.1</b> A brief intro to NILS</a></li>
 <li class="chapter" data-level="7.2" data-path="query-data-from-nils-vegetation-cover-in-two-time-periods.html"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#query-nils-data-via-apis"><i class="fa fa-check"></i><b>7.2</b> Query NILS data via APIs</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="query-data-from-nils-blueberry-and-mountain-violet-occurrence-in-alpine-region-over-time.html"><a href="query-data-from-nils-blueberry-and-mountain-violet-occurrence-in-alpine-region-over-time.html"><i class="fa fa-check"></i><b>8</b> Query data from NILS: blueberry and mountain violet occurrence in alpine region over time</a>
+<li class="chapter" data-level="8" data-path="query-data-from-nils-blueberry-and-mountain-violet-occurrence-in-the-alpine-region.html"><a href="query-data-from-nils-blueberry-and-mountain-violet-occurrence-in-the-alpine-region.html"><i class="fa fa-check"></i><b>8</b> Query data from NILS: blueberry and mountain violet occurrence in the alpine region</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="query-data-from-nils-blueberry-and-mountain-violet-occurrence-in-alpine-region-over-time.html"><a href="query-data-from-nils-blueberry-and-mountain-violet-occurrence-in-alpine-region-over-time.html#query-data"><i class="fa fa-check"></i><b>8.1</b> Query data</a></li>
+<li class="chapter" data-level="8.1" data-path="query-data-from-nils-blueberry-and-mountain-violet-occurrence-in-the-alpine-region.html"><a href="query-data-from-nils-blueberry-and-mountain-violet-occurrence-in-the-alpine-region.html#query-data"><i class="fa fa-check"></i><b>8.1</b> Query data</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
@@ -274,7 +274,7 @@ about design and methodology can be found
 <a href="https://www.slu.se/centrumbildningar-och-projekt/nils/">here</a> and <a href="https://www.slu.se/globalassets/ew/org/centrb/nils/publikationer/2019/nils_faltinstruktion_webb_ht_2019_2.pdf">here (in
 Swedish)</a>.</p>
 <div class="float" id="figMethod">
-<img src="images/hedenas_%20fig1_map-shows-the-location-of-stratum.png" class="illustration" alt="The map shows the location of stratum 10 (gray), i.e., the Swedish mountain region, and the 145 systematically placed 5 × 5 km sample units (red). The 12 circular sample plots is in the center of the sample unit with a distance of 250 m between the centers of each plot and a distance of 2125 m between the centers of each plot and the edge of the 5 × 5 km2. Each plot consists of two concentric circular plots, and different variables are recorded in these plots. Canopy cover is estimated in the 20-m radius plot, and shrub cover, cover of field vegetation, and cover of the bottom layer are estimated in the 10-m radius plot. The sample plot is divided into subplots if the sample plot contains distinct areas of different types of land use or land cover etc. (Esseen et al. 2007). The figure also shows a list of the field variables used in this study sorted size of the circular sample plots" />
+<img src="images/hedenas_%20fig1_map-shows-the-location-of-stratum.png" class="illustration" alt="The map shows the location of stratum 10 (gray), i.e., the Swedish mountain region, and the 145 systematically placed 5 × 5 km sample units (red). The 12 circular sample plots is in the center of the sample unit with a distance of 250 m between the centers of each plot and a distance of 2125 m between the centers of each plot and the edge of the 5 × 5 km2. Each plot consists of two concentric circular plots, and different variables are recorded in these plots. Canopy cover is estimated in the 20-m radius plot, and shrub cover, cover of field vegetation, and cover of the bottom layer are estimated in the 10-m radius plot. The sample plot is divided into subplots if the sample plot contains distinct areas of different types of land use or land cover etc. (Esseen et al. 2007). The figure also shows a list of the field variables used in this study sorted size of the circular sample plots" />
 <div class="figcaption">The map shows the location of stratum 10 (gray), i.e., the Swedish mountain region,
 and the 145 systematically placed 5 × 5 km sample units (red). The 12 circular sample
 plots is in the center of the sample unit with a distance of 250 m between the centers
@@ -291,9 +291,9 @@ plots</div>
 <p>This inventory contributes with an environmental target indicator for monitoring the
 environmental target “A magnificent mountain environment” - monitoring of vegetation
 changes in the mountains.</p>
-<p>All data inventoried can be found downloade without registering and is available at
-<a href="https://landskap.slu.se/nils/dv">NILS datavärdskap</a>. The data is also available via
-REST APIs (Application Program Interface). More documentation can be found at <a href="https://landskap.slu.se/api/nils/index.html">Swagger
+<p>All inventory data can be downloaded without registering and is available at <a href="https://landskap.slu.se/nils/dv">NILS
+datavärdskap</a>. The data is also available via REST
+APIs (Application Program Interface). More documentation can be found at <a href="https://landskap.slu.se/api/nils/index.html">Swagger
 description of NILS’ APIs</a>. APIs are
 suitable for a replicable and streamlined analysis sending queries directly to the
 database therefore avoiding the unnecessary download of complete data sets. REST APIs
@@ -312,7 +312,7 @@ resource ‘homes’</p>
 </div>
 <div id="query-nils-data-via-apis" class="section level2 hasAnchor" number="7.2">
 <h2><span class="header-section-number">7.2</span> Query NILS data via APIs<a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#query-nils-data-via-apis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Here and in the next chapter we show with examples how to integrate these APIs in your
+<p>Here and in the next chapter we show examples of how to integrate these APIs in your
 workflow. The first example replicates Fig.3 a and b from <span class="citation">(<a href="#ref-hedenås2016">Hedenås, Christensen, and Svensson 2016</a>)</span>.</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb23-1" tabindex="-1"></a><span class="co"># Set up</span></span>
 <span id="cb23-2"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb23-2" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
@@ -323,8 +323,8 @@ workflow. The first example replicates Fig.3 a and b from <span class="citation"
 <span id="cb23-7"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb23-7" tabindex="-1"></a><span class="fu">library</span>(glue)</span>
 <span id="cb23-8"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb23-8" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
 <p>The endpoint ‘Klasser’ points to the table with all categorical data sampled within
-sampling areas, that is forest type, type of land cover. (Note: only for the mountain
-are at the moment).</p>
+mountain areas, that is forest type, type of land cover. (Note: only for the mountain
+areas at the moment).</p>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb24-1" tabindex="-1"></a>urlApi <span class="ot">&lt;-</span> <span class="st">&#39;https://landskap.slu.se/api/nils/api/&#39;</span></span>
 <span id="cb24-2"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb24-2" tabindex="-1"></a>endpoint <span class="ot">&lt;-</span> <span class="st">&#39;Klasser&#39;</span></span>
 <span id="cb24-3"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb24-3" tabindex="-1"></a>klasserUrl <span class="ot">&lt;-</span> <span class="fu">url</span>(<span class="fu">glue</span>(<span class="st">&#39;{urlApi}{endpoint}&#39;</span>))</span>
@@ -341,7 +341,7 @@ restricted data set only containing data collected between 2003 and 2012.</p>
 <span id="cb25-7"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb25-7" tabindex="-1"></a>klasser <span class="ot">&lt;-</span> klasserGet<span class="sc">$</span>data</span></code></pre></div>
 <p>We also want some data from the table ‘Vegetationstackning’ that contains the cover
 (%) of different vegetation layers. In this case, however, we don’t want to preserve
-all columns, just those that are not repeated in the klasses table.</p>
+all columns, just those that are unique in the classes table.</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb26-1" tabindex="-1"></a>endpoint <span class="ot">&lt;-</span> <span class="st">&#39;Vegetationstackning&#39;</span></span>
 <span id="cb26-2"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb26-2" tabindex="-1"></a>vegetationUrl <span class="ot">&lt;-</span> <span class="fu">url</span>(<span class="fu">glue</span>(<span class="st">&#39;{urlApi}{endpoint}?{years}&#39;</span>))</span>
 <span id="cb26-3"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb26-3" tabindex="-1"></a>vegetationGet <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(vegetationUrl)</span>
@@ -393,6 +393,12 @@ area is visited once within five years)</p></li>
 <span id="cb30-10"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb30-10" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;Total cover (%)&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Layer&quot;</span>, <span class="at">color =</span> <span class="st">&quot;Inventory phase&quot;</span>) <span class="sc">+</span></span>
 <span id="cb30-11"><a href="query-data-from-nils-vegetation-cover-in-two-time-periods.html#cb30-11" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Tree&quot;</span>, <span class="st">&quot;Shrub&quot;</span>, <span class="st">&quot;Field&quot;</span>))</span></code></pre></div>
 <p><img src="biodiversity-analysis-tools_files/figure-html/plot_kvSumm-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p>The resulting graph shows the estimated total canopy cover, total cover of shrubs, and
+total cover of field vegetation, during the initial inventory (2003– 2007) and the
+re-inventory (2008–2012) in the alpine area and in the mountain birch forest. Further
+refinement of this graph for the publication shows estimates of cover with a 95%
+confidence interval and a separation of cover types to unlink y-axis values in the
+figure.</p>
 
 </div>
 </div>
@@ -408,7 +414,7 @@ Hedenås, Henrik, Pernilla Christensen, and Johan Svensson. 2016. <span>“Chang
         </div>
       </div>
 <a href="essential-biodiversity-variables.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="query-data-from-nils-blueberry-and-mountain-violet-occurrence-in-alpine-region-over-time.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="query-data-from-nils-blueberry-and-mountain-violet-occurrence-in-the-alpine-region.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
