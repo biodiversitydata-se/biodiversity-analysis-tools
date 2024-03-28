@@ -40,8 +40,8 @@ df <- data.frame(class_1 = sample(1:100,10,replace = TRUE),
                  class_10 = sample(1:100,10,replace = TRUE)
                  )
 row.names(df) <- paste("Site",
-                       1:nrow(df),sep="_")
-kable(df, booktabs = TRUE, caption = "Example of wide format")%>%
+                       1:nrow(df),sep = "_")
+kable(df, booktabs = TRUE, caption = "Example of wide format") |>
   kable_styling(latex_options = c("striped", "hold_position"),
                 full_width = F)
 
@@ -127,7 +127,7 @@ vegData <-  finch::dwca_read( list.files( fileDirs,
 ```{r , echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
 library(kableExtra)
 
-kable(head(vegData$data$event.txt)) %>%
+kable(head(vegData$data$event.txt)) |>
   kable_styling()
 ```
 
@@ -136,6 +136,6 @@ kable(head(vegData$data$event.txt)) %>%
 ```{r , echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
 library(kableExtra)
 
-kable(head(vegData$data$occurrence.txt)) %>%
+kable(head(vegData$data$occurrence.txt)) |>
   kable_styling()
 ```

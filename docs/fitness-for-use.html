@@ -226,6 +226,12 @@ div.csl-indent {
 <li class="chapter" data-level="6.2.8" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html#example-of-analysis-of-diversity"><i class="fa fa-check"></i><b>6.2.8</b> Example of analysis of diversity</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="7" data-path="query-data-from-nils.html"><a href="query-data-from-nils.html"><i class="fa fa-check"></i><b>7</b> Query data from NILS</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="query-data-from-nils.html"><a href="query-data-from-nils.html#a-brief-intro-to-nils"><i class="fa fa-check"></i><b>7.1</b> A brief intro to NILS</a></li>
+<li class="chapter" data-level="7.2" data-path="query-data-from-nils.html"><a href="query-data-from-nils.html#vegetation-cover-in-two-time-periods"><i class="fa fa-check"></i><b>7.2</b> Vegetation cover in two time periods</a></li>
+<li class="chapter" data-level="7.3" data-path="query-data-from-nils.html"><a href="query-data-from-nils.html#blueberry-and-mountain-violet-occurrence-in-the-alpine-region"><i class="fa fa-check"></i><b>7.3</b> Blueberry and mountain violet occurrence in the alpine region</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
 
@@ -261,8 +267,8 @@ div.csl-indent {
 <span id="cb17-7"><a href="fitness-for-use.html#cb17-7" tabindex="-1"></a>grid <span class="ot">&lt;-</span> <span class="fu">makeGrid</span>(gotaland, <span class="at">gridSize =</span> <span class="dv">10</span>)</span>
 <span id="cb17-8"><a href="fitness-for-use.html#cb17-8" tabindex="-1"></a></span>
 <span id="cb17-9"><a href="fitness-for-use.html#cb17-9" tabindex="-1"></a>SB <span class="ot">&lt;-</span> <span class="fu">summariseBirds</span>(OB, grid)</span></code></pre></div>
-<p><img src="biodiversity-analysis-tools_files/figure-html/unnamed-chunk-28-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
-<p><img src="biodiversity-analysis-tools_files/figure-html/unnamed-chunk-29-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><img src="biodiversity-analysis-tools_files/figure-html/unnamed-chunk-6-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><img src="biodiversity-analysis-tools_files/figure-html/unnamed-chunk-7-1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
 <div id="bias" class="section level2 hasAnchor" number="4.1">
 <h2><span class="header-section-number">4.1</span> Bias<a href="fitness-for-use.html#bias" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>All data sets are biased to some degree. For field data, the structure of data gathering should be robust enough to reduce the effects of bias to a minimum. Data downloaded from biodiversity databases are by their nature from different sources. Such sources may have differing causes of bias and it is important to consider if and how such biases will affect research.</p>
@@ -291,7 +297,7 @@ div.csl-indent {
 <p>Spatial sorting or dissaggregating presence points can reduce the effects of bias:</p>
 <ul>
 <li><strong>ENMeval</strong> - Provides methods for quickly spatially aggregating presence points for model building;</li>
-<li><strong>spThin</strong> - Randomly thins the number of presences used for a model by an agreed distance. THis</li>
+<li><strong>spThin</strong> - Randomly thins the number of presences used for a model by an agreed distance.</li>
 </ul>
 
 </div>
