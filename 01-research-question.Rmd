@@ -24,12 +24,12 @@ There are a large number of available on-line resources. These include but are n
 - [VertNet](http://vertnet.org/) - vertebrate biodiversity collections **rvert, spocc**
 - [iDigBio](https://www.idigbio.org/) - Integrated digitise biodiversity collections **ridigbio**
 - [OBIS](http://www.iobis.org/) - Ocean biodiversity information system **robis**
-- [ALA](http://www.ala.org.au/) - Atlas of living Australia **ALA4r**
+- [ALA](http://www.ala.org.au/) - Atlas of living Australia **galah**
 - [Neotoma](https://www.neotomadb.org/) Palaeoecology databas **neotoma**
 - ...
 
 ### Taxonomic diversity
-To keep track of ever changing taxonomy of species there are different databases that follow different standars.
+To keep track of ever changing taxonomy of species there are different databases that follow different standard.
 
 - [dyntaxa](https://www.dyntaxa.se/)
 - [GBIF backbone](http://www.gbif.org/)
