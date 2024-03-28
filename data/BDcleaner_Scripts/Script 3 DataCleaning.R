@@ -17,8 +17,8 @@ library(data.table)
 library(magrittr)
 
 # data format trasformation (the coordinates' format of some data base are "string")
-df.bio$decimalLatitude  <- df.bio$decimalLatitude %>% as.numeric
-df.bio$decimalLongitude <- df.bio$decimalLongitude %>% as.numeric
+df.bio$decimalLatitude  <- df.bio$decimalLatitude |> as.numeric
+df.bio$decimalLongitude <- df.bio$decimalLongitude |> as.numeric
 
 
 ##########################################################################################
@@ -49,7 +49,7 @@ name.vec.j <- c("bindname","Taxonomic status in TPL","Accepted ID","conf","Line"
 LD.name <- c('LD_Spe','LD_Aut','RLD_Spe','RLD_Aut')
 
 # unique taxon names in dataframe
-Name.occ <- unique(df.bio$scientificName) %>% as.character
+Name.occ <- unique(df.bio$scientificName) |> as.character
 Name.occ2 <- Name.occ[which(!str_detect(Name.occ,' [×xX] '))] # remove hybrids species
 
 
@@ -195,7 +195,7 @@ for(k in 1:nrow(judge.taxon))
 
 
 # Match the names status in judge.taxon with the df.bio dataframe
-Name.occ.full <- df.bio$scientificName %>% as.character
+Name.occ.full <- df.bio$scientificName |> as.character
 TaxonStatus  <- rep(NA,nrow(df.bio)) # Status in TPL
 TaxonConf    <- rep(NA,nrow(df.bio)) # Confidence level in TPL
 TaxonType    <- rep(NA,nrow(df.bio)) # Match type in TPL
@@ -271,8 +271,8 @@ df.bio$ExGeo[no.geo]  <- 1
 df.bio$ExGeo[-no.geo] <- 0
 
 # GeoPrecision Use: number of decimal digits of coordinates
-clat <- df.bio$decimalLatitude[no.geo] %>% as.character %>% str_split(pattern = '[.]')
-clon <- df.bio$decimalLongitude[no.geo] %>% as.character %>% str_split(pattern = '[.]')
+clat <- df.bio$decimalLatitude[no.geo] |> as.character |> str_split(pattern = '[.]')
+clon <- df.bio$decimalLongitude[no.geo] |> as.character |> str_split(pattern = '[.]')
 
 geop.use <- rep(0,length = length(no.geo))
 for(p in 1:length(no.geo))
@@ -327,7 +327,7 @@ country.inf <- wrld_simpl@data
 country.inf$ISO2 <- as.character(country.inf$ISO2)
 
 # Some special lower case
-df.bio$countryCode <- toupper(df.bio$countryCode %>% as.character)
+df.bio$countryCode <- toupper(df.bio$countryCode |> as.character)
 
 # "" not NA if countryCode is NA
 
@@ -471,7 +471,7 @@ diff.use <- setdiff(diff.use, diff.use[which(df.use$countryCode[diff.use] == "")
 
 x <- df.use$decimalLongitude[diff.use]
 y <- df.use$decimalLatitude[diff.use]
-use.iso2 <- df.use$countryCode[diff.use] %>% as.character
+use.iso2 <- df.use$countryCode[diff.use] |> as.character
 
 # Transformation process and tests (Simple world map)
 over.list1  <- Coord8.Out(coordx = x, coordy = y, worldmap_use = wrld_simpl)

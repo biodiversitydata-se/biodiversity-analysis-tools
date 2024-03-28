@@ -6,12 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 6 Essential Biodiversity Variables |     A general workflow for analysis of primary biodiversity data</title>
   <meta name="description" content="  A general workflow for analysis of primary biodiversity data" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 6 Essential Biodiversity Variables |     A general workflow for analysis of primary biodiversity data" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="https://biodiversitydata-se.github.io/biodiversity-analysis-tools/" />
-  <meta property="og:image" content="https://biodiversitydata-se.github.io/biodiversity-analysis-tools//images/sbdi-logo-orginal-large.png" />
+  <meta property="og:image" content="https://biodiversitydata-se.github.io/biodiversity-analysis-tools/images/sbdi-logo-orginal-large.png" />
   
   <meta name="github-repo" content="biodiversitydata-se/biodiversity-analysis-tools" />
 
@@ -19,12 +18,12 @@
   <meta name="twitter:title" content="Chapter 6 Essential Biodiversity Variables |     A general workflow for analysis of primary biodiversity data" />
   
   
-  <meta name="twitter:image" content="https://biodiversitydata-se.github.io/biodiversity-analysis-tools//images/sbdi-logo-orginal-large.png" />
+  <meta name="twitter:image" content="https://biodiversitydata-se.github.io/biodiversity-analysis-tools/images/sbdi-logo-orginal-large.png" />
 
 <meta name="author" content="Debora Arlt, Alejandro Ruete and Charles Campbell  for the Swedish Biodiversity Data Infrastructure" />
 
 
-<meta name="date" content="2021-06-04" />
+<meta name="date" content="2023-07-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,9 +31,9 @@
   
   <link rel="shortcut icon" href="images/favicon_io/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="data-exploration-and-transformation.html"/>
-<link rel="next" href="references.html"/>
-<script src="libs/header-attrs-2.8/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link rel="next" href="query-data-from-nils.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,9 +49,9 @@
 
 
 
-
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
@@ -63,6 +62,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -94,11 +94,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ef2929; } /* Alert */
 code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #c4a000; } /* Attribute */
+code span.at { color: #204a87; } /* Attribute */
 code span.bn { color: #0000cf; } /* BaseN */
 code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4e9a06; } /* Char */
-code span.cn { color: #000000; } /* Constant */
+code span.cn { color: #8f5902; } /* Constant */
 code span.co { color: #8f5902; font-style: italic; } /* Comment */
 code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
 code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
@@ -107,14 +107,14 @@ code span.dv { color: #0000cf; } /* DecVal */
 code span.er { color: #a40000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #0000cf; } /* Float */
-code span.fu { color: #000000; } /* Function */
+code span.fu { color: #204a87; font-weight: bold; } /* Function */
 code span.im { } /* Import */
 code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
 code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
 code span.ot { color: #8f5902; } /* Other */
 code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
-code span.sc { color: #000000; } /* SpecialChar */
+code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
 code span.ss { color: #4e9a06; } /* SpecialString */
 code span.st { color: #4e9a06; } /* String */
 code span.va { color: #000000; } /* Variable */
@@ -122,6 +122,10 @@ code span.vs { color: #4e9a06; } /* VerbatimString */
 code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
@@ -222,6 +226,12 @@ div.csl-indent {
 <li class="chapter" data-level="6.2.8" data-path="essential-biodiversity-variables.html"><a href="essential-biodiversity-variables.html#example-of-analysis-of-diversity"><i class="fa fa-check"></i><b>6.2.8</b> Example of analysis of diversity</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="7" data-path="query-data-from-nils.html"><a href="query-data-from-nils.html"><i class="fa fa-check"></i><b>7</b> Query data from NILS</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="query-data-from-nils.html"><a href="query-data-from-nils.html#a-brief-intro-to-nils"><i class="fa fa-check"></i><b>7.1</b> A brief intro to NILS</a></li>
+<li class="chapter" data-level="7.2" data-path="query-data-from-nils.html"><a href="query-data-from-nils.html#vegetation-cover-in-two-time-periods"><i class="fa fa-check"></i><b>7.2</b> Vegetation cover in two time periods</a></li>
+<li class="chapter" data-level="7.3" data-path="query-data-from-nils.html"><a href="query-data-from-nils.html#blueberry-and-mountain-violet-occurrence-in-the-alpine-region"><i class="fa fa-check"></i><b>7.3</b> Blueberry and mountain violet occurrence in the alpine region</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
 
@@ -240,14 +250,14 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="essential-biodiversity-variables" class="section level1" number="6">
-<h1><span class="header-section-number">Chapter 6</span> Essential Biodiversity Variables</h1>
-<div id="sdm" class="section level2" number="6.1">
-<h2><span class="header-section-number">6.1</span> SDM</h2>
+<div id="essential-biodiversity-variables" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Essential Biodiversity Variables<a href="essential-biodiversity-variables.html#essential-biodiversity-variables" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="sdm" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> SDM<a href="essential-biodiversity-variables.html#sdm" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><a href="https://rspatial.org/raster/sdm/index.html">rspatial</a></p>
 </div>
-<div id="diversity" class="section level2" number="6.2">
-<h2><span class="header-section-number">6.2</span> Diversity</h2>
+<div id="diversity" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Diversity<a href="essential-biodiversity-variables.html#diversity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Biological diversity analyses typically use multivariate techniques to assess variation in data sets comprising sampling events and cases. A sampling event can be across time and space. In biodiversity analysis three cases are the most common:</p>
 <ul>
 <li><p>Taxonomic diversity (species);</p></li>
@@ -255,19 +265,19 @@ div.csl-indent {
 <li><p>Genetic diversity (allellic frequency, phylogeny etc).</p></li>
 </ul>
 <p>Variation in these three dimensions can be directly compared both within and between these different dimensions of biological diversity.</p>
-<div id="types-of-analyses---patitioning-alpha-beta-gamma-etc.-diversity" class="section level3" number="6.2.1">
-<h3><span class="header-section-number">6.2.1</span> Types of analyses - Patitioning <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span>, <span class="math inline">\(\gamma\)</span> <em>etc.</em> diversity</h3>
-<p>Two forms of diversity analyses are currently widely used; classic diversity measures (eg. species richness, Shannons diversity index <em>etc.</em>) and <em>numbers equivalents</em> representation of the underlying diversity distribution. This second form was first introduced in Hill <span class="citation">(<a href="#ref-hill_diversity_1973" role="doc-biblioref">1973</a>)</span> and a number of resources are now available for computing both forms. See the forum piece <em>Forum: Partitioning diversity</em> in Ecology <span class="citation">(<a href="#ref-ellison_partitioning_2010" role="doc-biblioref">2010</a>)</span> for a fuller discussion on the use of <em>numbers equivalents</em>.</p>
+<div id="types-of-analyses---patitioning-alpha-beta-gamma-etc.-diversity" class="section level3 hasAnchor" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> Types of analyses - Patitioning <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span>, <span class="math inline">\(\gamma\)</span> <em>etc.</em> diversity<a href="essential-biodiversity-variables.html#types-of-analyses---patitioning-alpha-beta-gamma-etc.-diversity" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Two forms of diversity analyses are currently widely used; classic diversity measures (eg. species richness, Shannons diversity index <em>etc.</em>) and <em>numbers equivalents</em> representation of the underlying diversity distribution. This second form was first introduced in Hill <span class="citation">(<a href="#ref-hill_diversity_1973">1973</a>)</span> and a number of resources are now available for computing both forms. See the forum piece <em>Forum: Partitioning diversity</em> in Ecology <span class="citation">(<a href="#ref-ellison_partitioning_2010">2010</a>)</span> for a fuller discussion on the use of <em>numbers equivalents</em>.</p>
 <p>Both types of diversity partitioning are used for all types of analyses and we present resources which are available for both forms:
 - Resources for classic diversity measures
 - Resources for <em>numbers equivalents</em>.</p>
 </div>
-<div id="data-form" class="section level3" number="6.2.2">
-<h3><span class="header-section-number">6.2.2</span> Data form</h3>
+<div id="data-form" class="section level3 hasAnchor" number="6.2.2">
+<h3><span class="header-section-number">6.2.2</span> Data form<a href="essential-biodiversity-variables.html#data-form" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Within the R environment both methods require data to be in the <strong>wide format</strong>. See [link to page explaining shift from long to wide].</p>
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:unnamed-chunk-39">Table 6.1: </span>Example of wide format
+<span id="tab:unnamed-chunk-11">Table 6.1: </span>Example of wide format
 </caption>
 <thead>
 <tr>
@@ -659,12 +669,12 @@ Site_10
 </tbody>
 </table>
 </div>
-<div id="classic-diversity-measures" class="section level3" number="6.2.3">
-<h3><span class="header-section-number">6.2.3</span> Classic diversity measures</h3>
+<div id="classic-diversity-measures" class="section level3 hasAnchor" number="6.2.3">
+<h3><span class="header-section-number">6.2.3</span> Classic diversity measures<a href="essential-biodiversity-variables.html#classic-diversity-measures" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>People have used many different indices to measure diversity. These include:</p>
 </div>
-<div id="alpha-diversity" class="section level3" number="6.2.4">
-<h3><span class="header-section-number">6.2.4</span> <span class="math inline">\(\alpha\)</span> diversity</h3>
+<div id="alpha-diversity" class="section level3 hasAnchor" number="6.2.4">
+<h3><span class="header-section-number">6.2.4</span> <span class="math inline">\(\alpha\)</span> diversity<a href="essential-biodiversity-variables.html#alpha-diversity" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="math inline">\(\alpha\)</span> diversity refers to the diversity at a single site. There are a number of different indices to caclculate the most common are:</p>
 <ul>
 <li>Species richness;</li>
@@ -676,8 +686,8 @@ Site_10
 <p>The R libraries <strong>vegan, adiv, abdiv</strong> all provide methods to calculate these measures as well as a wealth of others. Within <strong>abdiv</strong> the funtion <em>alpha_diversity</em> lists the <span class="math inline">\(\alpha\)</span> diversity measures available within the package. Whilst not exhaustive it is a large list.</p>
 <p>There are also ways of estimating <span class="math inline">\(\alpha\)</span> diversity through rarefaction as well as modeling and visualising its different aspects in both <strong>vegan</strong> and <strong>adiv</strong>.</p>
 </div>
-<div id="beta-diversity-and-dissimilarities" class="section level3" number="6.2.5">
-<h3><span class="header-section-number">6.2.5</span> <span class="math inline">\(\beta\)</span> diversity and dissimilarities</h3>
+<div id="beta-diversity-and-dissimilarities" class="section level3 hasAnchor" number="6.2.5">
+<h3><span class="header-section-number">6.2.5</span> <span class="math inline">\(\beta\)</span> diversity and dissimilarities<a href="essential-biodiversity-variables.html#beta-diversity-and-dissimilarities" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The <span class="math inline">\(\beta\)</span> diversity is a measure of the change in composition and/or abundance between sites. There is a long history of methods to measure this particular aspect of diversity. This has resulted in multiple indices and dissimilarities. Commonly used indices include:</p>
 <ul>
 <li>Jaccard;</li>
@@ -689,50 +699,50 @@ Site_10
 <p>An extensive list of <span class="math inline">\(\beta\)</span> diversities are available through the function <em>betadiver</em> in the <strong>vegan</strong> package as well as <em>beta_diversity</em> in the <strong>abdiv</strong> package.</p>
 <p>Methods for analysing <span class="math inline">\(\beta\)</span> diversity are included in the libraries <strong>betapart, vegan, adiv and ade4</strong>.</p>
 </div>
-<div id="additional-related-diversities" class="section level3" number="6.2.6">
-<h3><span class="header-section-number">6.2.6</span> Additional related diversities</h3>
-<p>Measures of dark diversity (those species that are absent from an ecosystem but which belong to its species pool, <span class="citation">(<a href="#ref-partel_dark_2011" role="doc-biblioref">Pärtel, Szava-Kovats, and Zobel 2011</a>)</span>) and <span class="math inline">\(\zeta\)</span> diversity (a measure of species pool overlap, <span class="citation">(<a href="#ref-hui_zeta_2014" role="doc-biblioref">Hui and McGeoch 2014</a>)</span>) have been developed. These measures are instituted in the libraries:</p>
+<div id="additional-related-diversities" class="section level3 hasAnchor" number="6.2.6">
+<h3><span class="header-section-number">6.2.6</span> Additional related diversities<a href="essential-biodiversity-variables.html#additional-related-diversities" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Measures of dark diversity (those species that are absent from an ecosystem but which belong to its species pool, <span class="citation">(<a href="#ref-partel_dark_2011">Pärtel, Szava-Kovats, and Zobel 2011</a>)</span>) and <span class="math inline">\(\zeta\)</span> diversity (a measure of species pool overlap, <span class="citation">(<a href="#ref-hui_zeta_2014">Hui and McGeoch 2014</a>)</span>) have been developed. These measures are instituted in the libraries:</p>
 <ul>
 <li><strong>DarkDiv</strong> dark diversity; and</li>
 <li><strong>zetadiv</strong> zeta diversity</li>
 </ul>
 </div>
-<div id="numbers-equivalents" class="section level3" number="6.2.7">
-<h3><span class="header-section-number">6.2.7</span> Numbers equivalents</h3>
+<div id="numbers-equivalents" class="section level3 hasAnchor" number="6.2.7">
+<h3><span class="header-section-number">6.2.7</span> Numbers equivalents<a href="essential-biodiversity-variables.html#numbers-equivalents" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Numbers equivalents account for the nested heirarchies in <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span> and <span class="math inline">\(\gamma\)</span> diversity. A number of different libraries have now been developed:</p>
 <ul>
-<li>Hill numbers: <span class="citation"><a href="#ref-hill_diversity_1973" role="doc-biblioref">Hill</a> (<a href="#ref-hill_diversity_1973" role="doc-biblioref">1973</a>)</span>
+<li>Hill numbers: <span class="citation">Hill (<a href="#ref-hill_diversity_1973">1973</a>)</span>
 <ul>
 <li><strong>adiv</strong></li>
 <li><strong>HillR</strong></li>
 <li><strong>iNext</strong></li>
 </ul></li>
-<li>Tsallis entropy: <span class="citation"><a href="#ref-marcon_decomposing_2015" role="doc-biblioref">Marcon and Hérault</a> (<a href="#ref-marcon_decomposing_2015" role="doc-biblioref">2015</a>)</span>
+<li>Tsallis entropy: <span class="citation">Marcon and Hérault (<a href="#ref-marcon_decomposing_2015">2015</a>)</span>
 <ul>
 <li><strong>adiv</strong></li>
 <li><strong>entropart</strong></li>
 </ul></li>
-<li>Crossing point theory: <span class="citation"><a href="#ref-patil_diversity_1982" role="doc-biblioref">Patil and Taillie</a> (<a href="#ref-patil_diversity_1982" role="doc-biblioref">1982</a>)</span>
+<li>Crossing point theory: <span class="citation">Patil and Taillie (<a href="#ref-patil_diversity_1982">1982</a>)</span>
 <ul>
 <li><strong>BioFTF</strong></li>
 </ul></li>
 </ul>
 </div>
-<div id="example-of-analysis-of-diversity" class="section level3" number="6.2.8">
-<h3><span class="header-section-number">6.2.8</span> Example of analysis of diversity</h3>
+<div id="example-of-analysis-of-diversity" class="section level3 hasAnchor" number="6.2.8">
+<h3><span class="header-section-number">6.2.8</span> Example of analysis of diversity<a href="essential-biodiversity-variables.html#example-of-analysis-of-diversity" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In this example we use the sampling event “Vegetation data from sheep grazing experiment at alpine site in Hol, Norway” available <a href="https://www.gbif.org/dataset/57d403f4-9d00-4651-8e26-1f4e81a21181">here</a>.</p>
 <p>Downloading the Darwin core archive which contains a … TO BE DONE…</p>
-<div id="event-data" class="section level4" number="6.2.8.1">
-<h4><span class="header-section-number">6.2.8.1</span> Event data</h4>
+<div id="event-data" class="section level4 hasAnchor" number="6.2.8.1">
+<h4><span class="header-section-number">6.2.8.1</span> Event data<a href="essential-biodiversity-variables.html#event-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 </div>
-<div id="occurence-data" class="section level4" number="6.2.8.2">
-<h4><span class="header-section-number">6.2.8.2</span> Occurence data</h4>
+<div id="occurence-data" class="section level4 hasAnchor" number="6.2.8.2">
+<h4><span class="header-section-number">6.2.8.2</span> Occurence data<a href="essential-biodiversity-variables.html#occurence-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 
 </div>
 </div>
 </div>
 </div>
-<h3>References</h3>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-ellison_partitioning_2010" class="csl-entry">
 Ellison, Aaron M. 2010. <span>“Partitioning Diversity1.”</span> <em>Ecology</em> 91 (7): 1962–63. https://doi.org/<a href="https://doi.org/10.1890/09-1692.1">https://doi.org/10.1890/09-1692.1</a>.
@@ -746,11 +756,11 @@ Hui, Cang, and Melodie A. McGeoch. 2014. <span>“Zeta <span>Diversity</span> as
 <div id="ref-marcon_decomposing_2015" class="csl-entry">
 Marcon, Eric, and Bruno Hérault. 2015. <span>“Decomposing Phylodiversity.”</span> <em>Methods in Ecology and Evolution</em> 6 (3): 333–39. https://doi.org/<a href="https://doi.org/10.1111/2041-210X.12323">https://doi.org/10.1111/2041-210X.12323</a>.
 </div>
-<div id="ref-patil_diversity_1982" class="csl-entry">
-Patil, G. P., and C. Taillie. 1982. <span>“Diversity as a <span>Concept</span> and Its <span>Measurement</span>.”</span> <em>Journal of the American Statistical Association</em> 77 (379): 548–61. <a href="https://doi.org/10.1080/01621459.1982.10477845">https://doi.org/10.1080/01621459.1982.10477845</a>.
-</div>
 <div id="ref-partel_dark_2011" class="csl-entry">
 Pärtel, Meelis, Robert Szava-Kovats, and Martin Zobel. 2011. <span>“Dark Diversity: Shedding Light on Absent Species.”</span> <em>Trends in Ecology &amp; Evolution</em> 26 (3): 124–28. <a href="https://doi.org/10.1016/j.tree.2010.12.004">https://doi.org/10.1016/j.tree.2010.12.004</a>.
+</div>
+<div id="ref-patil_diversity_1982" class="csl-entry">
+Patil, G. P., and C. Taillie. 1982. <span>“Diversity as a <span>Concept</span> and Its <span>Measurement</span>.”</span> <em>Journal of the American Statistical Association</em> 77 (379): 548–61. <a href="https://doi.org/10.1080/01621459.1982.10477845">https://doi.org/10.1080/01621459.1982.10477845</a>.
 </div>
 </div>
             </section>
@@ -759,11 +769,10 @@ Pärtel, Meelis, Robert Szava-Kovats, and Martin Zobel. 2011. <span>“Dark Dive
         </div>
       </div>
 <a href="data-exploration-and-transformation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="query-data-from-nils.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -803,6 +812,10 @@ gitbook.start({
 "text": null
 },
 "download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "section"
 }
@@ -816,7 +829,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

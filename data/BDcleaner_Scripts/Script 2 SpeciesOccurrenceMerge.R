@@ -449,7 +449,7 @@ df.code <- codelist
 #########################
 # GBIF
 ##########################
-df.GBIF <- fread('YourPath/GBIF.csv',encoding = 'UTF-8') %>% unique()
+df.GBIF <- fread('YourPath/GBIF.csv',encoding = 'UTF-8') |> unique()
 db.GBIF <- subset(df.GBIF,select = c('scientificName','countryCode',
                                     'decimalLatitude','decimalLongitude','year'))
 db.GBIF$FlagCountry <- 1
@@ -459,9 +459,9 @@ db.GBIF$DB     <- 'GBIF'
 #########################
 # BIEN
 ##########################
-df.BIEN <- fread('YourPath/BIEN.csv',encoding = 'UTF-8') %>% unique()
-table.BIEN <- df.BIEN$country %>% table
-name.BIEN  <- df.BIEN$country %>% table %>% names
+df.BIEN <- fread('YourPath/BIEN.csv',encoding = 'UTF-8') |> unique()
+table.BIEN <- df.BIEN$country |> table
+name.BIEN  <- df.BIEN$country |> table |> names
 match1     <- name2iso(name = name.idig,df.code = df.code)
 code.BIEN  <- rep(NA,nrow(df.BIEN))
 t.use2     <- df.BIEN$country
@@ -470,7 +470,7 @@ df.BIEN$countryCode <- code.BIEN
 
 
 library(lubridate)
-use.year <- df.BIEN$date_collected %>% as.Date %>% year
+use.year <- df.BIEN$date_collected |> as.Date |> year
 df.BIEN$year <- use.year
 
 
@@ -495,7 +495,7 @@ iso3166.code <- read.csv('ISO3166.csv',header = T) ## datasource: iso 3166 onlin
 name.use <- ala.c2[which(ala.c1 == "" & ala.c2 != "")]
 code.mat <- rep(NA,length(name.use))
 
-pro1 <- name.use %>% unique %>% tolower %>% str_trim
+pro1 <- name.use |> unique |> tolower |> str_trim
 num1 <- which(pro1 %in% tolower(iso3166.code$`English short name`))
 name.mat <- rep(NA,length(pro1))
 for(i in num1)
@@ -509,7 +509,7 @@ pro2 <- pro1[-num1]
 match3 <- name2iso(name = pro2,df.code = df.code)
 match3[18] <- 'FM'
 name.mat[-num1] <- match3
-t.use <- name.use %>% tolower
+t.use <- name.use |> tolower
 
 for(i in 1:length(name.mat)) {code.mat[which(t.use == pro1[i])] <- name.mat[i]}
 db.ALA$countryCode[which(ala.c1 == "" & ala.c2 != "")] <- code.mat
@@ -539,8 +539,8 @@ df.iDig    <- fread('YourPath/iDigBio/idigbioDF_uninei.csv',
 db.idig    <- subset(df.iDig,select=c('scientificname','country','geopoint.lat',
                                       'geopoint.lon','datecollected'))
 
-table.idig <- db.idig$country %>% table
-name.idig  <- db.idig$country %>% table %>% names
+table.idig <- db.idig$country |> table
+name.idig  <- db.idig$country |> table |> names
 match1     <- name2iso(name = name.idig,df.code = df.code)
 code.idig  <- rep(NA,nrow(db.idig))
 t.use2     <- db.idig$country
@@ -553,7 +553,7 @@ db.idig$FlagCountry[which(is.na(code.idig))] <- df.iDig$country[which(is.na(code
 
 # For year
 library(lubridate)
-use.year <- db.idig$datecollected %>% as.Date %>% year
+use.year <- db.idig$datecollected |> as.Date |> year
 db.idig$year <- use.year
 
 
@@ -571,8 +571,8 @@ db.iDigBio$DB     <- 'iDigBio'
 df.SpeLink <- fread('YourPath/SpeciesLink/splink_tree.csv', encoding = 'UTF-8')
 db.SpeLink <- subset(df.SpeLink,select=c('scientificname','scientificnameauthor','country',
                                          'latitude','longitude','yearcollected'))
-table.spel <- db.SpeLink$country %>% table
-name.spel  <- db.SpeLink$country %>% table %>% names
+table.spel <- db.SpeLink$country |> table
+name.spel  <- db.SpeLink$country |> table |> names
 match2     <- name2iso(name = tolower(name.spel),df.code = df.code)
 sum(table.spel[which(is.na(match2))])
 

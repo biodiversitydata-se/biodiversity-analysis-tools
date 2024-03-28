@@ -1,7 +1,7 @@
-tab:unnamed-chunk-5
-tab:unnamed-chunk-32
-tab:unnamed-chunk-33
-tab:unnamed-chunk-39
+tab:georef
+tab:wide
+tab:long
+tab:unnamed-chunk-11
 introduction
 the-importance-of-questions-and-sources-of-data
 questions
@@ -47,3 +47,7 @@ numbers-equivalents
 example-of-analysis-of-diversity
 event-data
 occurence-data
+query-data-from-nils
+a-brief-intro-to-nils
+vegetation-cover-in-two-time-periods
+blueberry-and-mountain-violet-occurrence-in-the-alpine-region
