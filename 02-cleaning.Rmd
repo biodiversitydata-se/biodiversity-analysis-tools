@@ -179,26 +179,18 @@ First we give each record in the assembled data set a unique ID. In this case it
 
 ```{r hiden-data-search, warning=FALSE, error=FALSE, message=FALSE, eval=FALSE, echo=FALSE}
 library(BIRDS)
-library(SBDI4R)
-
+library(sbdi4r2)
+sbdi_config(email = "sbdi4r-test@biodiversitydata.se", 
+            download_reason_id = 10)
+library(lubridate)
 ## TODO optimize the search so that the dataset is smaller than 5mb
-Carex <- occurrences(taxon="Carex",
-                     fq="year:[2000 TO 2020]",
-                     email="test@test.org", 
-                     download_reason_id=10)
+Carex <- sbdi_call() |> 
+  sbdi_identify("Carex") |> 
+  filter(year >= 2000, year <= 2020) |>
+  atlas_occurrences()
 
 #it creates month data that is currently lacking from the SBDI API
-Carex$data$day <- ifelse(is.na(Carex$data$day), 
-                       sample(c(1:31), 1, replace = TRUE),
-                       Carex$data$day)
-Carex$data$month <- ifelse(Carex$data$day == 31, 
-                       sample(c(1,3,5,7,8,10,12), 1, replace = TRUE),
-                       ifelse(Carex$data$day>=28, 
-                              sample(c(1,3:12), 1, replace = TRUE), #not February
-                              sample(c(1:12), 1, replace = TRUE)
-                              )
-                       )
-Carex <- Carex$data
+Carex <- Carex |> filter(!is.na(eventDate))
 save(Carex, file = "./data/Cyperacea_SWE.rdata")
 ```
 
@@ -240,7 +232,7 @@ unUseful <- Carex |>
 
 ```
 
-We now need to check that the species names in the records that we are using are valid for the area which we are looking at i.e. Sweden. There are several resources out there that do this. As we are looking specifically and solely at Sweden there is [Dyntaxa.se](https://www.dyntaxa.se/). There is also an R package as part of the [Swedish Biodiversity Data Infrastructure](https://github.com/biodiversitydata-se/SBDI4R) with examples and documentation. For wider applicability we will export the unique names from the Carex data frame. These will then be copied to the [Dyntaxa portal](https://www.dyntaxa.se/Match/Settings/0) for matching multiple names. The results are checked against the Swedish lists and unknown species or uncertainties are flagged. Names can be copied directly into a box in Dyntaxa or may be imported directly as an `xlsx` file. Here we shall export just the species names. There are multiple options. 
+We now need to check that the species names in the records that we are using are valid for the area which we are looking at i.e. Sweden. There are several resources out there that do this. As we are looking specifically and solely at Sweden there is [Dyntaxa.se](https://www.dyntaxa.se/). There is also an R package as part of the [Swedish Biodiversity Data Infrastructure](https://github.com/biodiversitydata-se/sbdi4r2) with examples and documentation. For wider applicability we will export the unique names from the Carex data frame. These will then be copied to the [Dyntaxa portal](https://www.dyntaxa.se/Match/Settings/0) for matching multiple names. The results are checked against the Swedish lists and unknown species or uncertainties are flagged. Names can be copied directly into a box in Dyntaxa or may be imported directly as an `xlsx` file. Here we shall export just the species names. There are multiple options. 
 
 ```{r filter_unusef, warning=FALSE, error=FALSE, message=FALSE, eval=FALSE}
 
